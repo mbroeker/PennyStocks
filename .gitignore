@@ -1,0 +1,5 @@
+.hg
+.DS_Store
+.idea/
+PennyStocks.xcodeproj/xcuserdata/
+PennyStocks.xcodeproj/project.xcworkspace/xcuserdata/

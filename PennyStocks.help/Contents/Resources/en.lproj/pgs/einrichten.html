@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <meta name="keywords" content="einrichten, benutzen, anwenden, erklärung" />
+  <meta name="description" content="Funktionsweise des iBrokers" />
+  <link href="../sty/main.css" rel="stylesheet" type="text/css" />
+  <title>Usage</title>
+</head>
+
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="row">
+        <h1 class="text-left">2<span class="right">iBroker - Escobar Edition</span></h1>
+      </div>
+
+      <hr />
+    </div>
+
+    <div class="content">
+
+      <div class="row">
+        <h3>Dashboard</h3>
+
+        <div class="row description">
+          <img class="img img-25 right" src="../../shrd/Dashboard.png" alt="Dashboard" />
+
+          <p>The first row of the iBroker shows current Trading Data for BTC in Euro from Bitstamp Exchange.</p>
+          <p>The other rows of the iBroker show you the current prices in Euro.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Bitcoin</h3>
+
+        <div class="row description">
+          <img class="img img-25 right" src="../../shrd/Bitcoin.png" alt="Bitcoin" />
+
+          <p>The first row of the iBroker shows current Trading Data for BTC in Euro from Bitstamp Exchange.</p>
+          <p>The other rows of the iBroker show you the current conversion factors for the respective asset.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Bitcoin, Ethereum, Monero, Litecoin, ..., Siacoin</h3>
+
+        <div class="row description">
+          <img class="img img-25 right" src="../../shrd/Poloniex.png" alt="Poloniex" />
+
+          <p>The first row of the iBroker shows you the current exchange data from the Default Exchange in Preferences Menu.</p>
+          <p>The other rows of the iBroker show you the current conversion factors for the respective asset.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Colors</h3>
+
+        <div class="row">
+          <table class="colors">
+            <tr class="grün">
+              <td class="text-right">GREEN</td>
+              <td>Asset with Gain</td>
+            </tr>
+
+            <tr class="gelb">
+              <td class="text-right">YELLOW</td>
+              <td>Asset with exchange loss</td>
+            </tr>
+
+            <tr class="magenta">
+              <td class="text-right">MAGENTA</td>
+              <td>Asset with 5% Gain or more</td>
+            </tr>
+
+            <tr class="orange">
+              <td class="text-right">ORANGE</td>
+              <td>Asset with 5% exchange loss or more</td>
+            </tr>
+
+            <tr class="blau">
+              <td class="text-right">BLUE</td>
+              <td>Asset with highest Gain</td>
+            </tr>
+
+            <tr class="rot">
+              <td class="text-right">RED</td>
+              <td>Asset with highest exchange loss</td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Statusbar of the iBroker</h3>
+        <table class="status">
+          <tr class="orange">
+            <td class="text-center">Investment-Rate</td>
+            <td class="text-center">Exchange-Rate</td>
+            <td class="text-center">Profit</td>
+          </tr>
+        </table>
+
+        <div class="row">
+          <p>A positive Investment-Rate says, that the current price is over the real price.</p>
+          <p>A negative Investment-Rate says, that the current price is under the real price.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Portfolio Management</h3>
+
+        <div class="row">
+          <p>
+            Enter your portfolio into the respective fields of the assets Bitcoin, Ethereum, Monero, Litecoin, ..., Siacoin
+            <br />IBroker calculates your total assets in euros based on your assets.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Buttons</h3>
+
+        <div class="row">
+          <p>
+            The <strong>Home-Symbol</strong> opens the Standard-Webpage for the current tab - see preferences.
+            <br />The <strong>Arrows</strong> will start trading webpages.
+            <br />The <strong>Exchange-Button</strong> starts the Default-Wallet-Application for the current asset.
+            <br />By clicking the <strong>Euro-Symbol</strong> a facts sheet appears - in theory.
+          </p>
+        </div>
+
+        <div class="row">
+          <h4>If you bought</h4>
+          <p>Clicking the <strong>Asset-Symbol</strong> updates the checkpoints for the current asset and BTC.</p>
+          <br />
+
+          <h4>If you have sold</h4>
+          <p>Clicking the <strong>Asset-Symbol</strong> updates the checkpoint for BTC.</p>
+          <br />
+
+          <h4>In Common</h4>
+          <p>Clicking the blue info icon updates the checkpoint for the current asset.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Additional Informations</h3>
+
+        <div class="row">
+          <p>
+            The current Update-Intervall is 1 minute.
+            <br /> The Calculator will update too - be careful.
+          </p>
+        </div>
+
+        <div class="row">
+          <p>
+            In /var/log/system.log are the charts for the last weeks.
+            <br />In the console utility, set up a new system log request "Sender is equal to iBroker".
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="row">
+      <div class="column-3 white-bg">
+        <p><a href="../index.html">Overview</a></p>
+      </div>
+      <div class="column-3 white-bg">
+        <p><a href="einrichten.html">Usage</a></p>
+      </div>
+      <div class="column-3 white-bg">
+        <p><a href="4customers.html">Vendor</a></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

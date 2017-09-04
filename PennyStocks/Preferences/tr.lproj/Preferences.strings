@@ -1,0 +1,81 @@
+
+/* Class = "NSButtonCell"; title = "Speichern"; ObjectID = "49C-4j-sAM"; */
+"49C-4j-sAM.title" = "Save";
+
+/* Class = "NSViewController"; title = "Bestand"; ObjectID = "4CC-Z0-rPL"; */
+"4CC-Z0-rPL.title" = "Saldo";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Siacoin App"; ObjectID = "4k1-rI-Zsg"; */
+"4k1-rI-Zsg.placeholderString" = "Siacoin App";
+
+/* Class = "NSButtonCell"; title = "Speichern"; ObjectID = "6ml-ZP-eQr"; */
+"6ml-ZP-eQr.title" = "Save";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Einsteinium App"; ObjectID = "Bfj-Ty-Lk2"; */
+"Bfj-Ty-Lk2.placeholderString" = "Einsteinium App";
+
+/* Class = "NSButtonCell"; title = "Speichern"; ObjectID = "GHP-k3-BVj"; */
+"GHP-k3-BVj.title" = "Save";
+
+/* Class = "NSTextFieldCell"; placeholderString = "BTC App"; ObjectID = "H7E-SH-aUb"; */
+"H7E-SH-aUb.placeholderString" = "BTC App";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Maid App"; ObjectID = "Hdy-AC-OGz"; */
+"Hdy-AC-OGz.placeholderString" = "Maid App";
+
+/* Class = "NSTextFieldCell"; title = "Ihre Konten und Adressen"; ObjectID = "HtI-qx-WwD"; */
+"HtI-qx-WwD.title" = "Your Accounts and Addresses";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Dogecoin App"; ObjectID = "Kb6-TM-NP1"; */
+"Kb6-TM-NP1.placeholderString" = "Dogecoin App";
+
+/* Class = "NSViewController"; title = "Kurse"; ObjectID = "Txn-YE-STf"; */
+"Txn-YE-STf.title" = "Charts";
+
+/* Class = "NSTextFieldCell"; title = "Ihre initialen Kurse (EUR)"; ObjectID = "Ukn-PJ-ZoR"; */
+"Ukn-PJ-ZoR.title" = "Your initial Charts";
+
+/* Class = "NSTextFieldCell"; title = "Ihre Anwendungen"; ObjectID = "WEN-8p-MCk"; */
+"WEN-8p-MCk.title" = "Your Applications";
+
+/* Class = "NSTextFieldCell"; placeholderString = "ZCash App"; ObjectID = "aDi-3m-noU"; */
+"aDi-3m-noU.placeholderString" = "ZCash App";
+
+/* Class = "NSViewController"; title = "Anwendungen"; ObjectID = "aKY-JE-DW7"; */
+"aKY-JE-DW7.title" = "Applications";
+
+/* Class = "NSButtonCell"; title = "Speichern"; ObjectID = "fds-XU-PTr"; */
+"fds-XU-PTr.title" = "Save";
+
+/* Class = "NSTextFieldCell"; title = "Ihre Kurse"; ObjectID = "hGP-DD-Z1J"; */
+"hGP-DD-Z1J.title" = "Your Charts";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Litecoin App"; ObjectID = "lDw-Wg-oCN"; */
+"lDw-Wg-oCN.placeholderString" = "Litecoin App";
+
+/* Class = "NSTextFieldCell"; title = "Ihre Kurse"; ObjectID = "oQE-oM-Odg"; */
+"oQE-oM-Odg.title" = "Your Charts";
+
+/* Class = "NSTextFieldCell"; title = "Aktueller Bestand (EUR)"; ObjectID = "sTj-bR-Idz"; */
+"sTj-bR-Idz.title" = "Current Saldo";
+
+/* Class = "NSTabViewController"; title = "Einstellungen"; ObjectID = "u0k-Ex-xGQ"; */
+"u0k-Ex-xGQ.title" = "Preferences";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Ethereum App"; ObjectID = "wLD-vL-gqh"; */
+"wLD-vL-gqh.placeholderString" = "Ethereum App";
+
+/* Class = "NSTextFieldCell"; placeholderString = "GameCredits App"; ObjectID = "xee-Df-Fat"; */
+"xee-Df-Fat.placeholderString" = "GameCredits App";
+
+/* Class = "NSViewController"; title = "Adressen"; ObjectID = "yX1-xt-20W"; */
+"yX1-xt-20W.title" = "Addresses";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Monero App"; ObjectID = "zXb-Yy-man"; */
+"zXb-Yy-man.placeholderString" = "Monero App";
+
+/* Class = "NSButtonCell"; title = "Bestätigen und Speichern"; ObjectID = "uID-7H-x92"; */
+"uID-7H-x92.title" = "I agree and save the key";
+
+/* Class = "NSButtonCell"; title = "KEY LÖSCHEN"; ObjectID = "ibU-TP-Ip6"; */
+"ibU-TP-Ip6.title" = "ERASE KEY FROM DISK";

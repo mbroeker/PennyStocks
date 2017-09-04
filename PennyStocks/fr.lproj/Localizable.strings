@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  iBroker
+
+  Created by Markus Bröker on 14.05.17.
+  Copyright © 2017 Markus Bröker. All rights reserved.
+*/
+abort = "Abort";
+acknowledge = "Acknowledge";
+all_charts = "all assets";
+application_reset = "Reset of the Application";
+check_preferences = "Please check your preferences!";
+comparison_belongs_to_checkpoint = "The Comparision (+/-) belongs to the last saved Checkpoint!";
+error_starting_app_with_param = "Error starting the Wallet Application %@";
+exchange = "Exchange";
+install_app_with_param = "Install %@";
+internet_connection_required = "You need a valid internet connection during inital startup";
+no_internet_connection = "No Internet Connection";
+ok = "Dismiss";
+total_saldo = "Your estimated saldo would be";
+std_app_not_configured = "The Standard Application for this asset is not configured.";
+update_saldo_with_asset = "Update your saldo for %@";
+wanna_update_current_saldo = "Do you want to update your current Saldo?";
+wanna_update_with_asset = "Do you want to update your current checkpoint for %@?";
+wanna_reset_to_app_defaults = "Do you want to reset the application to default settings and quit?";
+not_enough_btc = "Not enough BTC";
+not_enough_btc_long = "You have not enough BTC to buy";
+not_enough_asset_param = "Not enough %@";
+not_enough_asset_param_long = "You have not enough %@ for this trade.";
+legal_notice = "
+  Inserting the API KEY from %@ is done
+  on your own desire. You are aware of the personal
+  risks, fully minded and confirm by utilizing this
+  feature, that you are an adult, business-aware and
+  clear in mind.\n
+  Use this feature at your own risk.
+  If you do not agree, use another software!";
+
+buy_confirmation = "Purchaise Confirmation";
+sell_confirmation = "Order Confirmation";
+buy_with_amount_asset_and_rate = "Buying %.4f %@ for %.8f each";
+sell_with_amount_asset_and_rate = "Selling %.4f %@ for %.8f each";
+
+automated_trading_on = "Would you like to activate Automated Trading?";
+automated_trading_off = "Would you like to deactivate Automated Trading?";

@@ -1,0 +1,47 @@
+/**
+  Localizable.strings
+  iBroker
+
+  Created by Markus Bröker on 14.05.17.
+  Copyright © 2017 Markus Bröker. All rights reserved.
+*/
+abort = "Verwerfen";
+acknowledge = "Bestätigen";
+application_reset = "Anwendungs-Reset";
+all_charts = "alle Assets";
+check_preferences = "Überprüfen Sie die Einstellungen!";
+comparison_belongs_to_checkpoint = "Der Vergleich (+/-) bezieht sich auf den zuletzt gespeicherten Checkpoint!";
+error_starting_app_with_param = "Fehler beim Starten der %@ Wallet";
+exchange = "Tausch";
+install_app_with_param = "Installieren Sie %@.";
+internet_connection_required = "Sie benötigen eine gültige Internetverbindung beim initialen Start.";
+no_internet_connection = "Keine Internetverbindung";
+ok = "OK";
+total_saldo = "Gesamtbestand umgerechnet";
+std_app_not_configured = "Die Standard Anwendung ist nicht konfiguriert.";
+update_saldo_with_asset = "%@ Bestand aktualisieren";
+wanna_update_current_saldo = "Möchten Sie Ihren aktuellen Bestand aktualisieren?";
+wanna_update_with_asset = "Möchten Sie den Checkpoint für %@ aktualisieren?";
+wanna_reset_to_app_defaults = "Möchten Sie auf die Standard-Einstellungen zurück setzen und beenden?";
+not_enough_btc = "Sie haben nicht genug BTC";
+not_enough_btc_long = "Sie haben nicht genug BTC für diesen Kauf";
+not_enough_asset_param = "Sie haben nicht genug %@";
+not_enough_asset_long_param = "Sie haben nicht genug %@ für diesen Verkauf";
+legal_notice = "
+  Das Einfügen des API-KEYS von %@ geschieht
+  auf Ihren eigenen Wunsch. Sie sind sich der persönlichen
+  Gefahren voll bewusst und bestätigen durch das Nutzen
+  dieses Features, dass Sie volljährig, geschäftsfähig und
+  klar im Kopf sind. Die Nutzung dieses Features geschieht
+  auf eigene Gefahr und eigenes Risiko.\n
+  Sollten Sie damit nicht einverstanden sein, nutzen Sie
+  eine andere Software.";
+
+buy_confirmation = "Kaufbestätigung";
+sell_confirmation = "Verkaufsbestätigung";
+buy_with_amount_asset_and_rate = "Kaufe %.4f %@ für %.8f das Stück";
+sell_with_amount_asset_and_rate = "Verkaufe %.4f %@ für %.8f das Stück";
+
+automated_trading_on = "Möchten Sie das automatisierte Handeln mit Assets einschalten?";
+automated_trading_off = "Möchten Sie das automatisierte Handeln mit Assets ausschalten?";
+
