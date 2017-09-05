@@ -636,7 +636,7 @@
  */
 + (NSNumber*)fiatExchangeRate:(NSArray*)fiatCurrencies {
     NSString *jsonURL =
-        [NSString stringWithFormat:@"https://min-api.cryptocompare.com/data/pricemulti?fsyms=%@&tsyms=%@&extraParams=de.4customers.iBroker", fiatCurrencies[0], fiatCurrencies[1]];
+        [NSString stringWithFormat:@"https://min-api.cryptocompare.com/data/pricemulti?fsyms=%@&tsyms=%@&extraParams=de.4customers.PennyStocks", fiatCurrencies[0], fiatCurrencies[1]];
 
     NSDictionary *data = [Brokerage jsonRequest:jsonURL];
 

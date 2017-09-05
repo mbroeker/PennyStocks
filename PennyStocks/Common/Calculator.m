@@ -880,7 +880,7 @@
  */
 - (void)updateBalances:(BOOL)synchronized {
 
-    dispatch_queue_t queue = dispatch_queue_create("de.4customers.iBroker.updateBalances", NULL);
+    dispatch_queue_t queue = dispatch_queue_create("de.4customers.PennyStocks.updateBalances", NULL);
 
     if (synchronized) {
         dispatch_sync(queue, ^{
@@ -946,7 +946,7 @@
  */
 - (void)updateRatings:(BOOL)synchronized {
 
-    dispatch_queue_t queue = dispatch_queue_create("de.4customers.iBroker.updateRatings", NULL);
+    dispatch_queue_t queue = dispatch_queue_create("de.4customers.PennyStocks.updateRatings", NULL);
 
     if (synchronized) {
         dispatch_sync(queue, ^{
