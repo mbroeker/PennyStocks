@@ -22,6 +22,17 @@
 @property (strong) IBOutlet NSTextField *asset9Field;
 @property (strong) IBOutlet NSTextField *asset10Field;
 
+// Images List
+@property (strong) IBOutlet NSImageView *asset1ImageView;
+@property (strong) IBOutlet NSImageView *asset2ImageView;
+@property (strong) IBOutlet NSImageView *asset3ImageView;
+@property (strong) IBOutlet NSImageView *asset4ImageView;
+@property (strong) IBOutlet NSImageView *asset5ImageView;
+@property (strong) IBOutlet NSImageView *asset6ImageView;
+@property (strong) IBOutlet NSImageView *asset7ImageView;
+@property (strong) IBOutlet NSImageView *asset8ImageView;
+@property (strong) IBOutlet NSImageView *asset9ImageView;
+@property (strong) IBOutlet NSImageView *asset10ImageView;
 
 // Action Handler
 - (IBAction)saveAction:(id)sender;

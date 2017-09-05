@@ -81,6 +81,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // Properties List
     self.asset1Field.placeholderString = ASSET1_DESC;
     self.asset2Field.placeholderString = ASSET2_DESC;
     self.asset3Field.placeholderString = ASSET3_DESC;
@@ -92,6 +93,19 @@
     self.asset7Field.placeholderString = ASSET8_DESC;
     self.asset9Field.placeholderString = ASSET9_DESC;
     self.asset10Field.placeholderString = ASSET10_DESC;
+
+    // Image List
+    self.asset1ImageView.image = [NSImage imageNamed:ASSET1];
+    self.asset2ImageView.image = [NSImage imageNamed:ASSET2];
+    self.asset3ImageView.image = [NSImage imageNamed:ASSET3];
+    self.asset4ImageView.image = [NSImage imageNamed:ASSET4];
+    self.asset5ImageView.image = [NSImage imageNamed:ASSET5];
+
+    self.asset6ImageView.image = [NSImage imageNamed:ASSET6];
+    self.asset7ImageView.image = [NSImage imageNamed:ASSET7];
+    self.asset8ImageView.image = [NSImage imageNamed:ASSET8];
+    self.asset9ImageView.image = [NSImage imageNamed:ASSET9];
+    self.asset10ImageView.image = [NSImage imageNamed:ASSET10];
 
    [self updateView];
 }
