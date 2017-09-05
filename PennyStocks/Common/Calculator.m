@@ -517,7 +517,7 @@
  * @param cAsset
  * @param wantedAmount
  */
-- (void)autoBuy:(NSString*)cAsset amount:(double)wantedAmount {
+- (NSString*)autoBuy:(NSString*)cAsset amount:(double)wantedAmount {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSDictionary *ak;
@@ -536,7 +536,7 @@
     }
 
     if (ak == nil || sk == nil) {
-        return;
+        return nil;
     }
 
     double btcPrice = [currentRatings[ASSET1] doubleValue];
@@ -553,7 +553,7 @@
 
     if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:USD] || [cAsset isEqualToString:EUR]) {
         // Illegale Kombination BTC_(cAsset)
-        return;
+        return nil;
     }
 
     // Es kann maximal für amountMax gekauft werden...
@@ -561,7 +561,7 @@
         NSString *mText = NSLocalizedString(@"not_enough_btc", @"Zu wenig BTC");
         NSString *iText = NSLocalizedString(@"not_enough_btc_long", @"Sie haben zu wenig BTC zum Kauf");
         [Helper messageText:mText info:iText];
-        return;
+        return nil;
     }
 
     // Sollte einer dieser Beträge negativ sein, wird die Transaktion verhindert
@@ -569,7 +569,7 @@
         NSString *mText = NSLocalizedString(@"not_enough_btc", @"Zu wenig BTC");
         NSString *iText = NSLocalizedString(@"not_enough_btc_long", @"Sie haben zu wenig BTC zum Kauf");
         [Helper messageText:mText info:iText];
-        return;
+        return nil;
     }
 
     NSString *text = [NSString stringWithFormat:NSLocalizedString(@"buy_with_amount_asset_and_rate", @"Kaufe %.4f %@ für %.8f das Stück"), amount, cAsset, cRate];
@@ -578,7 +578,7 @@
     if (wantedAmount >= 0) {
         if ([Helper messageText:NSLocalizedString(@"buy_confirmation", "Kaufbestätigung") info:text] != NSAlertFirstButtonReturn) {
             // Abort Buy
-            return;
+            return nil;
         }
     }
 
@@ -587,7 +587,11 @@
 
     if (order[@"orderNumber"]) {
         [self updateCheckpointForAsset:cAsset withBTCUpdate:true];
+
+        return order[@"orderNumber"];
     }
+
+    return nil;
 }
 
 /**
@@ -596,7 +600,7 @@
  * @param cAsset
  * @param wantedAmount
  */
-- (void)autoSell:(NSString*)cAsset amount:(double)wantedAmount {
+- (NSString*)autoSell:(NSString*)cAsset amount:(double)wantedAmount {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSDictionary *ak;
@@ -615,7 +619,7 @@
     }
 
     if (ak == nil || sk == nil) {
-        return;
+        return nil;
     }
 
     double amountMax = feeAsFactor * [self currentSaldo:cAsset];
@@ -630,7 +634,7 @@
 
     if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:USD] || [cAsset isEqualToString:EUR]) {
         // Illegale Kombination BTC_(cAsset)
-        return;
+        return nil;
     }
 
     double cRate = btcPrice / assetPrice;
@@ -640,7 +644,7 @@
         NSString *mText = [NSString stringWithFormat: NSLocalizedString(@"not_enough_asset_param", @"Zu wenig %@"), cAsset];
         NSString *iText = [NSString stringWithFormat: NSLocalizedString(@"not_enough_asset_long_param", @"Zu wenig %@ zum Verkaufen"), cAsset];
         [Helper messageText:mText info:iText];
-        return;
+        return nil;
     }
 
     NSString *text = [NSString stringWithFormat:NSLocalizedString(@"sell_with_amount_asset_and_rate", @"Verkaufe %.4f %@ für %.8f das Stück"), amount, cAsset, cRate];
@@ -649,7 +653,7 @@
     if (wantedAmount >= 0) {
         if ([Helper messageText:NSLocalizedString(@"sell_confirmation", @"Verkaufsbestätigung") info:text] != NSAlertFirstButtonReturn) {
             // Abort Sell
-            return;
+            return nil;
         }
     }
 
@@ -658,7 +662,11 @@
 
     if (order[@"orderNumber"]) {
         [self updateCheckpointForAsset:cAsset withBTCUpdate:false];
+
+        return order[@"orderNumber"];
     }
+
+    return nil;
 }
 
 /**
@@ -674,11 +682,12 @@
        // ask = 0;
     }
 
-    [self autoBuy:cAsset amount:ask];
-    lastBoughtAsset = cAsset;
+    if ([self autoBuy:cAsset amount:ask] != nil) {
+        lastBoughtAsset = cAsset;
 
-    // Aktualisiere alle Checkpoints
-    [self updateCheckpointForAsset:DASHBOARD withBTCUpdate:true];
+        // Aktualisiere alle Checkpoints
+        [self updateCheckpointForAsset:DASHBOARD withBTCUpdate:true];
+    }
 }
 
 /**
@@ -688,10 +697,10 @@
  */
 - (void)autoSellAll:(NSString*)cAsset {
     double ask = ([tradingWithConfirmation boolValue]) ? 0 : -1;
-    [self autoSell:cAsset amount:ask];
-
-    // Aktualisiere alle Checkpoints
-    [self updateCheckpointForAsset:DASHBOARD withBTCUpdate:true];
+    if ([self autoSell:cAsset amount:ask] != nil) {
+        // Aktualisiere alle Checkpoints
+        [self updateCheckpointForAsset:DASHBOARD withBTCUpdate:true];
+    }
 }
 
 /**
