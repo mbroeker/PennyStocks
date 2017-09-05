@@ -143,7 +143,7 @@
         tradingWithConfirmation = [defaults objectForKey:@"tradingWithConfirmation"];
 
         if (tradingWithConfirmation == nil) {
-            tradingWithConfirmation = @true;
+            tradingWithConfirmation = [NSNumber numberWithBool:true];
 
             [defaults setObject:tradingWithConfirmation forKey:@"tradingWithConfirmation"];
         }
