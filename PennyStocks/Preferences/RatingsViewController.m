@@ -119,27 +119,27 @@
     // Aktualisierte Ratings besorgen
     NSMutableDictionary *initialRatings = [calculator initialRatings];
 
-    double btc = 1 / self.asset1Field.doubleValue;
-    double zec = 1 / self.asset2Field.doubleValue;
-    double eth = 1 / self.asset3Field.doubleValue;
-    double xmr = 1 / self.asset4Field.doubleValue;
-    double ltc = 1 / self.asset5Field.doubleValue;
-    double game = 1 / self.asset6Field.doubleValue;
-    double emc2 = 1 / self.asset7Field.doubleValue;
-    double maid = 1 / self.asset8Field.doubleValue;
-    double bts = 1 / self.asset9Field.doubleValue;
-    double sc = 1 / self.asset10Field.doubleValue;
+    double numberAsset1 = 1 / self.asset1Field.doubleValue;
+    double numberAsset2 = 1 / self.asset2Field.doubleValue;
+    double numberAsset3 = 1 / self.asset3Field.doubleValue;
+    double numberAsset4 = 1 / self.asset4Field.doubleValue;
+    double numberAsset5 = 1 / self.asset5Field.doubleValue;
+    double numberAsset6 = 1 / self.asset6Field.doubleValue;
+    double numberAsset7 = 1 / self.asset7Field.doubleValue;
+    double numberAsset8 = 1 / self.asset8Field.doubleValue;
+    double numberAsset9 = 1 / self.asset9Field.doubleValue;
+    double numberAsset10 = 1 / self.asset10Field.doubleValue;
 
-    initialRatings[ASSET1] = @(btc);
-    initialRatings[ASSET2] = @(zec);
-    initialRatings[ASSET3] = @(eth);
-    initialRatings[ASSET4] = @(xmr);
-    initialRatings[ASSET5] = @(ltc);
-    initialRatings[ASSET6] = @(game);
-    initialRatings[ASSET7] = @(emc2);
-    initialRatings[ASSET8] = @(maid);
-    initialRatings[ASSET9] = @(bts);
-    initialRatings[ASSET10] = @(sc);
+    initialRatings[ASSET1] = @(numberAsset1);
+    initialRatings[ASSET2] = @(numberAsset2);
+    initialRatings[ASSET3] = @(numberAsset3);
+    initialRatings[ASSET4] = @(numberAsset4);
+    initialRatings[ASSET5] = @(numberAsset5);
+    initialRatings[ASSET6] = @(numberAsset6);
+    initialRatings[ASSET7] = @(numberAsset7);
+    initialRatings[ASSET8] = @(numberAsset8);
+    initialRatings[ASSET9] = @(numberAsset9);
+    initialRatings[ASSET10] = @(numberAsset10);
 
     [calculator initialRatingsWithDictionary:initialRatings];
 
