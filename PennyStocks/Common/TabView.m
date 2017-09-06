@@ -25,7 +25,7 @@
     rect.size.width += offsetRect.size.width;
     rect.size.height += offsetRect.size.height;
 
-    [[NSColor colorWithCalibratedRed:1.0f/255.0f green:99.0f/255.0f blue:66.0f/255.0f alpha:1.0f] set];
+    [[NSColor colorWithCalibratedRed:1.0f/255.0f green:40.0f/255.0f blue:40.0f/255.0f alpha:1.0f] set];
 
     NSRectFill(rect);
     
