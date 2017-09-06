@@ -38,7 +38,7 @@
     // Startseite aufrufen
     [controller updateOverview];
 
-    dispatch_queue_t autoRefreshQueue = dispatch_queue_create("de.4customers.iBroker.autoRefresh", NULL);
+    dispatch_queue_t autoRefreshQueue = dispatch_queue_create("de.4customers.PennyStocks.autoRefresh", NULL);
     dispatch_async(autoRefreshQueue, ^{
 
         while(true) {

@@ -9,7 +9,7 @@
 	<key>CFBundleHelpBookFolder</key>
 	<string>PennyStocks.help</string>
 	<key>CFBundleHelpBookName</key>
-	<string>de.4customers.pennyStocks.help</string>
+	<string>de.4customers.PennyStocks.help</string>
 	<key>CFBundleIconFile</key>
 	<string>shrd/iBroker.png</string>
 	<key>CFBundleIdentifier</key>
