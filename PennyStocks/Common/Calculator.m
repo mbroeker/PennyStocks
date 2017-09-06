@@ -522,7 +522,6 @@
 
     NSDictionary *ak;
     NSString *sk;
-    double feeAsFactor = 1.0;
 
     if ([defaultExchange isEqualToString:@"POLONIEX_EXCHANGE"]) {
         ak = [defaults objectForKey:@"POLO_KEY"];
@@ -532,7 +531,6 @@
     if ([defaultExchange isEqualToString:@"BITTREX_EXCHANGE"]) {
         ak = [defaults objectForKey:@"BITTREX_KEY"];
         sk = [defaults objectForKey:@"BITTREX_SEC"];
-        feeAsFactor = 0.9975;
     }
 
     if (ak == nil || sk == nil) {
@@ -544,7 +542,7 @@
     double cRate = btcPrice / assetPrice;
 
     // Bestimme die maximale Anzahl an BTC's, die verkauft werden können...
-    double amountMax = floor(100000000.0 * feeAsFactor * ([self currentSaldo:ASSET1] / cRate)) / 100000000.0;
+    double amountMax = round(100000000.0 * ([self currentSaldo:ASSET1] / cRate)) / 100000000.0;
     double amount = amountMax;
 
     if (wantedAmount > 0) {
@@ -605,7 +603,6 @@
 
     NSDictionary *ak;
     NSString *sk;
-    double feeAsFactor = 1.0;
 
     if ([defaultExchange isEqualToString:@"POLONIEX_EXCHANGE"]) {
         ak = [defaults objectForKey:@"POLO_KEY"];
@@ -615,14 +612,13 @@
     if ([defaultExchange isEqualToString:@"BITTREX_EXCHANGE"]) {
         ak = [defaults objectForKey:@"BITTREX_KEY"];
         sk = [defaults objectForKey:@"BITTREX_SEC"];
-        feeAsFactor = 0.9975;
     }
 
     if (ak == nil || sk == nil) {
         return nil;
     }
 
-    double amountMax = floor(100000000.0 * feeAsFactor * [self currentSaldo:cAsset]) / 100000000.0;
+    double amountMax = round(100000000.0 * [self currentSaldo:cAsset]) / 100000000.0;
     double amount = amountMax;
 
     double btcPrice = [currentRatings[ASSET1] doubleValue];
