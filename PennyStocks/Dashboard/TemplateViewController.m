@@ -78,11 +78,11 @@ typedef struct DASHBOARD_VARS {
     if (withTrading) {
         if (calculator.automatedTrading) {
 
-            // Gewinn: Automatisches Verkaufen von Assets mit einer Exchange-Rate von 1.25% oder mehr
-            [calculator sellWithProfitInPercent:1.25];
+            // Gewinn: Automatisches Verkaufen von Assets mit einer Exchange-Rate von 5% oder mehr
+            [calculator sellWithProfitInPercent:5.0];
 
-            // Gewinn: Automatisches Kaufen von Assets mit einer Exchange-Rate von 1.25% oder mehr
-            [calculator buyWithProfitInPercent:1.25 andInvestmentRate:0];
+            // Gewinn: Automatisches Kaufen von Assets mit einer Exchange-Rate von 0.5% oder mehr
+            [calculator buyWithProfitInPercent:0.5 andInvestmentRate:0];
 
             // Verlust: Automatisches Verkaufen von Assets mit einer Exchange-Rate von -5.0
             //[calculator sellWithProfitInPercent:-5];
