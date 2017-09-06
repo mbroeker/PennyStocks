@@ -544,7 +544,7 @@
     double cRate = btcPrice / assetPrice;
 
     // Bestimme die maximale Anzahl an BTC's, die verkauft werden können...
-    double amountMax = floor(100000000.0 * feeAsFactor * ([self currentSaldo:ASSET1] / cRate) / 100000000.0);
+    double amountMax = floor(100000000.0 * feeAsFactor * ([self currentSaldo:ASSET1] / cRate)) / 100000000.0;
     double amount = amountMax;
 
     if (wantedAmount > 0) {
