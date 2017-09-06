@@ -1231,7 +1231,7 @@ typedef struct DASHBOARD_VARS {
  * @return NSString*
  */
 - (NSString *)vendorURL {
-    return @"https://www.4customers.de/ibroker/";
+    return @"https://www.4customers.de/pennystocks/";
 }
 
 /**

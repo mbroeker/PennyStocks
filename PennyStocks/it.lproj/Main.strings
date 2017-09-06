@@ -1,7 +1,4 @@
 
-/* Class = "NSMenuItem"; title = "iBroker"; ObjectID = "1Xt-HY-uBw"; */
-"1Xt-HY-uBw.title" = "iBroker";
-
 /* Class = "NSTextFieldCell"; placeholderString = "Rate Field"; ObjectID = "1Ys-Dp-0XL"; */
 "1Ys-Dp-0XL.placeholderString" = "Rate Field";
 
@@ -27,7 +24,7 @@
 "5jW-sL-1jd.title" = "Application Reset";
 
 /* Class = "NSMenuItem"; title = "Über das Programm"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About iBroker";
+"5kV-Vb-QxS.title" = "About PennyStocks";
 
 /* Class = "NSMenuItem"; title = "Menüleiste"; ObjectID = "7GE-rs-aAs"; */
 "7GE-rs-aAs.title" = "Menubar";
@@ -37,12 +34,6 @@
 
 /* Class = "NSMenuItem"; title = "Einstellungen"; ObjectID = "BOF-NM-1cW"; */
 "BOF-NM-1cW.title" = "Preferences";
-
-/* Class = "NSTextFieldCell"; title = "Escobar Edition"; ObjectID = "BiY-c6-xVz"; */
-"BiY-c6-xVz.title" = "Escobar Edition";
-
-/* Class = "NSTextFieldCell"; title = "iBroker"; ObjectID = "Boa-Pw-8hT"; */
-"Boa-Pw-8hT.title" = "iBroker";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Kurs"; ObjectID = "CHo-nz-QdA"; */
 "CHo-nz-QdA.placeholderString" = "Chart";
@@ -60,10 +51,7 @@
 "F2S-fz-NVQ.title" = "Help";
 
 /* Class = "NSMenuItem"; title = "Hilfe zum Programm"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Help for iBroker";
-
-/* Class = "NSWindow"; title = "iBroker"; ObjectID = "IQv-IB-iLA"; */
-"IQv-IB-iLA.title" = "iBroker";
+"FKE-Sm-Kum.title" = "Help for Penny Stocks";
 
 /* Class = "NSMenuItem"; title = "Alle Anzeigen"; ObjectID = "Kd2-mp-pUS"; */
 "Kd2-mp-pUS.title" = "Show All";
@@ -75,7 +63,7 @@
 "OY7-WF-poV.title" = "Minimize";
 
 /* Class = "NSMenuItem"; title = "Programm minimieren"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Minimize iBroker";
+"Olw-nP-bQN.title" = "Minimize Penny Stocks";
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "QCn-PU-dxM"; */
 "QCn-PU-dxM.title" = "Box";
@@ -91,9 +79,6 @@
 
 /* Class = "NSMenuItem"; title = "Andere minimieren"; ObjectID = "Vdr-fp-XzO"; */
 "Vdr-fp-XzO.title" = "Minimize others";
-
-/* Class = "NSTabViewItem"; label = "MAID"; ObjectID = "XBF-ls-CU9"; */
-"XBF-ls-CU9.label" = "MAID";
 
 /* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "Ywa-JN-XWX"; */
 "Ywa-JN-XWX.title" = "0.0";
@@ -118,9 +103,6 @@
 
 /* Class = "NSBox"; title = "Box"; ObjectID = "ibZ-fl-489"; */
 "ibZ-fl-489.title" = "Box";
-
-/* Class = "NSMenu"; title = "iBroker"; ObjectID = "uQy-DD-JDr"; */
-"uQy-DD-JDr.title" = "iBroker";
 
 /* Class = "NSMenuItem"; title = "Hilfe"; ObjectID = "wpr-3q-Mcd"; */
 "wpr-3q-Mcd.title" = "Help";
