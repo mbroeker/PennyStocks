@@ -161,10 +161,6 @@ typedef struct DASHBOARD_VARS {
         fiatCurrencySymbol = @"€";
     }
 
-    if ([fiatCurrencies[0] isEqualToString:GBP]) {
-        fiatCurrencySymbol = @"£";
-    }
-
     if ([fiatCurrencies[0] isEqualToString:USD]) {
         fiatCurrencySymbol = @"$";
     }
@@ -1176,7 +1172,7 @@ typedef struct DASHBOARD_VARS {
     }
 
     // EUR / USD - das kann nicht direkt gehandelt werden
-    if ([exchangeUnit isEqualToString:USD] || [exchangeUnit isEqualToString:EUR]) {
+    if ([exchangeUnit isEqualToString:fiatCurrencies[0]] || [exchangeUnit isEqualToString:fiatCurrencies[1]]) {
         return;
     }
 

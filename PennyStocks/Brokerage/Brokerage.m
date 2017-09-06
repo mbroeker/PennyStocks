@@ -555,7 +555,8 @@
         return nil;
     }
 
-    ticker[@"BTC_EUR"] = btcTicker;
+    NSString *btcFiat = [NSString stringWithFormat:@"BTC_%@", fiatCurrencies[0]];
+    ticker[btcFiat] = btcTicker;
     ticker[fiatCurrencies[1]] = @([exchangeRate doubleValue]);
 
     ticker[@"BTC_BCC"] = ticker[@"BTC_BCH"];
@@ -622,7 +623,8 @@
         return nil;
     }
 
-    ticker[@"BTC_EUR"] = btcTicker;
+    NSString *btcFiat = [NSString stringWithFormat:@"BTC_%@", fiatCurrencies[0]];
+    ticker[btcFiat] = btcTicker;
     ticker[fiatCurrencies[1]] = @([exchangeRate doubleValue]);
 
     return ticker;

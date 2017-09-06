@@ -120,7 +120,7 @@
         }
 
         tickerKeys = @{
-            ASSET1: [NSString stringWithFormat:@"%@_%@", ASSET1, EUR],
+            ASSET1: [NSString stringWithFormat:@"%@_%@", ASSET1, fiatCurrencies[0]],
             ASSET2: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET2],
             ASSET3: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET3],
             ASSET4: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET4],
@@ -551,7 +551,7 @@
         amount = wantedAmount;
     }
 
-    if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:USD] || [cAsset isEqualToString:EUR]) {
+    if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:fiatCurrencies[0]] || [cAsset isEqualToString:fiatCurrencies[1]]) {
         // Illegale Kombination BTC_(cAsset)
         return nil;
     }
@@ -632,7 +632,7 @@
         amount = wantedAmount;
     }
 
-    if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:USD] || [cAsset isEqualToString:EUR]) {
+    if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:fiatCurrencies[0]] || [cAsset isEqualToString:fiatCurrencies[1]]) {
         // Illegale Kombination BTC_(cAsset)
         return nil;
     }
@@ -1004,7 +1004,8 @@
 
     ticker = [tickerDictionary mutableCopy];
 
-    double btcValue = 1.0 / [tickerDictionary[@"BTC_EUR"][POLONIEX_LAST] doubleValue];
+    NSString *btcFiat = [NSString stringWithFormat:@"BTC_%@", fiatCurrencies[0]];
+    double btcValue = 1.0 / [tickerDictionary[btcFiat][POLONIEX_LAST] doubleValue];
 
     currentRatings = [[NSMutableDictionary alloc] init];
 
