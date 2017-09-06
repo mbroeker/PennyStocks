@@ -87,13 +87,13 @@
                 ASSET1: @0.0,
                 ASSET2: @0.0,
                 ASSET3: @0.0,
-                ASSET5: @0.0,
                 ASSET4: @0.0,
+                ASSET5: @0.0,
                 ASSET6: @0.0,
                 ASSET7: @0.0,
                 ASSET8: @0.0,
-                ASSET10: @0.0,
                 ASSET9: @0.0,
+                ASSET10: @0.0,
             } mutableCopy];
 
             [defaults setObject:currentSaldo forKey:KEY_CURRENT_SALDO];
@@ -107,8 +107,8 @@
                 ASSET1_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET1 lowercaseString]],
                 ASSET2_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET2 lowercaseString]],
                 ASSET3_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET3 lowercaseString]],
-                ASSET5_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET5 lowercaseString]],
                 ASSET4_DESC:[NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET4 lowercaseString]],
+                ASSET5_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET5 lowercaseString]],
                 ASSET6_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET6 lowercaseString]],
                 ASSET7_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET7 lowercaseString]],
                 ASSET8_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET8 lowercaseString]],
@@ -225,20 +225,20 @@
         mustUpdate = true;
     }
 
-    if (!saldoUrls[ASSET8_DESC]) {
-        saldoUrls[ASSET8_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET8 lowercaseString]];
-
-        currentSaldo[ASSET8] = @0.0;
-        initialRatings[ASSET8] = @0.0;
-
-        mustUpdate = true;
-    }
-
     if (!saldoUrls[ASSET7_DESC]) {
         saldoUrls[ASSET7_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET7 lowercaseString]];
 
         currentSaldo[ASSET7] = @0.0;
         initialRatings[ASSET7] = @0.0;
+
+        mustUpdate = true;
+    }
+
+    if (!saldoUrls[ASSET8_DESC]) {
+        saldoUrls[ASSET8_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET8 lowercaseString]];
+
+        currentSaldo[ASSET8] = @0.0;
+        initialRatings[ASSET8] = @0.0;
 
         mustUpdate = true;
     }
@@ -424,31 +424,31 @@
         }
     }
 
-    double btcRating = [ratings[ASSET1] doubleValue];
-    double zecRating = [ratings[ASSET2] doubleValue];
-    double ethRating = [ratings[ASSET3] doubleValue];
-    double xmrRating = [ratings[ASSET4] doubleValue];
-    double ltcRating = [ratings[ASSET5] doubleValue];
+    double asset1Rating = [ratings[ASSET1] doubleValue];
+    double asset2Rating = [ratings[ASSET2] doubleValue];
+    double asset3Rating = [ratings[ASSET3] doubleValue];
+    double asset4Rating = [ratings[ASSET4] doubleValue];
+    double asset5Rating = [ratings[ASSET5] doubleValue];
 
-    double gameRating = [ratings[ASSET6] doubleValue];
-    double steemRating = [ratings[ASSET7] doubleValue];
-    double maidRating = [ratings[ASSET8] doubleValue];
-    double btsRating = [ratings[ASSET9] doubleValue];
-    double scRating = [ratings[ASSET10] doubleValue];
+    double asset6Rating = [ratings[ASSET6] doubleValue];
+    double asset7Rating = [ratings[ASSET7] doubleValue];
+    double asset8Rating = [ratings[ASSET8] doubleValue];
+    double asset9Rating = [ratings[ASSET9] doubleValue];
+    double asset10Rating = [ratings[ASSET10] doubleValue];
 
-    double btc = [currentSaldo[ASSET1] doubleValue] / btcRating;
-    double zec = [currentSaldo[ASSET2] doubleValue] / zecRating;
-    double eth = [currentSaldo[ASSET3] doubleValue] / ethRating;
-    double ltc = [currentSaldo[ASSET5] doubleValue] / ltcRating;
-    double xmr = [currentSaldo[ASSET4] doubleValue] / xmrRating;
+    double price1 = [currentSaldo[ASSET1] doubleValue] / asset1Rating;
+    double price2 = [currentSaldo[ASSET2] doubleValue] / asset2Rating;
+    double price3 = [currentSaldo[ASSET3] doubleValue] / asset3Rating;
+    double price4 = [currentSaldo[ASSET4] doubleValue] / asset4Rating;
+    double price5 = [currentSaldo[ASSET5] doubleValue] / asset5Rating;
 
-    double game = [currentSaldo[ASSET6] doubleValue] / gameRating;
-    double steem = [currentSaldo[ASSET7] doubleValue] / steemRating;
-    double maid = [currentSaldo[ASSET8] doubleValue] / maidRating;
-    double bts = [currentSaldo[ASSET9] doubleValue] / btsRating;
-    double sc = [currentSaldo[ASSET10] doubleValue] / scRating;
+    double price6 = [currentSaldo[ASSET6] doubleValue] / asset6Rating;
+    double price7 = [currentSaldo[ASSET7] doubleValue] / asset7Rating;
+    double price8 = [currentSaldo[ASSET8] doubleValue] / asset8Rating;
+    double price9 = [currentSaldo[ASSET9] doubleValue] / asset9Rating;
+    double price10 = [currentSaldo[ASSET10] doubleValue] / asset10Rating;
 
-    double sum = btc + zec + eth + ltc + xmr + game + steem + maid + bts + sc;
+    double sum = price1 + price2 + price3 + price4 + price5 + price6 + price7 + price8 + price9 + price10;
 
     if ([currency isEqualToString:fiatCurrencies[0]]) {
         return sum;
