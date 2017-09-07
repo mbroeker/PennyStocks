@@ -69,9 +69,10 @@ const char *makeString(NSDictionary *checkpoint, NSString *asset, NSDictionary *
     double currentPriceInBTC = [currentRatings[ASSET1] doubleValue] / [currentRatings[asset] doubleValue];
 
     NSString *theString = [
-        NSString stringWithFormat:@"%.6f EUR / %.8f BTC / %+.2f%%",
+        NSString stringWithFormat:@"%.6f EUR / %.8f %@ / %+.2f%%",
                                   currentPrice,
                                   currentPriceInBTC,
+                                  ASSET1,
                                   effectivePercent
     ];
 
