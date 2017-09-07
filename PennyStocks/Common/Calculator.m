@@ -545,7 +545,7 @@
     double cRate = btcPrice / assetPrice;
 
     // Bestimme die maximale Anzahl an BTC's, die verkauft werden können...
-    double amountMax = round(100000000.0 * feeAsFactor * ([self currentSaldo:ASSET1] / cRate)) / 100000000.0;
+    double amountMax = floor(100000000.0 * feeAsFactor * ([self currentSaldo:ASSET1] / cRate)) / 100000000.0;
     double amount = amountMax;
 
     if (wantedAmount > 0) {
@@ -624,7 +624,7 @@
         return nil;
     }
 
-    double amountMax = round(100000000.0 * feeAsFactor * [self currentSaldo:cAsset]) / 100000000.0;
+    double amountMax = floor(100000000.0 * feeAsFactor * [self currentSaldo:cAsset]) / 100000000.0;
     double amount = amountMax;
 
     double btcPrice = [currentRatings[ASSET1] doubleValue];
@@ -1006,7 +1006,7 @@
 
     ticker = [tickerDictionary mutableCopy];
 
-    NSString *btcFiat = [NSString stringWithFormat:@"BTC_%@", fiatCurrencies[0]];
+    NSString *btcFiat = [NSString stringWithFormat:@"%@_%@", ASSET1, fiatCurrencies[0]];
     double btcValue = 1.0 / [tickerDictionary[btcFiat][POLONIEX_LAST] doubleValue];
 
     currentRatings = [[NSMutableDictionary alloc] init];
