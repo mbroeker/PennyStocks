@@ -1,22 +1,22 @@
-### Projekt PennyStocks ###
+### Project PennyStocks ###
 
-Eine simple Bestandssoftware fürs Online-Traden auf diversen Tauschbörsen
+A Portfolio Manager for Bittrex with Ethereum as its main currency
 
-### iBroker - Escobar Edition ###
+### iBroker - Penny Stocks ###
 
-* Livedaten von Bittrex
-* Taschenrechner für Crypto-Währungen
-* Aktualisierungsintervall 30s
-* Intelligentes Setzen von Checkpoints
-* Genauigkeit auf 5 Stellen
+* Livedata from Bittrex
+* Calculator for Crypto-Currencies
+* Update Interval 30s
+* Checkpoint Management
+* Accuracy of 4-8 Digits
 
 ### Penny Stocks ###
 
-Mit "Penny Stocks" behalten Sie den Überblick bei Ihren Assets - Wirken Sie der Inflation entgegen und tauschen Sie Ihre Cryptowährungen gewinnbringend hin und her.
-Der alte Grundsatz, dass sich beim Traden die Gewinne und Verluste ausgleichen - der gilt nur bedingt. Mit dem iBroker haben Sie ihre Posten im Blick und können
-sich gezielt auf den jeweiligen Tauschbörsen anmelden und aktiv Gewinne erwirtschaften. 
+With "Penny Stocks" you can keep an overview of your assets - act on inflation and exchange your cryptos profitably.
+The old principle that trading profits and losses balance out - this only applies to a limited extent.
+With "Penny Stocks" you have your positions in view and your can log on the respective exchanges and actively generate profits.
 
-### Webseite ###
+### Website ###
 
 4customers UG - https://www.4customers.de/pennystocks/
 
