@@ -688,7 +688,7 @@ typedef struct DASHBOARD_VARS {
         [@"####" UTF8String],
         [@"BALANCE" UTF8String],
         [[NSString stringWithFormat:@"BALANCE IN %@", fiatCurrencies[0]] UTF8String],
-        [@"BALANCE IN BTC" UTF8String],
+        [[NSString stringWithFormat:@"BALANCE IN %@", ASSET1]  UTF8String],
         [[NSString stringWithFormat:@"INITIAL IN %@", fiatCurrencies[0]] UTF8String],
         [[NSString stringWithFormat:@"CURRENT IN %@", fiatCurrencies[0]] UTF8String],
         [@"SHARE IN %" UTF8String],

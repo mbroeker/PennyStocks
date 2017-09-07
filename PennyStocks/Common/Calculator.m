@@ -103,7 +103,7 @@
 
         if (saldoUrls == nil) {
             saldoUrls = [@{
-                DASHBOARD: @"https://bittrex.com/Market/Index?MarketName=BTC-LTC",
+                DASHBOARD: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-LTC", ASSET1],
                 ASSET1_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET1 lowercaseString]],
                 ASSET2_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET2 lowercaseString]],
                 ASSET3_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET3 lowercaseString]],
@@ -583,7 +583,7 @@
         }
     }
 
-    NSString *cPair = [NSString stringWithFormat:@"BTC_%@", cAsset];
+    NSString *cPair = [NSString stringWithFormat:@"%@_%@", ASSET1, cAsset];
     NSDictionary *order = [Brokerage buy:ak withSecret:sk currencyPair:cPair rate:cRate amount:amount onExchange:defaultExchange];
 
     if (order[@"orderNumber"]) {
@@ -659,7 +659,7 @@
         }
     }
 
-    NSString *cPair = [NSString stringWithFormat:@"BTC_%@", cAsset];
+    NSString *cPair = [NSString stringWithFormat:@"%@_%@", ASSET1, cAsset];
     NSDictionary *order = [Brokerage sell:ak withSecret:sk currencyPair:cPair rate:cRate amount:amount onExchange:defaultExchange];
 
     if (order[@"orderNumber"]) {

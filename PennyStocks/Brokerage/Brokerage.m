@@ -374,7 +374,7 @@
 
     NSString *bittrexCurrencyPair = [currencyPair stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
     NSString *bittrexRate = [NSString stringWithFormat:@"%.8f", rate];
-    NSString *bittrexAmount = [NSString stringWithFormat:@"%.4f", amount];
+    NSString *bittrexAmount = [NSString stringWithFormat:@"%.8f", amount];
 
     time_t t = time(NULL);
     NSString *nonce = [NSString stringWithFormat:@"%ld", t];
@@ -398,7 +398,7 @@
             @"orderNumber": result[@"uuid"]
         };
     } else {
-        NSLog(@"Buy-LIMIT: %@", response[@"message"]);
+        NSLog(@"Buy-LIMIT: %@/%@/%@: %@", bittrexCurrencyPair, bittrexAmount, bittrexRate, response[@"message"]);
     }
 
     return nil;
@@ -446,7 +446,7 @@
             @"orderNumber": result[@"uuid"]
         };
     } else {
-        NSLog(@"SELL-LIMIT: %@", response[@"message"]);
+        NSLog(@"Sell-LIMIT: %@/%@/%@: %@", bittrexCurrencyPair, bittrexAmount, bittrexRate, response[@"message"]);
     }
 
     return nil;
