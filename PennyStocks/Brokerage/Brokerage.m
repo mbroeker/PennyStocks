@@ -398,7 +398,7 @@
             @"orderNumber": result[@"uuid"]
         };
     } else {
-        NSLog(@"Buy-LIMIT: %@/%@/%@: %@", bittrexCurrencyPair, bittrexAmount, bittrexRate, response[@"message"]);
+        NSLog(@"BUY-LIMIT: %@/%@/%@: %@", bittrexCurrencyPair, bittrexAmount, bittrexRate, response[@"message"]);
     }
 
     return nil;
@@ -446,7 +446,7 @@
             @"orderNumber": result[@"uuid"]
         };
     } else {
-        NSLog(@"Sell-LIMIT: %@/%@/%@: %@", bittrexCurrencyPair, bittrexAmount, bittrexRate, response[@"message"]);
+        NSLog(@"SELL-LIMIT: %@/%@/%@: %@", bittrexCurrencyPair, bittrexAmount, bittrexRate, response[@"message"]);
     }
 
     return nil;
