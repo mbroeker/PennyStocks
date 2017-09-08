@@ -89,8 +89,8 @@
     self.asset5Field.placeholderString = ASSET5_DESC;
 
     self.asset6Field.placeholderString = ASSET6_DESC;
-    self.asset8Field.placeholderString = ASSET7_DESC;
-    self.asset7Field.placeholderString = ASSET8_DESC;
+    self.asset7Field.placeholderString = ASSET7_DESC;
+    self.asset8Field.placeholderString = ASSET8_DESC;
     self.asset9Field.placeholderString = ASSET9_DESC;
     self.asset10Field.placeholderString = ASSET10_DESC;
 

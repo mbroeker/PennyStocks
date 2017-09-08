@@ -560,9 +560,9 @@
                         <outlet property="asset5ImageView" destination="G0w-Eq-Sbu" id="5Fe-SQ-Lad"/>
                         <outlet property="asset6Field" destination="dZZ-6D-56N" id="ur2-cZ-Xsz"/>
                         <outlet property="asset6ImageView" destination="88L-JM-T3s" id="Vmz-bE-RT8"/>
-                        <outlet property="asset7Field" destination="uHG-Id-HcW" id="gU0-gy-Hua"/>
+                        <outlet property="asset7Field" destination="IkW-ab-HuL" id="chW-rQ-I4T"/>
                         <outlet property="asset7ImageView" destination="1OV-5P-rIV" id="oYS-YS-6ae"/>
-                        <outlet property="asset8Field" destination="IkW-ab-HuL" id="F1r-ow-R87"/>
+                        <outlet property="asset8Field" destination="uHG-Id-HcW" id="SJV-Iz-UBB"/>
                         <outlet property="asset8ImageView" destination="ksM-sK-uB4" id="dsh-gM-JlV"/>
                         <outlet property="asset9Field" destination="mW1-ga-dFP" id="FzE-XZ-b8O"/>
                         <outlet property="asset9ImageView" destination="SQe-CY-G5k" id="V9Z-cv-zAQ"/>

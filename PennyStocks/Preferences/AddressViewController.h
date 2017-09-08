@@ -17,8 +17,8 @@
 @property (strong) IBOutlet NSTextField *asset4Field;
 @property (strong) IBOutlet NSTextField *asset5Field;
 @property (strong) IBOutlet NSTextField *asset6Field;
-@property (strong) IBOutlet NSTextField *asset8Field;
 @property (strong) IBOutlet NSTextField *asset7Field;
+@property (strong) IBOutlet NSTextField *asset8Field;
 @property (strong) IBOutlet NSTextField *asset9Field;
 @property (strong) IBOutlet NSTextField *asset10Field;
 @property (strong) IBOutlet NSTextField *dashboardField;

@@ -60,8 +60,8 @@
     self.asset4Field.stringValue = saldoUrls[ASSET4_DESC];
     self.asset5Field.stringValue = saldoUrls[ASSET5_DESC];
     self.asset6Field.stringValue = saldoUrls[ASSET6_DESC];
-    self.asset8Field.stringValue = saldoUrls[ASSET7_DESC];
-    self.asset7Field.stringValue = saldoUrls[ASSET8_DESC];
+    self.asset7Field.stringValue = saldoUrls[ASSET7_DESC];
+    self.asset8Field.stringValue = saldoUrls[ASSET8_DESC];
     self.asset9Field.stringValue = saldoUrls[ASSET9_DESC];
     self.asset10Field.stringValue = saldoUrls[ASSET10_DESC];
     
@@ -83,8 +83,8 @@
     saldoUrls[ASSET4_DESC] = self.asset4Field.stringValue;
     saldoUrls[ASSET5_DESC] = self.asset5Field.stringValue;
     saldoUrls[ASSET6_DESC] = self.asset6Field.stringValue;
-    saldoUrls[ASSET7_DESC] = self.asset8Field.stringValue;
-    saldoUrls[ASSET8_DESC] = self.asset7Field.stringValue;
+    saldoUrls[ASSET7_DESC] = self.asset7Field.stringValue;
+    saldoUrls[ASSET8_DESC] = self.asset8Field.stringValue;
     saldoUrls[ASSET9_DESC] = self.asset9Field.stringValue;
     saldoUrls[ASSET10_DESC] = self.asset10Field.stringValue;
     saldoUrls[DASHBOARD] = self.dashboardField.stringValue;
