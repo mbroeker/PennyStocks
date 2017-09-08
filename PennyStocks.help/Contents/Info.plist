@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>de-DE</string>
 	<key>CFBundleIdentifier</key>
-	<string>de.4customers.pennyStocks.help</string>
+	<string>de.4customers.PennyStocks.help</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -21,7 +21,7 @@
 	<key>HPDBookIndexPath</key>
 	<string>search.helpindex</string>
 	<key>HPDBookTitle</key>
-	<string>pennyStocks Help</string>
+	<string>PennyStocks Help</string>
 	<key>HPDBookType</key>
 	<string>3</string>
 	<key>HPDBookUsesExternalViewer</key>
