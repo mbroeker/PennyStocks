@@ -51,7 +51,7 @@
 /**
  * Der öffentliche Konstruktor als statisches Singleton mit wählbaren Fiat-Währungen
  */
-+ (id)instance:(NSArray*)currencies {
++ (id)instance:(NSArray *)currencies {
     static Calculator *calculator = nil;
     static dispatch_once_t onceToken;
 
@@ -73,7 +73,7 @@
  * Der private Konstruktor der Klasse, der deswegen nicht in Calculator.h gelistet wird.
  *
  */
-- (id)initWithFiatCurrencies:(NSArray*)currencies {
+- (id)initWithFiatCurrencies:(NSArray *)currencies {
 
     if (self = [super init]) {
 
@@ -104,16 +104,16 @@
         if (saldoUrls == nil) {
             saldoUrls = [@{
                 DASHBOARD: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-LTC", ASSET1],
-                ASSET1_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET1 lowercaseString]],
-                ASSET2_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET2 lowercaseString]],
-                ASSET3_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET3 lowercaseString]],
-                ASSET4_DESC:[NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET4 lowercaseString]],
-                ASSET5_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET5 lowercaseString]],
-                ASSET6_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET6 lowercaseString]],
-                ASSET7_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET7 lowercaseString]],
-                ASSET8_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET8 lowercaseString]],
-                ASSET9_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET9 lowercaseString]],
-                ASSET10_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET10 lowercaseString]],
+                ASSET1_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET1.lowercaseString],
+                ASSET2_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET2.lowercaseString],
+                ASSET3_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET3.lowercaseString],
+                ASSET4_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET4.lowercaseString],
+                ASSET5_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET5.lowercaseString],
+                ASSET6_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET6.lowercaseString],
+                ASSET7_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET7.lowercaseString],
+                ASSET8_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET8.lowercaseString],
+                ASSET9_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET9.lowercaseString],
+                ASSET10_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET10.lowercaseString],
             } mutableCopy];
 
             [defaults setObject:saldoUrls forKey:KEY_SALDO_URLS];
@@ -172,7 +172,7 @@
     }
 
     if (!saldoUrls[ASSET1_DESC]) {
-        saldoUrls[ASSET1_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET1 lowercaseString]];
+        saldoUrls[ASSET1_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET1.lowercaseString];
 
         currentSaldo[ASSET1] = @0.0;
         initialRatings[ASSET1] = @0.0;
@@ -181,7 +181,7 @@
     }
 
     if (!saldoUrls[ASSET2_DESC]) {
-        saldoUrls[ASSET2_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET2 lowercaseString]];
+        saldoUrls[ASSET2_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET2.lowercaseString];
 
         currentSaldo[ASSET2] = @0.0;
         initialRatings[ASSET2] = @0.0;
@@ -190,7 +190,7 @@
     }
 
     if (!saldoUrls[ASSET3_DESC]) {
-        saldoUrls[ASSET3_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET3 lowercaseString]];
+        saldoUrls[ASSET3_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET3.lowercaseString];
 
         currentSaldo[ASSET3] = @0.0;
         initialRatings[ASSET3] = @0.0;
@@ -199,7 +199,7 @@
     }
 
     if (!saldoUrls[ASSET4_DESC]) {
-        saldoUrls[ASSET4_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET4 lowercaseString]];
+        saldoUrls[ASSET4_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET4.lowercaseString];
 
         currentSaldo[ASSET4] = @0.0;
         initialRatings[ASSET4] = @0.0;
@@ -208,7 +208,7 @@
     }
 
     if (!saldoUrls[ASSET5_DESC]) {
-        saldoUrls[ASSET5_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET5 lowercaseString]];
+        saldoUrls[ASSET5_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET5.lowercaseString];
 
         currentSaldo[ASSET5] = @0.0;
         initialRatings[ASSET5] = @0.0;
@@ -217,7 +217,7 @@
     }
 
     if (!saldoUrls[ASSET6_DESC]) {
-        saldoUrls[ASSET6_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET6 lowercaseString]];
+        saldoUrls[ASSET6_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET6.lowercaseString];
 
         currentSaldo[ASSET6] = @0.0;
         initialRatings[ASSET6] = @0.0;
@@ -226,7 +226,7 @@
     }
 
     if (!saldoUrls[ASSET7_DESC]) {
-        saldoUrls[ASSET7_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET7 lowercaseString]];
+        saldoUrls[ASSET7_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET7.lowercaseString];
 
         currentSaldo[ASSET7] = @0.0;
         initialRatings[ASSET7] = @0.0;
@@ -235,7 +235,7 @@
     }
 
     if (!saldoUrls[ASSET8_DESC]) {
-        saldoUrls[ASSET8_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET8 lowercaseString]];
+        saldoUrls[ASSET8_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET8.lowercaseString];
 
         currentSaldo[ASSET8] = @0.0;
         initialRatings[ASSET8] = @0.0;
@@ -244,7 +244,7 @@
     }
 
     if (!saldoUrls[ASSET9_DESC]) {
-        saldoUrls[ASSET9_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET9 lowercaseString]];
+        saldoUrls[ASSET9_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET9.lowercaseString];
 
         currentSaldo[ASSET9] = @0.0;
         initialRatings[ASSET9] = @0.0;
@@ -253,7 +253,7 @@
     }
 
     if (!saldoUrls[ASSET10_DESC]) {
-        saldoUrls[ASSET10_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", [ASSET10 lowercaseString]];
+        saldoUrls[ASSET10_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET10.lowercaseString];
 
         currentSaldo[ASSET10] = @0.0;
         initialRatings[ASSET10] = @0.0;
@@ -325,7 +325,7 @@
  * @param asset
  * @return NSDictionary*
  */
-- (NSDictionary*)checkpointForAsset:(NSString*)asset {
+- (NSDictionary *)checkpointForAsset:(NSString *)asset {
     double initialAssetRating = [initialRatings[asset] doubleValue];
     double currentAssetRating = [currentRatings[asset] doubleValue];
 
@@ -351,7 +351,7 @@
  *
  * @param asset
  */
-- (double)btcPriceForAsset:(NSString*)asset {
+- (double)btcPriceForAsset:(NSString *)asset {
     double btcRating = [currentRatings[ASSET1] doubleValue];
     double assetRating = [currentRatings[asset] doubleValue];
 
@@ -365,7 +365,7 @@
  * @param asset
  * @param baseAsset
  */
-- (double)factorForAsset:(NSString*)asset inRelationTo:(NSString*)baseAsset {
+- (double)factorForAsset:(NSString *)asset inRelationTo:(NSString *)baseAsset {
     return [self btcPriceForAsset:baseAsset] / [self btcPriceForAsset:asset];
 }
 
@@ -374,7 +374,7 @@
  *
  * @param asset
  */
-- (double)fiatPriceForAsset:(NSString*)asset {
+- (double)fiatPriceForAsset:(NSString *)asset {
     return (1 / [self btcPriceForAsset:asset]);
 }
 
@@ -383,7 +383,7 @@
  *
  * @return NSDictionary
  */
-- (NSDictionary*)checkpointChanges {
+- (NSDictionary *)checkpointChanges {
     NSMutableDictionary *checkpointChanges = [[NSMutableDictionary alloc] init];
 
     for (id cAsset in currentRatings) {
@@ -415,7 +415,7 @@
  * @param currency
  * @return double
  */
-- (double)calculateWithRatings:(NSDictionary*)ratings currency:(NSString *)currency {
+- (double)calculateWithRatings:(NSDictionary *)ratings currency:(NSString *)currency {
 
     for (id key in ratings) {
         if ([ratings[key] doubleValue] == 0.0) {
@@ -460,7 +460,7 @@
 /**
  * Berechnet die realen Preise anhand des Handelsvolumens auf Poloniex
  */
-- (NSDictionary*)realPrices {
+- (NSDictionary *)realPrices {
     NSMutableDictionary *volumes = [[NSMutableDictionary alloc] init];
 
     for (id key in tickerKeys) {
@@ -500,7 +500,7 @@
 /**
  * Simple Changes
  */
-- (NSDictionary*)realChanges {
+- (NSDictionary *)realChanges {
     NSDictionary *realPrices = [self realPrices];
     NSMutableDictionary *changes = [[NSMutableDictionary alloc] init];
 
@@ -512,12 +512,12 @@
 }
 
 /**
- * Automatisches Kaufen...
+ * Automatisches Kaufen von Assets
  *
  * @param cAsset
  * @param wantedAmount
  */
-- (NSString*)autoBuy:(NSString*)cAsset amount:(double)wantedAmount {
+- (NSString *)autoBuy:(NSString *)cAsset amount:(double)wantedAmount {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSDictionary *ak;
@@ -544,8 +544,8 @@
     double assetPrice = [currentRatings[cAsset] doubleValue];
     double cRate = btcPrice / assetPrice;
 
-    // Bestimme die maximale Anzahl an BTC's, die verkauft werden können...
-    double amountMax = floor(100000000.0 * feeAsFactor * ([self currentSaldo:ASSET1] / cRate)) / 100000000.0;
+    // Bestimme die maximale Anzahl an ASSET1's, die verkauft werden können...
+    double amountMax = feeAsFactor * ([self currentSaldo:ASSET1] / cRate);
     double amount = amountMax;
 
     if (wantedAmount > 0) {
@@ -553,7 +553,7 @@
     }
 
     if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:fiatCurrencies[0]] || [cAsset isEqualToString:fiatCurrencies[1]]) {
-        // Illegale Kombination BTC_(cAsset)
+        // Illegale Kombination ASSET1_(cAsset)
         return nil;
     }
 
@@ -596,17 +596,17 @@
 }
 
 /**
- * Automatisches Verkaufen...
+ * Automatisches Verkaufen von Assets
  *
  * @param cAsset
  * @param wantedAmount
  */
-- (NSString*)autoSell:(NSString*)cAsset amount:(double)wantedAmount {
+- (NSString *)autoSell:(NSString *)cAsset amount:(double)wantedAmount {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSDictionary *ak;
     NSString *sk;
-    
+
     double feeAsFactor = 1.0;
 
     if ([defaultExchange isEqualToString:@"POLONIEX_EXCHANGE"]) {
@@ -617,14 +617,15 @@
     if ([defaultExchange isEqualToString:@"BITTREX_EXCHANGE"]) {
         ak = [defaults objectForKey:@"BITTREX_KEY"];
         sk = [defaults objectForKey:@"BITTREX_SEC"];
-        feeAsFactor = 0.9975;
+        //feeAsFactor = 0.9975;
     }
 
     if (ak == nil || sk == nil) {
         return nil;
     }
 
-    double amountMax = floor(100000000.0 * feeAsFactor * [self currentSaldo:cAsset]) / 100000000.0;
+    // Bestimme die maximale Anzahl an Assets, die verkauft werden können...
+    double amountMax = feeAsFactor * [self currentSaldo:cAsset];
     double amount = amountMax;
 
     double btcPrice = [currentRatings[ASSET1] doubleValue];
@@ -635,7 +636,7 @@
     }
 
     if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:fiatCurrencies[0]] || [cAsset isEqualToString:fiatCurrencies[1]]) {
-        // Illegale Kombination BTC_(cAsset)
+        // Illegale Kombination ASSET1_(cAsset)
         return nil;
     }
 
@@ -643,8 +644,8 @@
 
     // Sollte einer dieser Beträge negativ sein, wird die Transaktion verhindert
     if (amount > amountMax || amount <= 0 || btcPrice <= 0 || assetPrice <= 0 || cRate <= 0) {
-        NSString *mText = [NSString stringWithFormat: NSLocalizedString(@"not_enough_asset_param", @"Zu wenig %@"), cAsset];
-        NSString *iText = [NSString stringWithFormat: NSLocalizedString(@"not_enough_asset_long_param", @"Zu wenig %@ zum Verkaufen"), cAsset];
+        NSString *mText = [NSString stringWithFormat:NSLocalizedString(@"not_enough_asset_param", @"Zu wenig %@"), cAsset];
+        NSString *iText = [NSString stringWithFormat:NSLocalizedString(@"not_enough_asset_long_param", @"Zu wenig %@ zum Verkaufen"), cAsset];
         [Helper messageText:mText info:iText];
         return nil;
     }
@@ -676,12 +677,12 @@
  *
  * @param cAsset
  */
-- (void)autoBuyAll:(NSString*)cAsset {
+- (void)autoBuyAll:(NSString *)cAsset {
     static NSString *lastBoughtAsset = @"";
 
     double ask = ([tradingWithConfirmation boolValue]) ? 0 : -1;
-    if ([cAsset isEqualToString:lastBoughtAsset]) {        
-       // ask = 0;
+    if ([cAsset isEqualToString:lastBoughtAsset]) {
+        // ask = 0;
     }
 
     if ([self autoBuy:cAsset amount:ask] != nil) {
@@ -697,7 +698,7 @@
  *
  * @param cAsset
  */
-- (void)autoSellAll:(NSString*)cAsset {
+- (void)autoSellAll:(NSString *)cAsset {
     double ask = ([tradingWithConfirmation boolValue]) ? 0 : -1;
     if ([self autoSell:cAsset amount:ask] != nil) {
         // Aktualisiere alle Checkpoints
@@ -796,7 +797,7 @@
  *
  * @param wantedPercent
  */
-- (void)buyWithProfitInPercent:(double)wantedPercent andInvestmentRate:(double) rate {
+- (void)buyWithProfitInPercent:(double)wantedPercent andInvestmentRate:(double)rate {
     double balance = [self currentSaldo:ASSET1];
     NSDictionary *realChanges = [self realChanges];
 
@@ -827,7 +828,7 @@
         }
 
         if (effectivePercent > wantedPercent) {
-           [self autoBuyAll:key];
+            [self autoBuyAll:key];
         }
     }
 }
@@ -1039,7 +1040,7 @@
  * @param asset
  * @return double
  */
-- (double)currentSaldo:(NSString*)asset {
+- (double)currentSaldo:(NSString *)asset {
     return [currentSaldo[asset] doubleValue];
 }
 
@@ -1049,7 +1050,7 @@
  * @param label
  * @return NSString*
  */
-- (NSString*)saldoUrlForLabel:(NSString*)label {
+- (NSString *)saldoUrlForLabel:(NSString *)label {
     return saldoUrls[label];
 }
 
@@ -1059,7 +1060,7 @@
  * @param asset
  * @param saldo
  */
-- (void)currentSaldo:(NSString*)asset withDouble: (double) saldo {
+- (void)currentSaldo:(NSString *)asset withDouble:(double)saldo {
     currentSaldo[asset] = [[NSNumber alloc] initWithDouble:saldo];
 
     [self currentSaldoForDictionary:currentSaldo];
@@ -1070,7 +1071,7 @@
  *
  * @param dictionary
  */
-- (void)currentSaldoForDictionary:(NSMutableDictionary*)dictionary {
+- (void)currentSaldoForDictionary:(NSMutableDictionary *)dictionary {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (dictionary == nil) return;
@@ -1093,7 +1094,7 @@
  *
  * @param dictionary
  */
-- (void)saldoUrlsForDictionary:(NSMutableDictionary*)dictionary {
+- (void)saldoUrlsForDictionary:(NSMutableDictionary *)dictionary {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (dictionary == nil) return;
@@ -1116,7 +1117,7 @@
  *
  * @param dictionary
  */
-- (void)initialRatingsWithDictionary:(NSMutableDictionary*)dictionary {
+- (void)initialRatingsWithDictionary:(NSMutableDictionary *)dictionary {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (dictionary == nil) return;
@@ -1139,7 +1140,7 @@
  *
  * @param exchange
  */
-- (void)defaultExchange:(NSString*)exchange {
+- (void)defaultExchange:(NSString *)exchange {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     [defaults setObject:exchange forKey:KEY_DEFAULT_EXCHANGE];
@@ -1153,7 +1154,7 @@
  *
  * @return NSString*
  */
-- (NSArray*)fiatCurrencies {
+- (NSArray *)fiatCurrencies {
     return fiatCurrencies;
 }
 
@@ -1162,7 +1163,7 @@
  *
  * @return NSMutableDictionary*
  */
-- (NSMutableDictionary*)currentSaldo {
+- (NSMutableDictionary *)currentSaldo {
     return [currentSaldo mutableCopy];
 }
 
@@ -1171,7 +1172,7 @@
  *
  * @return NSMutableDictionary*
  */
-- (NSMutableDictionary*)saldoUrls {
+- (NSMutableDictionary *)saldoUrls {
     return [saldoUrls mutableCopy];
 }
 
@@ -1180,7 +1181,7 @@
  *
  * @return NSMutableDictionary*
  */
-- (NSMutableDictionary*)initialRatings {
+- (NSMutableDictionary *)initialRatings {
     return [initialRatings mutableCopy];
 }
 
@@ -1189,15 +1190,15 @@
  *
  * @return NSMutableDictionary*
  */
-- (NSMutableDictionary*)currentRatings {
+- (NSMutableDictionary *)currentRatings {
     return [currentRatings mutableCopy];
 }
 
-- (NSMutableDictionary*)ticker {
+- (NSMutableDictionary *)ticker {
     return [ticker mutableCopy];
 }
 
-- (NSDictionary*)tickerKeys {
+- (NSDictionary *)tickerKeys {
     return tickerKeys;
 }
 
