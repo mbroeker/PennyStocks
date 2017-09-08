@@ -38,8 +38,8 @@ legal_notice = "
 
 buy_confirmation = "Purchaise Confirmation";
 sell_confirmation = "Order Confirmation";
-buy_with_amount_asset_and_rate = "Buying %.4f %@ for %.8f each";
-sell_with_amount_asset_and_rate = "Selling %.4f %@ for %.8f each";
+buy_with_amount_asset_and_rate = "Buying %.8f %@ for %.8f each";
+sell_with_amount_asset_and_rate = "Selling %.8f %@ for %.8f each";
 
 automated_trading_on = "Would you like to activate Automated Trading?";
 automated_trading_off = "Would you like to deactivate Automated Trading?";

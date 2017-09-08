@@ -39,8 +39,8 @@ legal_notice = "
 
 buy_confirmation = "Kaufbestätigung";
 sell_confirmation = "Verkaufsbestätigung";
-buy_with_amount_asset_and_rate = "Kaufe %.4f %@ für %.8f das Stück";
-sell_with_amount_asset_and_rate = "Verkaufe %.4f %@ für %.8f das Stück";
+buy_with_amount_asset_and_rate = "Kaufe %.8f %@ für %.8f das Stück";
+sell_with_amount_asset_and_rate = "Verkaufe %.8f %@ für %.8f das Stück";
 
 automated_trading_on = "Möchten Sie das automatisierte Handeln mit Assets einschalten?";
 automated_trading_off = "Möchten Sie das automatisierte Handeln mit Assets ausschalten?";
