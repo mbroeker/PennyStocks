@@ -266,9 +266,24 @@
 
         NSLog(@"Migrating Calculator settings...");
 
+        NSMutableDictionary *tempCurrentSaldo = [currentSaldo mutableCopy];
+        NSMutableDictionary *tempInitialRatings = [initialRatings mutableCopy];
+
+        for (id key in currentSaldo) {
+            if ([tickerKeys objectForKey:key] == nil) {
+                [tempCurrentSaldo removeObjectForKey:key];
+            }
+        }
+
+        for (id key in initialRatings) {
+            if ([tickerKeys objectForKey:key] == nil) {
+                [tempInitialRatings removeObjectForKey:key];
+            }
+        }
+
         [defaults setObject:saldoUrls forKey:KEY_SALDO_URLS];
-        [defaults setObject:currentSaldo forKey:KEY_CURRENT_SALDO];
-        [defaults setObject:initialRatings forKey:KEY_INITIAL_RATINGS];
+        [defaults setObject:tempCurrentSaldo forKey:KEY_CURRENT_SALDO];
+        [defaults setObject:tempInitialRatings forKey:KEY_INITIAL_RATINGS];
 
         [defaults synchronize];
     }
