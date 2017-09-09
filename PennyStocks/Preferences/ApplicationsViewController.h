@@ -23,16 +23,30 @@
 @property (strong) IBOutlet NSTextField *asset10Field;
 
 // Images List
-@property (strong) IBOutlet NSImageView *asset1ImageView;
-@property (strong) IBOutlet NSImageView *asset2ImageView;
-@property (strong) IBOutlet NSImageView *asset3ImageView;
-@property (strong) IBOutlet NSImageView *asset4ImageView;
-@property (strong) IBOutlet NSImageView *asset5ImageView;
-@property (strong) IBOutlet NSImageView *asset6ImageView;
-@property (strong) IBOutlet NSImageView *asset7ImageView;
-@property (strong) IBOutlet NSImageView *asset8ImageView;
-@property (strong) IBOutlet NSImageView *asset9ImageView;
-@property (strong) IBOutlet NSImageView *asset10ImageView;
+@property (strong) IBOutlet NSButton *asset1ImageButton;
+@property (strong) IBOutlet NSButton *asset2ImageButton;
+@property (strong) IBOutlet NSButton *asset3ImageButton;
+@property (strong) IBOutlet NSButton *asset4ImageButton;
+@property (strong) IBOutlet NSButton *asset5ImageButton;
+
+@property (strong) IBOutlet NSButton *asset6ImageButton;
+@property (strong) IBOutlet NSButton *asset7ImageButton;
+@property (strong) IBOutlet NSButton *asset8ImageButton;
+@property (strong) IBOutlet NSButton *asset9ImageButton;
+@property (strong) IBOutlet NSButton *asset10ImageButton;
+
+// Button Actions
+- (IBAction)asset1ClickedAction:(id)sender;
+- (IBAction)asset2ClickedAction:(id)sender;
+- (IBAction)asset3ClickedAction:(id)sender;
+- (IBAction)asset4ClickedAction:(id)sender;
+- (IBAction)asset5ClickedAction:(id)sender;
+
+- (IBAction)asset6ClickedAction:(id)sender;
+- (IBAction)asset7ClickedAction:(id)sender;
+- (IBAction)asset8ClickedAction:(id)sender;
+- (IBAction)asset9ClickedAction:(id)sender;
+- (IBAction)asset10ClickedAction:(id)sender;
 
 // Action Handler
 - (IBAction)saveAction:(id)sender;

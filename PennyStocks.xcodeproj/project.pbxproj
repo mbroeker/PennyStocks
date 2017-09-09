@@ -127,6 +127,7 @@
 		B271E58F1F5E1D8100B14228 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Preferences.strings; sourceTree = "<group>"; };
 		B271E5901F5E1D8300B14228 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Preferences.strings; sourceTree = "<group>"; };
 		B271E5911F5E1D8600B14228 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Preferences.strings; sourceTree = "<group>"; };
+		B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PennyStocks.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +170,7 @@
 		B271E4C81F5E0C4800B14228 /* PennyStocks */ = {
 			isa = PBXGroup;
 			children = (
+				B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */,
 				B271E4DD1F5E0D0E00B14228 /* AppDelegate */,
 				B271E4E01F5E0D0E00B14228 /* Assets.xcassets */,
 				B271E4E61F5E0D0E00B14228 /* Brokerage */,
@@ -341,6 +343,11 @@
 					B271E4C51F5E0C4800B14228 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = NS52DCTHFQ;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					B271E5521F5E0EA000B14228 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -569,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PennyStocks/PennyStocks.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -584,6 +592,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PennyStocks/PennyStocks.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
