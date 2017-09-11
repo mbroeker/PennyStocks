@@ -3,3 +3,6 @@
 .idea/
 PennyStocks.xcodeproj/xcuserdata/
 PennyStocks.xcodeproj/project.xcworkspace/xcuserdata/
+
+PennyStocksTool/obj
+PennyStocksTool/*.app

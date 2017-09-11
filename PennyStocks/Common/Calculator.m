@@ -6,6 +6,8 @@
 #import "Calculator.h"
 #import "Helper.h"
 
+#import <dispatch/dispatch.h>
+
 /**
  * Berechnungklasse für Crypto-Währungen
  */
