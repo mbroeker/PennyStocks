@@ -1,6 +1,6 @@
 //
 //  BittrexViewController.m
-//  iBroker
+//  PennyStocks
 //
 //  Created by Markus Bröker on 26.05.17.
 //  Copyright © 2017 Markus Bröker. All rights reserved.
