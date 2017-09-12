@@ -28,7 +28,7 @@
 + (NSDictionary*)jsonRequest:(NSString*)jsonURL withPayload:(NSDictionary*)payload;
 + (NSDictionary*)jsonRequest:(NSString*)jsonURL withPayload:(NSDictionary*)payload andHeader:(NSDictionary*)header;
 + (NSDictionary*)poloniexTicker:(NSArray*)fiatCurrencies;
-+ (NSDictionary*)bittrexTicker:(NSArray*)fiatCurrencies forCurrencyPairs:(NSArray*)currencyPairs;
++ (NSDictionary*)bittrexTicker:(NSArray*)fiatCurrencies forAssets:(NSArray*)assetsArray;
 + (NSDictionary*)balance:(NSDictionary*)apikey withSecret:(NSString*)secret forExchange:(NSString*)exchange;
 + (NSDictionary*)buy:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString*)exchange;
 + (NSDictionary*)sell:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString*)exchange;

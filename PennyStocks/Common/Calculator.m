@@ -997,7 +997,7 @@
     NSDictionary *tickerDictionary;
 
     if ([defaultExchange isEqualToString:EXCHANGE_POLONIEX]) tickerDictionary = [Brokerage poloniexTicker:fiatCurrencies];
-    if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) tickerDictionary = [Brokerage bittrexTicker:fiatCurrencies forCurrencyPairs:[currentSaldo allKeys]];
+    if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) tickerDictionary = [Brokerage bittrexTicker:fiatCurrencies forAssets:[currentSaldo allKeys]];
 
     if (tickerDictionary == nil) {
 

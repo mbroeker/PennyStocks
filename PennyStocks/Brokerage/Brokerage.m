@@ -298,8 +298,10 @@
     }
 
     // Bitcoin Cash heißt BCH auf Poloniex
-    if ([currencyPair isEqualToString:@"BTC_BCC"]) {
-        currencyPair = @"BTC_BCH";
+    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
+    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET1];
+    if ([currencyPair isEqualToString:asset1BCC]) {
+        currencyPair = asset1BCH;
     }
 
     NSMutableDictionary *payload = [[NSMutableDictionary alloc] init];
@@ -336,8 +338,10 @@
     }
 
     // Bitcoin Cash heißt BCH auf Poloniex
-    if ([currencyPair isEqualToString:@"BTC_BCC"]) {
-        currencyPair = @"BTC_BCH";
+    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
+    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET1];
+    if ([currencyPair isEqualToString:asset1BCC]) {
+        currencyPair = asset1BCH;
     }
 
     NSMutableDictionary *payload = [[NSMutableDictionary alloc] init];
@@ -560,8 +564,10 @@
     ticker[btcFiat] = btcTicker;
     ticker[fiatCurrencies[1]] = @([exchangeRate doubleValue]);
 
-
-    ticker[@"BTC_BCC"] = ticker[@"BTC_BCH"];
+    // BCC ist BCH auf Poloniex
+    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
+    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET1];
+    ticker[asset1BCC] = ticker[asset1BCH];
 
     return ticker;
 }
@@ -570,12 +576,13 @@
  * Besorge den Ticker von Bittrex
  *
  * @param fiatCurrencies
+ * @param assetsArray
  * @return NSDictionary*
  */
-+ (NSDictionary*)bittrexTicker:(NSArray*)fiatCurrencies forCurrencyPairs:(NSArray*)currencyPairs {
++ (NSDictionary*)bittrexTicker:(NSArray*)fiatCurrencies forAssets:(NSArray*)assetsArray {
 
     NSMutableDictionary *ticker = [[NSMutableDictionary alloc] init];
-    for (id key in currencyPairs) {
+    for (id key in assetsArray) {
         if ([key isEqualToString:ASSET1]) continue;
 
         NSString *pair = [NSString stringWithFormat:@"%@-%@", [ASSET1 lowercaseString], [key lowercaseString]];
