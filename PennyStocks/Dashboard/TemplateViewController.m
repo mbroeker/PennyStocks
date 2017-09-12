@@ -212,7 +212,7 @@ typedef struct DASHBOARD_VARS {
 
     if (applications == nil) {
         applications = [@{
-            ASSET1_DESC: @"/Applications/Electrum.App",
+            ASSET1_DESC: @"/Applications/Ethereum Wallet.app",
             ASSET2_DESC: @"",
             ASSET3_DESC: @"",
             ASSET4_DESC: @"",
