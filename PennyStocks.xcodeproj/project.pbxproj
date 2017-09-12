@@ -11,7 +11,6 @@
 		B271E4D31F5E0C4800B14228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D21F5E0C4800B14228 /* Assets.xcassets */; };
 		B271E4D61F5E0C4800B14228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D41F5E0C4800B14228 /* Main.storyboard */; };
 		B271E52E1F5E0D0E00B14228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4DF1F5E0D0E00B14228 /* AppDelegate.m */; };
-		B271E52F1F5E0D0E00B14228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B271E4E01F5E0D0E00B14228 /* Assets.xcassets */; };
 		B271E5321F5E0D0E00B14228 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4E81F5E0D0E00B14228 /* Algorithm.m */; };
 		B271E5331F5E0D0E00B14228 /* Brokerage.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4EA1F5E0D0E00B14228 /* Brokerage.m */; };
 		B271E5341F5E0D0E00B14228 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4ED1F5E0D0E00B14228 /* Calculator.m */; };
@@ -33,6 +32,10 @@
 		B271E56C1F5E0F3A00B14228 /* TabView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5661F5E0F3A00B14228 /* TabView.m */; };
 		B271E56D1F5E0F3A00B14228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5671F5E0F3A00B14228 /* main.m */; };
 		B271E5741F5E1CC600B14228 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B271E5721F5E1CC600B14228 /* Localizable.strings */; };
+		B2824CF41F676DD800DC10F3 /* PennyStocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */; };
+		B2824CF91F676E7D00DC10F3 /* Brokerage.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4EA1F5E0D0E00B14228 /* Brokerage.m */; };
+		B2824CFA1F676E7D00DC10F3 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4ED1F5E0D0E00B14228 /* Calculator.m */; };
+		B2824CFB1F676E7D00DC10F3 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F01F5E0D0E00B14228 /* Helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -127,6 +130,9 @@
 		B271E58F1F5E1D8100B14228 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Preferences.strings; sourceTree = "<group>"; };
 		B271E5901F5E1D8300B14228 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Preferences.strings; sourceTree = "<group>"; };
 		B271E5911F5E1D8600B14228 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Preferences.strings; sourceTree = "<group>"; };
+		B2824CF11F676DD800DC10F3 /* PennyStocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PennyStocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennyStocksTests.m; sourceTree = "<group>"; };
+		B2824CF51F676DD800DC10F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PennyStocks.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +151,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2824CEE1F676DD800DC10F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -154,6 +167,7 @@
 				B271E56E1F5E0F6400B14228 /* PennyStocksTool */,
 				B271E54D1F5E0D7A00B14228 /* PennyStocks.help */,
 				B271E4C81F5E0C4800B14228 /* PennyStocks */,
+				B2824CF21F676DD800DC10F3 /* PennyStocksTests */,
 				B271E4C71F5E0C4800B14228 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -163,6 +177,7 @@
 			children = (
 				B271E4C61F5E0C4800B14228 /* PennyStocks.app */,
 				B271E5531F5E0EA000B14228 /* PennyStocksTool */,
+				B2824CF11F676DD800DC10F3 /* PennyStocksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,6 +309,15 @@
 			name = PennyStocksTool;
 			sourceTree = "<group>";
 		};
+		B2824CF21F676DD800DC10F3 /* PennyStocksTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */,
+				B2824CF51F676DD800DC10F3 /* Info.plist */,
+			);
+			path = PennyStocksTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -331,6 +355,23 @@
 			productReference = B271E5531F5E0EA000B14228 /* PennyStocksTool */;
 			productType = "com.apple.product-type.tool";
 		};
+		B2824CF01F676DD800DC10F3 /* PennyStocksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2824CF61F676DD800DC10F3 /* Build configuration list for PBXNativeTarget "PennyStocksTests" */;
+			buildPhases = (
+				B2824CED1F676DD800DC10F3 /* Sources */,
+				B2824CEE1F676DD800DC10F3 /* Frameworks */,
+				B2824CEF1F676DD800DC10F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PennyStocksTests;
+			productName = PennyStocksTests;
+			productReference = B2824CF11F676DD800DC10F3 /* PennyStocksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -350,6 +391,9 @@
 						};
 					};
 					B271E5521F5E0EA000B14228 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					B2824CF01F676DD800DC10F3 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
@@ -378,6 +422,7 @@
 			targets = (
 				B271E4C51F5E0C4800B14228 /* PennyStocks */,
 				B271E5521F5E0EA000B14228 /* PennyStocksTool */,
+				B2824CF01F676DD800DC10F3 /* PennyStocksTests */,
 			);
 		};
 /* End PBXProject section */
@@ -390,9 +435,15 @@
 				B271E4D31F5E0C4800B14228 /* Assets.xcassets in Resources */,
 				B271E5421F5E0D0E00B14228 /* Preferences.storyboard in Resources */,
 				B271E5741F5E1CC600B14228 /* Localizable.strings in Resources */,
-				B271E52F1F5E0D0E00B14228 /* Assets.xcassets in Resources */,
 				B271E54E1F5E0D7A00B14228 /* PennyStocks.help in Resources */,
 				B271E4D61F5E0C4800B14228 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2824CEF1F676DD800DC10F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +481,17 @@
 				B271E5681F5E0F3A00B14228 /* Algorithm.m in Sources */,
 				B271E56D1F5E0F3A00B14228 /* main.m in Sources */,
 				B271E56B1F5E0F3A00B14228 /* Helper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2824CED1F676DD800DC10F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2824CF91F676E7D00DC10F3 /* Brokerage.m in Sources */,
+				B2824CFA1F676E7D00DC10F3 /* Calculator.m in Sources */,
+				B2824CFB1F676E7D00DC10F3 /* Helper.m in Sources */,
+				B2824CF41F676DD800DC10F3 /* PennyStocksTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +680,28 @@
 			};
 			name = Release;
 		};
+		B2824CF71F676DD800DC10F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PennyStocksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.4customers.PennyStocksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B2824CF81F676DD800DC10F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PennyStocksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.4customers.PennyStocksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -647,6 +731,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B2824CF61F676DD800DC10F3 /* Build configuration list for PBXNativeTarget "PennyStocksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2824CF71F676DD800DC10F3 /* Debug */,
+				B2824CF81F676DD800DC10F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
