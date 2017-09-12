@@ -1,11 +1,13 @@
 //
+//  Calculator.h
+//  PennyStocks
+//
 // Created by Markus Bröker on 28.04.17.
 // Copyright (c) 2017 Markus Bröker. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "Brokerage.h"
-#import "CalculatorConstants.h"
 
 @interface Calculator : NSObject
 

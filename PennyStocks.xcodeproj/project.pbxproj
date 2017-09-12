@@ -11,8 +11,6 @@
 		B271E4D31F5E0C4800B14228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D21F5E0C4800B14228 /* Assets.xcassets */; };
 		B271E4D61F5E0C4800B14228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D41F5E0C4800B14228 /* Main.storyboard */; };
 		B271E52E1F5E0D0E00B14228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4DF1F5E0D0E00B14228 /* AppDelegate.m */; };
-		B271E5321F5E0D0E00B14228 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4E81F5E0D0E00B14228 /* Algorithm.m */; };
-		B271E5331F5E0D0E00B14228 /* Brokerage.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4EA1F5E0D0E00B14228 /* Brokerage.m */; };
 		B271E5341F5E0D0E00B14228 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4ED1F5E0D0E00B14228 /* Calculator.m */; };
 		B271E5351F5E0D0E00B14228 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F01F5E0D0E00B14228 /* Helper.m */; };
 		B271E5361F5E0D0E00B14228 /* TabView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F21F5E0D0E00B14228 /* TabView.m */; };
@@ -25,17 +23,34 @@
 		B271E5441F5E0D0E00B14228 /* RatingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E51A1F5E0D0E00B14228 /* RatingsViewController.m */; };
 		B271E5451F5E0D0E00B14228 /* SaldoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E51D1F5E0D0E00B14228 /* SaldoViewController.m */; };
 		B271E54E1F5E0D7A00B14228 /* PennyStocks.help in Resources */ = {isa = PBXBuildFile; fileRef = B271E54D1F5E0D7A00B14228 /* PennyStocks.help */; };
-		B271E5681F5E0F3A00B14228 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E55C1F5E0F3A00B14228 /* Algorithm.m */; };
-		B271E5691F5E0F3A00B14228 /* Brokerage.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E55E1F5E0F3A00B14228 /* Brokerage.m */; };
 		B271E56A1F5E0F3A00B14228 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5611F5E0F3A00B14228 /* Calculator.m */; };
 		B271E56B1F5E0F3A00B14228 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5641F5E0F3A00B14228 /* Helper.m */; };
 		B271E56C1F5E0F3A00B14228 /* TabView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5661F5E0F3A00B14228 /* TabView.m */; };
 		B271E56D1F5E0F3A00B14228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5671F5E0F3A00B14228 /* main.m */; };
 		B271E5741F5E1CC600B14228 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B271E5721F5E1CC600B14228 /* Localizable.strings */; };
 		B2824CF41F676DD800DC10F3 /* PennyStocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */; };
-		B2824CF91F676E7D00DC10F3 /* Brokerage.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4EA1F5E0D0E00B14228 /* Brokerage.m */; };
 		B2824CFA1F676E7D00DC10F3 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4ED1F5E0D0E00B14228 /* Calculator.m */; };
 		B2824CFB1F676E7D00DC10F3 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F01F5E0D0E00B14228 /* Helper.m */; };
+		B2FB85A51F688B8A00F37D30 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85971F688B8A00F37D30 /* Algorithm.m */; };
+		B2FB85A61F688B8A00F37D30 /* Brokerage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85991F688B8A00F37D30 /* Brokerage.m */; };
+		B2FB85A71F688B8A00F37D30 /* Brokerage+Bittrex.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB859C1F688B8A00F37D30 /* Brokerage+Bittrex.m */; };
+		B2FB85A81F688B8A00F37D30 /* Brokerage+Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB859E1F688B8A00F37D30 /* Brokerage+Crypto.m */; };
+		B2FB85A91F688B8A00F37D30 /* Brokerage+External.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85A01F688B8A00F37D30 /* Brokerage+External.m */; };
+		B2FB85AA1F688B8A00F37D30 /* Brokerage+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85A21F688B8A00F37D30 /* Brokerage+JSON.m */; };
+		B2FB85AB1F688B8A00F37D30 /* Brokerage+Poloniex.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85A41F688B8A00F37D30 /* Brokerage+Poloniex.m */; };
+		B2FB85BC1F688BBA00F37D30 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85AE1F688BBA00F37D30 /* Algorithm.m */; };
+		B2FB85BD1F688BBA00F37D30 /* Brokerage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85B01F688BBA00F37D30 /* Brokerage.m */; };
+		B2FB85BE1F688BBA00F37D30 /* Brokerage+Bittrex.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85B31F688BBA00F37D30 /* Brokerage+Bittrex.m */; };
+		B2FB85BF1F688BBA00F37D30 /* Brokerage+Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85B51F688BBA00F37D30 /* Brokerage+Crypto.m */; };
+		B2FB85C01F688BBA00F37D30 /* Brokerage+External.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85B71F688BBA00F37D30 /* Brokerage+External.m */; };
+		B2FB85C11F688BBA00F37D30 /* Brokerage+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85B91F688BBA00F37D30 /* Brokerage+JSON.m */; };
+		B2FB85C21F688BBA00F37D30 /* Brokerage+Poloniex.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85BB1F688BBA00F37D30 /* Brokerage+Poloniex.m */; };
+		B2FB85E41F6892FA00F37D30 /* Brokerage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85991F688B8A00F37D30 /* Brokerage.m */; };
+		B2FB85E51F68936000F37D30 /* Brokerage+Bittrex.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB859C1F688B8A00F37D30 /* Brokerage+Bittrex.m */; };
+		B2FB85E61F68936000F37D30 /* Brokerage+Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB859E1F688B8A00F37D30 /* Brokerage+Crypto.m */; };
+		B2FB85E71F68936000F37D30 /* Brokerage+External.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85A01F688B8A00F37D30 /* Brokerage+External.m */; };
+		B2FB85E81F68936000F37D30 /* Brokerage+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85A21F688B8A00F37D30 /* Brokerage+JSON.m */; };
+		B2FB85E91F68936000F37D30 /* Brokerage+Poloniex.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85A41F688B8A00F37D30 /* Brokerage+Poloniex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,10 +74,6 @@
 		B271E4DE1F5E0D0E00B14228 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B271E4DF1F5E0D0E00B14228 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B271E4E01F5E0D0E00B14228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B271E4E71F5E0D0E00B14228 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Algorithm.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B271E4E81F5E0D0E00B14228 /* Algorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Algorithm.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B271E4E91F5E0D0E00B14228 /* Brokerage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Brokerage.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B271E4EA1F5E0D0E00B14228 /* Brokerage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Brokerage.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B271E4EC1F5E0D0E00B14228 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
 		B271E4ED1F5E0D0E00B14228 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		B271E4EE1F5E0D0E00B14228 /* CalculatorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CalculatorConstants.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -88,10 +99,6 @@
 		B271E54C1F5E0D3E00B14228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B271E54D1F5E0D7A00B14228 /* PennyStocks.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PennyStocks.help; sourceTree = "<group>"; };
 		B271E5531F5E0EA000B14228 /* PennyStocksTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PennyStocksTool; sourceTree = BUILT_PRODUCTS_DIR; };
-		B271E55B1F5E0F3A00B14228 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Algorithm.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B271E55C1F5E0F3A00B14228 /* Algorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Algorithm.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B271E55D1F5E0F3A00B14228 /* Brokerage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Brokerage.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B271E55E1F5E0F3A00B14228 /* Brokerage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Brokerage.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B271E5601F5E0F3A00B14228 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
 		B271E5611F5E0F3A00B14228 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		B271E5621F5E0F3A00B14228 /* CalculatorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CalculatorConstants.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -134,6 +141,34 @@
 		B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennyStocksTests.m; sourceTree = "<group>"; };
 		B2824CF51F676DD800DC10F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PennyStocks.entitlements; sourceTree = "<group>"; };
+		B2FB85961F688B8A00F37D30 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
+		B2FB85971F688B8A00F37D30 /* Algorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
+		B2FB85981F688B8A00F37D30 /* Brokerage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brokerage.h; sourceTree = "<group>"; };
+		B2FB85991F688B8A00F37D30 /* Brokerage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brokerage.m; sourceTree = "<group>"; };
+		B2FB859B1F688B8A00F37D30 /* Brokerage+Bittrex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+Bittrex.h"; sourceTree = "<group>"; };
+		B2FB859C1F688B8A00F37D30 /* Brokerage+Bittrex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+Bittrex.m"; sourceTree = "<group>"; };
+		B2FB859D1F688B8A00F37D30 /* Brokerage+Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+Crypto.h"; sourceTree = "<group>"; };
+		B2FB859E1F688B8A00F37D30 /* Brokerage+Crypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+Crypto.m"; sourceTree = "<group>"; };
+		B2FB859F1F688B8A00F37D30 /* Brokerage+External.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+External.h"; sourceTree = "<group>"; };
+		B2FB85A01F688B8A00F37D30 /* Brokerage+External.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+External.m"; sourceTree = "<group>"; };
+		B2FB85A11F688B8A00F37D30 /* Brokerage+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+JSON.h"; sourceTree = "<group>"; };
+		B2FB85A21F688B8A00F37D30 /* Brokerage+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+JSON.m"; sourceTree = "<group>"; };
+		B2FB85A31F688B8A00F37D30 /* Brokerage+Poloniex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+Poloniex.h"; sourceTree = "<group>"; };
+		B2FB85A41F688B8A00F37D30 /* Brokerage+Poloniex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+Poloniex.m"; sourceTree = "<group>"; };
+		B2FB85AD1F688BBA00F37D30 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
+		B2FB85AE1F688BBA00F37D30 /* Algorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
+		B2FB85AF1F688BBA00F37D30 /* Brokerage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brokerage.h; sourceTree = "<group>"; };
+		B2FB85B01F688BBA00F37D30 /* Brokerage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brokerage.m; sourceTree = "<group>"; };
+		B2FB85B21F688BBA00F37D30 /* Brokerage+Bittrex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+Bittrex.h"; sourceTree = "<group>"; };
+		B2FB85B31F688BBA00F37D30 /* Brokerage+Bittrex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+Bittrex.m"; sourceTree = "<group>"; };
+		B2FB85B41F688BBA00F37D30 /* Brokerage+Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+Crypto.h"; sourceTree = "<group>"; };
+		B2FB85B51F688BBA00F37D30 /* Brokerage+Crypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+Crypto.m"; sourceTree = "<group>"; };
+		B2FB85B61F688BBA00F37D30 /* Brokerage+External.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+External.h"; sourceTree = "<group>"; };
+		B2FB85B71F688BBA00F37D30 /* Brokerage+External.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+External.m"; sourceTree = "<group>"; };
+		B2FB85B81F688BBA00F37D30 /* Brokerage+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+JSON.h"; sourceTree = "<group>"; };
+		B2FB85B91F688BBA00F37D30 /* Brokerage+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+JSON.m"; sourceTree = "<group>"; };
+		B2FB85BA1F688BBA00F37D30 /* Brokerage+Poloniex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+Poloniex.h"; sourceTree = "<group>"; };
+		B2FB85BB1F688BBA00F37D30 /* Brokerage+Poloniex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+Poloniex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,10 +220,10 @@
 		B271E4C81F5E0C4800B14228 /* PennyStocks */ = {
 			isa = PBXGroup;
 			children = (
+				B2FB85AC1F688BBA00F37D30 /* Brokerage */,
 				B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */,
 				B271E4DD1F5E0D0E00B14228 /* AppDelegate */,
 				B271E4E01F5E0D0E00B14228 /* Assets.xcassets */,
-				B271E4E61F5E0D0E00B14228 /* Brokerage */,
 				B271E4EB1F5E0D0E00B14228 /* Common */,
 				B271E4F31F5E0D0E00B14228 /* Dashboard */,
 				B271E5071F5E0D0E00B14228 /* Preferences */,
@@ -216,17 +251,6 @@
 				B271E4DF1F5E0D0E00B14228 /* AppDelegate.m */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		B271E4E61F5E0D0E00B14228 /* Brokerage */ = {
-			isa = PBXGroup;
-			children = (
-				B271E4E71F5E0D0E00B14228 /* Algorithm.h */,
-				B271E4E81F5E0D0E00B14228 /* Algorithm.m */,
-				B271E4E91F5E0D0E00B14228 /* Brokerage.h */,
-				B271E4EA1F5E0D0E00B14228 /* Brokerage.m */,
-			);
-			path = Brokerage;
 			sourceTree = "<group>";
 		};
 		B271E4EB1F5E0D0E00B14228 /* Common */ = {
@@ -272,18 +296,6 @@
 			path = Preferences;
 			sourceTree = "<group>";
 		};
-		B271E55A1F5E0F3A00B14228 /* Brokerage */ = {
-			isa = PBXGroup;
-			children = (
-				B271E55B1F5E0F3A00B14228 /* Algorithm.h */,
-				B271E55C1F5E0F3A00B14228 /* Algorithm.m */,
-				B271E55D1F5E0F3A00B14228 /* Brokerage.h */,
-				B271E55E1F5E0F3A00B14228 /* Brokerage.m */,
-			);
-			name = Brokerage;
-			path = PennyStocks/Brokerage;
-			sourceTree = "<group>";
-		};
 		B271E55F1F5E0F3A00B14228 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +314,7 @@
 		B271E56E1F5E0F6400B14228 /* PennyStocksTool */ = {
 			isa = PBXGroup;
 			children = (
-				B271E55A1F5E0F3A00B14228 /* Brokerage */,
+				B2FB85951F688B8A00F37D30 /* Brokerage */,
 				B271E55F1F5E0F3A00B14228 /* Common */,
 				B271E5671F5E0F3A00B14228 /* main.m */,
 			);
@@ -316,6 +328,65 @@
 				B2824CF51F676DD800DC10F3 /* Info.plist */,
 			);
 			path = PennyStocksTests;
+			sourceTree = "<group>";
+		};
+		B2FB85951F688B8A00F37D30 /* Brokerage */ = {
+			isa = PBXGroup;
+			children = (
+				B2FB85961F688B8A00F37D30 /* Algorithm.h */,
+				B2FB85981F688B8A00F37D30 /* Brokerage.h */,
+				B2FB85971F688B8A00F37D30 /* Algorithm.m */,
+				B2FB85991F688B8A00F37D30 /* Brokerage.m */,
+				B2FB859A1F688B8A00F37D30 /* Categories */,
+			);
+			name = Brokerage;
+			path = PennyStocks/Brokerage;
+			sourceTree = "<group>";
+		};
+		B2FB859A1F688B8A00F37D30 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B2FB859B1F688B8A00F37D30 /* Brokerage+Bittrex.h */,
+				B2FB859C1F688B8A00F37D30 /* Brokerage+Bittrex.m */,
+				B2FB859D1F688B8A00F37D30 /* Brokerage+Crypto.h */,
+				B2FB859E1F688B8A00F37D30 /* Brokerage+Crypto.m */,
+				B2FB859F1F688B8A00F37D30 /* Brokerage+External.h */,
+				B2FB85A01F688B8A00F37D30 /* Brokerage+External.m */,
+				B2FB85A11F688B8A00F37D30 /* Brokerage+JSON.h */,
+				B2FB85A21F688B8A00F37D30 /* Brokerage+JSON.m */,
+				B2FB85A31F688B8A00F37D30 /* Brokerage+Poloniex.h */,
+				B2FB85A41F688B8A00F37D30 /* Brokerage+Poloniex.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		B2FB85AC1F688BBA00F37D30 /* Brokerage */ = {
+			isa = PBXGroup;
+			children = (
+				B2FB85AD1F688BBA00F37D30 /* Algorithm.h */,
+				B2FB85AF1F688BBA00F37D30 /* Brokerage.h */,
+				B2FB85AE1F688BBA00F37D30 /* Algorithm.m */,
+				B2FB85B01F688BBA00F37D30 /* Brokerage.m */,
+				B2FB85B11F688BBA00F37D30 /* Categories */,
+			);
+			path = Brokerage;
+			sourceTree = "<group>";
+		};
+		B2FB85B11F688BBA00F37D30 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B2FB85B21F688BBA00F37D30 /* Brokerage+Bittrex.h */,
+				B2FB85B41F688BBA00F37D30 /* Brokerage+Crypto.h */,
+				B2FB85B61F688BBA00F37D30 /* Brokerage+External.h */,
+				B2FB85B81F688BBA00F37D30 /* Brokerage+JSON.h */,
+				B2FB85BA1F688BBA00F37D30 /* Brokerage+Poloniex.h */,
+				B2FB85B31F688BBA00F37D30 /* Brokerage+Bittrex.m */,
+				B2FB85B51F688BBA00F37D30 /* Brokerage+Crypto.m */,
+				B2FB85B71F688BBA00F37D30 /* Brokerage+External.m */,
+				B2FB85B91F688BBA00F37D30 /* Brokerage+JSON.m */,
+				B2FB85BB1F688BBA00F37D30 /* Brokerage+Poloniex.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,16 +526,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B271E5361F5E0D0E00B14228 /* TabView.m in Sources */,
-				B271E5331F5E0D0E00B14228 /* Brokerage.m in Sources */,
 				B271E5451F5E0D0E00B14228 /* SaldoViewController.m in Sources */,
 				B271E5351F5E0D0E00B14228 /* Helper.m in Sources */,
 				B271E5431F5E0D0E00B14228 /* BittrexViewController.m in Sources */,
+				B2FB85C21F688BBA00F37D30 /* Brokerage+Poloniex.m in Sources */,
+				B2FB85C01F688BBA00F37D30 /* Brokerage+External.m in Sources */,
 				B271E52E1F5E0D0E00B14228 /* AppDelegate.m in Sources */,
 				B271E5371F5E0D0E00B14228 /* TabViewController.m in Sources */,
-				B271E5321F5E0D0E00B14228 /* Algorithm.m in Sources */,
+				B2FB85BC1F688BBA00F37D30 /* Algorithm.m in Sources */,
 				B271E4CE1F5E0C4800B14228 /* main.m in Sources */,
+				B2FB85BD1F688BBA00F37D30 /* Brokerage.m in Sources */,
+				B2FB85C11F688BBA00F37D30 /* Brokerage+JSON.m in Sources */,
 				B271E5441F5E0D0E00B14228 /* RatingsViewController.m in Sources */,
 				B271E53F1F5E0D0E00B14228 /* AddressViewController.m in Sources */,
+				B2FB85BF1F688BBA00F37D30 /* Brokerage+Crypto.m in Sources */,
+				B2FB85BE1F688BBA00F37D30 /* Brokerage+Bittrex.m in Sources */,
 				B271E5341F5E0D0E00B14228 /* Calculator.m in Sources */,
 				B271E5381F5E0D0E00B14228 /* TemplateViewController.m in Sources */,
 				B271E5401F5E0D0E00B14228 /* ApplicationsViewController.m in Sources */,
@@ -475,11 +551,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2FB85AA1F688B8A00F37D30 /* Brokerage+JSON.m in Sources */,
 				B271E56A1F5E0F3A00B14228 /* Calculator.m in Sources */,
+				B2FB85A61F688B8A00F37D30 /* Brokerage.m in Sources */,
+				B2FB85A81F688B8A00F37D30 /* Brokerage+Crypto.m in Sources */,
+				B2FB85A51F688B8A00F37D30 /* Algorithm.m in Sources */,
 				B271E56C1F5E0F3A00B14228 /* TabView.m in Sources */,
-				B271E5691F5E0F3A00B14228 /* Brokerage.m in Sources */,
-				B271E5681F5E0F3A00B14228 /* Algorithm.m in Sources */,
+				B2FB85A91F688B8A00F37D30 /* Brokerage+External.m in Sources */,
+				B2FB85A71F688B8A00F37D30 /* Brokerage+Bittrex.m in Sources */,
 				B271E56D1F5E0F3A00B14228 /* main.m in Sources */,
+				B2FB85AB1F688B8A00F37D30 /* Brokerage+Poloniex.m in Sources */,
 				B271E56B1F5E0F3A00B14228 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +569,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2824CF91F676E7D00DC10F3 /* Brokerage.m in Sources */,
+				B2FB85E51F68936000F37D30 /* Brokerage+Bittrex.m in Sources */,
+				B2FB85E61F68936000F37D30 /* Brokerage+Crypto.m in Sources */,
+				B2FB85E71F68936000F37D30 /* Brokerage+External.m in Sources */,
+				B2FB85E81F68936000F37D30 /* Brokerage+JSON.m in Sources */,
+				B2FB85E91F68936000F37D30 /* Brokerage+Poloniex.m in Sources */,
+				B2FB85E41F6892FA00F37D30 /* Brokerage.m in Sources */,
 				B2824CFA1F676E7D00DC10F3 /* Calculator.m in Sources */,
 				B2824CFB1F676E7D00DC10F3 /* Helper.m in Sources */,
 				B2824CF41F676DD800DC10F3 /* PennyStocksTests.m in Sources */,
@@ -739,6 +825,7 @@
 				B2824CF81F676DD800DC10F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
