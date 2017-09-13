@@ -937,21 +937,20 @@
  */
 - (void)unsynchronizedUpdateBalances {
 
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
     NSDictionary *ak = nil;
     NSString *sk = nil;
 
     if ([defaultExchange isEqualToString:EXCHANGE_POLONIEX]) {
         // @TODO Vielleicht sollten diese Zugangsdaten noch verschlüsselt werden...
-        ak = [defaults objectForKey:@"POLO_KEY"];
-        sk = [defaults objectForKey:@"POLO_SEC"];
+        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"POLONIEX"];
+        ak = apiKey[@"apiKey"];
+        sk = apiKey[@"secret"];
     }
 
     if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) {
-        // @TODO Vielleicht sollten diese Zugangsdaten noch verschlüsselt werden...
-        ak = [defaults objectForKey:@"BITTREX_KEY"];
-        sk = [defaults objectForKey:@"BITTREX_SEC"];
+        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"BITTREX"];
+        ak = apiKey[@"apiKey"];
+        sk = apiKey[@"secret"];
     }
 
     if (ak == nil || sk == nil) {
