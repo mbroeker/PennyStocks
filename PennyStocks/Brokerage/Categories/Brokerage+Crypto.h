@@ -7,8 +7,6 @@
 //
 
 #import "Brokerage.h"
-#import <CommonCrypto/CommonDigest.h>
-#include <CommonCrypto/CommonHMAC.h>
 
 @interface Brokerage (Crypto)
 + (NSString *)hmac:(NSString *)plainText withSecret:(NSString*)secret;

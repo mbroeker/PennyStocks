@@ -7,6 +7,8 @@
 //
 
 #import "Brokerage+Crypto.h"
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonHMAC.h>
 
 @implementation Brokerage (Crypto)
 /**
