@@ -53,6 +53,16 @@
 		B2FB85E91F68936000F37D30 /* Brokerage+Poloniex.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85A41F688B8A00F37D30 /* Brokerage+Poloniex.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B2232C191F68A9CD00691859 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B271E4BE1F5E0C4800B14228 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B271E5521F5E0EA000B14228;
+			remoteInfo = PennyStocksTool;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		B271E5511F5E0EA000B14228 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -403,6 +413,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B2232C1A1F68A9CD00691859 /* PBXTargetDependency */,
 			);
 			name = PennyStocks;
 			productName = PennyStocks;
@@ -582,6 +593,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2232C1A1F68A9CD00691859 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B271E5521F5E0EA000B14228 /* PennyStocksTool */;
+			targetProxy = B2232C191F68A9CD00691859 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B271E4D41F5E0C4800B14228 /* Main.storyboard */ = {
