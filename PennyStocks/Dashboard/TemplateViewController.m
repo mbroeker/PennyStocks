@@ -319,9 +319,18 @@ typedef struct DASHBOARD_VARS {
 
     if (mustUpdate) {
         NSLog(@"Migrating applications...");
+
+        NSArray *descriptionKeys = [[calculator saldoUrls] allKeys];
+        NSMutableDictionary *tempApplications = [applications mutableCopy];
+
+        for (id key in tempApplications) {
+            if (![descriptionKeys containsObject:key]) {
+                [tempApplications removeObjectForKey:key];
+            }
+        }
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:applications forKey:TV_APPLICATIONS];
+        [defaults setObject:tempApplications forKey:TV_APPLICATIONS];
 
         [defaults synchronize];
     }
@@ -351,13 +360,21 @@ typedef struct DASHBOARD_VARS {
     [rateFormatter setMaximumFractionDigits:assetFractions];
 }
 
-
 /**
  * Setzen des Action Buttons per Code, da es keinen Sinn macht, dass pro Tab in XCode einzurichten...
  */
 - (void)viewWillAppear {
     [_cryptoUnits setTarget:self];
     [_cryptoUnits setAction:@selector(cryptoAction:)];
+}
+
+/**
+ * Informiere den Nutzer über die aktuell genutzte Börse
+ */
+- (void)pennyStocksOnExchange {
+    NSWindow *parentWindow = [[NSApplication sharedApplication] windows][0];
+    NSString *onExchangeText = [calculator.defaultExchange isEqualToString:EXCHANGE_BITTREX] ? @"Bittrex" : @"Poloniex";
+    parentWindow.title = [NSString stringWithFormat:@"PennyStocks on %@", onExchangeText];
 }
 
 /**
@@ -401,7 +418,7 @@ typedef struct DASHBOARD_VARS {
     self.rateInputCurrencyLabel.stringValue = fiatCurrencies[1];
 
     // Setze das selektierte Element des Taschenrechners auf Fiat Währung 1 = EUR
-    [self.exchangeSelection selectItemWithTitle:fiatCurrencies[0]];    
+    [self.exchangeSelection selectItemWithTitle:fiatCurrencies[0]];
 }
 
 /**
@@ -674,6 +691,10 @@ typedef struct DASHBOARD_VARS {
  * Übersicht mit richtigen Live-Werten
  */
 - (void)updateOverview {
+
+    // Dynamisches Setzen des Titels
+    [self pennyStocksOnExchange];
+
     // Aktualisiere die URL für den HOME-Button
     homeURL = [calculator saldoUrlForLabel:DASHBOARD];
 
@@ -802,6 +823,9 @@ typedef struct DASHBOARD_VARS {
  * @param label
  */
 - (void)updateTemplateView:(NSString *)label {
+
+    // Dynamisches Setzen des Titles
+    [self pennyStocksOnExchange];
 
     // Es sind mehrere Buttons, die so synchronisiert gehalten werden...
     self.automatedTradingButton.state = (calculator.automatedTrading) ? NSOnState : NSOffState;

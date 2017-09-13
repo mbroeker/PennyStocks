@@ -108,17 +108,17 @@
 
         if (saldoUrls == nil) {
             saldoUrls = [@{
-                DASHBOARD: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-LTC", ASSET1],
+                DASHBOARD : [NSString stringWithFormat:@"https://coinmarketcap.com/gainers-losers/"],
                 ASSET1_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET1.lowercaseString],
-                ASSET2_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET2.lowercaseString],
-                ASSET3_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET3.lowercaseString],
-                ASSET4_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET4.lowercaseString],
-                ASSET5_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET5.lowercaseString],
-                ASSET6_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET6.lowercaseString],
-                ASSET7_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET7.lowercaseString],
-                ASSET8_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET8.lowercaseString],
-                ASSET9_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET9.lowercaseString],
-                ASSET10_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET10.lowercaseString],
+                ASSET2_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET2],
+                ASSET3_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET3],
+                ASSET4_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET4],
+                ASSET5_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET5],
+                ASSET6_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET6],
+                ASSET7_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET7],
+                ASSET8_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET8],
+                ASSET9_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET9],
+                ASSET10_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET10],
             } mutableCopy];
 
             [defaults setObject:saldoUrls forKey:KEY_SALDO_URLS];
@@ -1167,6 +1167,14 @@
     [defaults synchronize];
 
     defaultExchange = exchange;
+}
+
+/**
+ * Getter für die DefaultExchange
+ * @return NSString*
+ */
+- (NSString*)defaultExchange {
+    return defaultExchange;
 }
 
 /**

@@ -60,6 +60,7 @@
 - (void)initialRatingsWithDictionary:(NSMutableDictionary*)dictionary;
 
 // Setzten der Standardbörse
+- (NSString*)defaultExchange;
 - (void)defaultExchange:(NSString*)exchange;
 
 // die aktuellen Fiat-Währungen

@@ -45,7 +45,7 @@
 #define ASSET7_DESC @"OmiseGO"
 #define ASSET8_DESC @"Monaco"
 #define ASSET9_DESC @"Golem"
-#define ASSET10_DESC @"Digibyte"
+#define ASSET10_DESC @"DigiByte"
 
 // FIAT CURRENCY KEYS
 #define EUR @"EUR"
