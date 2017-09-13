@@ -8,6 +8,7 @@
 
 #import "BittrexViewController.h"
 #import "Calculator.h"
+#import "KeychainWrapper.h"
 
 @implementation BittrexViewController
 
@@ -28,8 +29,10 @@
 - (void)updateView {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    NSDictionary *apiKey = [defaults objectForKey:@"BITTREX_KEY"];
-    NSString *secret = [defaults objectForKey:@"BITTREX_SEC"];
+    NSDictionary *keychain = [KeychainWrapper keychain2ApiKeyAndSecret:@"BITTREX"];
+
+    self.apikeyField.stringValue = (keychain[@"apiKey"] != nil) ? keychain[@"apiKey"][@"Key"] : @"";
+    self.secretField.stringValue = (keychain[@"secret"] != nil) ? keychain[@"secret"] : @"";
 
     NSString *defaultExchange = [defaults objectForKey:KEY_DEFAULT_EXCHANGE];
 
@@ -37,9 +40,6 @@
     if ([defaultExchange isEqualToString:@"BITTREX_EXCHANGE"]) {
         self.standardExchangeButton.state = NSOnState;
     }
-
-    self.apikeyField.stringValue = (apiKey != nil) ? apiKey[@"Key"] : @"";
-    self.secretField.stringValue = (secret != nil) ? secret : @"";
 
     self.legalNoticeLabel.stringValue = [NSString stringWithFormat:NSLocalizedString(@"legal_notice", @"legal_notice"), @"Bittrex"];
 }
@@ -53,28 +53,14 @@
 
 - (IBAction)saveAction:(id)sender {
 
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    NSMutableDictionary *apiKey = [[NSMutableDictionary alloc] init];
-    NSString *secret = self.secretField.stringValue;
-    apiKey[@"Key"] = self.apikeyField.stringValue;
-
-    [defaults setObject:apiKey forKey:@"BITTREX_KEY"];
-    [defaults setObject:secret forKey:@"BITTREX_SEC"];
-
-    [defaults synchronize];
+    NSString *combinedKey = [NSString stringWithFormat:@"%@:%@", self.apikeyField.stringValue, self.secretField.stringValue];
+    [KeychainWrapper createKeychainValue:combinedKey forIdentifier:@"BITTREX"];
 
     [self updateView];
 }
 
 - (IBAction)keyEraseAction:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    [defaults removeObjectForKey:@"BITTREX_KEY"];
-    [defaults removeObjectForKey:@"BITTREX_SEC"];
-
-    [defaults synchronize];
-
+    [KeychainWrapper deleteItemFromKeychainWithIdentifier:@"BITTREX"];
     [self updateView];
 }
 @end

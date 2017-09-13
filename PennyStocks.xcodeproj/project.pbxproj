@@ -11,11 +11,7 @@
 		B271E4D31F5E0C4800B14228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D21F5E0C4800B14228 /* Assets.xcassets */; };
 		B271E4D61F5E0C4800B14228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D41F5E0C4800B14228 /* Main.storyboard */; };
 		B271E52E1F5E0D0E00B14228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4DF1F5E0D0E00B14228 /* AppDelegate.m */; };
-		B271E5341F5E0D0E00B14228 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4ED1F5E0D0E00B14228 /* Calculator.m */; };
-		B271E5351F5E0D0E00B14228 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F01F5E0D0E00B14228 /* Helper.m */; };
-		B271E5361F5E0D0E00B14228 /* TabView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F21F5E0D0E00B14228 /* TabView.m */; };
 		B271E5371F5E0D0E00B14228 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F51F5E0D0E00B14228 /* TabViewController.m */; };
-		B271E5381F5E0D0E00B14228 /* TemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F71F5E0D0E00B14228 /* TemplateViewController.m */; };
 		B271E53F1F5E0D0E00B14228 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5091F5E0D0E00B14228 /* AddressViewController.m */; };
 		B271E5401F5E0D0E00B14228 /* ApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E50B1F5E0D0E00B14228 /* ApplicationsViewController.m */; };
 		B271E5421F5E0D0E00B14228 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271E50E1F5E0D0E00B14228 /* Preferences.storyboard */; };
@@ -23,14 +19,20 @@
 		B271E5441F5E0D0E00B14228 /* RatingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E51A1F5E0D0E00B14228 /* RatingsViewController.m */; };
 		B271E5451F5E0D0E00B14228 /* SaldoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E51D1F5E0D0E00B14228 /* SaldoViewController.m */; };
 		B271E54E1F5E0D7A00B14228 /* PennyStocks.help in Resources */ = {isa = PBXBuildFile; fileRef = B271E54D1F5E0D7A00B14228 /* PennyStocks.help */; };
-		B271E56A1F5E0F3A00B14228 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5611F5E0F3A00B14228 /* Calculator.m */; };
-		B271E56B1F5E0F3A00B14228 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5641F5E0F3A00B14228 /* Helper.m */; };
-		B271E56C1F5E0F3A00B14228 /* TabView.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5661F5E0F3A00B14228 /* TabView.m */; };
 		B271E56D1F5E0F3A00B14228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5671F5E0F3A00B14228 /* main.m */; };
 		B271E5741F5E1CC600B14228 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B271E5721F5E1CC600B14228 /* Localizable.strings */; };
 		B2824CF41F676DD800DC10F3 /* PennyStocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */; };
-		B2824CFA1F676E7D00DC10F3 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4ED1F5E0D0E00B14228 /* Calculator.m */; };
-		B2824CFB1F676E7D00DC10F3 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F01F5E0D0E00B14228 /* Helper.m */; };
+		B2F9FEBA1F6913A600BD668D /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEB21F6913A600BD668D /* Calculator.m */; };
+		B2F9FEBB1F6913A600BD668D /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEB51F6913A600BD668D /* Helper.m */; };
+		B2F9FECA1F6913C600BD668D /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEC51F6913C600BD668D /* KeychainWrapper.m */; };
+		B2F9FECB1F6913C600BD668D /* TabView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEC71F6913C600BD668D /* TabView.m */; };
+		B2F9FECC1F6917FA00BD668D /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEC51F6913C600BD668D /* KeychainWrapper.m */; };
+		B2F9FECD1F69183E00BD668D /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEC01F6913C600BD668D /* Calculator.m */; };
+		B2F9FECE1F69185900BD668D /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEC31F6913C600BD668D /* Helper.m */; };
+		B2F9FECF1F691A3000BD668D /* TemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F71F5E0D0E00B14228 /* TemplateViewController.m */; };
+		B2F9FED01F691DAC00BD668D /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEC51F6913C600BD668D /* KeychainWrapper.m */; };
+		B2F9FED11F691DBC00BD668D /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEC01F6913C600BD668D /* Calculator.m */; };
+		B2F9FED21F691DE400BD668D /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEC31F6913C600BD668D /* Helper.m */; };
 		B2FB85A51F688B8A00F37D30 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85971F688B8A00F37D30 /* Algorithm.m */; };
 		B2FB85A61F688B8A00F37D30 /* Brokerage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85991F688B8A00F37D30 /* Brokerage.m */; };
 		B2FB85A71F688B8A00F37D30 /* Brokerage+Bittrex.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB859C1F688B8A00F37D30 /* Brokerage+Bittrex.m */; };
@@ -84,13 +86,6 @@
 		B271E4DE1F5E0D0E00B14228 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B271E4DF1F5E0D0E00B14228 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B271E4E01F5E0D0E00B14228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B271E4EC1F5E0D0E00B14228 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
-		B271E4ED1F5E0D0E00B14228 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
-		B271E4EE1F5E0D0E00B14228 /* CalculatorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CalculatorConstants.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B271E4EF1F5E0D0E00B14228 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Helper.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B271E4F01F5E0D0E00B14228 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Helper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B271E4F11F5E0D0E00B14228 /* TabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabView.h; sourceTree = "<group>"; };
-		B271E4F21F5E0D0E00B14228 /* TabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabView.m; sourceTree = "<group>"; };
 		B271E4F41F5E0D0E00B14228 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		B271E4F51F5E0D0E00B14228 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		B271E4F61F5E0D0E00B14228 /* TemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateViewController.h; sourceTree = "<group>"; };
@@ -109,13 +104,6 @@
 		B271E54C1F5E0D3E00B14228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B271E54D1F5E0D7A00B14228 /* PennyStocks.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PennyStocks.help; sourceTree = "<group>"; };
 		B271E5531F5E0EA000B14228 /* PennyStocksTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PennyStocksTool; sourceTree = BUILT_PRODUCTS_DIR; };
-		B271E5601F5E0F3A00B14228 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
-		B271E5611F5E0F3A00B14228 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
-		B271E5621F5E0F3A00B14228 /* CalculatorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CalculatorConstants.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B271E5631F5E0F3A00B14228 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Helper.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B271E5641F5E0F3A00B14228 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Helper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B271E5651F5E0F3A00B14228 /* TabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabView.h; sourceTree = "<group>"; };
-		B271E5661F5E0F3A00B14228 /* TabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabView.m; sourceTree = "<group>"; };
 		B271E5671F5E0F3A00B14228 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PennyStocksTool/main.m; sourceTree = "<group>"; };
 		B271E5731F5E1CC600B14228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
 		B271E5751F5E1CCD00B14228 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; lineEnding = 0; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
@@ -151,6 +139,24 @@
 		B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennyStocksTests.m; sourceTree = "<group>"; };
 		B2824CF51F676DD800DC10F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PennyStocks.entitlements; sourceTree = "<group>"; };
+		B2F9FEB11F6913A600BD668D /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
+		B2F9FEB21F6913A600BD668D /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
+		B2F9FEB31F6913A600BD668D /* CalculatorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorConstants.h; sourceTree = "<group>"; };
+		B2F9FEB41F6913A600BD668D /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		B2F9FEB51F6913A600BD668D /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		B2F9FEB61F6913A600BD668D /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		B2F9FEB71F6913A600BD668D /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		B2F9FEB81F6913A600BD668D /* TabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabView.h; sourceTree = "<group>"; };
+		B2F9FEB91F6913A600BD668D /* TabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabView.m; sourceTree = "<group>"; };
+		B2F9FEBF1F6913C600BD668D /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
+		B2F9FEC01F6913C600BD668D /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
+		B2F9FEC11F6913C600BD668D /* CalculatorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorConstants.h; sourceTree = "<group>"; };
+		B2F9FEC21F6913C600BD668D /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		B2F9FEC31F6913C600BD668D /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		B2F9FEC41F6913C600BD668D /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		B2F9FEC51F6913C600BD668D /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		B2F9FEC61F6913C600BD668D /* TabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabView.h; sourceTree = "<group>"; };
+		B2F9FEC71F6913C600BD668D /* TabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabView.m; sourceTree = "<group>"; };
 		B2FB85961F688B8A00F37D30 /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
 		B2FB85971F688B8A00F37D30 /* Algorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
 		B2FB85981F688B8A00F37D30 /* Brokerage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brokerage.h; sourceTree = "<group>"; };
@@ -230,11 +236,11 @@
 		B271E4C81F5E0C4800B14228 /* PennyStocks */ = {
 			isa = PBXGroup;
 			children = (
+				B2F9FEB01F6913A600BD668D /* Common */,
 				B2FB85AC1F688BBA00F37D30 /* Brokerage */,
 				B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */,
 				B271E4DD1F5E0D0E00B14228 /* AppDelegate */,
 				B271E4E01F5E0D0E00B14228 /* Assets.xcassets */,
-				B271E4EB1F5E0D0E00B14228 /* Common */,
 				B271E4F31F5E0D0E00B14228 /* Dashboard */,
 				B271E5071F5E0D0E00B14228 /* Preferences */,
 				B271E4D21F5E0C4800B14228 /* Assets.xcassets */,
@@ -261,20 +267,6 @@
 				B271E4DF1F5E0D0E00B14228 /* AppDelegate.m */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		B271E4EB1F5E0D0E00B14228 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				B271E4EC1F5E0D0E00B14228 /* Calculator.h */,
-				B271E4ED1F5E0D0E00B14228 /* Calculator.m */,
-				B271E4EE1F5E0D0E00B14228 /* CalculatorConstants.h */,
-				B271E4EF1F5E0D0E00B14228 /* Helper.h */,
-				B271E4F01F5E0D0E00B14228 /* Helper.m */,
-				B271E4F11F5E0D0E00B14228 /* TabView.h */,
-				B271E4F21F5E0D0E00B14228 /* TabView.m */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		B271E4F31F5E0D0E00B14228 /* Dashboard */ = {
@@ -306,26 +298,11 @@
 			path = Preferences;
 			sourceTree = "<group>";
 		};
-		B271E55F1F5E0F3A00B14228 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				B271E5601F5E0F3A00B14228 /* Calculator.h */,
-				B271E5611F5E0F3A00B14228 /* Calculator.m */,
-				B271E5621F5E0F3A00B14228 /* CalculatorConstants.h */,
-				B271E5631F5E0F3A00B14228 /* Helper.h */,
-				B271E5641F5E0F3A00B14228 /* Helper.m */,
-				B271E5651F5E0F3A00B14228 /* TabView.h */,
-				B271E5661F5E0F3A00B14228 /* TabView.m */,
-			);
-			name = Common;
-			path = PennyStocks/Common;
-			sourceTree = "<group>";
-		};
 		B271E56E1F5E0F6400B14228 /* PennyStocksTool */ = {
 			isa = PBXGroup;
 			children = (
+				B2F9FEBE1F6913C600BD668D /* Common */,
 				B2FB85951F688B8A00F37D30 /* Brokerage */,
-				B271E55F1F5E0F3A00B14228 /* Common */,
 				B271E5671F5E0F3A00B14228 /* main.m */,
 			);
 			name = PennyStocksTool;
@@ -338,6 +315,39 @@
 				B2824CF51F676DD800DC10F3 /* Info.plist */,
 			);
 			path = PennyStocksTests;
+			sourceTree = "<group>";
+		};
+		B2F9FEB01F6913A600BD668D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B2F9FEB11F6913A600BD668D /* Calculator.h */,
+				B2F9FEB21F6913A600BD668D /* Calculator.m */,
+				B2F9FEB31F6913A600BD668D /* CalculatorConstants.h */,
+				B2F9FEB41F6913A600BD668D /* Helper.h */,
+				B2F9FEB51F6913A600BD668D /* Helper.m */,
+				B2F9FEB61F6913A600BD668D /* KeychainWrapper.h */,
+				B2F9FEB71F6913A600BD668D /* KeychainWrapper.m */,
+				B2F9FEB81F6913A600BD668D /* TabView.h */,
+				B2F9FEB91F6913A600BD668D /* TabView.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B2F9FEBE1F6913C600BD668D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B2F9FEBF1F6913C600BD668D /* Calculator.h */,
+				B2F9FEC01F6913C600BD668D /* Calculator.m */,
+				B2F9FEC11F6913C600BD668D /* CalculatorConstants.h */,
+				B2F9FEC21F6913C600BD668D /* Helper.h */,
+				B2F9FEC31F6913C600BD668D /* Helper.m */,
+				B2F9FEC41F6913C600BD668D /* KeychainWrapper.h */,
+				B2F9FEC51F6913C600BD668D /* KeychainWrapper.m */,
+				B2F9FEC61F6913C600BD668D /* TabView.h */,
+				B2F9FEC71F6913C600BD668D /* TabView.m */,
+			);
+			name = Common;
+			path = PennyStocks/Common;
 			sourceTree = "<group>";
 		};
 		B2FB85951F688B8A00F37D30 /* Brokerage */ = {
@@ -536,24 +546,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B271E5361F5E0D0E00B14228 /* TabView.m in Sources */,
+				B2F9FECF1F691A3000BD668D /* TemplateViewController.m in Sources */,
 				B271E5451F5E0D0E00B14228 /* SaldoViewController.m in Sources */,
-				B271E5351F5E0D0E00B14228 /* Helper.m in Sources */,
 				B271E5431F5E0D0E00B14228 /* BittrexViewController.m in Sources */,
 				B2FB85C21F688BBA00F37D30 /* Brokerage+Poloniex.m in Sources */,
 				B2FB85C01F688BBA00F37D30 /* Brokerage+External.m in Sources */,
 				B271E52E1F5E0D0E00B14228 /* AppDelegate.m in Sources */,
+				B2F9FECB1F6913C600BD668D /* TabView.m in Sources */,
 				B271E5371F5E0D0E00B14228 /* TabViewController.m in Sources */,
 				B2FB85BC1F688BBA00F37D30 /* Algorithm.m in Sources */,
+				B2F9FEBB1F6913A600BD668D /* Helper.m in Sources */,
 				B271E4CE1F5E0C4800B14228 /* main.m in Sources */,
 				B2FB85BD1F688BBA00F37D30 /* Brokerage.m in Sources */,
+				B2F9FEBA1F6913A600BD668D /* Calculator.m in Sources */,
 				B2FB85C11F688BBA00F37D30 /* Brokerage+JSON.m in Sources */,
+				B2F9FECA1F6913C600BD668D /* KeychainWrapper.m in Sources */,
 				B271E5441F5E0D0E00B14228 /* RatingsViewController.m in Sources */,
 				B271E53F1F5E0D0E00B14228 /* AddressViewController.m in Sources */,
 				B2FB85BF1F688BBA00F37D30 /* Brokerage+Crypto.m in Sources */,
 				B2FB85BE1F688BBA00F37D30 /* Brokerage+Bittrex.m in Sources */,
-				B271E5341F5E0D0E00B14228 /* Calculator.m in Sources */,
-				B271E5381F5E0D0E00B14228 /* TemplateViewController.m in Sources */,
 				B271E5401F5E0D0E00B14228 /* ApplicationsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,17 +573,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F9FECE1F69185900BD668D /* Helper.m in Sources */,
+				B2F9FECD1F69183E00BD668D /* Calculator.m in Sources */,
+				B2F9FECC1F6917FA00BD668D /* KeychainWrapper.m in Sources */,
 				B2FB85AA1F688B8A00F37D30 /* Brokerage+JSON.m in Sources */,
-				B271E56A1F5E0F3A00B14228 /* Calculator.m in Sources */,
 				B2FB85A61F688B8A00F37D30 /* Brokerage.m in Sources */,
 				B2FB85A81F688B8A00F37D30 /* Brokerage+Crypto.m in Sources */,
 				B2FB85A51F688B8A00F37D30 /* Algorithm.m in Sources */,
-				B271E56C1F5E0F3A00B14228 /* TabView.m in Sources */,
 				B2FB85A91F688B8A00F37D30 /* Brokerage+External.m in Sources */,
 				B2FB85A71F688B8A00F37D30 /* Brokerage+Bittrex.m in Sources */,
 				B271E56D1F5E0F3A00B14228 /* main.m in Sources */,
 				B2FB85AB1F688B8A00F37D30 /* Brokerage+Poloniex.m in Sources */,
-				B271E56B1F5E0F3A00B14228 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,14 +591,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F9FED21F691DE400BD668D /* Helper.m in Sources */,
+				B2F9FED11F691DBC00BD668D /* Calculator.m in Sources */,
+				B2F9FED01F691DAC00BD668D /* KeychainWrapper.m in Sources */,
 				B2FB85E51F68936000F37D30 /* Brokerage+Bittrex.m in Sources */,
 				B2FB85E61F68936000F37D30 /* Brokerage+Crypto.m in Sources */,
 				B2FB85E71F68936000F37D30 /* Brokerage+External.m in Sources */,
 				B2FB85E81F68936000F37D30 /* Brokerage+JSON.m in Sources */,
 				B2FB85E91F68936000F37D30 /* Brokerage+Poloniex.m in Sources */,
 				B2FB85E41F6892FA00F37D30 /* Brokerage.m in Sources */,
-				B2824CFA1F676E7D00DC10F3 /* Calculator.m in Sources */,
-				B2824CFB1F676E7D00DC10F3 /* Helper.m in Sources */,
 				B2824CF41F676DD800DC10F3 /* PennyStocksTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
