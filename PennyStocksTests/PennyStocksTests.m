@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "../PennyStocks/Common/Calculator.h"
+#import "../PennyStocks/Common/KeychainWrapper.h"
 
 @interface PennyStocksTests : XCTestCase
     @property Calculator *calculator;
@@ -23,6 +24,8 @@
 
 - (void)tearDown {
     [super tearDown];
+
+    [Calculator reset];
 }
 
 /**
@@ -59,6 +62,31 @@
 
         XCTAssertNotNil(result[key], @"Key %@ is missing", key);
     }
+}
+
+/**
+ * Check Keychain Management
+ *
+ */
+- (void)testKeychain {
+    // Create a TEST API-KEY AND CHECK the presence
+    [KeychainWrapper createKeychainValue:@"key:secret" forIdentifier:@"TEST"];
+    NSDictionary *test = [KeychainWrapper keychain2ApiKeyAndSecret:@"TEST"];
+    XCTAssertNotNil(test, @"INVALID API-KEY");
+
+    // Delete the Test API-KEY AND CHECK the removal
+    [KeychainWrapper deleteItemFromKeychainWithIdentifier:@"TEST"];
+    test = [KeychainWrapper keychain2ApiKeyAndSecret:@"TEST"];
+    XCTAssertNil(test, @"API-KEY WAS NOT DELETED");
+}
+
+/**
+ * Check Balances and Number of ASSETS
+ */
+- (void)testCurrentBalance {
+    [self.calculator updateBalances:true];
+
+    XCTAssert([[self.calculator currentSaldo] count] == 10, @"NUMBER OF ASSETS != 10");
 }
 
 @end
