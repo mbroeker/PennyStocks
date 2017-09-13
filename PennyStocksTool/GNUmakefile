@@ -13,18 +13,20 @@ PennyStocksTool_HEADERS = \
 	Brokerage+External.h \
 	Brokerage+JSON.h \
 	Brokerage+Poloniex.h \
-	Calculator.h
+	Calculator.h \
+	KeychainWrapper.h
 
 PennyStocksTool_OBJC_FILES = \
 	main.m \
+	Common/Calculator.m \
 	Common/Helper.m \
+	Common/KeychainWrapper.m \
 	Brokerage/Brokerage.m \
 	Brokerage/Categories/Brokerage+Bittrex.m \
 	Brokerage/Categories/Brokerage+External.m \
 	Brokerage/Categories/Brokerage+Crypto.m \
-	Brokerage/Categories/Brokerage+JSON.m \
 	Brokerage/Categories/Brokerage+Poloniex.m \
-	Common/Calculator.m
+	Brokerage/Categories/Brokerage+JSON.m
 
 PennyStocksTool_RESOURCES_FILES =
 
