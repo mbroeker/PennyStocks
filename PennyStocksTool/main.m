@@ -61,9 +61,9 @@ const char *makeHeadlineString(NSDictionary *checkpoint, NSString *asset) {
  * @param btcPercent
  * @return
  */
-const char *makeString(NSDictionary *checkpoint, NSString *asset, NSDictionary *currentRatings, double btcPercent) {
+const char *makeString(NSDictionary *checkpoint, NSString *asset, NSDictionary *currentRatings, double asset1Percent) {
     double effectivePercent = [checkpoint[CP_PERCENT] doubleValue];
-    if (![asset isEqualToString:ASSET1]) effectivePercent -= btcPercent;
+    if (![asset isEqualToString:ASSET1]) effectivePercent -= asset1Percent;
 
     double currentPrice = [checkpoint[CP_CURRENT_PRICE] doubleValue];
     double currentPriceInBTC = [currentRatings[ASSET1] doubleValue] / [currentRatings[asset] doubleValue];
@@ -92,30 +92,30 @@ void brokerRun(CONFIG config) {
     for (;;) {
         NSDictionary *currentRatings = [calculator currentRatings];
 
-        NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET1];
-        NSDictionary *zecCheckpoint = [calculator checkpointForAsset:ASSET2];
-        NSDictionary *ethCheckpoint = [calculator checkpointForAsset:ASSET3];
-        NSDictionary *xmrCheckpoint = [calculator checkpointForAsset:ASSET4];
-        NSDictionary *ltcCheckpoint = [calculator checkpointForAsset:ASSET5];
+        NSDictionary *asset1Checkpoint = [calculator checkpointForAsset:ASSET1];
+        NSDictionary *asset2Checkpoint = [calculator checkpointForAsset:ASSET2];
+        NSDictionary *asset3Checkpoint = [calculator checkpointForAsset:ASSET3];
+        NSDictionary *asset4Checkpoint = [calculator checkpointForAsset:ASSET4];
+        NSDictionary *asset5Checkpoint = [calculator checkpointForAsset:ASSET5];
 
-        double btcPercent = [btcCheckpoint[CP_PERCENT] doubleValue];
+        double asset1Percent = [asset1Checkpoint[CP_PERCENT] doubleValue];
 
         if ((counter++ % config.rows) == 0) {
             printf("%%: %-43s | %-43s | %-43s | %-43s | %-43s\n",
-                makeHeadlineString(btcCheckpoint, ASSET1),
-                makeHeadlineString(zecCheckpoint, ASSET2),
-                makeHeadlineString(ethCheckpoint, ASSET3),
-                makeHeadlineString(xmrCheckpoint, ASSET4),
-                makeHeadlineString(ltcCheckpoint, ASSET5)
+                makeHeadlineString(asset1Checkpoint, ASSET1),
+                makeHeadlineString(asset2Checkpoint, ASSET2),
+                makeHeadlineString(asset3Checkpoint, ASSET3),
+                makeHeadlineString(asset4Checkpoint, ASSET4),
+                makeHeadlineString(asset5Checkpoint, ASSET5)
             );
         }
 
         printf("%%: %-43s | %-43s | %-43s | %-43s | %-43s\n",
-            makeString(btcCheckpoint, ASSET1, currentRatings, btcPercent),
-            makeString(zecCheckpoint, ASSET2, currentRatings, btcPercent),
-            makeString(ethCheckpoint, ASSET3, currentRatings, btcPercent),
-            makeString(xmrCheckpoint, ASSET4, currentRatings, btcPercent),
-            makeString(ltcCheckpoint, ASSET5, currentRatings, btcPercent)
+            makeString(asset1Checkpoint, ASSET1, currentRatings, asset1Percent),
+            makeString(asset2Checkpoint, ASSET2, currentRatings, asset1Percent),
+            makeString(asset3Checkpoint, ASSET3, currentRatings, asset1Percent),
+            makeString(asset4Checkpoint, ASSET4, currentRatings, asset1Percent),
+            makeString(asset5Checkpoint, ASSET5, currentRatings, asset1Percent)
         );
 
         [calculator updateRatings:false];
