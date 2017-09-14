@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Security/Security.h>
-#import <CommonCrypto/CommonDigest.h>
 
 @interface KeychainWrapper : NSObject
 
