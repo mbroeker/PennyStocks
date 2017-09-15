@@ -1079,48 +1079,6 @@ typedef struct DASHBOARD_VARS {
 }
 
 /**
- * Action Handler für das Anzeigen des umgerechneten Bestands
- *
- * @param sender
- */
-- (IBAction)currencyAction:(id)sender {
-
-    // Aktualisierte Ratings besorgen
-    NSMutableDictionary *currentRatings = [calculator currentRatings];
-    NSString *text;
-
-    NSArray *data = @[
-        @([calculator calculateWithRatings:currentRatings currency:ASSET1]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET2]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET3]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET4]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET5]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET6]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET7]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET8]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET9]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET10]),
-        @([calculator calculateWithRatings:currentRatings currency:fiatCurrencies[1]])
-    ];
-
-    text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@ %@\n%@ %@\n%@ %@\n%@ %@\n%@ %@\n%@ %@\n%@ %@\n%@ %@\n%@ %@",
-          [Helper double2German:[data[0] doubleValue] min:4 max:8], ASSET1,
-          [Helper double2German:[data[1] doubleValue] min:4 max:8], ASSET2,
-          [Helper double2German:[data[2] doubleValue] min:4 max:8], ASSET3,
-          [Helper double2German:[data[3] doubleValue] min:4 max:8], ASSET4,
-          [Helper double2German:[data[4] doubleValue] min:4 max:8], ASSET5,
-          [Helper double2German:[data[5] doubleValue] min:4 max:8], ASSET6,
-          [Helper double2German:[data[6] doubleValue] min:4 max:8], ASSET7,
-          [Helper double2German:[data[7] doubleValue] min:4 max:8], ASSET8,
-          [Helper double2German:[data[8] doubleValue] min:4 max:8], ASSET9,
-          [Helper double2German:[data[9] doubleValue] min:4 max:8], ASSET10,
-          [Helper double2German:[data[10] doubleValue] min:4 max:8], fiatCurrencies[1]
-    ];
-
-    [Helper messageText:NSLocalizedString(@"total_saldo", @"Gesamtbestand umgerechnet:") info:text];
-}
-
-/**
  * Aktualisieren des eingegeben Bestands per Klick
  *
  * @param sender

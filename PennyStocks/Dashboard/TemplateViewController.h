@@ -112,7 +112,6 @@
 - (IBAction)infoAction:(id)sender;
 
 // Währungssymbole
-- (IBAction)currencyAction:(id)sender;
 - (IBAction)cryptoAction:(id)sender;
 
 // RateExchange
