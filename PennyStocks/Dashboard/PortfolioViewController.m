@@ -11,10 +11,6 @@
 #import "CalculatorConstants.h"
 #import "Helper.h"
 
-@interface PortfolioViewController ()
-
-@end
-
 @implementation PortfolioViewController
 
 - (void)viewDidAppear {
