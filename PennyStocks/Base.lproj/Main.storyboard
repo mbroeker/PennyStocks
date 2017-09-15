@@ -260,14 +260,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="582" height="693"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box boxType="custom" borderType="none" translatesAutoresizingMaskIntoConstraints="NO" id="nRC-EN-5PG">
+                            <box boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="nRC-EN-5PG">
                                 <rect key="frame" x="515" y="622" width="58" height="60"/>
                                 <view key="contentView" id="nEU-gY-36u">
-                                    <rect key="frame" x="0.0" y="0.0" width="58" height="60"/>
+                                    <rect key="frame" x="1" y="1" width="56" height="58"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="udk-PX-mB2">
-                                            <rect key="frame" x="7" y="10" width="42" height="42"/>
+                                            <rect key="frame" x="7" y="8" width="42" height="42"/>
                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ETH" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Ofk-gL-n6g">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -279,8 +279,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="udk-PX-mB2" firstAttribute="leading" secondItem="nEU-gY-36u" secondAttribute="leading" constant="7" id="JCP-4p-NP9"/>
-                                        <constraint firstAttribute="trailing" secondItem="udk-PX-mB2" secondAttribute="trailing" constant="9" id="OZs-q3-drR"/>
-                                        <constraint firstAttribute="bottom" secondItem="udk-PX-mB2" secondAttribute="bottom" constant="10" id="gvI-Zn-U4J"/>
+                                        <constraint firstAttribute="trailing" secondItem="udk-PX-mB2" secondAttribute="trailing" constant="7" id="OZs-q3-drR"/>
+                                        <constraint firstAttribute="bottom" secondItem="udk-PX-mB2" secondAttribute="bottom" constant="8" id="gvI-Zn-U4J"/>
                                         <constraint firstItem="udk-PX-mB2" firstAttribute="top" secondItem="nEU-gY-36u" secondAttribute="top" constant="8" id="lz4-Ig-l4P"/>
                                     </constraints>
                                 </view>
