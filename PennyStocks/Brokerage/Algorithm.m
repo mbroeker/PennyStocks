@@ -64,7 +64,9 @@
         result[i] = [[NSMutableArray alloc] init];
 
         for (int j = 0; j < equations + 1; j++) {
-            result[i][j] = @(matrix[i][j]);
+            // Runde das Ergebnis auf 4 Nachkommastellen
+            double nearest = round(1000.0 * matrix[i][j]) / 1000.0;
+            result[i][j] = @(nearest);
         }
     }
     

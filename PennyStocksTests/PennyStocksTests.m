@@ -10,6 +10,7 @@
 #import "../PennyStocks/Common/Calculator.h"
 #import "../PennyStocks/Common/KeychainWrapper.h"
 #import "../PennyStocks/Brokerage/Categories/Brokerage+JSON.h"
+#import "../PennyStocks/Brokerage/Algorithm.h"
 
 @interface PennyStocksTests : XCTestCase
     @property Calculator *calculator;
@@ -37,13 +38,13 @@
     NSDictionary *result = [Brokerage poloniexTicker:@[EUR, USD]];
     NSArray *tickerKeys = [self.calculator.tickerKeys allValues];
 
-    NSLog(@"Testing all Ticker Keys on Poloniex");
+    NSLog(@"TESTING ALL KEYS ON POLONIEX");
     for (id key in tickerKeys) {
         if ([key isEqualToString:[NSString stringWithFormat:@"%@_%@", ASSET1, EUR]]) {
             continue;
         }
 
-        XCTAssertNotNil(result[key], @"Key %@ is missing", key);
+        XCTAssertNotNil(result[key], @"MISSING %@", key);
     }
 }
 
@@ -55,13 +56,13 @@
     NSDictionary *result = [Brokerage bittrexTicker:@[EUR, USD] forAssets:[self.calculator.tickerKeys allKeys]];
     NSArray *tickerKeys = [self.calculator.tickerKeys allValues];
 
-    NSLog(@"Testing all Ticker Keys on Bittrex");
+    NSLog(@"TESTING ALL KEYS ON BITTREX");
     for (id key in tickerKeys) {
         if ([key isEqualToString:[NSString stringWithFormat:@"%@_%@", ASSET1, EUR]]) {
             continue;
         }
 
-        XCTAssertNotNil(result[key], @"Key %@ is missing", key);
+        XCTAssertNotNil(result[key], @"MISSING %@", key);
     }
 }
 
@@ -90,6 +91,9 @@
     XCTAssert([[self.calculator currentSaldo] count] == 10, @"NUMBER OF ASSETS != 10");
 }
 
+/**
+ * Check test calls to quandl
+ */
 - (void)testQuandlDatabase {
     NSString *key = [KeychainWrapper keychainStringFromMatchingIdentifier:@"QUANDL"];
 
@@ -119,7 +123,26 @@
         historicalData[value[0]] = row;
     }
 
-    NSLog(@"Result: %@", historicalData);
+    NSLog(@"RESULT: %@", historicalData);
+}
+
+/**
+ * Check GAUSS Algorithm
+ */
+- (void)testGaussAlgorithm {
+    NSArray *equation = @[
+        @[@(2), @(3), @(27)],
+        @[@(3), @(2), @(28)],
+    ];
+
+    NSArray *result = [Algorithm gaussAlgorithm:equation];
+
+    NSArray *solution = @[
+        @[@(1), @(0), @(6)],
+        @[@(0), @(1), @(5)],
+    ];
+
+    XCTAssert([result isEqualToArray:solution], @"COMPUTED SOLUTION DIFFERS: %@", result);
 }
 
 @end

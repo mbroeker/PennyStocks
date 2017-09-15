@@ -23,6 +23,7 @@
 		B271E5741F5E1CC600B14228 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B271E5721F5E1CC600B14228 /* Localizable.strings */; };
 		B2824CF41F676DD800DC10F3 /* PennyStocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */; };
 		B2DD501E1F6B261B00230B21 /* PortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD501D1F6B261B00230B21 /* PortfolioViewController.m */; };
+		B2E076CB1F6B794A0050A42C /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85971F688B8A00F37D30 /* Algorithm.m */; };
 		B2F9FEBA1F6913A600BD668D /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEB21F6913A600BD668D /* Calculator.m */; };
 		B2F9FEBB1F6913A600BD668D /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEB51F6913A600BD668D /* Helper.m */; };
 		B2F9FECA1F6913C600BD668D /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9FEC51F6913C600BD668D /* KeychainWrapper.m */; };
@@ -597,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E076CB1F6B794A0050A42C /* Algorithm.m in Sources */,
 				B2F9FED21F691DE400BD668D /* Helper.m in Sources */,
 				B2F9FED11F691DBC00BD668D /* Calculator.m in Sources */,
 				B2F9FED01F691DAC00BD668D /* KeychainWrapper.m in Sources */,
