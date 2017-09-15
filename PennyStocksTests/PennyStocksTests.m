@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "../PennyStocks/Common/Calculator.h"
 #import "../PennyStocks/Common/KeychainWrapper.h"
+#import "../PennyStocks/Brokerage/Categories/Brokerage+JSON.h"
 
 @interface PennyStocksTests : XCTestCase
     @property Calculator *calculator;
@@ -87,6 +88,38 @@
     [self.calculator updateBalances:true];
 
     XCTAssert([[self.calculator currentSaldo] count] == 10, @"NUMBER OF ASSETS != 10");
+}
+
+- (void)testQuandlDatabase {
+    NSString *key = [KeychainWrapper keychainStringFromMatchingIdentifier:@"QUANDL"];
+
+    if (key == nil) {
+        NSLog(@"YOU NEED A VALID API KEY ON QUANDL FOR THIS TEST");
+        return;
+    }
+
+    NSString *baseAsset = ASSET1;
+    NSString *asset = ASSET6;
+
+    NSString *queryUrl = [NSString stringWithFormat:@"https://www.quandl.com/api/v3/datasets/BTER/%@%@.json?api_key=%@", asset, baseAsset, key];
+
+    NSDictionary *response = [Brokerage jsonRequest:queryUrl];
+    NSDictionary *dataset = response[@"dataset"];
+    NSArray *data = dataset[@"data"];
+
+    NSMutableDictionary *historicalData = [[NSMutableDictionary alloc] init];
+
+    for (id value in data) {
+        NSDictionary *row = @{
+            @"high": value[1],
+            @"low": value[2],
+            @"last": value[3],
+        };
+
+        historicalData[value[0]] = row;
+    }
+
+    NSLog(@"Result: %@", historicalData);
 }
 
 @end
