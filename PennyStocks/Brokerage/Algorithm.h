@@ -11,4 +11,5 @@
 @interface Algorithm : NSObject
 + (NSArray*)gaussAlgorithm:(NSArray*)matrix;
 + (void)gaussAlgorithm:(double**)A withEquations:(int)equations;
++ (double)nearest:(double)value withAccuracy:(double)accuracy;
 @end

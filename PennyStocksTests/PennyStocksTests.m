@@ -145,4 +145,16 @@
     XCTAssert([result isEqualToArray:solution], @"COMPUTED SOLUTION DIFFERS: %@", result);
 }
 
+/**
+ * Check Nearest Rounding Method
+ */
+- (void)testNearest {
+    double value = 0.12345678;
+
+    NSLog(@"ROUNDING %.8f INTERNALY TO %.4f", value, value);
+
+    double nearest = [Algorithm nearest:value withAccuracy:4];
+    XCTAssert(nearest == 0.1235, @"Assumpion failed %f", nearest);
+}
+
 @end

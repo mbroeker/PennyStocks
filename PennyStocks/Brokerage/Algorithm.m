@@ -65,8 +65,7 @@
 
         for (int j = 0; j < equations + 1; j++) {
             // Runde das Ergebnis auf 4 Nachkommastellen
-            double nearest = round(1000.0 * matrix[i][j]) / 1000.0;
-            result[i][j] = @(nearest);
+            result[i][j] = @([Algorithm nearest:matrix[i][j] withAccuracy:4]);
         }
     }
     
@@ -164,6 +163,17 @@
      */
     A[0][0] /= h;
     A[0][MAXX - 1] /= h;
+}
+
+/**
+ * Rounding Method for nearest and cleanest result
+ *
+ * @param value
+ * @param accuracy
+ * @return double
+ */
++ (double)nearest:(double)value withAccuracy:(double)accuracy {
+    return round(pow(10, accuracy) * value) / pow(10, accuracy);
 }
 
 @end
