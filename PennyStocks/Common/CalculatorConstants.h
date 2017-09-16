@@ -84,4 +84,6 @@
 #define TV_TICKER_PLACEHOLDER @"---"
 #define OPTIONS_MENUBAR @"menubar"
 
+#define COINCHANGE_PERCENTAGE @"coinchangePercentage"
+
 #endif /* CalculatorConstants_h */

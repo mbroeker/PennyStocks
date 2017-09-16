@@ -59,6 +59,8 @@ typedef struct DASHBOARD_VARS {
     // Low / High
     NSColor *defaultLowestColor;
     NSColor *defaultHighestColor;
+
+    double coinchangePercentage;
 }
 
 /**
@@ -78,11 +80,11 @@ typedef struct DASHBOARD_VARS {
     if (withTrading) {
         if (calculator.automatedTrading) {
 
-            // Gewinn: Automatisches Verkaufen von Assets mit einer Exchange-Rate von CHECKPOINT_PERCENTAGE oder mehr
-            [calculator sellWithProfitInPercent:CHECKPOINT_PERCENTAGE];
+            // Gewinn: Automatisches Verkaufen von Assets mit einer Exchange-Rate von coinchangePercentage oder mehr
+            [calculator sellWithProfitInPercent:coinchangePercentage];
 
-            // Gewinn: Automatisches Kaufen von Assets mit einer Exchange-Rate von CHECKPOINT_PERCENTAGE oder mehr
-            [calculator buyWithProfitInPercent:CHECKPOINT_PERCENTAGE andInvestmentRate:-3.5];
+            // Gewinn: Automatisches Kaufen von Assets mit einer Exchange-Rate von coinchangePercentage oder mehr
+            [calculator buyWithProfitInPercent:coinchangePercentage andInvestmentRate:-3.5];
 
         }
     }
@@ -258,6 +260,15 @@ typedef struct DASHBOARD_VARS {
 
     // deaktiviere das Instant Trading
     self.instantTrading.enabled = false;
+
+    NSNumber *ccp = [defaults objectForKey:COINCHANGE_PERCENTAGE];
+
+    if (ccp == nil) {
+        ccp = [NSNumber numberWithDouble:3.0];
+        [defaults setObject:ccp forKey:COINCHANGE_PERCENTAGE];
+    }
+
+    coinchangePercentage = [ccp doubleValue];
 }
 
 /**
