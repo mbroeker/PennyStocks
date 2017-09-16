@@ -70,17 +70,18 @@
         @([calculator calculateWithRatings:currentRatings currency:ASSET10]),
     ];
 
-    self.asset1Field.stringValue = [Helper double2German:[data[0] doubleValue] min:8 max:8];
-    self.asset2Field.stringValue = [Helper double2German:[data[1] doubleValue] min:8 max:8];
-    self.asset3Field.stringValue = [Helper double2German:[data[2] doubleValue] min:8 max:8];
-    self.asset4Field.stringValue = [Helper double2German:[data[3] doubleValue] min:8 max:8];
-    self.asset5Field.stringValue = [Helper double2German:[data[4] doubleValue] min:8 max:8];
+    // Auf 4 Stellen runden, da die Ergegbnisse nicht genauer sein können.
+    self.asset1Field.stringValue = [Helper double2German:[data[0] doubleValue] min:4 max:4];
+    self.asset2Field.stringValue = [Helper double2German:[data[1] doubleValue] min:4 max:4];
+    self.asset3Field.stringValue = [Helper double2German:[data[2] doubleValue] min:4 max:4];
+    self.asset4Field.stringValue = [Helper double2German:[data[3] doubleValue] min:4 max:4];
+    self.asset5Field.stringValue = [Helper double2German:[data[4] doubleValue] min:4 max:4];
 
-    self.asset6Field.stringValue = [Helper double2German:[data[5] doubleValue] min:8 max:8];
-    self.asset7Field.stringValue = [Helper double2German:[data[6] doubleValue] min:8 max:8];
-    self.asset8Field.stringValue = [Helper double2German:[data[7] doubleValue] min:8 max:8];
-    self.asset9Field.stringValue = [Helper double2German:[data[8] doubleValue] min:8 max:8];
-    self.asset10Field.stringValue = [Helper double2German:[data[9] doubleValue] min:8 max:8];
+    self.asset6Field.stringValue = [Helper double2German:[data[5] doubleValue] min:4 max:4];
+    self.asset7Field.stringValue = [Helper double2German:[data[6] doubleValue] min:4 max:4];
+    self.asset8Field.stringValue = [Helper double2German:[data[7] doubleValue] min:4 max:4];
+    self.asset9Field.stringValue = [Helper double2German:[data[8] doubleValue] min:4 max:4];
+    self.asset10Field.stringValue = [Helper double2German:[data[9] doubleValue] min:4 max:4];
 }
 
 - (IBAction)asset1ClickedAction:(id)sender {
