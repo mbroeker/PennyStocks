@@ -11,7 +11,11 @@
 #import "CalculatorConstants.h"
 #import "Helper.h"
 
-@implementation PortfolioViewController
+@implementation PortfolioViewController {
+@private
+    NSArray *fields;
+    NSArray *initialValues;
+}
 
 - (void)viewDidAppear {
     self.view.window.backgroundColor = [NSColor colorWithCalibratedRed:1.0f/255.0f green:40.0f/255.0f blue:40.0f/255.0f alpha:1.0f];
@@ -47,44 +51,86 @@
 
     self.title = NSLocalizedString(@"total_saldo", @"Gesamtbestand umgerechnet");
 
-    [self updatePortfolioView];
+    fields = @[
+        self.asset1Field,
+        self.asset2Field,
+        self.asset3Field,
+        self.asset4Field,
+        self.asset5Field,
+        self.asset6Field,
+        self.asset7Field,
+        self.asset8Field,
+        self.asset9Field,
+        self.asset10Field,
+    ];
+
+    dispatch_queue_t queue = dispatch_queue_create("de.4customers.PennyStocks.updatePortfolioViewer", NULL);
+    dispatch_async(queue, ^{
+
+        while(true) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updatePortfolioView];
+            });
+
+            [NSThread sleepForTimeInterval:30];
+        }
+
+    });
+}
+
+/**
+ * Formatiere auf n Stellen
+ *
+ */
+- (double)format:(double)value {
+    return round(pow(10, 4) * value) / pow(10, 4);
 }
 
 - (void)updatePortfolioView {
     Calculator *calculator = [Calculator instance];
-
     // Aktualisierte Ratings besorgen
-    NSMutableDictionary *currentRatings = [calculator currentRatings];
+    NSDictionary *currentRatings = [calculator currentRatings];
 
     NSArray *data = @[
-        @([calculator calculateWithRatings:currentRatings currency:ASSET1]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET2]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET3]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET4]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET5]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET1]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET2]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET3]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET4]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET5]]),
 
-        @([calculator calculateWithRatings:currentRatings currency:ASSET6]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET7]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET8]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET9]),
-        @([calculator calculateWithRatings:currentRatings currency:ASSET10]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET6]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET7]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET8]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET9]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET10]]),
     ];
 
-    // Auf 4 Stellen runden, da die Ergegbnisse nicht genauer sein können.
-    self.asset1Field.stringValue = [Helper double2German:[data[0] doubleValue] min:4 max:4];
-    self.asset2Field.stringValue = [Helper double2German:[data[1] doubleValue] min:4 max:4];
-    self.asset3Field.stringValue = [Helper double2German:[data[2] doubleValue] min:4 max:4];
-    self.asset4Field.stringValue = [Helper double2German:[data[3] doubleValue] min:4 max:4];
-    self.asset5Field.stringValue = [Helper double2German:[data[4] doubleValue] min:4 max:4];
+    if (initialValues == nil) {
+        initialValues = [NSArray arrayWithArray:data];
+    }
 
-    self.asset6Field.stringValue = [Helper double2German:[data[5] doubleValue] min:4 max:4];
-    self.asset7Field.stringValue = [Helper double2German:[data[6] doubleValue] min:4 max:4];
-    self.asset8Field.stringValue = [Helper double2German:[data[7] doubleValue] min:4 max:4];
-    self.asset9Field.stringValue = [Helper double2German:[data[8] doubleValue] min:4 max:4];
-    self.asset10Field.stringValue = [Helper double2German:[data[9] doubleValue] min:4 max:4];
+    for (int i = 0; i < fields.count; i++) {
+        NSTextField *field = (NSTextField*)fields[i];
+        double currentCoins = [data[i] doubleValue];
+        double initialCoins = [initialValues[i] doubleValue];
+
+        field.stringValue = [Helper double2German:[data[i] doubleValue] min:4 max:4];
+
+        if (currentCoins > initialCoins) {
+            field.backgroundColor = [NSColor greenColor];
+        } else if (currentCoins < initialCoins) {
+            field.backgroundColor = [NSColor yellowColor];
+        } else {
+            field.backgroundColor = [NSColor whiteColor];
+        }
+    }
 }
 
 - (IBAction)asset1ClickedAction:(id)sender {
+    if ([Helper messageText:NSLocalizedString(@"all_charts", @"") info:NSLocalizedString(@"wanna_update_current_saldo", @"")] == NSAlertFirstButtonReturn) {
+        initialValues = nil;
+    }
+
     [self updatePortfolioView];
 }
 
