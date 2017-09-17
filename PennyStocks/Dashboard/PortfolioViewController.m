@@ -26,17 +26,6 @@
 
     [self setPreferredContentSize:self.view.frame.size];
 
-    self.asset1Field.editable = false;
-    self.asset2Field.editable = false;
-    self.asset3Field.editable = false;
-    self.asset4Field.editable = false;
-    self.asset5Field.editable = false;
-    self.asset6Field.editable = false;
-    self.asset7Field.editable = false;
-    self.asset8Field.editable = false;
-    self.asset9Field.editable = false;
-    self.asset10Field.editable = false;
-
     self.asset1ImageButton.image = [NSImage imageNamed:ASSET1];
     self.asset2ImageButton.image = [NSImage imageNamed:ASSET2];
     self.asset3ImageButton.image = [NSImage imageNamed:ASSET3];
@@ -63,6 +52,10 @@
         self.asset9Field,
         self.asset10Field,
     ];
+
+    for (NSTextField *field in fields) {
+        field.editable = false;
+    }
 
     dispatch_queue_t queue = dispatch_queue_create("de.4customers.PennyStocks.updatePortfolioViewer", NULL);
     dispatch_async(queue, ^{
