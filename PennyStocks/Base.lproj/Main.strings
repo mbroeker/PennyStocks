@@ -1,57 +1,72 @@
 
 /* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "1eH-Do-Vcu"; */
-"1eH-Do-Vcu.title" = "0.0";
+"1eH-Do-Vcu.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "Dashboard"; ObjectID = "200-jD-Tem"; */
+"200-jD-Tem.title" = "Dashboard";
+
+/* Class = "NSViewController"; title = "Dash"; ObjectID = "2wC-py-DJR"; */
+"2wC-py-DJR.title" = "Dash";
+
+/* Class = "NSTabViewItem"; label = "Dashboard"; ObjectID = "35g-m1-hvR"; */
+"35g-m1-hvR.label" = "Dashboard";
 
 /* Class = "NSMenuItem"; title = "Programm beenden"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Quit Application";
+"4sb-4s-VLi.title" = "Programm beenden";
 
 /* Class = "NSMenuItem"; title = "Zurück setzen"; ObjectID = "5jW-sL-1jd"; */
-"5jW-sL-1jd.title" = "Reset Application";
+"5jW-sL-1jd.title" = "Zurück setzen";
 
 /* Class = "NSMenuItem"; title = "Über das Programm"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About PennyStocks";
+"5kV-Vb-QxS.title" = "Über das Programm";
 
 /* Class = "NSMenuItem"; title = "Menüleiste"; ObjectID = "7GE-rs-aAs"; */
-"7GE-rs-aAs.title" = "Menubar";
+"7GE-rs-aAs.title" = "Menüleiste";
 
 /* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
 "AYu-sK-qS6.title" = "Main Menu";
 
 /* Class = "NSMenuItem"; title = "Einstellungen"; ObjectID = "BOF-NM-1cW"; */
-"BOF-NM-1cW.title" = "Settings";
+"BOF-NM-1cW.title" = "Einstellungen";
 
 /* Class = "NSMenu"; title = "Hilfe"; ObjectID = "F2S-fz-NVQ"; */
-"F2S-fz-NVQ.title" = "Help";
+"F2S-fz-NVQ.title" = "Hilfe";
 
 /* Class = "NSMenuItem"; title = "Hilfe zum Programm"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "Help for PennyStocks";
+"FKE-Sm-Kum.title" = "Hilfe zum Programm";
 
 /* Class = "NSMenuItem"; title = "Alle Anzeigen"; ObjectID = "Kd2-mp-pUS"; */
-"Kd2-mp-pUS.title" = "Show All";
+"Kd2-mp-pUS.title" = "Alle Anzeigen";
 
 /* Class = "NSMenuItem"; title = "Alles anzeigen"; ObjectID = "LE2-aR-0XJ"; */
-"LE2-aR-0XJ.title" = "Show others";
+"LE2-aR-0XJ.title" = "Alles anzeigen";
+
+/* Class = "NSButtonCell"; title = "Instant Trading"; ObjectID = "O7G-e9-1bH"; */
+"O7G-e9-1bH.title" = "Instant Trading";
 
 /* Class = "NSMenuItem"; title = "Minimieren"; ObjectID = "OY7-WF-poV"; */
-"OY7-WF-poV.title" = "Minimize";
+"OY7-WF-poV.title" = "Minimieren";
 
 /* Class = "NSMenuItem"; title = "Programm minimieren"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Minimize PennyStocks";
+"Olw-nP-bQN.title" = "Programm minimieren";
 
 /* Class = "NSMenuItem"; title = "Maximieren"; ObjectID = "R4o-n2-Eq4"; */
-"R4o-n2-Eq4.title" = "Maximize";
+"R4o-n2-Eq4.title" = "Maximieren";
 
 /* Class = "NSMenu"; title = "Fenster"; ObjectID = "Td7-aD-5lo"; */
-"Td7-aD-5lo.title" = "Window";
+"Td7-aD-5lo.title" = "Fenster";
 
 /* Class = "NSMenuItem"; title = "Andere minimieren"; ObjectID = "Vdr-fp-XzO"; */
-"Vdr-fp-XzO.title" = "Minimize others";
+"Vdr-fp-XzO.title" = "Andere minimieren";
 
 /* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "Ywa-JN-XWX"; */
-"Ywa-JN-XWX.title" = "0.0";
+"Ywa-JN-XWX.title" = "0,0";
 
 /* Class = "NSMenuItem"; title = "Fenster"; ObjectID = "aUF-d1-5bR"; */
-"aUF-d1-5bR.title" = "Window";
+"aUF-d1-5bR.title" = "Fenster";
+
+/* Class = "NSTextFieldCell"; title = "24h LOW"; ObjectID = "l8V-LL-wt6"; */
+"l8V-LL-wt6.title" = "24h LOW";
 
 /* Class = "NSMenuItem"; title = "Hilfe"; ObjectID = "wpr-3q-Mcd"; */
-"wpr-3q-Mcd.title" = "Help";
+"wpr-3q-Mcd.title" = "Hilfe";

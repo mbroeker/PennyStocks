@@ -1,60 +1,57 @@
+
 /* Class = "NSButtonCell"; title = "Aktionen bestätigen"; ObjectID = "0BX-es-ET9"; */
-"0BX-es-ET9.title" = "Confirm actions?";
+"0BX-es-ET9.title" = "Aktionen bestätigen";
 
 /* Class = "NSButtonCell"; title = "KEY ENTFERNEN"; ObjectID = "32K-r9-DVt"; */
-"32K-r9-DVt.title" = "ERASE KEY FROM DISK";
+"32K-r9-DVt.title" = "KEY ENTFERNEN";
 
 /* Class = "NSButtonCell"; title = "Speichern"; ObjectID = "49C-4j-sAM"; */
-"49C-4j-sAM.title" = "Save";
+"49C-4j-sAM.title" = "Speichern";
 
 /* Class = "NSViewController"; title = "Bestand"; ObjectID = "4CC-Z0-rPL"; */
-"4CC-Z0-rPL.title" = "Saldo";
+"4CC-Z0-rPL.title" = "Bestand";
 
 /* Class = "NSButtonCell"; title = "Speichern"; ObjectID = "6ml-ZP-eQr"; */
-"6ml-ZP-eQr.title" = "Save";
-
-/* Class = "NSTextFieldCell"; placeholderString = "LEGACY RIGHTS"; ObjectID = "EPz-i6-6ai"; */
-"EPz-i6-6ai.placeholderString" = "LEGACY RIGHTS";
+"6ml-ZP-eQr.title" = "Speichern";
 
 /* Class = "NSButtonCell"; title = "Speichern"; ObjectID = "GHP-k3-BVj"; */
-"GHP-k3-BVj.title" = "Save";
+"GHP-k3-BVj.title" = "Speichern";
 
 /* Class = "NSTextFieldCell"; title = "Ihre Konten und Adressen"; ObjectID = "HtI-qx-WwD"; */
-"HtI-qx-WwD.title" = "Your Accounts and Addresses";
+"HtI-qx-WwD.title" = "Ihre Konten und Adressen";
 
 /* Class = "NSTextFieldCell"; title = "Optionale Einstellungen"; ObjectID = "LyT-lK-Zjl"; */
-"LyT-lK-Zjl.title" = "Optional Settings";
+"LyT-lK-Zjl.title" = "Optionale Einstellungen";
 
 /* Class = "NSViewController"; title = "Kurse"; ObjectID = "Txn-YE-STf"; */
-"Txn-YE-STf.title" = "Charts";
+"Txn-YE-STf.title" = "Kurse";
 
 /* Class = "NSTextFieldCell"; title = "Ihre initialen Kurse"; ObjectID = "Ukn-PJ-ZoR"; */
-"Ukn-PJ-ZoR.title" = "Your initial charts";
+"Ukn-PJ-ZoR.title" = "Ihre initialen Kurse";
 
 /* Class = "NSTextFieldCell"; title = "Ihre Anwendungen"; ObjectID = "WEN-8p-MCk"; */
-"WEN-8p-MCk.title" = "Your Applications";
+"WEN-8p-MCk.title" = "Ihre Anwendungen";
 
 /* Class = "NSButtonCell"; title = "Speichern"; ObjectID = "Woc-Ig-GpQ"; */
-"Woc-Ig-GpQ.title" = "Save";
+"Woc-Ig-GpQ.title" = "Speichern";
 
 /* Class = "NSViewController"; title = "Anwendungen"; ObjectID = "aKY-JE-DW7"; */
-"aKY-JE-DW7.title" = "Applications";
+"aKY-JE-DW7.title" = "Anwendungen";
 
 /* Class = "NSButtonCell"; title = "Speichern"; ObjectID = "fds-XU-PTr"; */
-"fds-XU-PTr.title" = "Save";
+"fds-XU-PTr.title" = "Speichern";
 
 /* Class = "NSTextFieldCell"; title = "Ihre Kurse"; ObjectID = "hGP-DD-Z1J"; */
-"hGP-DD-Z1J.title" = "Your Charts";
+"hGP-DD-Z1J.title" = "Ihre Kurse";
 
 /* Class = "NSButtonCell"; title = "Bestätigen und Speichern"; ObjectID = "knl-ee-x9q"; */
-"knl-ee-x9q.title" = "I agree and save the key";
+"knl-ee-x9q.title" = "Bestätigen und Speichern";
 
 /* Class = "NSTextFieldCell"; title = "Aktueller Bestand"; ObjectID = "sTj-bR-Idz"; */
-"sTj-bR-Idz.title" = "Current saldo";
+"sTj-bR-Idz.title" = "Aktueller Bestand";
 
 /* Class = "NSTabViewController"; title = "Einstellungen"; ObjectID = "u0k-Ex-xGQ"; */
-"u0k-Ex-xGQ.title" = "Preferences";
+"u0k-Ex-xGQ.title" = "Einstellungen";
 
 /* Class = "NSViewController"; title = "Adressen"; ObjectID = "yX1-xt-20W"; */
-"yX1-xt-20W.title" = "Addresses";
-
+"yX1-xt-20W.title" = "Adressen";
