@@ -49,3 +49,6 @@
 
 /* Class = "NSButtonCell"; title = "KEY LÖSCHEN"; ObjectID = "ibU-TP-Ip6"; */
 "ibU-TP-Ip6.title" = "ERASE KEY FROM DISK";
+
+/* Class = "NSTextFieldCell"; title = "Optional Settings"; ObjectID = "LyT-lK-Zjl"; */
+"LyT-lK-Zjl.title" = "Optional Settings";

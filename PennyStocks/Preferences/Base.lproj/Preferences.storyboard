@@ -118,7 +118,7 @@
                                 </constraints>
                                 <buttonCell key="cell" type="check" title="Aktionen bestätigen" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="0BX-es-ET9">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name=".HelveticaNeueDeskInterface-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JdS-7X-Gmv">
