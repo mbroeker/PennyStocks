@@ -45,3 +45,9 @@ sell_with_amount_asset_and_rate = "Verkaufe %.8f %@ für %.8f das Stück";
 automated_trading_on = "Möchten Sie das automatisierte Handeln mit Assets einschalten?";
 automated_trading_off = "Möchten Sie das automatisierte Handeln mit Assets ausschalten?";
 
+actions_ack = "Aktionen bestätigen";
+percentrate_with_param = "Prozentrate %.2f %%";
+extra_settings_text = "
+  Auf diesem Tab können Sie die Prozentrate beim
+  automatisierten Handeln einstellen und das Bestätigen
+  aktivieren oder deaktivieren.";

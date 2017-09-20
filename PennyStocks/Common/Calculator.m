@@ -146,12 +146,12 @@
             [defaults setObject:defaultExchange forKey:@"defaultExchange"];
         }
 
-        tradingWithConfirmation = [defaults objectForKey:@"tradingWithConfirmation"];
+        tradingWithConfirmation = [defaults objectForKey:KEY_TRADING_WITH_CONFIRMATION];
 
         if (tradingWithConfirmation == nil) {
             tradingWithConfirmation = [NSNumber numberWithBool:true];
 
-            [defaults setObject:tradingWithConfirmation forKey:@"tradingWithConfirmation"];
+            [defaults setObject:tradingWithConfirmation forKey:KEY_TRADING_WITH_CONFIRMATION];
         }
 
         [defaults synchronize];

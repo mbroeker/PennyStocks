@@ -58,6 +58,7 @@
 #define KEY_INITIAL_RATINGS @"initialRatings"
 #define KEY_CURRENT_SALDO @"currentSaldo"
 #define KEY_SALDO_URLS @"saldoUrls"
+#define KEY_TRADING_WITH_CONFIRMATION @"tradingWithConfirmation"
 
 #define KEY_FIAT_CURRENCIES @"fiatCurrencies"
 #define KEY_DEFAULT_EXCHANGE @"defaultExchange"

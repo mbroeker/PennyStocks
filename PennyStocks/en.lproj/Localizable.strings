@@ -43,3 +43,9 @@ sell_with_amount_asset_and_rate = "Selling %.8f %@ for %.8f each";
 
 automated_trading_on = "Would you like to activate Automated Trading?";
 automated_trading_off = "Would you like to deactivate Automated Trading?";
+
+actions_ack = "Actions with confirmation?";
+percentrate_with_param = "Percent Rate %.2f %%";
+extra_settings_text = "
+    You can alter the percent rate on this tab and
+    control the alert box on automated trading.";
