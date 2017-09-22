@@ -35,7 +35,7 @@
                     </connections>
                 </tabViewController>
             </objects>
-            <point key="canvasLocation" x="-141" y="-902"/>
+            <point key="canvasLocation" x="-2072" y="-2323"/>
         </scene>
         <!--Extra-->
         <scene sceneID="s5l-1n-Sfs">
@@ -101,9 +101,9 @@
                                 </connections>
                             </levelIndicator>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mq0-sj-x77">
-                                <rect key="frame" x="20" y="53" width="665" height="238"/>
+                                <rect key="frame" x="20" y="53" width="665" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="238" id="OLW-9I-lhX"/>
+                                    <constraint firstAttribute="height" constant="240" id="xQ3-xk-AXn"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="EXTRA_SETTINGS_TEXT" drawsBackground="YES" id="aIt-QU-5Oq">
                                     <font key="font" size="24" name=".HelveticaNeueDeskInterface-Regular"/>
@@ -135,16 +135,15 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="sMD-Xo-Kj9" firstAttribute="trailing" secondItem="JdS-7X-Gmv" secondAttribute="trailing" id="1KM-Wp-uPL"/>
-                            <constraint firstItem="Mq0-sj-x77" firstAttribute="trailing" secondItem="sMD-Xo-Kj9" secondAttribute="trailing" id="3cl-sJ-qe2"/>
-                            <constraint firstItem="Mq0-sj-x77" firstAttribute="top" secondItem="sMD-Xo-Kj9" secondAttribute="bottom" constant="8" symbolic="YES" id="6Zd-B8-mnt"/>
-                            <constraint firstItem="Mq0-sj-x77" firstAttribute="leading" secondItem="sMD-Xo-Kj9" secondAttribute="leading" id="85U-Gk-8Qh"/>
+                            <constraint firstItem="Mq0-sj-x77" firstAttribute="top" secondItem="sMD-Xo-Kj9" secondAttribute="bottom" constant="6" id="26h-4Q-lP5"/>
+                            <constraint firstItem="Mq0-sj-x77" firstAttribute="trailing" secondItem="sMD-Xo-Kj9" secondAttribute="trailing" id="CC4-cK-4Se"/>
                             <constraint firstItem="hjN-Jr-leS" firstAttribute="top" secondItem="MZZ-Sw-Ykc" secondAttribute="top" constant="20" symbolic="YES" id="CWs-rf-cj5"/>
                             <constraint firstItem="iSo-al-u8q" firstAttribute="leading" secondItem="MZZ-Sw-Ykc" secondAttribute="leading" id="Fp8-hZ-KtJ"/>
                             <constraint firstItem="JdS-7X-Gmv" firstAttribute="top" secondItem="MZZ-Sw-Ykc" secondAttribute="top" constant="29" id="GhX-BL-LFq"/>
                             <constraint firstItem="hjN-Jr-leS" firstAttribute="leading" secondItem="MZZ-Sw-Ykc" secondAttribute="leading" constant="20" symbolic="YES" id="LIF-Ph-XHZ"/>
                             <constraint firstAttribute="bottom" secondItem="iSo-al-u8q" secondAttribute="bottom" id="LmB-20-vVj"/>
-                            <constraint firstItem="iSo-al-u8q" firstAttribute="top" secondItem="Mq0-sj-x77" secondAttribute="bottom" constant="8" symbolic="YES" id="WGQ-S4-gw6"/>
                             <constraint firstItem="sMD-Xo-Kj9" firstAttribute="top" secondItem="Ymm-Xc-MQG" secondAttribute="bottom" constant="27" id="Xf4-ni-lj4"/>
+                            <constraint firstItem="iSo-al-u8q" firstAttribute="top" secondItem="Mq0-sj-x77" secondAttribute="bottom" constant="8" id="aZe-jF-gIO"/>
                             <constraint firstItem="sMD-Xo-Kj9" firstAttribute="top" secondItem="JdS-7X-Gmv" secondAttribute="bottom" constant="6" id="cqp-QQ-avU"/>
                             <constraint firstAttribute="trailing" secondItem="JdS-7X-Gmv" secondAttribute="trailing" constant="20" symbolic="YES" id="fxc-Bg-hwd"/>
                             <constraint firstItem="Ymm-Xc-MQG" firstAttribute="top" secondItem="MZZ-Sw-Ykc" secondAttribute="top" id="ngu-L9-mge"/>
@@ -153,6 +152,7 @@
                             <constraint firstItem="Ymm-Xc-MQG" firstAttribute="leading" secondItem="iSo-al-u8q" secondAttribute="leading" id="tZH-ZZ-G2r"/>
                             <constraint firstItem="sMD-Xo-Kj9" firstAttribute="leading" secondItem="hjN-Jr-leS" secondAttribute="leading" id="uNn-qc-zBh"/>
                             <constraint firstItem="Ymm-Xc-MQG" firstAttribute="centerX" secondItem="sMD-Xo-Kj9" secondAttribute="centerX" id="uPc-pg-fbx"/>
+                            <constraint firstItem="Mq0-sj-x77" firstAttribute="leading" secondItem="sMD-Xo-Kj9" secondAttribute="leading" id="xbh-r7-MTV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -165,7 +165,7 @@
                 </viewController>
                 <customObject id="muC-Pr-nfP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="540.5" y="-865.5"/>
+            <point key="canvasLocation" x="-1193.5" y="-2092.5"/>
         </scene>
         <!--Adressen-->
         <scene sceneID="Edj-MR-a3A">
@@ -703,7 +703,7 @@
                 </viewController>
                 <customObject id="Bz7-ms-ybZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-261.5" y="-131.5"/>
+            <point key="canvasLocation" x="-2842" y="-813"/>
         </scene>
         <!--Kurse-->
         <scene sceneID="cYe-rY-tXM">
@@ -1200,7 +1200,7 @@
                 </viewController>
                 <customObject id="pzb-FE-CXl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-261.5" y="669.5"/>
+            <point key="canvasLocation" x="-2077.5" y="-838"/>
         </scene>
         <!--Anwendungen-->
         <scene sceneID="otc-0a-fPj">
@@ -1687,7 +1687,7 @@
                 </viewController>
                 <customObject id="LsW-if-Gs2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534.5" y="-161"/>
+            <point key="canvasLocation" x="-1277.5" y="-843"/>
         </scene>
         <!--Bestand-->
         <scene sceneID="15C-dW-0cN">
@@ -2184,7 +2184,7 @@
                 </viewController>
                 <customObject id="DIk-Bb-kPN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534.5" y="667"/>
+            <point key="canvasLocation" x="-489.5" y="-838"/>
         </scene>
         <!--Bittrex-->
         <scene sceneID="vVc-oP-WCq">
@@ -2362,7 +2362,7 @@
                 </viewController>
                 <customObject id="fVN-NO-fix" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-994.5" y="-923"/>
+            <point key="canvasLocation" x="-3670.5" y="-842"/>
         </scene>
     </scenes>
     <resources>

@@ -28,7 +28,10 @@
 - (void)buyTheBest;
 - (void)buyTheWorst;
 - (NSString*)autoBuy:(NSString*)cAsset amount:(double)wantedAmount;
+- (NSString*)autoBuy:(NSString*)cAsset amount:(double)wantedAmount withRate:(double)wantedRate;
 - (NSString*)autoSell:(NSString*)cAsset amount:(double)wantedAmount;
+- (NSString*)autoSell:(NSString*)cAsset amount:(double)wantedAmount withRate:(double)wantedRate;
+
 - (void)autoBuyAll:(NSString*)cAsset;
 - (void)autoSellAll:(NSString*)cAsset;
 - (void)updateBalances:(BOOL)synchronized;

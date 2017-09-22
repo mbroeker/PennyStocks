@@ -49,3 +49,6 @@ percentrate_with_param = "Percent Rate %.2f %%";
 extra_settings_text = "
   You can alter the percent rate on this tab and
   control the alert box on automated trading.";
+
+buy = "BUY";
+sell = "SELL";

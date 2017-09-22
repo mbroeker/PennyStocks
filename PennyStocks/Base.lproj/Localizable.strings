@@ -51,3 +51,6 @@ extra_settings_text = "
   Auf diesem Tab können Sie die Prozentrate beim
   automatisierten Handeln einstellen und das Bestätigen
   aktivieren oder deaktivieren.";
+
+buy = "KAUFEN";
+sell = "VERKAUFEN";
