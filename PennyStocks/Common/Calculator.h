@@ -22,16 +22,15 @@
 // Trading API
 - (void)sellWithProfitInEuro:(double)wantedEuros;
 - (void)sellWithProfitInPercent:(double)wantedPercent;
-- (void)sellByInvestors:(double)rate;
-- (void)buyWithProfitInPercent:(double)wantedPercent andInvestmentRate:(double) rate;
-- (void)buyByInvestors:(double)rate;
+- (void)sellByInvestors:(double)wantedRate;
+- (void)buyWithProfitInPercent:(double)wantedPercent andInvestmentRate:(double)wantedRate;
+- (void)buyByInvestors:(double)wantedRate;
 - (void)buyTheBest;
 - (void)buyTheWorst;
 - (NSString*)autoBuy:(NSString*)cAsset amount:(double)wantedAmount;
 - (NSString*)autoBuy:(NSString*)cAsset amount:(double)wantedAmount withRate:(double)wantedRate;
 - (NSString*)autoSell:(NSString*)cAsset amount:(double)wantedAmount;
 - (NSString*)autoSell:(NSString*)cAsset amount:(double)wantedAmount withRate:(double)wantedRate;
-
 - (void)autoBuyAll:(NSString*)cAsset;
 - (void)autoSellAll:(NSString*)cAsset;
 - (void)updateBalances:(BOOL)synchronized;

@@ -80,6 +80,9 @@ typedef struct DASHBOARD_VARS {
     if (withTrading) {
         if (calculator.automatedTrading) {
 
+            // Aktualisiere coinchangePercentage, da es jetzt einstellbar ist
+            coinchangePercentage = [[[NSUserDefaults standardUserDefaults] objectForKey:COINCHANGE_PERCENTAGE] doubleValue];
+
             // Gewinn: Automatisches Verkaufen von Assets mit einer Exchange-Rate von coinchangePercentage oder mehr
             [calculator sellWithProfitInPercent:coinchangePercentage];
 
@@ -256,8 +259,6 @@ typedef struct DASHBOARD_VARS {
     defaultLowestColor = [NSColor orangeColor];
     defaultLooseColor = [NSColor redColor];
 
-    [defaults synchronize];
-
     // deaktiviere das Instant Trading
     self.instantTrading.enabled = false;
 
@@ -269,6 +270,9 @@ typedef struct DASHBOARD_VARS {
     }
 
     coinchangePercentage = [ccp doubleValue];
+
+    // Synchronisiere alle Werte zum Schluss
+    [defaults synchronize];
 }
 
 /**
