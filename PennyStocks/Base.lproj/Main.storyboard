@@ -171,6 +171,7 @@
                         <outlet property="usdCNYItem" destination="LLJ-aE-aag" id="OSE-tT-B7Z"/>
                         <outlet property="usdEURItem" destination="k28-GY-y1j" id="2zp-dB-4GN"/>
                         <outlet property="usdGBPItem" destination="WIR-F9-nF3" id="h3F-6v-6U1"/>
+                        <outlet property="usdJPYItem" destination="TT0-CZ-tlH" id="oF2-x2-O9a"/>
                     </connections>
                 </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
