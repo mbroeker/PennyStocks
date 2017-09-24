@@ -26,7 +26,7 @@ wanna_reset_to_app_defaults = "Do you want to reset the application to default s
 not_enough_btc = "Not enough ETH";
 not_enough_btc_long = "You have not enough ETH to buy";
 not_enough_asset_param = "Not enough %@";
-not_enough_asset_param_long = "You have not enough %@ for this trade.";
+not_enough_asset_long_param = "You have not enough %@ for this trade.";
 legal_notice = "
   Inserting the API KEY from %@ is done
   on your own desire. You are aware of the personal
