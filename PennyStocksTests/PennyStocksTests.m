@@ -13,7 +13,7 @@
 #import "../PennyStocks/Brokerage/Algorithm.h"
 
 @interface PennyStocksTests : XCTestCase
-    @property Calculator *calculator;
+@property Calculator *calculator;
 @end
 
 @implementation PennyStocksTests
@@ -31,16 +31,65 @@
 }
 
 /**
+ * Get Yesterdays date as string
+ *
+ * @return NSString*
+ */
+- (NSString *)yesterday {
+    NSDate *yesterday = [NSDate dateWithTimeIntervalSinceNow:-(60.0f * 60.0f * 24.0f)];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+
+    return [dateFormatter stringFromDate:yesterday];
+}
+
+/**
+ * Retrieve historical data from quandl
+ *
+ * @param key
+ * @param asset
+ * @param baseAsset
+ * @return NSDictionary*
+ */
+- (NSDictionary *)historicalData:(NSString *)key forAsset:(NSString *)asset withBaseAsset:(NSString *)baseAsset {
+    NSString *queryUrl = [NSString stringWithFormat:@"https://www.quandl.com/api/v3/datasets/BTER/%@%@.json?api_key=%@&start_date=%@", asset, baseAsset, key, [self yesterday]];
+
+    NSDictionary *response = [Brokerage jsonRequest:queryUrl];
+    NSDictionary *dataset = response[@"dataset"];
+    NSArray *data = dataset[@"data"];
+
+    if (data.count == 0) {
+        return nil;
+    }
+
+    NSMutableDictionary *historicalData = [[NSMutableDictionary alloc] init];
+
+    for (id value in data) {
+        NSDictionary *row = @{
+            @"high": value[1],
+            @"low": value[2],
+            @"last": value[3],
+        };
+
+        historicalData[value[0]] = row;
+    }
+
+    return historicalData;
+}
+
+/**
  * Check TickerStatus and Key Mappings on Poloniex
  *
  */
 - (void)testPoloniexTicker {
     NSDictionary *result = [Brokerage poloniexTicker:@[EUR, USD]];
-    NSArray *tickerKeys = [self.calculator.tickerKeys allValues];
+    NSArray *tickerKeys = @[
+        @"ETH_BCC", @"ETH_ZEC", @"ETH_ETC", @"ETH_OMG", @"ETH_STEEM"
+    ];
 
     NSLog(@"TESTING ALL KEYS ON POLONIEX");
     for (id key in tickerKeys) {
-        if ([key isEqualToString:[NSString stringWithFormat:@"%@_%@", ASSET1, EUR]]) {
+        if ([key isEqualToString:[NSString stringWithFormat:@"%@_%@", @"ETH", EUR]]) {
             continue;
         }
 
@@ -102,28 +151,21 @@
         return;
     }
 
-    NSString *baseAsset = ASSET1;
-    NSString *asset = ASSET6;
+    for (id asset in [self.calculator tickerKeys]) {
+        NSDictionary *historicalData = [self historicalData:key forAsset:asset withBaseAsset:ASSET1];
+        NSArray *sortedKeys = [[historicalData allKeys] sortedArrayUsingSelector:@selector(compare:)];
 
-    NSString *queryUrl = [NSString stringWithFormat:@"https://www.quandl.com/api/v3/datasets/BTER/%@%@.json?api_key=%@", asset, baseAsset, key];
+        for (id key in sortedKeys) {
+            double diffInBTC = ([historicalData[key][@"high"] doubleValue] - [historicalData[key][@"low"] doubleValue]);
+            double diffInPercent = 100 * (diffInBTC / [historicalData[key][@"low"] doubleValue]);
 
-    NSDictionary *response = [Brokerage jsonRequest:queryUrl];
-    NSDictionary *dataset = response[@"dataset"];
-    NSArray *data = dataset[@"data"];
-
-    NSMutableDictionary *historicalData = [[NSMutableDictionary alloc] init];
-
-    for (id value in data) {
-        NSDictionary *row = @{
-            @"high": value[1],
-            @"low": value[2],
-            @"last": value[3],
-        };
-
-        historicalData[value[0]] = row;
+            NSLog(@"POSSIBLE MARGIN YESTERDAY: %@/%@ %6.02f %%",
+                ASSET1,
+                asset,
+                diffInPercent
+            );
+        }
     }
-
-    NSLog(@"RESULT: %@", historicalData);
 }
 
 /**

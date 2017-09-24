@@ -408,7 +408,7 @@
  * @return double
  */
 - (double)fiatPriceForAsset:(NSString *)asset {
-    return (1 / [self btcPriceForAsset:asset]);
+    return (1 / [currentRatings[asset] doubleValue]);
 }
 
 /**
