@@ -21,8 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSWindow *window = self.view.window;
-
     self.buyButton.title = NSLocalizedString(@"buy", "Kaufen");
     self.sellButton.title = NSLocalizedString(@"sell", "Verkaufen");
 
@@ -31,11 +29,6 @@
     NSTabViewItem *item = controller.tabViewItems[pos];
 
     tabLabel = item.label;
-
-    if ([tabLabel isEqualToString:DASHBOARD]) {
-        [window.sheetParent endSheet:window returnCode:NSModalResponseOK];
-        return;
-    }
 
     calculator = [Calculator instance];
 
