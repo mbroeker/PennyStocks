@@ -108,6 +108,16 @@
     int MAXX = equations + 1;
     int MAXY = equations;
 
+    // Ohne Matrix gibts nichts zu lösen
+    if (A == NULL) {
+        return;
+    }
+
+    // Ohne die Anzahl der Gleichungen kann nichts gerechnet werden
+    if (equations == 0) {
+        return;
+    }
+
     i = 0;
     for (j = 0; j < MAXY; j++) {
         for (k = j + 1; k < MAXY; k++) {
