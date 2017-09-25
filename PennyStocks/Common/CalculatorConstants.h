@@ -24,28 +24,28 @@
 
 // ASSET KEYS
 #define ASSET1 @"ETH"
-#define ASSET2 @"BCC"
+#define ASSET2 @"ZEC"
 #define ASSET3 @"XMR"
 #define ASSET4 @"LTC"
 #define ASSET5 @"NEO"
 #define ASSET6 @"QTUM"
 #define ASSET7 @"OMG"
 #define ASSET8 @"MCO"
-#define ASSET9 @"GNT"
-#define ASSET10 @"DGB"
+#define ASSET9 @"PAY"
+#define ASSET10 @"BAT"
 
 // ASSET DESCRIPTION KEYS
 #define DASHBOARD @"Dashboard"
 #define ASSET1_DESC @"Ethereum"
-#define ASSET2_DESC @"BC Cash"
+#define ASSET2_DESC @"ZCash"
 #define ASSET3_DESC @"Monero"
 #define ASSET4_DESC @"Litecoin"
 #define ASSET5_DESC @"Neo"
 #define ASSET6_DESC @"Qtum"
 #define ASSET7_DESC @"OmiseGO"
 #define ASSET8_DESC @"Monaco"
-#define ASSET9_DESC @"Golem"
-#define ASSET10_DESC @"DigiByte"
+#define ASSET9_DESC @"Pay Token"
+#define ASSET10_DESC @"Basic Attention"
 
 // FIAT CURRENCY KEYS
 #define EUR @"EUR"
