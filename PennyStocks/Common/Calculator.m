@@ -351,7 +351,8 @@
         initialRatings = [currentRatings mutableCopy];
     } else {
         // aktualisiere den Kurs der Währung
-        initialRatings[asset] = ((wantedRate == 0.0) ? currentRatings[asset] : @(wantedRate));
+        double priceInFiat = [self fiatPriceForAsset:ASSET1] * wantedRate;
+        initialRatings[asset] = ((wantedRate == 0.0) ? currentRatings[asset] : @(1.0 / priceInFiat));
 
         if (![asset isEqualToString:ASSET1] && btcUpdate) {
             // aktualisiere den BTC Kurs, auf den sich die Transaktion bezog
