@@ -343,6 +343,9 @@ typedef struct DASHBOARD_VARS {
                 [tempApplications removeObjectForKey:key];
             }
         }
+
+        // Zurückspielen nicht vergessen
+        applications = tempApplications;
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:tempApplications forKey:TV_APPLICATIONS];
