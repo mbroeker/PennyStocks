@@ -296,6 +296,10 @@
             }
         }
 
+        // Zurückspielen nicht vergessen :)
+        currentSaldo = tempCurrentSaldo;
+        initialRatings = tempInitialRatings;
+        
         [defaults setObject:saldoUrls forKey:KEY_SALDO_URLS];
         [defaults setObject:tempCurrentSaldo forKey:KEY_CURRENT_SALDO];
         [defaults setObject:tempInitialRatings forKey:KEY_INITIAL_RATINGS];
@@ -325,6 +329,16 @@
  * @param btcUpdate
  */
 - (void)updateCheckpointForAsset:(NSString *)asset withBTCUpdate:(BOOL)btcUpdate {
+    [self updateCheckpointForAsset:asset withBTCUpdate:btcUpdate andRate:0.0];
+}
+
+/**
+ * Aktualisiere die Kurse der jeweiligen Währung
+ *
+ * @param asset
+ * @param btcUpdate
+ */
+- (void)updateCheckpointForAsset:(NSString *)asset withBTCUpdate:(BOOL)btcUpdate andRate:(double)wantedRate {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (currentRatings == nil || initialRatings == nil) {
@@ -337,7 +351,7 @@
         initialRatings = [currentRatings mutableCopy];
     } else {
         // aktualisiere den Kurs der Währung
-        initialRatings[asset] = currentRatings[asset];
+        initialRatings[asset] = ((wantedRate == 0.0) ? currentRatings[asset] : @(wantedRate));
 
         if (![asset isEqualToString:ASSET1] && btcUpdate) {
             // aktualisiere den BTC Kurs, auf den sich die Transaktion bezog
@@ -642,7 +656,7 @@
     NSDictionary *order = [Brokerage buy:ak withSecret:sk currencyPair:cPair rate:cRate amount:amount onExchange:defaultExchange];
 
     if (order[@"orderNumber"]) {
-        [self updateCheckpointForAsset:cAsset withBTCUpdate:true];
+        [self updateCheckpointForAsset:cAsset withBTCUpdate:true andRate:cRate];
 
         return order[@"orderNumber"];
     }
@@ -737,7 +751,7 @@
     NSDictionary *order = [Brokerage sell:ak withSecret:sk currencyPair:cPair rate:cRate amount:amount onExchange:defaultExchange];
 
     if (order[@"orderNumber"]) {
-        [self updateCheckpointForAsset:cAsset withBTCUpdate:false];
+        [self updateCheckpointForAsset:cAsset withBTCUpdate:false andRate:cRate];
 
         return order[@"orderNumber"];
     }

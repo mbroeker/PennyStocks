@@ -46,6 +46,7 @@
 // Methoden fürs Aktualisieren der Wechselkurse und zum Updaten dieser
 - (void)updateRatings:(BOOL)synchronized;
 - (void)updateCheckpointForAsset:(NSString *)asset withBTCUpdate:(BOOL) btcUpdate;
+- (void)updateCheckpointForAsset:(NSString *)asset withBTCUpdate:(BOOL) btcUpdate andRate:(double)wantedRate;
 
 // Methoden für das Aktualisieren des Saldos
 - (double)currentSaldo:(NSString*)asset;
