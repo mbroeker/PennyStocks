@@ -435,7 +435,7 @@
     NSMutableDictionary *checkpointChanges = [[NSMutableDictionary alloc] init];
 
     for (id cAsset in currentRatings) {
-        if ([cAsset isEqualToString:USD]) continue;
+        if ([cAsset isEqualToString:USD]) { continue; }
 
         NSDictionary *aCheckpoint = [self checkpointForAsset:cAsset];
         double cPercent = [aCheckpoint[CP_PERCENT] doubleValue];
@@ -801,9 +801,9 @@
  */
 - (void)sellWithProfitInEuro:(double)wantedEuros {
     for (id key in currentSaldo) {
-        if ([key isEqualToString:ASSET1]) continue;
-        if ([key isEqualToString:fiatCurrencies[0]]) continue;
-        if ([key isEqualToString:fiatCurrencies[1]]) continue;
+        if ([key isEqualToString:ASSET1]) { continue; }
+        if ([key isEqualToString:fiatCurrencies[0]]) { continue; }
+        if ([key isEqualToString:fiatCurrencies[1]]) { continue; }
 
         NSDictionary *checkpoint = [self checkpointForAsset:key];
 
@@ -829,9 +829,9 @@
 - (void)sellWithProfitInPercent:(double)wantedPercent {
 
     for (id key in currentSaldo) {
-        if ([key isEqualToString:ASSET1]) continue;
-        if ([key isEqualToString:fiatCurrencies[0]]) continue;
-        if ([key isEqualToString:fiatCurrencies[1]]) continue;
+        if ([key isEqualToString:ASSET1]) { continue; }
+        if ([key isEqualToString:fiatCurrencies[0]]) { continue; }
+        if ([key isEqualToString:fiatCurrencies[1]]) { continue; }
 
         NSDictionary *checkpoint = [self checkpointForAsset:key];
         NSDictionary *btcCheckpoint = [self checkpointForAsset:ASSET1];
@@ -871,7 +871,7 @@
         double price = [currentSaldo[lowestKey] doubleValue] * [self btcPriceForAsset:lowestKey];
 
         // Wir verkaufen keinen Sternenstaub...
-        if (price < 0.0001) return;
+        if (price < 0.0001) { return; }
 
         // Verkaufe auf Grundlage der aktuellen Investoren-Rate
         if (investorsRate < wantedRate) {
@@ -890,12 +890,12 @@
     double balance = [self currentSaldo:ASSET1];
     NSDictionary *realChanges = [self realChanges];
 
-    if (balance < 0.0001) return;
+    if (balance < 0.0001) { return; }
 
     for (id key in currentSaldo) {
-        if ([key isEqualToString:ASSET1]) continue;
-        if ([key isEqualToString:fiatCurrencies[0]]) continue;
-        if ([key isEqualToString:fiatCurrencies[1]]) continue;
+        if ([key isEqualToString:ASSET1]) { continue; }
+        if ([key isEqualToString:fiatCurrencies[0]]) { continue; }
+        if ([key isEqualToString:fiatCurrencies[1]]) { continue; }
 
         NSDictionary *checkpoint = [self checkpointForAsset:key];
         NSDictionary *btcCheckpoint = [self checkpointForAsset:ASSET1];
@@ -1034,7 +1034,7 @@
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
     for (id key in currentSaldo) {
         double sum = [[currentBalance[key] objectForKey:@"available"] doubleValue];
-        if (!self.automatedTrading) sum += [[currentBalance[key] objectForKey:@"onOrders"] doubleValue];
+        if (!self.automatedTrading) { sum += [[currentBalance[key] objectForKey:@"onOrders"] doubleValue]; }
 
         dictionary[key] = @(sum);
     }
@@ -1070,8 +1070,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *tickerDictionary;
 
-    if ([defaultExchange isEqualToString:EXCHANGE_POLONIEX]) tickerDictionary = [Brokerage poloniexTicker:fiatCurrencies];
-    if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) tickerDictionary = [Brokerage bittrexTicker:fiatCurrencies forAssets:[currentSaldo allKeys]];
+    if ([defaultExchange isEqualToString:EXCHANGE_POLONIEX]) { tickerDictionary = [Brokerage poloniexTicker:fiatCurrencies]; }
+    if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) { tickerDictionary = [Brokerage bittrexTicker:fiatCurrencies forAssets:[currentSaldo allKeys]]; }
 
     if (tickerDictionary == nil) {
 
@@ -1165,7 +1165,7 @@
 - (void)currentSaldoForDictionary:(NSMutableDictionary *)dictionary {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    if (dictionary == nil) return;
+    if (dictionary == nil) { return; }
     if ([dictionary count] == 0) {
         if (!RELEASE_BUILD) {
             NSLog(@"EMPTY ARRAY - NOT INSERTING");
@@ -1188,7 +1188,7 @@
 - (void)saldoUrlsForDictionary:(NSMutableDictionary *)dictionary {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    if (dictionary == nil) return;
+    if (dictionary == nil) { return; }
     if ([dictionary count] == 0) {
         if (!RELEASE_BUILD) {
             NSLog(@"EMPTY ARRAY - NOT INSERTING");
@@ -1211,7 +1211,7 @@
 - (void)initialRatingsWithDictionary:(NSMutableDictionary *)dictionary {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    if (dictionary == nil) return;
+    if (dictionary == nil) { return; }
     if ([dictionary count] == 0) {
         if (!RELEASE_BUILD) {
             NSLog(@"EMPTY ARRAY - NOT INSERTING");

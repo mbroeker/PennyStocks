@@ -20,11 +20,11 @@
  * @param assetsArray
  * @return NSDictionary*
  */
-+ (NSDictionary*)bittrexTicker:(NSArray*)fiatCurrencies forAssets:(NSArray*)assetsArray {
++ (NSDictionary *)bittrexTicker:(NSArray *)fiatCurrencies forAssets:(NSArray *)assetsArray {
 
     NSMutableDictionary *ticker = [[NSMutableDictionary alloc] init];
     for (id key in assetsArray) {
-        if ([key isEqualToString:ASSET1]) continue;
+        if ([key isEqualToString:ASSET1]) { continue; }
 
         NSString *pair = [NSString stringWithFormat:@"%@-%@", [ASSET1 lowercaseString], [key lowercaseString]];
         NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/public/getmarketsummary?market=%@", pair];
@@ -52,7 +52,7 @@
 
         marketName = [marketName stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
 
-        double percent = ([data[@"Last"] doubleValue] / [data[@"PrevDay"] doubleValue]) -1;
+        double percent = ([data[@"Last"] doubleValue] / [data[@"PrevDay"] doubleValue]) - 1;
 
         ticker[marketName] = @{
             POLONIEX_HIGH24: data[@"High"],
@@ -92,7 +92,7 @@
  * @param secret
  * returns NSDictionary*
  */
-+ (NSDictionary*)bittrexBalance:(NSDictionary*)apikey withSecret:(NSString*)secret {
++ (NSDictionary *)bittrexBalance:(NSDictionary *)apikey withSecret:(NSString *)secret {
 
     time_t t = 1000 * time(NULL);
     NSString *nonce = [NSString stringWithFormat:@"%ld", t];
@@ -149,7 +149,7 @@
  * @param amount
  * returns NSDictionary*
  */
-+ (NSDictionary*)bittrexBuy:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount {
++ (NSDictionary *)bittrexBuy:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount {
 
     if ([apikey[@"Key"] isEqualToString:@""]) {
         return nil;
@@ -197,7 +197,7 @@
  * @param amount
  * returns NSDictionary*
  */
-+ (NSDictionary*)bittrexSell:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount {
++ (NSDictionary *)bittrexSell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount {
 
     if ([apikey[@"Key"] isEqualToString:@""]) {
         return nil;

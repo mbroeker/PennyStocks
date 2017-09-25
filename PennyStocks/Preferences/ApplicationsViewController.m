@@ -75,7 +75,7 @@
 
     // aktualisierten Saldo besorgen
     NSMutableDictionary *applications = [[defaults objectForKey:TV_APPLICATIONS] mutableCopy];
-    
+
     applications[ASSET1_DESC] = self.asset1Field.stringValue;
     applications[ASSET2_DESC] = self.asset2Field.stringValue;
     applications[ASSET3_DESC] = self.asset3Field.stringValue;

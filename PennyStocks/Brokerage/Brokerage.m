@@ -17,7 +17,7 @@
  * @param secret
  * returns NSDictionary*
  */
-+ (NSDictionary*)balance:(NSDictionary*)apikey withSecret:(NSString*)secret forExchange:(NSString*)exchange {
++ (NSDictionary *)balance:(NSDictionary *)apikey withSecret:(NSString *)secret forExchange:(NSString *)exchange {
     if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
         return [Brokerage poloniexBalance:apikey withSecret:secret];
     }
@@ -40,7 +40,7 @@
  * @param exchange
  * returns NSDictionary*
  */
-+ (NSDictionary*)buy:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString*)exchange {
++ (NSDictionary *)buy:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString *)exchange {
     if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
         return [Brokerage poloniexBuy:apikey withSecret:secret currencyPair:currencyPair rate:rate amount:amount];
     }
@@ -63,7 +63,7 @@
  * @param exchange
  * returns NSDictionary*
  */
-+ (NSDictionary*)sell:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString*)exchange {
++ (NSDictionary *)sell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString *)exchange {
     if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
         return [Brokerage poloniexSell:apikey withSecret:secret currencyPair:currencyPair rate:rate amount:amount];
     }

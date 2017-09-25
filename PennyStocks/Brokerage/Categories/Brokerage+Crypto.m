@@ -14,8 +14,8 @@
 /**
  * HMAC SHA512
  */
-+ (NSString *)hmac:(NSString *)plainText withSecret:(NSString*)secret {
-    const char *cKey  = [secret cStringUsingEncoding:NSASCIIStringEncoding];
++ (NSString *)hmac:(NSString *)plainText withSecret:(NSString *)secret {
+    const char *cKey = [secret cStringUsingEncoding:NSASCIIStringEncoding];
     const char *cData = [plainText cStringUsingEncoding:NSASCIIStringEncoding];
 
     unsigned char cHMAC[CC_SHA512_DIGEST_LENGTH];
@@ -24,11 +24,12 @@
 
     NSData *HMACData = [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
 
-    const unsigned char *buffer = (const unsigned char *)[HMACData bytes];
+    const unsigned char *buffer = (const unsigned char *) [HMACData bytes];
     NSString *HMAC = [NSMutableString stringWithCapacity:HMACData.length * 2];
 
-    for (int i = 0; i < HMACData.length; ++i)
-        HMAC = [HMAC stringByAppendingFormat:@"%02lx", (unsigned long)buffer[i]];
+    for (int i = 0; i < HMACData.length; ++i) {
+        HMAC = [HMAC stringByAppendingFormat:@"%02lx", (unsigned long) buffer[i]];
+    }
 
     return HMAC;
 }
@@ -45,12 +46,12 @@
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
 
     // It takes in the data, how much data, and then output format, which in this case is an int array.
-    CC_SHA512(data.bytes, (CC_LONG)data.length, digest);
+    CC_SHA512(data.bytes, (CC_LONG) data.length, digest);
 
-    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
 
     // Parse through the CC_SHA256 results (stored inside of digest[]).
-    for(int i = 0; i < CC_SHA256_DIGEST_LENGTH; i++) {
+    for (int i = 0; i < CC_SHA256_DIGEST_LENGTH; i++) {
         [output appendFormat:@"%02x", digest[i]];
     }
 

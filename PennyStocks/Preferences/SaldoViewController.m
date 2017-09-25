@@ -15,44 +15,44 @@
 
 - (void)viewWillAppear {
     NSNumberFormatter *formatter;
-    
-    formatter  = self.asset1Field.formatter;
+
+    formatter = self.asset1Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 
-    formatter  = self.asset2Field.formatter;
+    formatter = self.asset2Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 
-    formatter  = self.asset3Field.formatter;
+    formatter = self.asset3Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 
-    formatter  = self.asset4Field.formatter;
+    formatter = self.asset4Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 
-    formatter  = self.asset5Field.formatter;
+    formatter = self.asset5Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 
-    formatter  = self.asset6Field.formatter;
+    formatter = self.asset6Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 
-    formatter  = self.asset7Field.formatter;
+    formatter = self.asset7Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 
-    formatter  = self.asset8Field.formatter;
+    formatter = self.asset8Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 
-    formatter  = self.asset9Field.formatter;
+    formatter = self.asset9Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 
-    formatter  = self.asset10Field.formatter;
+    formatter = self.asset10Field.formatter;
     [formatter setMinimumFractionDigits:8];
     [formatter setMaximumFractionDigits:8];
 }

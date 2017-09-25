@@ -19,7 +19,7 @@
  * @param fiatCurrencies
  * @return NSDictionary*
  */
-+ (NSDictionary*)poloniexTicker:(NSArray*)fiatCurrencies {
++ (NSDictionary *)poloniexTicker:(NSArray *)fiatCurrencies {
     NSString *jsonURL = @"https://poloniex.com/public?command=returnTicker";
 
     NSMutableDictionary *ticker = [[Brokerage jsonRequest:jsonURL] mutableCopy];
@@ -61,7 +61,7 @@
  * @param secret
  * returns NSDictionary*
  */
-+ (NSDictionary*)poloniexBalance:(NSDictionary*)apikey withSecret:(NSString*)secret {
++ (NSDictionary *)poloniexBalance:(NSDictionary *)apikey withSecret:(NSString *)secret {
     NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     if ([secret isEqualToString:@""]) {
@@ -99,7 +99,7 @@
  * @param amount
  * returns NSDictionary*
  */
-+ (NSDictionary*)poloniexBuy:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount {
++ (NSDictionary *)poloniexBuy:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount {
     NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     if ([secret isEqualToString:@""]) {
@@ -139,7 +139,7 @@
  * @param amount
  * returns NSDictionary*
  */
-+ (NSDictionary*)poloniexSell:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount {
++ (NSDictionary *)poloniexSell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount {
     NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     if ([secret isEqualToString:@""]) {

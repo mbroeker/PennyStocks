@@ -10,7 +10,7 @@
 #import "Calculator.h"
 
 @implementation BuyAndSellViewController {
-    @private
+@private
     Calculator *calculator;
     NSString *tabLabel;
 }
@@ -24,7 +24,7 @@
     self.buyButton.title = NSLocalizedString(@"buy", "Kaufen");
     self.sellButton.title = NSLocalizedString(@"sell", "Verkaufen");
 
-    NSTabViewController *controller = (NSTabViewController*)[[[NSApplication sharedApplication] mainWindow] contentViewController];
+    NSTabViewController *controller = (NSTabViewController *) [[[NSApplication sharedApplication] mainWindow] contentViewController];
     NSUInteger pos = controller.selectedTabViewItemIndex;
     NSTabViewItem *item = controller.tabViewItems[pos];
 
@@ -42,7 +42,7 @@
 /**
  * Update the view after user interaction
  */
-- (void) updateBuyAndSellView {
+- (void)updateBuyAndSellView {
     self.buyAssetImage.image = [NSImage imageNamed:tabLabel];
     self.buyAsset1Image.image = [NSImage imageNamed:ASSET1];
     self.buyAsset1TotalImage.image = [NSImage imageNamed:ASSET1];

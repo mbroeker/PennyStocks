@@ -53,7 +53,7 @@
 
     // aktualisierten Saldo besorgen
     NSMutableDictionary *saldoUrls = [calculator saldoUrls];
-    
+
     self.asset1Field.stringValue = saldoUrls[ASSET1_DESC];
     self.asset2Field.stringValue = saldoUrls[ASSET2_DESC];
     self.asset3Field.stringValue = saldoUrls[ASSET3_DESC];
@@ -64,7 +64,7 @@
     self.asset8Field.stringValue = saldoUrls[ASSET8_DESC];
     self.asset9Field.stringValue = saldoUrls[ASSET9_DESC];
     self.asset10Field.stringValue = saldoUrls[ASSET10_DESC];
-    
+
     self.dashboardField.stringValue = saldoUrls[DASHBOARD];
 }
 
@@ -88,7 +88,7 @@
     saldoUrls[ASSET9_DESC] = self.asset9Field.stringValue;
     saldoUrls[ASSET10_DESC] = self.asset10Field.stringValue;
     saldoUrls[DASHBOARD] = self.dashboardField.stringValue;
-    
+
     [calculator saldoUrlsForDictionary:saldoUrls];
 
     // Gespeicherte Daten neu einlesen...

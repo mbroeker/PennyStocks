@@ -16,18 +16,18 @@
  * @param equations
  * @param data
  */
-+ (double**)gaussAlloc:(int)equations withData:(NSArray*)data {
-    
-    double **matrix = calloc(equations, sizeof(double*));
-    
++ (double **)gaussAlloc:(int)equations withData:(NSArray *)data {
+
+    double **matrix = calloc(equations, sizeof(double *));
+
     for (int i = 0; i < equations; i++) {
         matrix[i] = calloc(equations + 1, sizeof(double));
 
-        for (int j = 0;j < equations + 1; j++) {
+        for (int j = 0; j < equations + 1; j++) {
             matrix[i][j] = [data[i][j] doubleValue];
         }
     }
-    
+
     return matrix;
 }
 
@@ -36,13 +36,13 @@
  *
  * @param matrix
  */
-+ (void)gaussDealloc:(double**)matrix withEquations: (int)equations {
++ (void)gaussDealloc:(double **)matrix withEquations:(int)equations {
     for (int i = 0; i < equations; i++) {
         if (matrix[i] != NULL) {
             free(matrix[i]);
         }
     }
-    
+
     if (matrix != NULL) {
         free(matrix);
     }
@@ -56,7 +56,7 @@
  *
  * @return NSArray*
  */
-+ (NSArray*)gaussResult:(double**)matrix withEquations:(int)equations {
++ (NSArray *)gaussResult:(double **)matrix withEquations:(int)equations {
 
     NSMutableArray *result = [[NSMutableArray alloc] init];
 
@@ -68,7 +68,7 @@
             result[i][j] = @([Algorithm nearest:matrix[i][j] withAccuracy:4]);
         }
     }
-    
+
     return result;
 }
 
@@ -79,7 +79,7 @@
  *
  * @return NSArray*
  */
-+ (NSArray*)gaussAlgorithm:(NSArray*)data {
++ (NSArray *)gaussAlgorithm:(NSArray *)data {
     int equations = (int) [data count];
 
     double **matrix = [Algorithm gaussAlloc:equations withData:data];
@@ -97,14 +97,14 @@
  * @param matrix
  * @param equations
  */
-+ (void)gaussAlgorithm:(double**)A withEquations:(int)equations {
++ (void)gaussAlgorithm:(double **)A withEquations:(int)equations {
 
     double ACCURACY = pow(10, -3);
 
     int i, j, k, n;
 
     double h;
-    
+
     int MAXX = equations + 1;
     int MAXY = equations;
 
@@ -147,11 +147,11 @@
                 if (A[j][i] == 0.0) {
                     return;
                 }
-        
+
                 A[j][n] /= (A[j][i]);
             }
         }
-        
+
         i--;
     }
 

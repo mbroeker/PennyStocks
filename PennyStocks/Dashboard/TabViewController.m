@@ -32,7 +32,7 @@
     self.asset9TabViewItem.label = ASSET9;
     self.asset10TabViewItem.label = ASSET10;
 
-    controller = (TemplateViewController*)self.tabViewItems.firstObject.viewController;
+    controller = (TemplateViewController *) self.tabViewItems.firstObject.viewController;
     [controller updateAssistant];
 
     // Startseite aufrufen
@@ -41,7 +41,7 @@
     dispatch_queue_t autoRefreshQueue = dispatch_queue_create("de.4customers.PennyStocks.autoRefresh", NULL);
     dispatch_async(autoRefreshQueue, ^{
 
-        while(true) {
+        while (true) {
             [NSThread sleepForTimeInterval:DEFAULT_TIMEOUT];
 
             [controller updateBalanceAndRatings];
@@ -63,7 +63,7 @@
 
     NSString *tab = tabViewItem.label;
 
-    controller = (TemplateViewController*)tabViewItem.viewController;
+    controller = (TemplateViewController *) tabViewItem.viewController;
     [controller updateTemplateView:tab];
 }
 

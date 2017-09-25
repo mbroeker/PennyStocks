@@ -60,7 +60,7 @@
     dispatch_queue_t queue = dispatch_queue_create("de.4customers.PennyStocks.updatePortfolioViewer", NULL);
     dispatch_async(queue, ^{
 
-        while(true) {
+        while (true) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self updatePortfolioView];
             });
@@ -103,7 +103,7 @@
     }
 
     for (int i = 0; i < fields.count; i++) {
-        NSTextField *field = (NSTextField*)fields[i];
+        NSTextField *field = (NSTextField *) fields[i];
         double currentCoins = [data[i] doubleValue];
         double initialCoins = [initialValues[i] doubleValue];
 

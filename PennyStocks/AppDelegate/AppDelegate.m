@@ -70,24 +70,36 @@
 
     // und dann den einzelnen selektieren
     if ([fiatCurrencies[0] isEqualToString:EUR] &&
-        [fiatCurrencies[1] isEqualToString:USD]) self.eurUSDItem.state = NSOnState;
+        [fiatCurrencies[1] isEqualToString:USD]) {
+        self.eurUSDItem.state = NSOnState;
+    }
 
     if ([fiatCurrencies[0] isEqualToString:USD] &&
-        [fiatCurrencies[1] isEqualToString:EUR]) self.usdEURItem.state = NSOnState;
+        [fiatCurrencies[1] isEqualToString:EUR]) {
+        self.usdEURItem.state = NSOnState;
+    }
 
     // und dann den einzelnen selektieren
     if ([fiatCurrencies[0] isEqualToString:EUR] &&
-        [fiatCurrencies[1] isEqualToString:GBP]) self.eurGBPItem.state = NSOnState;
+        [fiatCurrencies[1] isEqualToString:GBP]) {
+        self.eurGBPItem.state = NSOnState;
+    }
 
     if ([fiatCurrencies[0] isEqualToString:USD] &&
-        [fiatCurrencies[1] isEqualToString:GBP]) self.usdGBPItem.state = NSOnState;
+        [fiatCurrencies[1] isEqualToString:GBP]) {
+        self.usdGBPItem.state = NSOnState;
+    }
 
     // und dann den einzelnen selektieren
     if ([fiatCurrencies[0] isEqualToString:USD] &&
-        [fiatCurrencies[1] isEqualToString:CNY]) self.usdCNYItem.state = NSOnState;
+        [fiatCurrencies[1] isEqualToString:CNY]) {
+        self.usdCNYItem.state = NSOnState;
+    }
 
     if ([fiatCurrencies[0] isEqualToString:USD] &&
-        [fiatCurrencies[1] isEqualToString:JPY]) self.usdJPYItem.state = NSOnState;
+        [fiatCurrencies[1] isEqualToString:JPY]) {
+        self.usdJPYItem.state = NSOnState;
+    }
 }
 
 /**
@@ -181,14 +193,14 @@
  * @param sender
  */
 - (IBAction)toggleMenuBar:(id)sender {
-    NSMenuItem *item = (NSMenuItem*)sender;
+    NSMenuItem *item = (NSMenuItem *) sender;
 
     item.state = !item.state;
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber *state = @(item.state);
 
-    [defaults setValue:state forKey: OPTIONS_MENUBAR];
+    [defaults setValue:state forKey:OPTIONS_MENUBAR];
     [defaults synchronize];
 }
 

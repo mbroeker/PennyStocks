@@ -17,7 +17,7 @@
  * @param jsonURL
  * @return NSDictionary*
  */
-+ (NSDictionary*)jsonRequest:(NSString*)jsonURL {
++ (NSDictionary *)jsonRequest:(NSString *)jsonURL {
 
     if (![Brokerage isInternetConnection]) {
         return nil;
@@ -26,7 +26,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:jsonURL]];
     [request setHTTPMethod:@"GET"];
-    
+
     __block NSMutableDictionary *result;
     __block BOOL hasFinished = false;
 
@@ -47,10 +47,10 @@
 
     }] resume];
 
-    while(!hasFinished) {
+    while (!hasFinished) {
         [Brokerage safeSleep:0.1];
     }
-    
+
     return result;
 }
 
@@ -61,7 +61,7 @@
  * @param payload
  * @return NSDictionary*
  */
-+ (NSDictionary*)jsonRequest:(NSString*)jsonURL withPayload:(NSDictionary*)payload {
++ (NSDictionary *)jsonRequest:(NSString *)jsonURL withPayload:(NSDictionary *)payload {
     return [Brokerage jsonRequest:jsonURL withPayload:payload andHeader:nil];
 }
 
@@ -74,7 +74,7 @@
  *
  * @return NSDictionary*
  */
-+ (NSDictionary*)jsonRequest:(NSString*)jsonURL withPayload:(NSDictionary*)payload andHeader:(NSDictionary*)header {
++ (NSDictionary *)jsonRequest:(NSString *)jsonURL withPayload:(NSDictionary *)payload andHeader:(NSDictionary *)header {
 
     if (![Brokerage isInternetConnection]) {
         return nil;
@@ -116,10 +116,10 @@
 
     }] resume];
 
-    while(!hasFinished) {
+    while (!hasFinished) {
         [Brokerage safeSleep:0.1];
     }
-    
+
     return result;
 }
 
@@ -128,7 +128,7 @@
  *
  * @param string
  */
-+ (NSString*) urlStringEncode:(NSString*)string {
++ (NSString *)urlStringEncode:(NSString *)string {
     return [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 }
 
@@ -138,7 +138,7 @@
  * @param payload
  * @return NSString*
  */
-+ (NSString*)urlEncode:(NSDictionary*)payload {
++ (NSString *)urlEncode:(NSDictionary *)payload {
     NSMutableString *str = [@"" mutableCopy];
 
     for (id key in payload) {
@@ -166,7 +166,7 @@
  *
  * @return BOOL
  */
-+ (BOOL) isInternetConnection {
++ (BOOL)isInternetConnection {
     BOOL returnValue = NO;
 
     struct sockaddr zeroAddress;
@@ -174,12 +174,12 @@
     zeroAddress.sa_len = sizeof(zeroAddress);
     zeroAddress.sa_family = AF_INET;
 
-    SCNetworkReachabilityRef reachabilityRef = SCNetworkReachabilityCreateWithAddress(NULL, (const struct sockaddr*)&zeroAddress);
+    SCNetworkReachabilityRef reachabilityRef = SCNetworkReachabilityCreateWithAddress(NULL, (const struct sockaddr *) &zeroAddress);
 
     if (reachabilityRef != NULL) {
         SCNetworkReachabilityFlags flags;
 
-        if(SCNetworkReachabilityGetFlags(reachabilityRef, &flags)) {
+        if (SCNetworkReachabilityGetFlags(reachabilityRef, &flags)) {
             BOOL isReachable = ((flags & kSCNetworkFlagsReachable) != 0);
             BOOL connectionRequired = ((flags & kSCNetworkFlagsConnectionRequired) != 0);
             returnValue = isReachable && !connectionRequired;

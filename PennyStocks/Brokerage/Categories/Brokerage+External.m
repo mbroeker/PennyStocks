@@ -17,7 +17,7 @@
  * @param fiatCurrencies
  * @return NSNumber*
  */
-+ (NSNumber*)fiatExchangeRate:(NSArray*)fiatCurrencies {
++ (NSNumber *)fiatExchangeRate:(NSArray *)fiatCurrencies {
     NSString *jsonURL =
         [NSString stringWithFormat:@"https://min-api.cryptocompare.com/data/pricemulti?fsyms=%@&tsyms=%@&extraParams=de.4customers.PennyStocks", fiatCurrencies[0], fiatCurrencies[1]];
 
@@ -38,7 +38,7 @@
  * @param asset
  * @return NSDictionary*
  */
-+ (NSDictionary*)bitstampAsset1Ticker:(NSString*)asset {
++ (NSDictionary *)bitstampAsset1Ticker:(NSString *)asset {
     NSString *jsonURL = [NSString stringWithFormat:@"https://www.bitstamp.net/api/v2/ticker/%@%@/", [ASSET1 lowercaseString], [asset lowercaseString]];
 
     NSDictionary *theirData = [Brokerage jsonRequest:jsonURL];
@@ -61,7 +61,7 @@
     double last = [theirData[@"last"] doubleValue];
 
     // Heutiger Eröffnungskurs
-    double open= [theirData[@"open"] doubleValue];
+    double open = [theirData[@"open"] doubleValue];
     double percent = (last / open) - 1;
 
     NSMutableDictionary *poloniexData = [[NSMutableDictionary alloc] init];
