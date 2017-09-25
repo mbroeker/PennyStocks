@@ -119,7 +119,7 @@
         if (saldoUrls == nil) {
             saldoUrls = [@{
                 DASHBOARD: [NSString stringWithFormat:@"https://coinmarketcap.com/gainers-losers/"],
-                ASSET1_DESC: [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET1.lowercaseString],
+                ASSET1_DESC: [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges/bittrex/"],
                 ASSET2_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET2],
                 ASSET3_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET3],
                 ASSET4_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET4],
@@ -181,13 +181,13 @@
     BOOL mustUpdate = false;
 
     if (!saldoUrls[DASHBOARD]) {
-        saldoUrls[DASHBOARD] = @"";
+        saldoUrls[DASHBOARD] = @"https://coinmarketcap.com/gainers-losers/";
 
         mustUpdate = true;
     }
 
     if (!saldoUrls[ASSET1_DESC]) {
-        saldoUrls[ASSET1_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET1.lowercaseString];
+        saldoUrls[ASSET1_DESC] = @"https://coinmarketcap.com/exchanges/bittrex/";
 
         currentSaldo[ASSET1] = @0.0;
         initialRatings[ASSET1] = @0.0;
@@ -196,7 +196,7 @@
     }
 
     if (!saldoUrls[ASSET2_DESC]) {
-        saldoUrls[ASSET2_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET2.lowercaseString];
+        saldoUrls[ASSET2_DESC] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET2];
 
         currentSaldo[ASSET2] = @0.0;
         initialRatings[ASSET2] = @0.0;
@@ -205,7 +205,7 @@
     }
 
     if (!saldoUrls[ASSET3_DESC]) {
-        saldoUrls[ASSET3_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET3.lowercaseString];
+        saldoUrls[ASSET3_DESC] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET3];
 
         currentSaldo[ASSET3] = @0.0;
         initialRatings[ASSET3] = @0.0;
@@ -214,7 +214,7 @@
     }
 
     if (!saldoUrls[ASSET4_DESC]) {
-        saldoUrls[ASSET4_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET4.lowercaseString];
+        saldoUrls[ASSET4_DESC] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET4];
 
         currentSaldo[ASSET4] = @0.0;
         initialRatings[ASSET4] = @0.0;
@@ -223,7 +223,7 @@
     }
 
     if (!saldoUrls[ASSET5_DESC]) {
-        saldoUrls[ASSET5_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET5.lowercaseString];
+        saldoUrls[ASSET5_DESC] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET5];
 
         currentSaldo[ASSET5] = @0.0;
         initialRatings[ASSET5] = @0.0;
@@ -232,7 +232,7 @@
     }
 
     if (!saldoUrls[ASSET6_DESC]) {
-        saldoUrls[ASSET6_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET6.lowercaseString];
+        saldoUrls[ASSET6_DESC] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET6];
 
         currentSaldo[ASSET6] = @0.0;
         initialRatings[ASSET6] = @0.0;
@@ -241,7 +241,7 @@
     }
 
     if (!saldoUrls[ASSET7_DESC]) {
-        saldoUrls[ASSET7_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET7.lowercaseString];
+        saldoUrls[ASSET7_DESC] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET7];
 
         currentSaldo[ASSET7] = @0.0;
         initialRatings[ASSET7] = @0.0;
@@ -250,7 +250,7 @@
     }
 
     if (!saldoUrls[ASSET8_DESC]) {
-        saldoUrls[ASSET8_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET8.lowercaseString];
+        saldoUrls[ASSET8_DESC] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET8];
 
         currentSaldo[ASSET8] = @0.0;
         initialRatings[ASSET8] = @0.0;
@@ -259,7 +259,7 @@
     }
 
     if (!saldoUrls[ASSET9_DESC]) {
-        saldoUrls[ASSET9_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET9.lowercaseString];
+        saldoUrls[ASSET9_DESC] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET9];
 
         currentSaldo[ASSET9] = @0.0;
         initialRatings[ASSET9] = @0.0;
@@ -268,7 +268,7 @@
     }
 
     if (!saldoUrls[ASSET10_DESC]) {
-        saldoUrls[ASSET10_DESC] = [NSString stringWithFormat:@"https://chainz.cryptoid.info/%@/", ASSET10.lowercaseString];
+        saldoUrls[ASSET10_DESC] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET10];
 
         currentSaldo[ASSET10] = @0.0;
         initialRatings[ASSET10] = @0.0;
@@ -296,10 +296,10 @@
             }
         }
 
-        // Zurückspielen nicht vergessen :)
+        // Zurückspielen nicht vergessen
         currentSaldo = tempCurrentSaldo;
         initialRatings = tempInitialRatings;
-        
+
         [defaults setObject:saldoUrls forKey:KEY_SALDO_URLS];
         [defaults setObject:tempCurrentSaldo forKey:KEY_CURRENT_SALDO];
         [defaults setObject:tempInitialRatings forKey:KEY_INITIAL_RATINGS];
