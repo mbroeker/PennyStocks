@@ -392,17 +392,17 @@
 }
 
 /**
- * Berechne den BTC-Preis
+ * Berechne den ETH-Preis
  *
  * @param asset
  * @return double
  */
-- (double)btcPriceForAsset:(NSString *)asset {
-    double btcRating = [currentRatings[ASSET1] doubleValue];
+- (double)ethPriceForAsset:(NSString *)asset {
+    double ethRating = [currentRatings[ASSET1] doubleValue];
     double assetRating = [currentRatings[asset] doubleValue];
 
-    double btcPrice = btcRating / assetRating;
-    return btcPrice;
+    double ethPrice = ethRating / assetRating;
+    return ethPrice;
 }
 
 /**
@@ -413,7 +413,7 @@
  * @return double
  */
 - (double)factorForAsset:(NSString *)asset inRelationTo:(NSString *)baseAsset {
-    return [self btcPriceForAsset:baseAsset] / [self btcPriceForAsset:asset];
+    return [self ethPriceForAsset:baseAsset] / [self ethPriceForAsset:asset];
 }
 
 /**
@@ -855,11 +855,11 @@
 }
 
 /**
- * Verkaufe Assets mit einer Investor-Rate von "rate"% oder mehr...
+ * Verkaufe Assets mit einer Investor-Rate von "wantedPercent" oder mehr...
  *
- * @param wantedRate
+ * @param wantedPercent
  */
-- (void)sellByInvestors:(double)wantedRate {
+- (void)sellByInvestors:(double)wantedPercent {
     NSDictionary *currencyUnits = [self realChanges];
 
     NSNumber *lowest = [[currencyUnits allValues] valueForKeyPath:@"@min.self"];
@@ -868,13 +868,13 @@
         NSString *lowestKey = [currencyUnits allKeysForObject:lowest][0];
         double investorsRate = [currencyUnits[lowestKey] doubleValue];
 
-        double price = [currentSaldo[lowestKey] doubleValue] * [self btcPriceForAsset:lowestKey];
+        double price = [currentSaldo[lowestKey] doubleValue] * [self ethPriceForAsset:lowestKey];
 
         // Wir verkaufen keinen Sternenstaub...
         if (price < 0.0001) { return; }
 
         // Verkaufe auf Grundlage der aktuellen Investoren-Rate
-        if (investorsRate < wantedRate) {
+        if (investorsRate < wantedPercent) {
             [self autoSellAll:lowestKey];
         }
     }

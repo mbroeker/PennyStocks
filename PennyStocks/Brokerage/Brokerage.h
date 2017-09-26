@@ -13,9 +13,42 @@
 #import "CalculatorConstants.h"
 
 @interface Brokerage : NSObject
-+ (NSDictionary*)balance:(NSDictionary*)apikey withSecret:(NSString*)secret forExchange:(NSString*)exchange;
-+ (NSDictionary*)buy:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString*)exchange;
-+ (NSDictionary*)sell:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString*)exchange;
+
+/**
+ * Retrieve the current balance from the crypto exchange of choice
+ *
+ * @param apikey
+ * @param secret
+ * @param exchange
+ * @return NSDictionary*
+ */
++ (NSDictionary *)balance:(NSDictionary *)apikey withSecret:(NSString *)secret forExchange:(NSString *)exchange;
+
+/**
+ * Buy an ASSET with the MASTER-ASSET (ETH) via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @param currencyPair
+ * @param rate
+ * @param amount
+ * @param exchange
+ * @return NSDictionary*
+ */
++ (NSDictionary *)buy:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString *)exchange;
+
+/**
+ * Sell an ASSET back into the MASTER-ASSET (ETH) via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @param currencyPair
+ * @param rate
+ * @param amount
+ * @param exchange
+ * @return NSDictionary*
+ */
++ (NSDictionary *)sell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString *)exchange;
 @end
 
 #import "Categories/Brokerage+Bittrex.h"

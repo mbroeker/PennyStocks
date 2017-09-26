@@ -41,8 +41,8 @@
     self.sellAsset1TotalImage.image = [NSImage imageNamed:ASSET1];
 
     // Vorbelegen der Preise
-    self.buyAssetPriceField.doubleValue = [calculator btcPriceForAsset:tabLabel];
-    self.sellAssetPriceField.doubleValue = [calculator btcPriceForAsset:tabLabel];
+    self.buyAssetPriceField.doubleValue = [calculator ethPriceForAsset:tabLabel];
+    self.sellAssetPriceField.doubleValue = [calculator ethPriceForAsset:tabLabel];
 
     [self updateBuyAndSellView];
 }

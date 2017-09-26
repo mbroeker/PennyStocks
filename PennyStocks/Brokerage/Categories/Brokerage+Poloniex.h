@@ -9,8 +9,45 @@
 #import "Brokerage.h"
 
 @interface Brokerage (Poloniex)
-+ (NSDictionary*)poloniexTicker:(NSArray*)fiatCurrencies;
-+ (NSDictionary*)poloniexBalance:(NSDictionary*)apikey withSecret:(NSString*)secret;
-+ (NSDictionary*)poloniexBuy:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount;
-+ (NSDictionary*)poloniexSell:(NSDictionary*)apikey withSecret:(NSString*)secret currencyPair:(NSString*)currencyPair rate:(double)rate amount:(double)amount;
+
+/**
+ * Retrieve the Ticker from Poloniex
+ *
+ * @param fiatCurrencies
+ * @return
+ */
++ (NSDictionary *)poloniexTicker:(NSArray *)fiatCurrencies;
+
+/**
+ * Retrieve the balance from Poloniex via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @return
+ */
++ (NSDictionary *)poloniexBalance:(NSDictionary *)apikey withSecret:(NSString *)secret;
+
+/**
+ * Buy an ASSET with the MASTER ASSET (ETH) via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @param currencyPair
+ * @param rate
+ * @param amount
+ * @return
+ */
++ (NSDictionary *)poloniexBuy:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount;
+
+/**
+ * Sell an ASSET back into the master ASSET (ETH) via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @param currencyPair
+ * @param rate
+ * @param amount
+ * @return
+ */
++ (NSDictionary *)poloniexSell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount;
 @end
