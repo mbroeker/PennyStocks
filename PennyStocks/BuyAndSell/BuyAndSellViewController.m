@@ -32,6 +32,14 @@
 
     calculator = [Calculator instance];
 
+    self.buyAssetImage.image = [NSImage imageNamed:tabLabel];
+    self.buyAsset1Image.image = [NSImage imageNamed:ASSET1];
+    self.buyAsset1TotalImage.image = [NSImage imageNamed:ASSET1];
+
+    self.sellAssetImage.image = [NSImage imageNamed:tabLabel];
+    self.sellAsset1Image.image = [NSImage imageNamed:ASSET1];
+    self.sellAsset1TotalImage.image = [NSImage imageNamed:ASSET1];
+
     // Vorbelegen der Preise
     self.buyAssetPriceField.doubleValue = [calculator btcPriceForAsset:tabLabel];
     self.sellAssetPriceField.doubleValue = [calculator btcPriceForAsset:tabLabel];
@@ -43,14 +51,6 @@
  * Update the view after user interaction
  */
 - (void)updateBuyAndSellView {
-    self.buyAssetImage.image = [NSImage imageNamed:tabLabel];
-    self.buyAsset1Image.image = [NSImage imageNamed:ASSET1];
-    self.buyAsset1TotalImage.image = [NSImage imageNamed:ASSET1];
-
-    self.sellAssetImage.image = [NSImage imageNamed:tabLabel];
-    self.sellAsset1Image.image = [NSImage imageNamed:ASSET1];
-    self.sellAsset1TotalImage.image = [NSImage imageNamed:ASSET1];
-
     double amountAssetsToBuy = self.buyAssetField.doubleValue;
     double buyPrice = self.buyAssetPriceField.doubleValue;
     double buyPriceTotal = buyPrice * amountAssetsToBuy;
