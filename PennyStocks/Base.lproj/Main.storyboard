@@ -1050,7 +1050,7 @@
                                     <action selector="rateInputAction:" target="2wC-py-DJR" id="7eT-nd-CXB"/>
                                 </connections>
                             </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cqL-ye-zmb">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cqL-ye-zmb" customClass="RestrictedClickableTextField">
                                 <rect key="frame" x="16" y="277" width="360" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="356" id="2n2-eN-hGz"/>
@@ -1060,6 +1060,9 @@
                                     <color key="textColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="wK0-k4-yot" kind="sheet" id="2Ee-hc-del"/>
+                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bgz-bJ-5nT">
                                 <rect key="frame" x="502" y="417" width="117" height="32"/>
@@ -1355,9 +1358,6 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <connections>
-                                    <segue destination="wK0-k4-yot" kind="sheet" id="arq-H4-ch1"/>
-                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="obE-h9-MjG">
                                 <rect key="frame" x="377" y="337" width="120" height="17"/>

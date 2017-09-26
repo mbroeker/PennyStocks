@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43D6F38ACFC8FA54F3AC373E /* ClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D6FFBF2890499FD95E1FFB /* ClickableTextField.m */; };
+		43D6F4348C268AF3D7234DC6 /* RestrictedClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D6F0544839CEF7511634D5 /* RestrictedClickableTextField.m */; };
 		B271E4CE1F5E0C4800B14228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4CD1F5E0C4800B14228 /* main.m */; };
 		B271E4D31F5E0C4800B14228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D21F5E0C4800B14228 /* Assets.xcassets */; };
 		B271E4D61F5E0C4800B14228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D41F5E0C4800B14228 /* Main.storyboard */; };
@@ -82,6 +84,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43D6F0544839CEF7511634D5 /* RestrictedClickableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestrictedClickableTextField.m; sourceTree = "<group>"; };
+		43D6F269EE82390A9B8A6C87 /* ClickableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableTextField.h; sourceTree = "<group>"; };
+		43D6F673AE566AF75F129ECE /* RestrictedClickableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestrictedClickableTextField.h; sourceTree = "<group>"; };
+		43D6FFBF2890499FD95E1FFB /* ClickableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableTextField.m; sourceTree = "<group>"; };
 		B271E4C61F5E0C4800B14228 /* PennyStocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennyStocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B271E4CD1F5E0C4800B14228 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B271E4D21F5E0C4800B14228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -337,6 +343,8 @@
 			children = (
 				B2E23D251F756075001E135B /* BuyAndSellViewController.h */,
 				B2E23D261F756075001E135B /* BuyAndSellViewController.m */,
+				43D6F0544839CEF7511634D5 /* RestrictedClickableTextField.m */,
+				43D6F673AE566AF75F129ECE /* RestrictedClickableTextField.h */,
 			);
 			path = BuyAndSell;
 			sourceTree = "<group>";
@@ -353,6 +361,8 @@
 				B2F9FEB71F6913A600BD668D /* KeychainWrapper.m */,
 				B2F9FEB81F6913A600BD668D /* TabView.h */,
 				B2F9FEB91F6913A600BD668D /* TabView.m */,
+				43D6FFBF2890499FD95E1FFB /* ClickableTextField.m */,
+				43D6F269EE82390A9B8A6C87 /* ClickableTextField.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -593,6 +603,8 @@
 				B2FB85BE1F688BBA00F37D30 /* Brokerage+Bittrex.m in Sources */,
 				B2E23D271F756075001E135B /* BuyAndSellViewController.m in Sources */,
 				B271E5401F5E0D0E00B14228 /* ApplicationsViewController.m in Sources */,
+				43D6F38ACFC8FA54F3AC373E /* ClickableTextField.m in Sources */,
+				43D6F4348C268AF3D7234DC6 /* RestrictedClickableTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
