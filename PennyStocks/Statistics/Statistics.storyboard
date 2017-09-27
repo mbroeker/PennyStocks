@@ -12,9 +12,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="514" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZB-Ai-RAf">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZB-Ai-RAf">
                                 <rect key="frame" x="10" y="56" width="494" height="119"/>
-                                <clipView key="contentView" ambiguous="YES" id="sGm-JH-23o">
+                                <clipView key="contentView" id="sGm-JH-23o">
                                     <rect key="frame" x="1" y="17" width="492" height="101"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -95,8 +95,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11s-47-Feb">
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="11s-47-Feb">
                                 <rect key="frame" x="456" y="0.0" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="gKu-yV-7oh"/>
+                                </constraints>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRefreshTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Ucp-7d-PAG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -105,15 +108,30 @@
                                     <action selector="dismissActionClicked:" target="O93-fa-MTm" id="8PQ-IR-AIc"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYL-Er-zix">
-                                <rect key="frame" x="8" y="183" width="498" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iYL-Er-zix">
+                                <rect key="frame" x="8" y="6" width="240" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="23F-aZ-HtF"/>
+                                    <constraint firstAttribute="height" constant="38" id="Y9V-KM-dDd"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="OPEN ORDERS" id="fd5-AY-3ja">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <font key="font" size="24" name="Krungthep"/>
+                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="KZB-Ai-RAf" firstAttribute="centerX" secondItem="4IR-Vm-dTK" secondAttribute="centerX" id="9GM-PA-hG3"/>
+                            <constraint firstItem="11s-47-Feb" firstAttribute="trailing" secondItem="KZB-Ai-RAf" secondAttribute="trailing" id="Bzl-Jx-Ii9"/>
+                            <constraint firstAttribute="bottom" secondItem="iYL-Er-zix" secondAttribute="bottom" constant="6" id="CQJ-5W-u7W"/>
+                            <constraint firstItem="11s-47-Feb" firstAttribute="top" secondItem="KZB-Ai-RAf" secondAttribute="bottom" constant="8" symbolic="YES" id="RRZ-eA-UlY"/>
+                            <constraint firstItem="iYL-Er-zix" firstAttribute="top" secondItem="KZB-Ai-RAf" secondAttribute="bottom" constant="12" id="bJn-aS-fdg"/>
+                            <constraint firstItem="KZB-Ai-RAf" firstAttribute="leading" secondItem="4IR-Vm-dTK" secondAttribute="leading" constant="10" id="bwL-Ew-PEA"/>
+                            <constraint firstAttribute="bottom" secondItem="11s-47-Feb" secondAttribute="bottom" id="lKX-co-rtU"/>
+                            <constraint firstItem="iYL-Er-zix" firstAttribute="leading" secondItem="KZB-Ai-RAf" secondAttribute="leading" id="sno-UF-UrK"/>
+                            <constraint firstItem="KZB-Ai-RAf" firstAttribute="top" secondItem="4IR-Vm-dTK" secondAttribute="top" constant="25" id="uvC-oM-lVj"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="dismissButton" destination="11s-47-Feb" id="pgq-fO-zU4"/>
