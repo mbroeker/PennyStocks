@@ -51,4 +51,23 @@
  * @return NSDictionary*
  */
 + (NSDictionary *)bittrexSell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount;
+
+/**
+ * Get Open Orders from Bittrex via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @return
+ */
++ (NSArray *)bittrexOpenOrders:(NSDictionary *)apikey withSecret:(NSString *)secret;
+
+/**
+ *
+ * @param apikey
+ * @param secret
+ * @param orderId
+ * @return
+ */
++ (BOOL)bittrexCancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId;
+
 @end

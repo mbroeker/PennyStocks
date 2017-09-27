@@ -24,6 +24,9 @@
 		B271E56D1F5E0F3A00B14228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5671F5E0F3A00B14228 /* main.m */; };
 		B271E5741F5E1CC600B14228 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B271E5721F5E1CC600B14228 /* Localizable.strings */; };
 		B2824CF41F676DD800DC10F3 /* PennyStocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */; };
+		B2A344D21F7B44F4000A6ED2 /* OrderData.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A344CE1F7B44F4000A6ED2 /* OrderData.m */; };
+		B2A344D31F7B44F4000A6ED2 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A344CF1F7B44F4000A6ED2 /* Statistics.storyboard */; };
+		B2A344D41F7B44F4000A6ED2 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A344D11F7B44F4000A6ED2 /* StatisticsViewController.m */; };
 		B2B2316A1F71C9CC007FD022 /* ExtraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B231691F71C9CC007FD022 /* ExtraViewController.m */; };
 		B2DD501E1F6B261B00230B21 /* PortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD501D1F6B261B00230B21 /* PortfolioViewController.m */; };
 		B2E076CB1F6B794A0050A42C /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85971F688B8A00F37D30 /* Algorithm.m */; };
@@ -149,6 +152,11 @@
 		B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennyStocksTests.m; sourceTree = "<group>"; };
 		B2824CF51F676DD800DC10F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PennyStocks.entitlements; sourceTree = "<group>"; };
+		B2A344CD1F7B44F4000A6ED2 /* OrderData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderData.h; sourceTree = "<group>"; };
+		B2A344CE1F7B44F4000A6ED2 /* OrderData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderData.m; sourceTree = "<group>"; };
+		B2A344CF1F7B44F4000A6ED2 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
+		B2A344D01F7B44F4000A6ED2 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
+		B2A344D11F7B44F4000A6ED2 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
 		B2B231681F71C9CC007FD022 /* ExtraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraViewController.h; sourceTree = "<group>"; };
 		B2B231691F71C9CC007FD022 /* ExtraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraViewController.m; sourceTree = "<group>"; };
 		B2DD501C1F6B261B00230B21 /* PortfolioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortfolioViewController.h; sourceTree = "<group>"; };
@@ -252,18 +260,19 @@
 		B271E4C81F5E0C4800B14228 /* PennyStocks */ = {
 			isa = PBXGroup;
 			children = (
-				B2E23D241F756075001E135B /* BuyAndSell */,
-				B2F9FEB01F6913A600BD668D /* Common */,
-				B2FB85AC1F688BBA00F37D30 /* Brokerage */,
-				B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */,
 				B271E4DD1F5E0D0E00B14228 /* AppDelegate */,
 				B271E4E01F5E0D0E00B14228 /* Assets.xcassets */,
+				B2FB85AC1F688BBA00F37D30 /* Brokerage */,
+				B2E23D241F756075001E135B /* BuyAndSell */,
+				B2F9FEB01F6913A600BD668D /* Common */,
 				B271E4F31F5E0D0E00B14228 /* Dashboard */,
-				B271E5071F5E0D0E00B14228 /* Preferences */,
-				B271E4D21F5E0C4800B14228 /* Assets.xcassets */,
-				B271E4D41F5E0C4800B14228 /* Main.storyboard */,
 				B271E4D71F5E0C4800B14228 /* Info.plist */,
+				B271E4D41F5E0C4800B14228 /* Main.storyboard */,
+				B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */,
+				B271E5071F5E0D0E00B14228 /* Preferences */,
+				B2A344CC1F7B44F4000A6ED2 /* Statistics */,
 				B271E4CC1F5E0C4800B14228 /* Supporting Files */,
+				B271E4D21F5E0C4800B14228 /* Assets.xcassets */,
 			);
 			path = PennyStocks;
 			sourceTree = "<group>";
@@ -336,6 +345,18 @@
 				B2824CF51F676DD800DC10F3 /* Info.plist */,
 			);
 			path = PennyStocksTests;
+			sourceTree = "<group>";
+		};
+		B2A344CC1F7B44F4000A6ED2 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				B2A344CD1F7B44F4000A6ED2 /* OrderData.h */,
+				B2A344CE1F7B44F4000A6ED2 /* OrderData.m */,
+				B2A344CF1F7B44F4000A6ED2 /* Statistics.storyboard */,
+				B2A344D01F7B44F4000A6ED2 /* StatisticsViewController.h */,
+				B2A344D11F7B44F4000A6ED2 /* StatisticsViewController.m */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		B2E23D241F756075001E135B /* BuyAndSell */ = {
@@ -509,7 +530,6 @@
 				TargetAttributes = {
 					B271E4C51F5E0C4800B14228 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = NS52DCTHFQ;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -561,6 +581,7 @@
 				B271E4D31F5E0C4800B14228 /* Assets.xcassets in Resources */,
 				B271E5421F5E0D0E00B14228 /* Preferences.storyboard in Resources */,
 				B271E5741F5E1CC600B14228 /* Localizable.strings in Resources */,
+				B2A344D31F7B44F4000A6ED2 /* Statistics.storyboard in Resources */,
 				B271E54E1F5E0D7A00B14228 /* PennyStocks.help in Resources */,
 				B271E4D61F5E0C4800B14228 /* Main.storyboard in Resources */,
 			);
@@ -583,7 +604,9 @@
 				B2F9FECF1F691A3000BD668D /* TemplateViewController.m in Sources */,
 				B271E5451F5E0D0E00B14228 /* SaldoViewController.m in Sources */,
 				B271E5431F5E0D0E00B14228 /* BittrexViewController.m in Sources */,
+				B2A344D41F7B44F4000A6ED2 /* StatisticsViewController.m in Sources */,
 				B2FB85C21F688BBA00F37D30 /* Brokerage+Poloniex.m in Sources */,
+				B2A344D21F7B44F4000A6ED2 /* OrderData.m in Sources */,
 				B2FB85C01F688BBA00F37D30 /* Brokerage+External.m in Sources */,
 				B2B2316A1F71C9CC007FD022 /* ExtraViewController.m in Sources */,
 				B271E52E1F5E0D0E00B14228 /* AppDelegate.m in Sources */,

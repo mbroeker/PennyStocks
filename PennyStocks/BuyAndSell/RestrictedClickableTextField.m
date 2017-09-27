@@ -13,7 +13,7 @@
  * @param theEvent
  */
 - (void)mouseDown:(NSEvent *)theEvent {
-    if ([self.stringValue isEqualToString:DASHBOARD] || [self.stringValue isEqualToString:ASSET1]) {
+    if ([self.stringValue isEqualToString:DASHBOARD] || [self.stringValue isEqualToString:ASSET1_DESC]) {
         return;
     }
 

@@ -75,4 +75,44 @@
     return nil;
 }
 
+/**
+ * Get Open Orders from the given exchange via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @param exchange
+ * @return
+ */
++ (NSArray *)openOrders:(NSDictionary *)apikey withSecret:(NSString *)secret onExchange:(NSString *)exchange {
+    if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
+        return [Brokerage poloniexOpenOrders:apikey withSecret:secret];
+    }
+
+    if ([exchange isEqualToString:EXCHANGE_BITTREX]) {
+        return [Brokerage bittrexOpenOrders:apikey withSecret:secret];
+    }
+
+    return nil;
+}
+
+/**
+ *
+ * @param apikey
+ * @param secret
+ * @param orderId
+ * @param exchange
+ * @return
+ */
++ (BOOL)cancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId onExchange:(NSString *)exchange {
+    if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
+        return [Brokerage poloniexCancelOrder:apikey withSecret:secret orderId:orderId];
+    }
+
+    if ([exchange isEqualToString:EXCHANGE_BITTREX]) {
+        return [Brokerage bittrexCancelOrder:apikey withSecret:secret orderId:orderId];
+    }
+
+    return false;
+}
+
 @end

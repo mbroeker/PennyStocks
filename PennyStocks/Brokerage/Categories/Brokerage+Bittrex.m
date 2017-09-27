@@ -235,4 +235,77 @@
     return nil;
 }
 
+/**
+ * Get Open Orders from Bittrex via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @return
+ */
++ (NSArray *)bittrexOpenOrders:(NSDictionary *)apikey withSecret:(NSString *)secret {
+
+    if ([apikey[@"Key"] isEqualToString:@""]) {
+        return nil;
+    }
+
+    time_t t = time(NULL);
+    NSString *nonce = [NSString stringWithFormat:@"%ld", t];
+    NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/market/getopenorders?apikey=%@&nonce=%@",
+        apikey[@"Key"],
+        nonce
+    ];
+
+    NSMutableDictionary *header = [[NSMutableDictionary alloc] init];
+    header[@"apisign"] = [Brokerage hmac:[Brokerage urlStringEncode:jsonURL] withSecret:secret];
+
+    NSDictionary *response = [Brokerage jsonRequest:jsonURL withPayload:nil andHeader:header];
+
+    NSMutableArray *orders = [[NSMutableArray alloc] init];
+    if ([response[@"success"] integerValue] == 1) {
+        NSArray *result = response[@"result"];
+
+        int i = 0;
+        for (NSDictionary *element in result) {
+            orders[i++] = @[
+                element[@"OrderUuid"],
+                element[@"Opened"],
+                element[@"Exchange"],
+                element[@"Quantity"],
+                element[@"Limit"]
+            ];
+        }
+    }
+
+    return orders;
+}
+
+/**
+ *
+ * @param apikey
+ * @param secret
+ * @param orderId
+ * @return
+ */
++ (BOOL)bittrexCancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId {
+
+    if ([apikey[@"Key"] isEqualToString:@""]) {
+        return false;
+    }
+
+    time_t t = time(NULL);
+    NSString *nonce = [NSString stringWithFormat:@"%ld", t];
+    NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/market/cancel?apikey=%@&uuid=%@&nonce=%@",
+        apikey[@"Key"],
+        orderId,
+        nonce
+    ];
+
+    NSMutableDictionary *header = [[NSMutableDictionary alloc] init];
+    header[@"apisign"] = [Brokerage hmac:[Brokerage urlStringEncode:jsonURL] withSecret:secret];
+
+    NSDictionary *response = [Brokerage jsonRequest:jsonURL withPayload:nil andHeader:header];
+
+    return ([response[@"success"] integerValue] == 1);
+}
+
 @end

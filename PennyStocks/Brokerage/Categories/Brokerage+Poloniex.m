@@ -169,4 +169,101 @@
     return [Brokerage jsonRequest:jsonURL withPayload:payload andHeader:header];
 }
 
+/**
+ * Get Open Orders from Poloniex via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @return
+ */
++ (NSArray *)poloniexOpenOrders:(NSDictionary *)apikey withSecret:(NSString *)secret {
+    NSString *jsonURL = @"https://poloniex.com/tradingApi";
+
+    if ([secret isEqualToString:@""]) {
+        return nil;
+    }
+
+    NSMutableDictionary *payload = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *header = [apikey mutableCopy];
+
+    time_t t = 1975.0 * time(NULL);
+
+    payload[@"command"] = @"returnOpenOrders";
+    payload[@"currencyPair"] = @"all";
+    payload[@"nonce"] = [NSString stringWithFormat:@"%ld", t];
+
+    header[@"Sign"] = [Brokerage hmac:[Brokerage urlEncode:payload] withSecret:secret];
+
+    NSDictionary *response = [Brokerage jsonRequest:jsonURL withPayload:payload andHeader:header];
+
+    if (response[@"error"]) {
+        NSLog(@"ERROR: %@", response[@"error"]);
+        return nil;
+    }
+
+    // Bitcoin Cash heißt BCH auf Poloniex
+    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
+    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET1];
+
+    NSMutableArray *orders = [[NSMutableArray alloc] init];
+
+    int i = 0;
+    for (id key in response) {
+        NSString *asset = key;
+
+        if ([asset isEqualToString:asset1BCH]) {
+            asset = asset1BCC;
+        }
+
+        NSDictionary *data = response[key];
+
+        if (data.count > 0) {
+            orders[i++] = @[
+                data[@"orderNumber"],
+                @"---",
+                asset,
+                data[@"amount"],
+                data[@"rate"]
+            ];
+        }
+    }
+
+    return orders;
+}
+
+/**
+ *
+ * @param apikey
+ * @param secret
+ * @param orderId
+ * @return
+ */
++ (BOOL)poloniexCancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId {
+    NSString *jsonURL = @"https://poloniex.com/tradingApi";
+
+    if ([secret isEqualToString:@""]) {
+        return false;
+    }
+
+    NSMutableDictionary *payload = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *header = [apikey mutableCopy];
+
+    time_t t = 1975.0 * time(NULL);
+
+    payload[@"command"] = @"cancelOrder";
+    payload[@"orderId"] = orderId;
+    payload[@"nonce"] = [NSString stringWithFormat:@"%ld", t];
+
+    header[@"Sign"] = [Brokerage hmac:[Brokerage urlEncode:payload] withSecret:secret];
+
+    NSDictionary *response = [Brokerage jsonRequest:jsonURL withPayload:payload andHeader:header];
+
+    if (response[@"error"]) {
+        NSLog(@"ERROR: %@", response[@"error"]);
+        return false;
+    }
+
+    return [response[@"success"] isEqualToString:@"true"];
+}
+
 @end

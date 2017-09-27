@@ -49,6 +49,27 @@
  * @return NSDictionary*
  */
 + (NSDictionary *)sell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString *)exchange;
+
+/**
+ * Get Open Orders from the given exchange via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @param exchange
+ * @return
+ */
++ (NSArray *)openOrders:(NSDictionary *)apikey withSecret:(NSString *)secret onExchange:(NSString *)exchange;
+
+/**
+ * Cancel Order from the given exchange via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @param exchange
+ * @return
+ */
++ (BOOL)cancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId onExchange:(NSString *)exchange;
+
 @end
 
 #import "Categories/Brokerage+Bittrex.h"

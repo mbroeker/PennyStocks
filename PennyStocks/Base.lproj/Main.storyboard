@@ -742,6 +742,14 @@
             </objects>
             <point key="canvasLocation" x="-840" y="306.5"/>
         </scene>
+        <!--Statistics-->
+        <scene sceneID="kKk-re-RJa">
+            <objects>
+                <controllerPlaceholder storyboardName="Statistics" id="6Lb-B9-5Dp" sceneMemberID="viewController"/>
+                <customObject id="VNo-47-Yvb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2223" y="307"/>
+        </scene>
         <!--Dash-->
         <scene sceneID="2XX-Xf-dCL">
             <objects>
@@ -1064,29 +1072,38 @@
                                     <segue destination="wK0-k4-yot" kind="sheet" id="2Ee-hc-del"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bgz-bJ-5nT">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bgz-bJ-5nT" customClass="ClickableTextField">
                                 <rect key="frame" x="502" y="417" width="117" height="32"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" placeholderString="Kurs" drawsBackground="YES" id="EVR-A1-L2s">
                                     <font key="font" size="14" name="Krungthep"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="9F5-Fs-Ucc"/>
+                                </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AkD-wb-YDJ">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AkD-wb-YDJ" customClass="ClickableTextField">
                                 <rect key="frame" x="139" y="417" width="117" height="32"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" placeholderString="Kurs" drawsBackground="YES" id="adB-Si-qHl">
                                     <font key="font" size="14" name="Krungthep"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="CQF-bT-ioo"/>
+                                </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OGh-CP-Qjo">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OGh-CP-Qjo" customClass="ClickableTextField">
                                 <rect key="frame" x="381" y="417" width="117" height="32"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" placeholderString="Kurs" drawsBackground="YES" id="Ux0-BH-TEe">
                                     <font key="font" size="14" name="Krungthep"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="MSL-Pm-j0j"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-Gw-jnu">
                                 <rect key="frame" x="18" y="457" width="120" height="17"/>
@@ -1147,39 +1164,51 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NPB-Td-UQc">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NPB-Td-UQc" customClass="ClickableTextField">
                                 <rect key="frame" x="502" y="357" width="117" height="32"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" placeholderString="Kurs" drawsBackground="YES" id="ELP-22-eyf">
                                     <font key="font" size="14" name="Krungthep"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="WQ3-hn-Lu3"/>
+                                </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O4D-dm-rXc">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="O4D-dm-rXc" customClass="ClickableTextField">
                                 <rect key="frame" x="139" y="357" width="117" height="32"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" placeholderString="Kurs" drawsBackground="YES" id="4vc-37-SrV">
                                     <font key="font" size="14" name="Krungthep"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="ygA-VK-WXc"/>
+                                </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-Yz-7tv">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yoy-Yz-7tv" customClass="ClickableTextField">
                                 <rect key="frame" x="260" y="357" width="117" height="32"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" placeholderString="Kurs" drawsBackground="YES" id="xCC-gr-YEB">
                                     <font key="font" size="14" name="Krungthep"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="gOu-bo-siy"/>
+                                </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WsO-tu-loy">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WsO-tu-loy" customClass="ClickableTextField">
                                 <rect key="frame" x="381" y="357" width="117" height="32"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" placeholderString="Kurs" drawsBackground="YES" id="5WR-pz-LnN">
                                     <font key="font" size="14" name="Krungthep"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="Dx1-0y-fV7"/>
+                                </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GCB-ht-bQJ">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GCB-ht-bQJ" customClass="ClickableTextField">
                                 <rect key="frame" x="18" y="357" width="117" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="gK1-VQ-paP"/>
@@ -1189,6 +1218,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="ph6-cc-cel"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hjC-a5-QlD">
                                 <rect key="frame" x="139" y="337" width="117" height="17"/>
@@ -1217,7 +1249,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7ho-z0-6QQ">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7ho-z0-6QQ" customClass="ClickableTextField">
                                 <rect key="frame" x="18" y="417" width="117" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="hfg-cP-3Tw"/>
@@ -1227,6 +1259,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="VEy-v6-kWc"/>
+                                </connections>
                             </textField>
                             <box boxType="custom" borderType="none" translatesAutoresizingMaskIntoConstraints="NO" id="VrK-PC-fjo">
                                 <rect key="frame" x="1" y="518" width="637" height="35"/>
@@ -1331,13 +1366,16 @@
                                 <color key="borderColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aIM-JT-ogg">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aIM-JT-ogg" customClass="ClickableTextField">
                                 <rect key="frame" x="260" y="417" width="117" height="32"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" placeholderString="Kurs" drawsBackground="YES" id="cms-kU-nB6">
                                     <font key="font" size="14" name="Krungthep"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <segue destination="6Lb-B9-5Dp" kind="sheet" id="rwI-WH-gaT"/>
+                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cPk-Kk-daI">
                                 <rect key="frame" x="20" y="210" width="525" height="64"/>
@@ -1715,30 +1753,6 @@
                                     <action selector="dismissActionClicked:" target="wK0-k4-yot" id="vc8-jQ-uDf"/>
                                 </connections>
                             </button>
-                            <box boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="btY-Fu-GBF">
-                                <rect key="frame" x="262" y="157" width="42" height="42"/>
-                                <view key="contentView" id="pbS-Jx-bH6">
-                                    <rect key="frame" x="1" y="1" width="40" height="40"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="9fO-J0-A8Z">
-                                            <rect key="frame" x="2" y="2" width="38" height="38"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GAME" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="l19-Tv-Ngb">
-                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="9fO-J0-A8Z" secondAttribute="bottom" constant="2" id="7rA-d7-G8z"/>
-                                        <constraint firstItem="9fO-J0-A8Z" firstAttribute="top" secondItem="pbS-Jx-bH6" secondAttribute="top" id="Enr-kj-Lmc"/>
-                                        <constraint firstItem="9fO-J0-A8Z" firstAttribute="leading" secondItem="pbS-Jx-bH6" secondAttribute="leading" constant="2" id="GtZ-O7-sVk"/>
-                                        <constraint firstAttribute="trailing" secondItem="9fO-J0-A8Z" secondAttribute="trailing" id="ga8-pc-lml"/>
-                                    </constraints>
-                                </view>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                            </box>
                             <box boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="IGY-Sn-fDv">
                                 <rect key="frame" x="262" y="107" width="42" height="42"/>
                                 <view key="contentView" id="RJk-Q1-30g">
@@ -1746,7 +1760,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="fkh-cQ-8gi">
-                                            <rect key="frame" x="2" y="2" width="38" height="38"/>
+                                            <rect key="frame" x="1" y="1" width="38" height="38"/>
                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ETH" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="IiI-N7-SSB">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -1754,10 +1768,10 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="fkh-cQ-8gi" secondAttribute="trailing" id="3FK-VK-nlI"/>
-                                        <constraint firstItem="fkh-cQ-8gi" firstAttribute="leading" secondItem="RJk-Q1-30g" secondAttribute="leading" constant="2" id="XdB-oC-dUW"/>
-                                        <constraint firstAttribute="bottom" secondItem="fkh-cQ-8gi" secondAttribute="bottom" constant="2" id="nxI-hb-Ufd"/>
-                                        <constraint firstItem="fkh-cQ-8gi" firstAttribute="top" secondItem="RJk-Q1-30g" secondAttribute="top" id="wZb-lM-KEf"/>
+                                        <constraint firstAttribute="trailing" secondItem="fkh-cQ-8gi" secondAttribute="trailing" constant="1" id="3FK-VK-nlI"/>
+                                        <constraint firstItem="fkh-cQ-8gi" firstAttribute="leading" secondItem="RJk-Q1-30g" secondAttribute="leading" constant="1" id="XdB-oC-dUW"/>
+                                        <constraint firstAttribute="bottom" secondItem="fkh-cQ-8gi" secondAttribute="bottom" constant="1" id="nxI-hb-Ufd"/>
+                                        <constraint firstItem="fkh-cQ-8gi" firstAttribute="top" secondItem="RJk-Q1-30g" secondAttribute="top" constant="1" id="wZb-lM-KEf"/>
                                     </constraints>
                                 </view>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -1770,7 +1784,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="LPj-gN-VS9">
-                                            <rect key="frame" x="2" y="2" width="38" height="38"/>
+                                            <rect key="frame" x="1" y="1" width="38" height="38"/>
                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GAME" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="hjf-wi-i3P">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -1778,10 +1792,10 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="LPj-gN-VS9" firstAttribute="leading" secondItem="FQM-Ow-ip9" secondAttribute="leading" constant="2" id="JU8-kr-7Fx"/>
-                                        <constraint firstAttribute="trailing" secondItem="LPj-gN-VS9" secondAttribute="trailing" id="wkc-Rq-gIL"/>
-                                        <constraint firstItem="LPj-gN-VS9" firstAttribute="top" secondItem="FQM-Ow-ip9" secondAttribute="top" id="wxX-OD-ef8"/>
-                                        <constraint firstAttribute="bottom" secondItem="LPj-gN-VS9" secondAttribute="bottom" constant="2" id="zXZ-sC-oCs"/>
+                                        <constraint firstItem="LPj-gN-VS9" firstAttribute="leading" secondItem="FQM-Ow-ip9" secondAttribute="leading" constant="1" id="JU8-kr-7Fx"/>
+                                        <constraint firstAttribute="trailing" secondItem="LPj-gN-VS9" secondAttribute="trailing" constant="1" id="wkc-Rq-gIL"/>
+                                        <constraint firstItem="LPj-gN-VS9" firstAttribute="top" secondItem="FQM-Ow-ip9" secondAttribute="top" constant="1" id="wxX-OD-ef8"/>
+                                        <constraint firstAttribute="bottom" secondItem="LPj-gN-VS9" secondAttribute="bottom" constant="1" id="zXZ-sC-oCs"/>
                                     </constraints>
                                 </view>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -1794,7 +1808,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="bee-a3-UBt">
-                                            <rect key="frame" x="2" y="2" width="38" height="38"/>
+                                            <rect key="frame" x="1" y="1" width="38" height="38"/>
                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ETH" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="XLH-ff-Ulo">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -1802,10 +1816,10 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="bee-a3-UBt" secondAttribute="trailing" id="1lD-CC-Woj"/>
-                                        <constraint firstItem="bee-a3-UBt" firstAttribute="leading" secondItem="d3R-Rv-Jnh" secondAttribute="leading" constant="2" id="2CD-Sz-HBH"/>
-                                        <constraint firstAttribute="bottom" secondItem="bee-a3-UBt" secondAttribute="bottom" constant="2" id="LUt-8p-UDp"/>
-                                        <constraint firstItem="bee-a3-UBt" firstAttribute="top" secondItem="d3R-Rv-Jnh" secondAttribute="top" id="har-eY-FNO"/>
+                                        <constraint firstAttribute="trailing" secondItem="bee-a3-UBt" secondAttribute="trailing" constant="1" id="1lD-CC-Woj"/>
+                                        <constraint firstItem="bee-a3-UBt" firstAttribute="leading" secondItem="d3R-Rv-Jnh" secondAttribute="leading" constant="1" id="2CD-Sz-HBH"/>
+                                        <constraint firstAttribute="bottom" secondItem="bee-a3-UBt" secondAttribute="bottom" constant="1" id="LUt-8p-UDp"/>
+                                        <constraint firstItem="bee-a3-UBt" firstAttribute="top" secondItem="d3R-Rv-Jnh" secondAttribute="top" constant="1" id="har-eY-FNO"/>
                                     </constraints>
                                 </view>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -1818,7 +1832,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="rnf-7d-2FD">
-                                            <rect key="frame" x="2" y="2" width="38" height="38"/>
+                                            <rect key="frame" x="1" y="1" width="38" height="38"/>
                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ETH" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="BHr-p7-Kaw">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -1826,10 +1840,10 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="rnf-7d-2FD" firstAttribute="top" secondItem="NQE-Bn-aC0" secondAttribute="top" id="30m-kF-h5h"/>
-                                        <constraint firstAttribute="trailing" secondItem="rnf-7d-2FD" secondAttribute="trailing" id="90i-Oz-oMj"/>
-                                        <constraint firstAttribute="bottom" secondItem="rnf-7d-2FD" secondAttribute="bottom" constant="2" id="Inf-S5-GHi"/>
-                                        <constraint firstItem="rnf-7d-2FD" firstAttribute="leading" secondItem="NQE-Bn-aC0" secondAttribute="leading" constant="2" id="KVp-k1-aft"/>
+                                        <constraint firstItem="rnf-7d-2FD" firstAttribute="top" secondItem="NQE-Bn-aC0" secondAttribute="top" constant="1" id="30m-kF-h5h"/>
+                                        <constraint firstAttribute="trailing" secondItem="rnf-7d-2FD" secondAttribute="trailing" constant="1" id="90i-Oz-oMj"/>
+                                        <constraint firstAttribute="bottom" secondItem="rnf-7d-2FD" secondAttribute="bottom" constant="1" id="Inf-S5-GHi"/>
+                                        <constraint firstItem="rnf-7d-2FD" firstAttribute="leading" secondItem="NQE-Bn-aC0" secondAttribute="leading" constant="1" id="KVp-k1-aft"/>
                                     </constraints>
                                 </view>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -1842,7 +1856,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="hIS-Fs-66e">
-                                            <rect key="frame" x="2" y="2" width="38" height="38"/>
+                                            <rect key="frame" x="1" y="1" width="38" height="38"/>
                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ETH" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="wqM-fF-Zn9">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -1850,10 +1864,34 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="hIS-Fs-66e" secondAttribute="trailing" id="30F-mR-CuY"/>
-                                        <constraint firstItem="hIS-Fs-66e" firstAttribute="leading" secondItem="fgk-pA-xNY" secondAttribute="leading" constant="2" id="3ln-nr-kpw"/>
-                                        <constraint firstAttribute="bottom" secondItem="hIS-Fs-66e" secondAttribute="bottom" constant="2" id="EJk-R2-o30"/>
-                                        <constraint firstItem="hIS-Fs-66e" firstAttribute="top" secondItem="fgk-pA-xNY" secondAttribute="top" id="pwJ-XD-7dB"/>
+                                        <constraint firstAttribute="trailing" secondItem="hIS-Fs-66e" secondAttribute="trailing" constant="1" id="30F-mR-CuY"/>
+                                        <constraint firstItem="hIS-Fs-66e" firstAttribute="leading" secondItem="fgk-pA-xNY" secondAttribute="leading" constant="1" id="3ln-nr-kpw"/>
+                                        <constraint firstAttribute="bottom" secondItem="hIS-Fs-66e" secondAttribute="bottom" constant="1" id="EJk-R2-o30"/>
+                                        <constraint firstItem="hIS-Fs-66e" firstAttribute="top" secondItem="fgk-pA-xNY" secondAttribute="top" constant="1" id="pwJ-XD-7dB"/>
+                                    </constraints>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                            </box>
+                            <box boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="btY-Fu-GBF">
+                                <rect key="frame" x="263" y="157" width="42" height="42"/>
+                                <view key="contentView" id="pbS-Jx-bH6">
+                                    <rect key="frame" x="1" y="1" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="9fO-J0-A8Z">
+                                            <rect key="frame" x="1" y="1" width="38" height="38"/>
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GAME" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="l19-Tv-Ngb">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="9fO-J0-A8Z" secondAttribute="bottom" constant="1" id="7rA-d7-G8z"/>
+                                        <constraint firstItem="9fO-J0-A8Z" firstAttribute="top" secondItem="pbS-Jx-bH6" secondAttribute="top" constant="1" id="Enr-kj-Lmc"/>
+                                        <constraint firstItem="9fO-J0-A8Z" firstAttribute="leading" secondItem="pbS-Jx-bH6" secondAttribute="leading" constant="1" id="GtZ-O7-sVk"/>
+                                        <constraint firstAttribute="trailing" secondItem="9fO-J0-A8Z" secondAttribute="trailing" constant="1" id="ga8-pc-lml"/>
                                     </constraints>
                                 </view>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -1901,7 +1939,7 @@
                             <constraint firstItem="p3g-Yt-DJ2" firstAttribute="trailing" secondItem="PMs-yL-1Wy" secondAttribute="trailing" id="guy-V7-BZw"/>
                             <constraint firstItem="KcH-Vq-84a" firstAttribute="leading" secondItem="Q1K-sd-mk1" secondAttribute="leading" id="iFr-Ct-TeM"/>
                             <constraint firstItem="CqQ-a9-Gnb" firstAttribute="leading" secondItem="hil-xF-0Hl" secondAttribute="leading" id="iFw-YV-6vg"/>
-                            <constraint firstItem="btY-Fu-GBF" firstAttribute="leading" secondItem="bwP-U8-h6d" secondAttribute="trailing" constant="7" id="krD-eV-U1O"/>
+                            <constraint firstItem="btY-Fu-GBF" firstAttribute="leading" secondItem="bwP-U8-h6d" secondAttribute="trailing" constant="8" id="krD-eV-U1O"/>
                             <constraint firstItem="1kB-5b-7sR" firstAttribute="top" secondItem="bwP-U8-h6d" secondAttribute="bottom" constant="8" id="ldv-rk-zsM"/>
                             <constraint firstAttribute="bottom" secondItem="jnO-79-zZx" secondAttribute="bottom" constant="7" id="mNY-rs-jhY"/>
                             <constraint firstItem="p3g-Yt-DJ2" firstAttribute="top" secondItem="btY-Fu-GBF" secondAttribute="top" id="mRe-7G-FZL"/>
@@ -1911,11 +1949,11 @@
                             <constraint firstItem="hil-xF-0Hl" firstAttribute="trailing" secondItem="CqQ-a9-Gnb" secondAttribute="trailing" id="sGk-xe-LsI"/>
                             <constraint firstItem="bwP-U8-h6d" firstAttribute="leading" secondItem="1kB-5b-7sR" secondAttribute="leading" id="ubJ-7W-Xzj"/>
                             <constraint firstItem="IGY-Sn-fDv" firstAttribute="top" secondItem="1kB-5b-7sR" secondAttribute="top" id="ur5-YV-IRj"/>
-                            <constraint firstItem="IGY-Sn-fDv" firstAttribute="leading" secondItem="btY-Fu-GBF" secondAttribute="leading" id="vrZ-aF-caV"/>
+                            <constraint firstItem="IGY-Sn-fDv" firstAttribute="leading" secondItem="btY-Fu-GBF" secondAttribute="leading" constant="-1" id="vrZ-aF-caV"/>
                             <constraint firstItem="1Bz-js-VLt" firstAttribute="top" secondItem="CqQ-a9-Gnb" secondAttribute="top" id="wA5-Si-JVK"/>
                             <constraint firstItem="hZN-P3-FOs" firstAttribute="bottom" secondItem="p3g-Yt-DJ2" secondAttribute="bottom" id="wip-H6-Ob9"/>
                             <constraint firstItem="jnO-79-zZx" firstAttribute="top" secondItem="CqQ-a9-Gnb" secondAttribute="top" id="x9y-tq-PmV"/>
-                            <constraint firstItem="p3g-Yt-DJ2" firstAttribute="leading" secondItem="btY-Fu-GBF" secondAttribute="trailing" constant="8" symbolic="YES" id="yC4-lF-pms"/>
+                            <constraint firstItem="p3g-Yt-DJ2" firstAttribute="leading" secondItem="btY-Fu-GBF" secondAttribute="trailing" constant="7" id="yC4-lF-pms"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1969,5 +2007,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uWH-We-CUG"/>
+        <segue reference="ygA-VK-WXc"/>
     </inferredMetricsTieBreakers>
 </document>

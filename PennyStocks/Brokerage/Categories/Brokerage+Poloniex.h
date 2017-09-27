@@ -50,4 +50,23 @@
  * @return
  */
 + (NSDictionary *)poloniexSell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount;
+
+/**
+ * Get Open Orders from Poloniex via API-KEY
+ *
+ * @param apikey
+ * @param secret
+ * @return
+ */
++ (NSArray *)poloniexOpenOrders:(NSDictionary *)apikey withSecret:(NSString *)secret;
+
+/**
+ *
+ * @param apikey
+ * @param secret
+ * @param orderId
+ * @return
+ */
++ (BOOL)poloniexCancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId;
+
 @end
