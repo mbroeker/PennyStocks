@@ -10,7 +10,7 @@
 
 @interface StatisticsViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
 
-@property (strong) IBOutlet NSTextField *openOrdersLabel;
+@property(strong) IBOutlet NSTextField *openOrdersLabel;
 @property(strong) IBOutlet NSButton *dismissButton;
 @property(strong) IBOutlet NSTableView *ordersTableView;
 
