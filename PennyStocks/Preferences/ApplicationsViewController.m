@@ -99,10 +99,20 @@
  *
  */
 - (NSURL *)pickApplication {
+    NSArray *possibleURLs = [[NSFileManager defaultManager] URLsForDirectory:NSApplicationDirectory inDomains:NSLocalDomainMask];
+    NSURL *applicationsFolder;
+
+    if ([possibleURLs count] > 0) {
+        applicationsFolder = possibleURLs[0];
+    } else {
+        // Fallback for things that might happen...
+        applicationsFolder = [[NSURL alloc] initWithString:@"/Applications"];
+    }
+
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setCanChooseFiles:YES];
     [panel setCanChooseDirectories:YES];
-    [panel setDirectoryURL:[NSURL URLWithString:@"/Applications/"]];
+    [panel setDirectoryURL:applicationsFolder];
 
     NSInteger clicked = [panel runModal];
 
