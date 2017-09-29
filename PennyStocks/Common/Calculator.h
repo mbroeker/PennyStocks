@@ -131,8 +131,6 @@
  */
 - (void)updateBalances:(BOOL)synchronized;
 
-// Umrechnungsmethoden für Crypto-Währungen
-
 /**
  * Sums up the current balances of all cryptos in Fiat-Money (EUR, USD, GBP, JPY, CNY)
  *
@@ -182,8 +180,6 @@
  */
 - (double)factorForAsset:(NSString *)asset inRelationTo:(NSString *)baseAsset;
 
-// Methoden fürs Aktualisieren der Wechselkurse und zum Updaten dieser
-
 /**
  * Update the internal ticker
  *
@@ -207,8 +203,6 @@
  * @param wantedRate
  */
 - (void)updateCheckpointForAsset:(NSString *)asset withBTCUpdate:(BOOL)btcUpdate andRate:(double)wantedRate;
-
-// Methoden für das Aktualisieren des Saldos
 
 /**
  * Get the current amount of an specific ASSET

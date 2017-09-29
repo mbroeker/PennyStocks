@@ -747,8 +747,8 @@ typedef struct DASHBOARD_VARS {
     for (id asset in [[currentSaldo allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]) {
         NSDictionary *checkpoint = [calculator checkpointForAsset:asset];
 
-        double initialPrice = [checkpoint[CP_INITIAL_PRICE] doubleValue];
         double currentPrice = [checkpoint[CP_CURRENT_PRICE] doubleValue];
+        double percent = [checkpoint[CP_PERCENT] doubleValue];
         double btcPrice = [asset isEqualToString:ASSET1] ? 1 : [currentRatings[ASSET1] doubleValue] / [currentRatings[asset] doubleValue];
 
         double amount = [currentSaldo[asset] doubleValue];
@@ -759,10 +759,11 @@ typedef struct DASHBOARD_VARS {
         double share = 0;
         if (loop_vars.totalBalancesInEUR != 0) { share = (balanceInEUR / loop_vars.totalBalancesInEUR) * 100.0; }
 
-        double diffInEuro = balanceInEUR - ((initialPrice / currentPrice) * balanceInEUR);
-        double diffInPercent = (amount >= 0) ? [checkpoint[CP_PERCENT] doubleValue] : 0;
+        double diffInEuro = balanceInEUR * percent / 100.0;
+        double diffInPercent = (amount >= 0) ? percent : 0;
 
 #ifdef DEBUG
+        double initialPrice = [checkpoint[CP_INITIAL_PRICE] doubleValue];
         NSLog(@"%5s %20s | %20s | %14s | %14s | %14s | %12s | %20s | %12s |\n",
             [asset UTF8String],
             [[Helper double2German:amount min:8 max:8] UTF8String],
@@ -892,16 +893,13 @@ typedef struct DASHBOARD_VARS {
     NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET1];
     NSMutableDictionary *currentRatings = [calculator currentRatings];
 
-    double initialPrice = [checkpoint[CP_INITIAL_PRICE] doubleValue];
-    double currentPrice = [checkpoint[CP_CURRENT_PRICE] doubleValue];
     double percent = [checkpoint[CP_PERCENT] doubleValue];
     double btcPercent = [btcCheckpoint[CP_PERCENT] doubleValue];
 
     double assetRating = [currentRatings[asset] doubleValue];
     double saldo = [calculator currentSaldo:asset];
     double priceInEuro = saldo / assetRating;
-
-    double diffInEuro = priceInEuro * (1 - (initialPrice / currentPrice));
+    double diffInEuro = priceInEuro * percent / 100.0;
 
     double diffPercent = percent;
 

@@ -381,7 +381,7 @@
     double initialPrice = 1.0 / initialAssetRating;
     double currentPrice = 1.0 / currentAssetRating;
 
-    double percent = 100.0 * ((currentPrice / initialPrice) - 1);
+    double percent = 100.0 * (1 - (initialPrice / currentPrice));
 
     return @{
         CP_INITIAL_PRICE: @(initialPrice),
