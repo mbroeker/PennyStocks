@@ -365,7 +365,7 @@
 }
 
 /**
- * Liefert NSDictionary mit den Schlüsseln "initialPrice", "currentPrice", "percent", "effectivePrice"
+ * Liefert NSDictionary mit den Schlüsseln "initialPrice", "currentPrice", "percent"
  *
  * @param asset
  * @return NSDictionary*
@@ -386,8 +386,7 @@
     return @{
         CP_INITIAL_PRICE: @(initialPrice),
         CP_CURRENT_PRICE: @(currentPrice),
-        CP_PERCENT: @(percent),
-        CP_EFFECTIVE_PRICE: @((1 + (percent / 100.0)) * currentPrice)
+        CP_PERCENT: @(percent)
     };
 }
 
@@ -807,13 +806,13 @@
 
         NSDictionary *checkpoint = [self checkpointForAsset:key];
 
+        double initialPrice = [checkpoint[CP_INITIAL_PRICE] doubleValue];
         double currentPrice = [checkpoint[CP_CURRENT_PRICE] doubleValue];
-        double effectivePrice = [checkpoint[CP_EFFECTIVE_PRICE] doubleValue];
 
+        double initialBalanceInEUR = initialPrice * [self currentSaldo:key];
         double currentBalanceInEUR = currentPrice * [self currentSaldo:key];
-        double effectiveBalanceInEUR = effectivePrice * [self currentSaldo:key];
 
-        double gain = effectiveBalanceInEUR - currentBalanceInEUR;
+        double gain = currentBalanceInEUR - initialBalanceInEUR;
 
         if (gain > wantedEuros) {
             [self autoSellAll:key];
@@ -855,7 +854,7 @@
 }
 
 /**
- * Verkaufe Assets mit einer Investor-Rate von "wantedPercent" oder mehr...
+ * Verkaufe Assets mit einer Investor-Rate von "wantedPercent"% oder mehr...
  *
  * @param wantedPercent
  */

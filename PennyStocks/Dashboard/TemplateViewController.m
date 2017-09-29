@@ -759,7 +759,7 @@ typedef struct DASHBOARD_VARS {
         double share = 0;
         if (loop_vars.totalBalancesInEUR != 0) { share = (balanceInEUR / loop_vars.totalBalancesInEUR) * 100.0; }
 
-        double diffInEuro = ((currentPrice / initialPrice) * balanceInEUR) - balanceInEUR;
+        double diffInEuro = balanceInEUR - ((initialPrice / currentPrice) * balanceInEUR);
         double diffInPercent = (amount >= 0) ? [checkpoint[CP_PERCENT] doubleValue] : 0;
 
 #ifdef DEBUG
@@ -892,13 +892,16 @@ typedef struct DASHBOARD_VARS {
     NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET1];
     NSMutableDictionary *currentRatings = [calculator currentRatings];
 
+    double initialPrice = [checkpoint[CP_INITIAL_PRICE] doubleValue];
+    double currentPrice = [checkpoint[CP_CURRENT_PRICE] doubleValue];
     double percent = [checkpoint[CP_PERCENT] doubleValue];
     double btcPercent = [btcCheckpoint[CP_PERCENT] doubleValue];
 
     double assetRating = [currentRatings[asset] doubleValue];
     double saldo = [calculator currentSaldo:asset];
     double priceInEuro = saldo / assetRating;
-    double diffInEuro = priceInEuro * (percent / 100);
+
+    double diffInEuro = priceInEuro * (1 - (initialPrice / currentPrice));
 
     double diffPercent = percent;
 

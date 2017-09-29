@@ -66,7 +66,6 @@
 // CHECKPOINT KEYS
 #define CP_INITIAL_PRICE @"initialPrice"
 #define CP_CURRENT_PRICE @"currentPrice"
-#define CP_EFFECTIVE_PRICE @"effectivePrice"
 #define CP_PERCENT @"percent"
 
 // REAL_PRICE KEYS
