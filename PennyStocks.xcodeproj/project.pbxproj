@@ -28,6 +28,8 @@
 		B2A344D31F7B44F4000A6ED2 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A344CF1F7B44F4000A6ED2 /* Statistics.storyboard */; };
 		B2A344D41F7B44F4000A6ED2 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A344D11F7B44F4000A6ED2 /* StatisticsViewController.m */; };
 		B2B2316A1F71C9CC007FD022 /* ExtraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B231691F71C9CC007FD022 /* ExtraViewController.m */; };
+		B2B3319E1F7DD7CF00BD64AC /* Portfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B3319D1F7DD7CF00BD64AC /* Portfolio.storyboard */; };
+		B2B331A01F7DD87000BD64AC /* BuyAndSell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B3319F1F7DD87000BD64AC /* BuyAndSell.storyboard */; };
 		B2DD501E1F6B261B00230B21 /* PortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DD501D1F6B261B00230B21 /* PortfolioViewController.m */; };
 		B2E076CB1F6B794A0050A42C /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85971F688B8A00F37D30 /* Algorithm.m */; };
 		B2E23D271F756075001E135B /* BuyAndSellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E23D261F756075001E135B /* BuyAndSellViewController.m */; };
@@ -159,8 +161,10 @@
 		B2A344D11F7B44F4000A6ED2 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
 		B2B231681F71C9CC007FD022 /* ExtraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraViewController.h; sourceTree = "<group>"; };
 		B2B231691F71C9CC007FD022 /* ExtraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraViewController.m; sourceTree = "<group>"; };
-		B2DD501C1F6B261B00230B21 /* PortfolioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortfolioViewController.h; sourceTree = "<group>"; };
-		B2DD501D1F6B261B00230B21 /* PortfolioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortfolioViewController.m; sourceTree = "<group>"; };
+		B2B3319D1F7DD7CF00BD64AC /* Portfolio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Portfolio.storyboard; sourceTree = "<group>"; };
+		B2B3319F1F7DD87000BD64AC /* BuyAndSell.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BuyAndSell.storyboard; sourceTree = "<group>"; };
+		B2DD501C1F6B261B00230B21 /* PortfolioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PortfolioViewController.h; path = ../Dashboard/PortfolioViewController.h; sourceTree = "<group>"; };
+		B2DD501D1F6B261B00230B21 /* PortfolioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PortfolioViewController.m; path = ../Dashboard/PortfolioViewController.m; sourceTree = "<group>"; };
 		B2E23D251F756075001E135B /* BuyAndSellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyAndSellViewController.h; sourceTree = "<group>"; };
 		B2E23D261F756075001E135B /* BuyAndSellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyAndSellViewController.m; sourceTree = "<group>"; };
 		B2F9FEB11F6913A600BD668D /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 		B271E4C81F5E0C4800B14228 /* PennyStocks */ = {
 			isa = PBXGroup;
 			children = (
+				B2B3319C1F7DD78100BD64AC /* Portfolio */,
 				B271E4DD1F5E0D0E00B14228 /* AppDelegate */,
 				B271E4E01F5E0D0E00B14228 /* Assets.xcassets */,
 				B2FB85AC1F688BBA00F37D30 /* Brokerage */,
@@ -302,8 +307,6 @@
 				B271E4F51F5E0D0E00B14228 /* TabViewController.m */,
 				B271E4F61F5E0D0E00B14228 /* TemplateViewController.h */,
 				B271E4F71F5E0D0E00B14228 /* TemplateViewController.m */,
-				B2DD501C1F6B261B00230B21 /* PortfolioViewController.h */,
-				B2DD501D1F6B261B00230B21 /* PortfolioViewController.m */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -359,6 +362,16 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
+		B2B3319C1F7DD78100BD64AC /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				B2DD501C1F6B261B00230B21 /* PortfolioViewController.h */,
+				B2DD501D1F6B261B00230B21 /* PortfolioViewController.m */,
+				B2B3319D1F7DD7CF00BD64AC /* Portfolio.storyboard */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
 		B2E23D241F756075001E135B /* BuyAndSell */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +379,7 @@
 				B2E23D261F756075001E135B /* BuyAndSellViewController.m */,
 				43D6F0544839CEF7511634D5 /* RestrictedClickableTextField.m */,
 				43D6F673AE566AF75F129ECE /* RestrictedClickableTextField.h */,
+				B2B3319F1F7DD87000BD64AC /* BuyAndSell.storyboard */,
 			);
 			path = BuyAndSell;
 			sourceTree = "<group>";
@@ -581,9 +595,11 @@
 				B271E4D31F5E0C4800B14228 /* Assets.xcassets in Resources */,
 				B271E5421F5E0D0E00B14228 /* Preferences.storyboard in Resources */,
 				B271E5741F5E1CC600B14228 /* Localizable.strings in Resources */,
+				B2B3319E1F7DD7CF00BD64AC /* Portfolio.storyboard in Resources */,
 				B2A344D31F7B44F4000A6ED2 /* Statistics.storyboard in Resources */,
 				B271E54E1F5E0D7A00B14228 /* PennyStocks.help in Resources */,
 				B271E4D61F5E0C4800B14228 /* Main.storyboard in Resources */,
+				B2B331A01F7DD87000BD64AC /* BuyAndSell.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
