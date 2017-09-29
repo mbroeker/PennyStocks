@@ -43,10 +43,10 @@ const char *makeHeadlineString(NSDictionary *checkpoint, NSString *asset) {
 
     NSString *theHeadLine = [
         NSString stringWithFormat:format,
-                                  asset,
-                                  [checkpoint[CP_INITIAL_PRICE] doubleValue],
-                                  [checkpoint[CP_CURRENT_PRICE] doubleValue],
-                                  [checkpoint[CP_PERCENT] doubleValue]
+            asset,
+            [checkpoint[CP_INITIAL_PRICE] doubleValue],
+            [checkpoint[CP_CURRENT_PRICE] doubleValue],
+            [checkpoint[CP_PERCENT] doubleValue]
     ];
 
     return [theHeadLine UTF8String];
@@ -70,10 +70,10 @@ const char *makeString(NSDictionary *checkpoint, NSString *asset, NSDictionary *
 
     NSString *theString = [
         NSString stringWithFormat:@"%.6f EUR / %.8f %@ / %+.2f%%",
-                                  currentPrice,
-                                  currentPriceInBTC,
-                                  ASSET1,
-                                  effectivePercent
+            currentPrice,
+            currentPriceInBTC,
+            ASSET1,
+            effectivePercent
     ];
 
     return [theString UTF8String];
