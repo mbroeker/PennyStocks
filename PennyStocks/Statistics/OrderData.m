@@ -53,7 +53,7 @@
  */
 - (id)initWithArray:(NSArray*)data {
     if (self = [super init]) {
-        self.id = data[0];
+        self.orderId = data[0];
         self.date = data[1];
         self.pair = data[2];
         self.amount = data[3];
@@ -90,7 +90,7 @@
         return false;
     }
 
-    return [Brokerage cancelOrder:ak withSecret:sk orderId:self.id onExchange:defaultExchange];
+    return [Brokerage cancelOrder:ak withSecret:sk orderId:self.orderId onExchange:defaultExchange];
 }
 
 @end

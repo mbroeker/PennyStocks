@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface OrderData : NSObject
-@property(nonatomic, copy) NSString *id;
+@property(nonatomic, copy) NSString *orderId;
 @property(nonatomic, copy) NSString *date;
 @property(nonatomic, copy) NSString *pair;
 @property(nonatomic, copy) NSString *amount;
