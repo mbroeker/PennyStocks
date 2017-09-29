@@ -94,14 +94,14 @@
  */
 + (NSDictionary *)bittrexBalance:(NSDictionary *)apikey withSecret:(NSString *)secret {
 
+    if (apikey == nil || secret == nil) {
+        return nil;
+    }
+
     time_t t = 1000 * time(NULL);
     NSString *nonce = [NSString stringWithFormat:@"%ld", t];
 
     NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/account/getbalances?apikey=%@&nonce=%@", apikey[@"Key"], nonce];
-
-    if ([secret isEqualToString:@""]) {
-        return nil;
-    }
 
     NSMutableDictionary *header = [[NSMutableDictionary alloc] init];
     header[@"apisign"] = [Brokerage hmac:[Brokerage urlStringEncode:jsonURL] withSecret:secret];
@@ -151,7 +151,7 @@
  */
 + (NSDictionary *)bittrexBuy:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount {
 
-    if ([apikey[@"Key"] isEqualToString:@""]) {
+    if (apikey == nil || secret == nil) {
         return nil;
     }
 
@@ -199,7 +199,7 @@
  */
 + (NSDictionary *)bittrexSell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount {
 
-    if ([apikey[@"Key"] isEqualToString:@""]) {
+    if (apikey == nil || secret == nil) {
         return nil;
     }
 
@@ -244,7 +244,7 @@
  */
 + (NSArray *)bittrexOpenOrders:(NSDictionary *)apikey withSecret:(NSString *)secret {
 
-    if ([apikey[@"Key"] isEqualToString:@""]) {
+    if (apikey == nil || secret == nil) {
         return nil;
     }
 
@@ -288,7 +288,7 @@
  */
 + (BOOL)bittrexCancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId {
 
-    if ([apikey[@"Key"] isEqualToString:@""]) {
+    if (apikey == nil || secret == nil) {
         return false;
     }
 

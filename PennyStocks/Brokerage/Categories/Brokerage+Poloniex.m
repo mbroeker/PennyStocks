@@ -62,11 +62,12 @@
  * returns NSDictionary*
  */
 + (NSDictionary *)poloniexBalance:(NSDictionary *)apikey withSecret:(NSString *)secret {
-    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
-    if ([secret isEqualToString:@""]) {
+    if (apikey == nil || secret == nil) {
         return nil;
     }
+
+    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     NSMutableDictionary *payload = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *header = [apikey mutableCopy];
@@ -100,11 +101,12 @@
  * returns NSDictionary*
  */
 + (NSDictionary *)poloniexBuy:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount {
-    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
-    if ([secret isEqualToString:@""]) {
+    if (apikey == nil || secret == nil) {
         return nil;
     }
+
+    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     // Bitcoin Cash heißt BCH auf Poloniex
     NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
@@ -140,11 +142,12 @@
  * returns NSDictionary*
  */
 + (NSDictionary *)poloniexSell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount {
-    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
-    if ([secret isEqualToString:@""]) {
+    if (apikey == nil || secret == nil) {
         return nil;
     }
+
+    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     // Bitcoin Cash heißt BCH auf Poloniex
     NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
@@ -239,11 +242,12 @@
  * @return
  */
 + (BOOL)poloniexCancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId {
-    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
-    if ([secret isEqualToString:@""]) {
+    if (apikey == nil || secret == nil) {
         return false;
     }
+
+    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     NSMutableDictionary *payload = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *header = [apikey mutableCopy];
