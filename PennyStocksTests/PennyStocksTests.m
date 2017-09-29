@@ -159,9 +159,9 @@
             double diffInBTC = ([historicalData[key][@"high"] doubleValue] - [historicalData[key][@"low"] doubleValue]);
             double diffInPercent = 100 * (diffInBTC / [historicalData[key][@"low"] doubleValue]);
 
-            NSLog(@"POSSIBLE MARGIN YESTERDAY: %@/%@ %6.02f %%",
+            NSLog(@"POSSIBLE MARGIN YESTERDAY: %@ /%4s %6.02f %%",
                 ASSET1,
-                asset,
+                [asset UTF8String],
                 diffInPercent
             );
         }
