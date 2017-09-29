@@ -264,7 +264,6 @@
 		B271E4C81F5E0C4800B14228 /* PennyStocks */ = {
 			isa = PBXGroup;
 			children = (
-				B2B3319C1F7DD78100BD64AC /* Portfolio */,
 				B271E4DD1F5E0D0E00B14228 /* AppDelegate */,
 				B271E4E01F5E0D0E00B14228 /* Assets.xcassets */,
 				B2FB85AC1F688BBA00F37D30 /* Brokerage */,
@@ -274,6 +273,7 @@
 				B271E4D71F5E0C4800B14228 /* Info.plist */,
 				B271E4D41F5E0C4800B14228 /* Main.storyboard */,
 				B2883B751F646CF9003F0E69 /* PennyStocks.entitlements */,
+				B2B3319C1F7DD78100BD64AC /* Portfolio */,
 				B271E5071F5E0D0E00B14228 /* Preferences */,
 				B2A344CC1F7B44F4000A6ED2 /* Statistics */,
 				B271E4CC1F5E0C4800B14228 /* Supporting Files */,
