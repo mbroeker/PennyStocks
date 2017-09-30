@@ -52,6 +52,7 @@ extra_settings_text = "
 
 buy = "BUY";
 sell = "SELL";
+error = "ERROR";
 
 cancel_order_param = "Order %@";
 cancel_order_long = "Do you want to cancel the order?";

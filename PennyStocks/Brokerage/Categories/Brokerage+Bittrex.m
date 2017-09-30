@@ -181,7 +181,9 @@
             @"orderNumber": result[@"uuid"]
         };
     } else {
-        NSLog(@"BUY-LIMIT: %@/%@/%@: %@", bittrexCurrencyPair, bittrexAmount, bittrexRate, response[@"message"]);
+        return @{
+            @"error": [NSString stringWithFormat:@"BUY-LIMIT: %@", response[@"message"]]
+        };
     }
 
     return nil;
@@ -229,7 +231,9 @@
             @"orderNumber": result[@"uuid"]
         };
     } else {
-        NSLog(@"SELL-LIMIT: %@/%@/%@: %@", bittrexCurrencyPair, bittrexAmount, bittrexRate, response[@"message"]);
+        return @{
+            @"error": [NSString stringWithFormat:@"SELL-LIMIT: %@", response[@"message"]]
+        };
     }
 
     return nil;

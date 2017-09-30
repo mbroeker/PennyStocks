@@ -54,6 +54,7 @@ extra_settings_text = "
 
 buy = "KAUFEN";
 sell = "VERKAUFEN";
+error = "FEHLER";
 
 cancel_order_param = "Auftrag %@";
 cancel_order_long = "Möchten Sie den Auftrag stornieren?";
