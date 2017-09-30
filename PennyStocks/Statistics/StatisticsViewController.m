@@ -23,7 +23,19 @@
     self.ordersTableView.dataSource = self;
 
     [self.ordersTableView setDoubleAction:@selector(doubleClick:)];
-    [self updateTableData:false];
+    [self updateTableData];
+
+    dispatch_queue_t updateOpenOrdersQueue = dispatch_queue_create("de.4customers.PennyStocks.updateOpenOrdersQueue", NULL);
+    dispatch_async(updateOpenOrdersQueue, ^{
+
+        while (true) {
+            [NSThread sleepForTimeInterval:15];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateTableData];
+            });
+        }
+
+    });
 }
 
 /**
@@ -42,23 +54,16 @@
 
     if ([Helper messageText:message info:info] == NSAlertFirstButtonReturn) {
         if ([data cancelOrder]) {
-            [self.dataRows removeAllObjects];
+            [self.dataRows removeObject:data];
             [self.ordersTableView reloadData];
         }
     }
-
-    [self updateTableData:true];
 }
 
 /**
  *
  */
-- (void)updateTableData:(BOOL)withDelay {
-
-    if (withDelay) {
-        // Warte einfach eine halbe Sekunde
-        [NSThread sleepForTimeInterval:0.5];
-    }
+- (void)updateTableData {
 
     NSArray *data = [OrderData fetchOrderData];
 
