@@ -24,8 +24,8 @@
 
 // ASSET KEYS
 #define ASSET1 @"ETH"
-#define ASSET2 @"ZEC"
-#define ASSET3 @"XMR"
+#define ASSET2 @"DASH"
+#define ASSET3 @"ZEC"
 #define ASSET4 @"LTC"
 #define ASSET5 @"NEO"
 #define ASSET6 @"QTUM"
@@ -37,8 +37,8 @@
 // ASSET DESCRIPTION KEYS
 #define DASHBOARD @"Dashboard"
 #define ASSET1_DESC @"Ethereum"
-#define ASSET2_DESC @"ZCash"
-#define ASSET3_DESC @"Monero"
+#define ASSET2_DESC @"Digital Cash"
+#define ASSET3_DESC @"ZCash"
 #define ASSET4_DESC @"Litecoin"
 #define ASSET5_DESC @"Neo"
 #define ASSET6_DESC @"Qtum"
