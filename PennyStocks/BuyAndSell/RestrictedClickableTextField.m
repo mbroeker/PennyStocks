@@ -9,6 +9,18 @@
 @implementation RestrictedClickableTextField
 
 /**
+ * onHover effect for restricted and clickable TextFields
+ */
+- (void)viewWillDraw {
+    if ([self.stringValue isEqualToString:DASHBOARD] || [self.stringValue isEqualToString:ASSET1_DESC]) {
+        return;
+    }
+
+    NSCursor *cursor = [NSCursor openHandCursor];
+    [self addCursorRect:[self bounds] cursor:cursor];
+}
+
+/**
  *
  * @param theEvent
  */

@@ -9,6 +9,14 @@
 @implementation ClickableTextField
 
 /**
+ * onHover effect for clickable TextFields
+ */
+- (void)viewWillDraw {
+    NSCursor *cursor = [NSCursor closedHandCursor];
+    [self addCursorRect:[self bounds] cursor:cursor];
+}
+
+/**
  *
  * @param theEvent
  */
