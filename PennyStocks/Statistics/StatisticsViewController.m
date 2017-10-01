@@ -114,8 +114,13 @@
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
 
     if (row == -1) { return nil; }
+    if (row >= self.dataRows.count) { return nil; }
 
     OrderData *data = (OrderData *) self.dataRows[row];
+
+    if (data == nil) {
+        return nil;
+    }
 
     if ([tableColumn.title isEqualToString:@"DATE"]) {
         NSDateFormatter *from = [[NSDateFormatter alloc] init];
