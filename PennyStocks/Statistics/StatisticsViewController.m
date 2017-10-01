@@ -10,6 +10,10 @@
 #import "OrderData.h"
 #import "Helper.h"
 
+@interface StatisticsViewController()
+@property BOOL isActive;
+@end
+
 @implementation StatisticsViewController
 
 /**
@@ -24,18 +28,6 @@
 
     [self.ordersTableView setDoubleAction:@selector(doubleClick:)];
     [self updateTableData];
-
-    dispatch_queue_t updateOpenOrdersQueue = dispatch_queue_create("de.4customers.PennyStocks.updateOpenOrdersQueue", NULL);
-    dispatch_async(updateOpenOrdersQueue, ^{
-
-        while (true) {
-            [NSThread sleepForTimeInterval:15];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self updateTableData];
-            });
-        }
-
-    });
 }
 
 /**
@@ -73,11 +65,11 @@
         [self.dataRows setArray:data];
     }
 
-    [self.ordersTableView beginUpdates];
     for (long i = 0; i < data.count; i++) {
+        [self.ordersTableView beginUpdates];
         [self.ordersTableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:i] withAnimation:NSTableViewAnimationEffectFade];
+        [self.ordersTableView endUpdates];
     }
-    [self.ordersTableView endUpdates];
 
     [self.ordersTableView reloadData];
 }
@@ -87,6 +79,20 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.isActive = true;
+
+    dispatch_queue_t updateOpenOrdersQueue = dispatch_queue_create("de.4customers.PennyStocks.updateOpenOrdersQueue", NULL);
+    dispatch_async(updateOpenOrdersQueue, ^{
+
+        while (self.isActive) {
+            [NSThread sleepForTimeInterval:15];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateTableData];
+            });
+        }
+
+    });
 }
 
 /**
@@ -146,6 +152,8 @@
 - (IBAction)dismissActionClicked:(id)sender {
     NSWindow *window = self.view.window;
     [window.sheetParent endSheet:window returnCode:NSModalResponseOK];
+
+    self.isActive = false;
 }
 
 @end
