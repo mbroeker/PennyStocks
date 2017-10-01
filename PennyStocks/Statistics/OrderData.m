@@ -8,7 +8,7 @@
 
 #import "OrderData.h"
 #import "Brokerage.h"
-#import "KeychainWrapper.h"
+#import "Calculator.h"
 
 @implementation OrderData
 
@@ -19,20 +19,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSString *defaultExchange = [defaults objectForKey:KEY_DEFAULT_EXCHANGE];
-    NSDictionary *ak = [[NSDictionary alloc] init];
-    NSString *sk;
-
-    if ([defaultExchange isEqualToString:@"POLONIEX_EXCHANGE"]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"POLONIEX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
-    }
-
-    if ([defaultExchange isEqualToString:@"BITTREX_EXCHANGE"]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"BITTREX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
-    }
+    NSDictionary *apiKey = [[Calculator instance] apiKey];
+    NSDictionary *ak = apiKey[@"apiKey"];
+    NSString *sk = apiKey[@"secret"];
 
     if (ak == nil || sk == nil) {
         return nil;
@@ -71,20 +60,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSString *defaultExchange = [defaults objectForKey:KEY_DEFAULT_EXCHANGE];
-    NSDictionary *ak = [[NSDictionary alloc] init];
-    NSString *sk;
-
-    if ([defaultExchange isEqualToString:@"POLONIEX_EXCHANGE"]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"POLONIEX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
-    }
-
-    if ([defaultExchange isEqualToString:@"BITTREX_EXCHANGE"]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"BITTREX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
-    }
+    NSDictionary *apiKey = [[Calculator instance] apiKey];
+    NSDictionary *ak = apiKey[@"apiKey"];
+    NSString *sk = apiKey[@"secret"];
 
     if (ak == nil || sk == nil) {
         return false;

@@ -326,4 +326,9 @@
  * @return NSDictionary*
  */
 - (NSDictionary *)tickerKeys;
+
+/**
+ * Get the ApiKey
+ */
+- (NSDictionary *)apiKey;
 @end

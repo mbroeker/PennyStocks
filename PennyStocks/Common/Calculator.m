@@ -36,6 +36,9 @@
 
     // Mit oder ohne Abfrage
     NSNumber *tradingWithConfirmation;
+
+    // Keychain Entries
+    NSDictionary *keyAndSecret;
 }
 
 /**
@@ -583,21 +586,13 @@
  */
 - (NSString *)autoBuy:(NSString *)cAsset amount:(double)wantedAmount withRate:(double)wantedRate {
 
-    NSDictionary *ak;
-    NSString *sk;
+    NSDictionary *apiKey = [self apiKey];
+    NSDictionary *ak = apiKey[@"apiKey"];
+    NSString *sk = apiKey[@"secret"];
 
     double feeAsFactor = 1.0;
 
-    if ([defaultExchange isEqualToString:@"POLONIEX_EXCHANGE"]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"POLONIEX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
-    }
-
-    if ([defaultExchange isEqualToString:@"BITTREX_EXCHANGE"]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"BITTREX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
+    if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) {
         feeAsFactor = 0.9975;
     }
 
@@ -690,21 +685,13 @@
  */
 - (NSString *)autoSell:(NSString *)cAsset amount:(double)wantedAmount withRate:(double)wantedRate {
 
-    NSDictionary *ak;
-    NSString *sk;
+    NSDictionary *apiKey = [self apiKey];
+    NSDictionary *ak = apiKey[@"apiKey"];
+    NSString *sk = apiKey[@"secret"];
 
     double feeAsFactor = 1.0;
 
-    if ([defaultExchange isEqualToString:@"POLONIEX_EXCHANGE"]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"POLONIEX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
-    }
-
-    if ([defaultExchange isEqualToString:@"BITTREX_EXCHANGE"]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"BITTREX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
+    if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) {
         //feeAsFactor = 0.9975;
     }
 
@@ -1014,20 +1001,9 @@
  */
 - (void)unsynchronizedUpdateBalances {
 
-    NSDictionary *ak = nil;
-    NSString *sk = nil;
-
-    if ([defaultExchange isEqualToString:EXCHANGE_POLONIEX]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"POLONIEX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
-    }
-
-    if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) {
-        NSDictionary *apiKey = [KeychainWrapper keychain2ApiKeyAndSecret:@"BITTREX"];
-        ak = apiKey[@"apiKey"];
-        sk = apiKey[@"secret"];
-    }
+    NSDictionary *apiKey = [self apiKey];
+    NSDictionary *ak = apiKey[@"apiKey"];
+    NSString *sk = apiKey[@"secret"];
 
     if (ak == nil || sk == nil) {
         return;
@@ -1036,7 +1012,10 @@
     NSDictionary *currentBalance = [Brokerage balance:ak withSecret:sk forExchange:defaultExchange];
 
     if (currentBalance[@"error"]) {
-        [Helper messageText:currentBalance[@"error"] info:@"CHECK API-KEY RESTRICTIONS"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [Helper messageText:currentBalance[@"error"] info:@"CHECK API-KEY RESTRICTIONS"];
+        });
+
         return;
     }
 
@@ -1088,11 +1067,13 @@
         initialRatings = [defaults objectForKey:KEY_INITIAL_RATINGS];
 
         if (initialRatings == nil) {
-            NSLog(@"SERVICE UNAVAILABLE DURING INITIAL START");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"SERVICE UNAVAILABLE DURING INITIAL START");
 
-            [Helper messageText:NSLocalizedString(@"no_internet_connection", @"NO INTERNET CONNECTION")
-                info:NSLocalizedString(@"internet_connection_required", @"Internet Connection required")
-            ];
+                [Helper messageText:NSLocalizedString(@"no_internet_connection", @"NO INTERNET CONNECTION")
+                    info:NSLocalizedString(@"internet_connection_required", @"Internet Connection required")
+                ];
+            });
 
             return;
         }
@@ -1243,6 +1224,9 @@
 - (void)defaultExchange:(NSString *)exchange {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
+    // Instanzvariable zurück setzen
+    keyAndSecret = nil;
+
     [defaults setObject:exchange forKey:KEY_DEFAULT_EXCHANGE];
     [defaults synchronize];
 
@@ -1321,4 +1305,20 @@
     return tickerKeys;
 }
 
+/**
+ * Minimieren des Zugriffs auf den Schlüsselbund
+ */
+- (NSDictionary *)apiKey {
+    if (keyAndSecret == nil) {
+        if ([defaultExchange isEqualToString:EXCHANGE_POLONIEX]) {
+            keyAndSecret = [KeychainWrapper keychain2ApiKeyAndSecret:@"POLONIEX"];
+        }
+
+        if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) {
+            keyAndSecret = [KeychainWrapper keychain2ApiKeyAndSecret:@"BITTREX"];
+        }
+    }
+
+    return keyAndSecret;
+}
 @end
