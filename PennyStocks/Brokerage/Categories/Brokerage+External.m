@@ -62,7 +62,11 @@
 
     // Heutiger Eröffnungskurs
     double open = [theirData[@"open"] doubleValue];
-    double percent = (last / open) - 1;
+    double percent = 0;
+
+    if (open != 0) {
+        percent = (last / open) - 1;
+    }
 
     NSMutableDictionary *poloniexData = [[NSMutableDictionary alloc] init];
 
