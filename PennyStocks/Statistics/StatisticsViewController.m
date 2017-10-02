@@ -50,9 +50,7 @@
 /**
  *
  */
-- (void)updateTableData {
-
-    NSArray *data = [OrderData fetchOrderData];
+- (void)updateTableData:(NSArray *)data {
 
     if (self.dataRows == nil) {
         self.dataRows = [[NSMutableArray alloc] initWithArray:data];
@@ -80,8 +78,10 @@
     dispatch_async(updateOpenOrdersQueue, ^{
 
         while (isActive) {
+            NSArray *data = [OrderData fetchOrderData];
+
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self updateTableData];
+                [self updateTableData:data];
             });
 
             [NSThread sleepForTimeInterval:15];            
