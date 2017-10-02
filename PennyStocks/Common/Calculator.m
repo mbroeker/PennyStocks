@@ -67,11 +67,13 @@
  */
 + (id)instance:(NSArray *)currencies {
     static Calculator *calculator = nil;
-    static dispatch_once_t onceToken;
 
-    dispatch_once(&onceToken, ^{
-        calculator = [[Calculator alloc] initWithFiatCurrencies:currencies];
-    });
+    if (calculator == nil) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            calculator = [[Calculator alloc] initWithFiatCurrencies:currencies];
+        });
+    }
 
     return calculator;
 }
