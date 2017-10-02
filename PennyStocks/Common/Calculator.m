@@ -56,7 +56,7 @@
         fc = @[EUR, USD];
     }
 
-    return [self instance:fc];
+    return [Calculator instance:fc];
 }
 
 /**
