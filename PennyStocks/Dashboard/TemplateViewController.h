@@ -14,35 +14,35 @@
 @property (strong) IBOutlet NSView *menuBar;
 
 // Definition der Menü-Buttons
-@property (weak) IBOutlet NSButton *homeButton;
-@property (weak) IBOutlet NSButton *leftButton;
-@property (weak) IBOutlet NSButton *rightButton;
-@property (weak) IBOutlet NSButton *walletButton;
+@property (strong) IBOutlet NSButton *homeButton;
+@property (strong) IBOutlet NSButton *leftButton;
+@property (strong) IBOutlet NSButton *rightButton;
+@property (strong) IBOutlet NSButton *walletButton;
 @property (strong) IBOutlet NSButton *automatedTradingButton;
 
-@property (weak) IBOutlet NSButton *homepageButton;
+@property (strong) IBOutlet NSButton *homepageButton;
 
 // Definition des blauen InfoButtons
-@property (weak) IBOutlet NSButton *infoButton;
+@property (strong) IBOutlet NSButton *infoButton;
 
 // Definition der Labels
-@property (weak) IBOutlet NSTextField *headlineLabel;
-@property (weak) IBOutlet NSTextFieldCell *percentLabel;
+@property (strong) IBOutlet NSTextField *headlineLabel;
+@property (strong) IBOutlet NSTextField *percentLabel;
 @property (strong) IBOutlet NSTextField *iBrokerLabel;
 @property (strong) IBOutlet NSTextField *statusLabel;
 @property (strong) IBOutlet NSTextField *infoLabel;
 
 // Definition der Eingabefelder
-@property (weak) IBOutlet NSButton *currencyButton;
-@property (weak) IBOutlet NSTextField *currencyUnits;
+@property (strong) IBOutlet NSButton *currencyButton;
+@property (strong) IBOutlet NSTextField *currencyUnits;
 
-@property (weak) IBOutlet NSButton *cryptoButton;
-@property (weak) IBOutlet NSTextField *cryptoUnits;
+@property (strong) IBOutlet NSButton *cryptoButton;
+@property (strong) IBOutlet NSTextField *cryptoUnits;
 
 // Definition der unteren Labels
 @property (strong) IBOutlet NSTextField *rateInputLabel;
 @property (strong) IBOutlet NSTextField *rateInputCurrencyLabel;
-@property (weak) IBOutlet NSTextField *rateOutputLabel;
+@property (strong) IBOutlet NSTextField *rateOutputLabel;
 
 // Definition der Exchange Rate Labels und Felder
 @property (strong) IBOutlet NSTextField *currency1Label;

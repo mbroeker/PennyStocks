@@ -1126,7 +1126,7 @@
                         <outlet property="low24Field" destination="Eux-yU-TCb" id="rUf-Do-T1x"/>
                         <outlet property="low24Label" destination="DEQ-kb-9Dj" id="tpH-N6-9VV"/>
                         <outlet property="menuBar" destination="gea-GI-YQj" id="GEI-rb-FWi"/>
-                        <outlet property="percentLabel" destination="gRb-72-KO9" id="dtf-Hb-rU3"/>
+                        <outlet property="percentLabel" destination="52m-od-dE4" id="8BO-fh-Kwt"/>
                         <outlet property="rateInputCurrencyLabel" destination="Zkw-JC-xWt" id="4iZ-qi-tmi"/>
                         <outlet property="rateInputLabel" destination="hD5-1w-bmW" id="whb-di-IFV"/>
                         <outlet property="rateOutputLabel" destination="byo-Q7-Pc5" id="EHk-xD-QqZ"/>
