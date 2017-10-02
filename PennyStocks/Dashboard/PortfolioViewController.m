@@ -15,6 +15,8 @@
 @private
     NSArray *fields;
     NSArray *initialValues;
+
+    BOOL isActive;
 }
 
 - (void)viewDidAppear {
@@ -57,10 +59,11 @@
         field.editable = false;
     }
 
+    isActive = true;
     dispatch_queue_t queue = dispatch_queue_create("de.4customers.PennyStocks.updatePortfolioViewer", NULL);
     dispatch_async(queue, ^{
 
-        while (true) {
+        while (isActive) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self updatePortfolioView];
             });
@@ -69,6 +72,13 @@
         }
 
     });
+}
+
+/**
+ * Deactivate the running thread
+ */
+- (void)viewDidDisappear {
+    isActive = false;
 }
 
 /**
