@@ -28,7 +28,7 @@
     [request setHTTPMethod:@"GET"];
 
     __block NSMutableDictionary *result;
-    dispatch_semaphore_t lock = dispatch_semaphore_create(0);
+    __block dispatch_semaphore_t lock = dispatch_semaphore_create(0);
 
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -96,7 +96,7 @@
     }
 
     __block NSMutableDictionary *result;
-    dispatch_semaphore_t lock = dispatch_semaphore_create(0);
+    __block dispatch_semaphore_t lock = dispatch_semaphore_create(0);
 
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
