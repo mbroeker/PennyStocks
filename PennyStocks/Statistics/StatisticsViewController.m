@@ -10,11 +10,9 @@
 #import "OrderData.h"
 #import "Helper.h"
 
-@interface StatisticsViewController()
-@property BOOL isActive;
-@end
-
-@implementation StatisticsViewController
+@implementation StatisticsViewController {
+    BOOL isActive;
+}
 
 /**
  *
@@ -79,12 +77,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.isActive = true;
-
+    isActive = true;
     dispatch_queue_t updateOpenOrdersQueue = dispatch_queue_create("de.4customers.PennyStocks.updateOpenOrdersQueue", NULL);
     dispatch_async(updateOpenOrdersQueue, ^{
 
-        while (self.isActive) {
+        while (isActive) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self updateTableData];
             });
@@ -158,7 +155,7 @@
     NSWindow *window = self.view.window;
     [window.sheetParent endSheet:window returnCode:NSModalResponseOK];
 
-    self.isActive = false;
+    isActive = false;
 }
 
 @end
