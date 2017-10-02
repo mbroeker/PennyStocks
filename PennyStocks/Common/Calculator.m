@@ -82,7 +82,7 @@
  * @return id
  */
 - (id)init {
-    return [self initWithFiatCurrencies:@[EUR, USD]];
+    return [Calculator instance:@[EUR, USD]];
 }
 
 /**
