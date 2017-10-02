@@ -9,14 +9,14 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-@property (weak) IBOutlet NSWindow *window;
-@property (weak) IBOutlet NSMenuItem *menubarItem;
-@property (weak) IBOutlet NSMenuItem *eurUSDItem;
-@property (weak) IBOutlet NSMenuItem *usdEURItem;
 
-@property (weak) IBOutlet NSMenuItem *eurGBPItem;
-@property (weak) IBOutlet NSMenuItem *usdGBPItem;
-@property (weak) IBOutlet NSMenuItem *usdCNYItem;
-@property (weak) IBOutlet NSMenuItem *usdJPYItem;
+@property (strong) IBOutlet NSMenuItem *menubarItem;
+@property (strong) IBOutlet NSMenuItem *eurUSDItem;
+@property (strong) IBOutlet NSMenuItem *usdEURItem;
+
+@property (strong) IBOutlet NSMenuItem *eurGBPItem;
+@property (strong) IBOutlet NSMenuItem *usdGBPItem;
+@property (strong) IBOutlet NSMenuItem *usdCNYItem;
+@property (strong) IBOutlet NSMenuItem *usdJPYItem;
 
 @end

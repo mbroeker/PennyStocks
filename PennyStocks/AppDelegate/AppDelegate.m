@@ -12,12 +12,6 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window;
-
-- (void)applicationWillFinishLaunching:(NSNotification *)notification {
-    _window = [[NSApplication sharedApplication] windows][0];
-}
-
 /**
  * Sinn und Zweck: Benachrichtigung des Programmierers, dass das Teil geladen wurde...
  *
