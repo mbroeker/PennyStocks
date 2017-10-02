@@ -23,15 +23,13 @@
 
     self.ordersTableView.delegate = self;
     self.ordersTableView.dataSource = self;
-
-    [self.ordersTableView setDoubleAction:@selector(doubleClick:)];
 }
 
 /**
  *
  * @param sender
  */
-- (void)doubleClick:(id)sender {
+- (IBAction)doubleClick:(id)sender {
     NSInteger row = self.ordersTableView.selectedRow;
 
     if (row == -1) return;

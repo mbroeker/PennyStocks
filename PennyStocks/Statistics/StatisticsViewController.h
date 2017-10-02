@@ -16,6 +16,7 @@
 
 @property(strong) NSMutableArray *dataRows;
 
+- (IBAction)doubleClick:(id)sender;
 - (IBAction)dismissActionClicked:(id)sender;
 
 @end
