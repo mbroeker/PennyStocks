@@ -212,19 +212,26 @@
 
     int i = 0;
     for (id key in response) {
-        NSString *asset = key;
+        NSString *assetPair = key;
 
-        if ([asset isEqualToString:asset1BCH]) {
-            asset = asset1BCC;
+        if ([assetPair isEqualToString:asset1BCH]) {
+            assetPair = asset1BCC;
         }
 
         NSDictionary *data = response[key];
 
         if (data.count > 0) {
+           /**
+            * ORDER-ID
+            * DATE
+            * PAIR
+            * AMOUNT
+            * RATE
+            */
             orders[i++] = @[
                 data[@"orderNumber"],
                 @"---",
-                asset,
+                assetPair,
                 data[@"amount"],
                 data[@"rate"]
             ];

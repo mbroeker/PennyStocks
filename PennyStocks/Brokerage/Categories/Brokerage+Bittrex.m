@@ -270,6 +270,13 @@
 
         int i = 0;
         for (NSDictionary *element in result) {
+            /**
+             * ORDER-ID
+             * DATE
+             * PAIR
+             * AMOUNT
+             * RATE
+             */
             orders[i++] = @[
                 element[@"OrderUuid"],
                 element[@"Opened"],
