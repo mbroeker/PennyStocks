@@ -28,7 +28,7 @@
     [request setHTTPMethod:@"GET"];
 
     __block NSMutableDictionary *result;
-    __block BOOL hasFinished = false;
+    dispatch_semaphore_t lock = dispatch_semaphore_create(0);
 
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -39,18 +39,17 @@
 
         result = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&jsonError];
         if (jsonError && !RELEASE_BUILD) {
-            // Fehlermeldung wird angezeigt
-            NSLog(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Fehlermeldung wird angezeigt
+                NSLog(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
+            });
         }
 
-        hasFinished = true;
+        dispatch_semaphore_signal(lock);
 
     }] resume];
 
-    while (!hasFinished) {
-        [Brokerage safeSleep:0.1];
-    }
-
+    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
     return result;
 }
 
@@ -97,7 +96,7 @@
     }
 
     __block NSMutableDictionary *result;
-    __block BOOL hasFinished = false;
+    dispatch_semaphore_t lock = dispatch_semaphore_create(0);
 
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -108,18 +107,17 @@
 
         result = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&jsonError];
         if (jsonError && !RELEASE_BUILD) {
-            // Fehlermeldung wird angezeigt
-            NSLog(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Fehlermeldung wird angezeigt
+                NSLog(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
+            });
         }
 
-        hasFinished = true;
+        dispatch_semaphore_signal(lock);
 
     }] resume];
 
-    while (!hasFinished) {
-        [Brokerage safeSleep:0.1];
-    }
-
+    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
     return result;
 }
 
@@ -150,15 +148,6 @@
     }
 
     return str;
-}
-
-/**
- * Warte timeout Sekunden
- *
- * @param timeout
- */
-+ (void)safeSleep:(NSTimeInterval)timeout {
-    [NSThread sleepForTimeInterval:timeout];
 }
 
 /**

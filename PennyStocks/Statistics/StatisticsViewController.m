@@ -27,7 +27,6 @@
     self.ordersTableView.dataSource = self;
 
     [self.ordersTableView setDoubleAction:@selector(doubleClick:)];
-    [self updateTableData];
 }
 
 /**
@@ -86,10 +85,11 @@
     dispatch_async(updateOpenOrdersQueue, ^{
 
         while (self.isActive) {
-            [NSThread sleepForTimeInterval:15];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self updateTableData];
             });
+
+            [NSThread sleepForTimeInterval:15];            
         }
 
     });
