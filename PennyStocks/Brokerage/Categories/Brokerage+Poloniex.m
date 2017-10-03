@@ -25,8 +25,6 @@
     NSMutableDictionary *ticker = [[Brokerage jsonRequest:jsonURL] mutableCopy];
 
     if (!ticker[@"BTC_XMR"]) {
-        NSLog(@"API-ERROR: Cannot retrieve ticker data from poloniex");
-
         return nil;
     }
 

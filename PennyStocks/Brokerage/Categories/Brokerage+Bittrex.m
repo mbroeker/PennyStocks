@@ -32,14 +32,11 @@
         NSMutableDictionary *innerTicker = [[Brokerage jsonRequest:jsonURL] mutableCopy];
 
         if (!innerTicker[@"result"]) {
-            NSLog(@"API-ERROR: Cannot retrieve ticker data from bittrex for key %@", key);
-
             return nil;
         }
 
         if ([innerTicker[@"message"] isEqualToString:@"INVALID_MARKET"]) {
-            NSLog(@"Invalid Market: %@/%@", ASSET1, key);
-            continue;
+            return nil;
         }
 
         NSDictionary *data = innerTicker[@"result"][0];
