@@ -26,8 +26,6 @@
  */
 + (id)instance:(NSArray *)currencies;
 
-+ (void)reset;
-
 /**
  * INTERNAL SWITCH FOR AUTOMATED TRADING
  */
@@ -328,7 +326,16 @@
 - (NSDictionary *)tickerKeys;
 
 /**
+ * Get a dictionary with the 10 tickerKeysDesc
+ *
+ * @return NSDictionary*
+ */
+- (NSDictionary *)tickerKeysDescription;
+
+/**
  * Get the ApiKey
  */
 - (NSDictionary *)apiKey;
 @end
+
+#import "Calculator+Migration.h"

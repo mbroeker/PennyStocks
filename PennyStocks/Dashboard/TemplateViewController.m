@@ -279,80 +279,8 @@ typedef struct DASHBOARD_VARS {
  * simpler Upgrade Assistent
  */
 - (void)updateAssistant {
-
-    BOOL mustUpdate = false;
-
-    if (!applications[ASSET1_DESC]) {
-        applications[ASSET1_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (!applications[ASSET2_DESC]) {
-        applications[ASSET2_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (!applications[ASSET3_DESC]) {
-        applications[ASSET3_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (!applications[ASSET4_DESC]) {
-        applications[ASSET4_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (!applications[ASSET5_DESC]) {
-        applications[ASSET5_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (!applications[ASSET6_DESC]) {
-        applications[ASSET6_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (!applications[ASSET7_DESC]) {
-        applications[ASSET7_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (!applications[ASSET8_DESC]) {
-        applications[ASSET8_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (!applications[ASSET9_DESC]) {
-        applications[ASSET9_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (!applications[ASSET10_DESC]) {
-        applications[ASSET10_DESC] = @"";
-        mustUpdate = true;
-    }
-
-    if (mustUpdate) {
-        NSLog(@"Migrating applications...");
-
-        NSArray *descriptionKeys = [[calculator saldoUrls] allKeys];
-        NSMutableDictionary *tempApplications = [applications mutableCopy];
-
-        for (id key in tempApplications) {
-            if (![descriptionKeys containsObject:key]) {
-                [tempApplications removeObjectForKey:key];
-            }
-        }
-
-        // Zurückspielen nicht vergessen
-        applications = tempApplications;
-
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:tempApplications forKey:TV_APPLICATIONS];
-
-        [defaults synchronize];
-    }
-
+    [Calculator migrateSaldoAndRatings];
+    applications = [Calculator migrateApplications];
 }
 
 /**
@@ -744,7 +672,7 @@ typedef struct DASHBOARD_VARS {
     loop_vars.initialBalancesInEUR = [calculator calculateWithRatings:initialRatings currency:fiatCurrencies[0]];
     if (loop_vars.initialBalancesInEUR != 0) { loop_vars.coinchange.effectivePercent = (loop_vars.totalBalancesInEUR / loop_vars.initialBalancesInEUR * 100.0) - 100.0; }
 
-    for (id asset in [[currentSaldo allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]) {
+    for (id asset in [[calculator.tickerKeys allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]) {
         NSDictionary *checkpoint = [calculator checkpointForAsset:asset];
 
         double currentPrice = [checkpoint[CP_CURRENT_PRICE] doubleValue];

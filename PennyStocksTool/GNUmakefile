@@ -18,7 +18,8 @@ PennyStocksTool_HEADERS = \
 
 PennyStocksTool_OBJC_FILES = \
 	main.m \
-	Common/Calculator.m \
+	Calculator/Calculator.m \
+	Calculator/Categories/Calculator+Migration.m \
 	Common/Helper.m \
 	Common/KeychainWrapper.m \
 	Brokerage/Brokerage.m \

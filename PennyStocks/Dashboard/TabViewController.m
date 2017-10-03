@@ -7,7 +7,7 @@
 //
 
 #import "TabViewController.h"
-#import "CalculatorConstants.h"
+#import "Calculator.h"
 
 #define DEFAULT_TIMEOUT 30
 
