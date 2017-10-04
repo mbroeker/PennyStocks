@@ -12,6 +12,8 @@
 		43D6F4348C268AF3D7234DC6 /* RestrictedClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D6F0544839CEF7511634D5 /* RestrictedClickableTextField.m */; };
 		43D6FAD50E6C3E0B991726AB /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CEE211F841E7D0025D545 /* Calculator.m */; };
 		43D6FF0BD023CA9F392D0B28 /* Calculator+Migration.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CEE1C1F841C100025D545 /* Calculator+Migration.m */; };
+		B22B2D461F850F2F007C2517 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CEE211F841E7D0025D545 /* Calculator.m */; };
+		B22B2D471F850F2F007C2517 /* Calculator+Migration.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CEE251F841E7D0025D545 /* Calculator+Migration.m */; };
 		B23CEE281F84225D0025D545 /* Calculator+Migration.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CEE251F841E7D0025D545 /* Calculator+Migration.m */; };
 		B271E4CE1F5E0C4800B14228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4CD1F5E0C4800B14228 /* main.m */; };
 		B271E4D31F5E0C4800B14228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D21F5E0C4800B14228 /* Assets.xcassets */; };
@@ -713,6 +715,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22B2D461F850F2F007C2517 /* Calculator.m in Sources */,
+				B22B2D471F850F2F007C2517 /* Calculator+Migration.m in Sources */,
 				B2E076CB1F6B794A0050A42C /* Algorithm.m in Sources */,
 				B2F9FED21F691DE400BD668D /* Helper.m in Sources */,
 				B2F9FED01F691DAC00BD668D /* KeychainWrapper.m in Sources */,

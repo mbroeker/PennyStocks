@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "../PennyStocks/Common/Calculator.h"
+#import "../PennyStocks/Calculator/Calculator.h"
 #import "../PennyStocks/Common/KeychainWrapper.h"
 #import "../PennyStocks/Brokerage/Categories/Brokerage+JSON.h"
 #import "../PennyStocks/Brokerage/Algorithm.h"
