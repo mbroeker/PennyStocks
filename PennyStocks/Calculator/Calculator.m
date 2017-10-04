@@ -43,6 +43,56 @@
 }
 
 /**
+ *
+ * @return
+ */
++ (NSArray *)initialAssets {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    NSArray *assets = [defaults objectForKey:KEY_CURRENT_ASSETS];
+
+    if (assets == nil) {
+        #ifdef DEBUG
+        NSLog(@"Creating inital assets");
+        #endif
+        assets = @[
+            @[@"DASHBOARD", @"DASHBOARD"],
+            @[@"ETH", @"Ethereum"],
+            @[@"DASH", @"Digital Cash"],
+            @[@"ZEC", @"ZCash"],
+            @[@"LTC", @"Litecoin"],
+            @[@"NEO", @"Neo"],
+            @[@"QTUM", @"Qtum"],
+            @[@"OMG", @"Omise GO"],
+            @[@"MCO", @"Monaco"],
+            @[@"PAY", @"Pay Token"],
+            @[@"BAT", @"Basic Attention"],
+        ];
+
+        [defaults setObject:assets forKey:KEY_CURRENT_ASSETS];
+        [defaults synchronize];
+    }
+
+    return assets;
+}
+
+/**
+ *
+ * @param row
+ * @param index
+ * @return
+ */
++ (NSString *)assetString:(long)row withIndex:(long)index {
+    static NSArray *assets = nil;
+
+    if (assets == nil) {
+        assets = [Calculator initialAssets];
+    }
+
+    return assets[row][index];
+}
+
+/**
  * Der öffentliche Konstruktor mit Vorbelegung EUR/USD
  *
  * @return id
@@ -114,16 +164,16 @@
 
         if (currentSaldo == nil) {
             currentSaldo = [@{
-                ASSET1: @0.0,
-                ASSET2: @0.0,
-                ASSET3: @0.0,
-                ASSET4: @0.0,
-                ASSET5: @0.0,
-                ASSET6: @0.0,
-                ASSET7: @0.0,
-                ASSET8: @0.0,
-                ASSET9: @0.0,
-                ASSET10: @0.0,
+                ASSET_KEY(1): @0.0,
+                ASSET_KEY(2): @0.0,
+                ASSET_KEY(3): @0.0,
+                ASSET_KEY(4): @0.0,
+                ASSET_KEY(5): @0.0,
+                ASSET_KEY(6): @0.0,
+                ASSET_KEY(7): @0.0,
+                ASSET_KEY(8): @0.0,
+                ASSET_KEY(9): @0.0,
+                ASSET_KEY(10): @0.0,
             } mutableCopy];
 
             [defaults setObject:currentSaldo forKey:KEY_CURRENT_SALDO];
@@ -136,30 +186,30 @@
             if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) {
                 saldoUrls = [@{
                     DASHBOARD: [NSString stringWithFormat:@"https://coinmarketcap.com/gainers-losers/"],
-                    ASSET1_DESC: [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges"],
-                    ASSET2_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET2],
-                    ASSET3_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET3],
-                    ASSET4_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET4],
-                    ASSET5_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET5],
-                    ASSET6_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET6],
-                    ASSET7_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET7],
-                    ASSET8_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET8],
-                    ASSET9_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET9],
-                    ASSET10_DESC: [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, ASSET10],
+                    ASSET_DESC(1): [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges"],
+                    ASSET_DESC(2): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(2)],
+                    ASSET_DESC(3): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(3)],
+                    ASSET_DESC(4): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(4)],
+                    ASSET_DESC(5): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(5)],
+                    ASSET_DESC(6): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(6)],
+                    ASSET_DESC(7): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(7)],
+                    ASSET_DESC(8): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(8)],
+                    ASSET_DESC(9): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(9)],
+                    ASSET_DESC(10): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(10)],
                 } mutableCopy];
             } else {
                 saldoUrls = [@{
                     DASHBOARD: [NSString stringWithFormat:@"https://coinmarketcap.com/gainers-losers/"],
-                    ASSET1_DESC: [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges"],
-                    ASSET2_DESC: [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, ASSET2.lowercaseString],
-                    ASSET3_DESC: [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, ASSET3.lowercaseString],
-                    ASSET4_DESC: [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, ASSET4.lowercaseString],
-                    ASSET5_DESC: [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, ASSET5.lowercaseString],
-                    ASSET6_DESC: [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, ASSET6.lowercaseString],
-                    ASSET7_DESC: [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, ASSET7.lowercaseString],
-                    ASSET8_DESC: [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, ASSET8.lowercaseString],
-                    ASSET9_DESC: [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, ASSET9.lowercaseString],
-                    ASSET10_DESC: [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, ASSET10.lowercaseString],
+                    ASSET_DESC(1): [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges"],
+                    ASSET_DESC(2): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(2).lowercaseString],
+                    ASSET_DESC(3): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(3).lowercaseString],
+                    ASSET_DESC(4): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(4).lowercaseString],
+                    ASSET_DESC(5): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(5).lowercaseString],
+                    ASSET_DESC(6): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(6).lowercaseString],
+                    ASSET_DESC(7): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(7).lowercaseString],
+                    ASSET_DESC(8): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(8).lowercaseString],
+                    ASSET_DESC(9): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(9).lowercaseString],
+                    ASSET_DESC(10): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(10).lowercaseString],
                 } mutableCopy];
             }
 
@@ -167,29 +217,29 @@
         }
 
         tickerKeys = @{
-            ASSET1: [NSString stringWithFormat:@"%@_%@", ASSET1, fiatCurrencies[0]],
-            ASSET2: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET2],
-            ASSET3: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET3],
-            ASSET4: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET4],
-            ASSET5: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET5],
-            ASSET6: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET6],
-            ASSET7: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET7],
-            ASSET8: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET8],
-            ASSET9: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET9],
-            ASSET10: [NSString stringWithFormat:@"%@_%@", ASSET1, ASSET10],
+            ASSET_KEY(1): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), fiatCurrencies[0]],
+            ASSET_KEY(2): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), ASSET_KEY(2)],
+            ASSET_KEY(3): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), ASSET_KEY(3)],
+            ASSET_KEY(4): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), ASSET_KEY(4)],
+            ASSET_KEY(5): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), ASSET_KEY(5)],
+            ASSET_KEY(6): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), ASSET_KEY(6)],
+            ASSET_KEY(7): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), ASSET_KEY(7)],
+            ASSET_KEY(8): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), ASSET_KEY(8)],
+            ASSET_KEY(9): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), ASSET_KEY(9)],
+            ASSET_KEY(10): [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), ASSET_KEY(10)],
         };
 
         tickerKeysDescription = @{
-            ASSET1_DESC: ASSET1,
-            ASSET2_DESC: ASSET2,
-            ASSET3_DESC: ASSET3,
-            ASSET4_DESC: ASSET4,
-            ASSET5_DESC: ASSET5,
-            ASSET6_DESC: ASSET6,
-            ASSET7_DESC: ASSET7,
-            ASSET8_DESC: ASSET8,
-            ASSET9_DESC: ASSET9,
-            ASSET10_DESC: ASSET10,
+            ASSET_DESC(1): ASSET_KEY(1),
+            ASSET_DESC(2): ASSET_KEY(2),
+            ASSET_DESC(3): ASSET_KEY(3),
+            ASSET_DESC(4): ASSET_KEY(4),
+            ASSET_DESC(5): ASSET_KEY(5),
+            ASSET_DESC(6): ASSET_KEY(6),
+            ASSET_DESC(7): ASSET_KEY(7),
+            ASSET_DESC(8): ASSET_KEY(8),
+            ASSET_DESC(9): ASSET_KEY(9),
+            ASSET_DESC(10): ASSET_KEY(10),
         };
 
         tradingWithConfirmation = [defaults objectForKey:KEY_TRADING_WITH_CONFIRMATION];
@@ -237,12 +287,12 @@
         initialRatings = [currentRatings mutableCopy];
     } else {
         // aktualisiere den Kurs der Währung
-        double priceInFiat = [self fiatPriceForAsset:ASSET1] * wantedRate;
+        double priceInFiat = [self fiatPriceForAsset:ASSET_KEY(1)] * wantedRate;
         initialRatings[asset] = ((wantedRate == 0.0) ? currentRatings[asset] : @(1.0 / priceInFiat));
 
-        if (![asset isEqualToString:ASSET1] && btcUpdate) {
+        if (![asset isEqualToString:ASSET_KEY(1)] && btcUpdate) {
             // aktualisiere den BTC Kurs, auf den sich die Transaktion bezog
-            initialRatings[ASSET1] = currentRatings[ASSET1];
+            initialRatings[ASSET_KEY(1)] = currentRatings[ASSET_KEY(1)];
         }
     }
 
@@ -284,7 +334,7 @@
  * @return double
  */
 - (double)ethPriceForAsset:(NSString *)asset {
-    double btcRating = [currentRatings[ASSET1] doubleValue];
+    double btcRating = [currentRatings[ASSET_KEY(1)] doubleValue];
     double assetRating = [currentRatings[asset] doubleValue];
 
     double btcPrice = btcRating / assetRating;
@@ -358,29 +408,29 @@
         }
     }
 
-    double asset1Rating = [ratings[ASSET1] doubleValue];
-    double asset2Rating = [ratings[ASSET2] doubleValue];
-    double asset3Rating = [ratings[ASSET3] doubleValue];
-    double asset4Rating = [ratings[ASSET4] doubleValue];
-    double asset5Rating = [ratings[ASSET5] doubleValue];
+    double asset1Rating = [ratings[ASSET_KEY(1)] doubleValue];
+    double asset2Rating = [ratings[ASSET_KEY(2)] doubleValue];
+    double asset3Rating = [ratings[ASSET_KEY(3)] doubleValue];
+    double asset4Rating = [ratings[ASSET_KEY(4)] doubleValue];
+    double asset5Rating = [ratings[ASSET_KEY(5)] doubleValue];
 
-    double asset6Rating = [ratings[ASSET6] doubleValue];
-    double asset7Rating = [ratings[ASSET7] doubleValue];
-    double asset8Rating = [ratings[ASSET8] doubleValue];
-    double asset9Rating = [ratings[ASSET9] doubleValue];
-    double asset10Rating = [ratings[ASSET10] doubleValue];
+    double asset6Rating = [ratings[ASSET_KEY(6)] doubleValue];
+    double asset7Rating = [ratings[ASSET_KEY(7)] doubleValue];
+    double asset8Rating = [ratings[ASSET_KEY(8)] doubleValue];
+    double asset9Rating = [ratings[ASSET_KEY(9)] doubleValue];
+    double asset10Rating = [ratings[ASSET_KEY(10)] doubleValue];
 
-    double price1 = [currentSaldo[ASSET1] doubleValue] / asset1Rating;
-    double price2 = [currentSaldo[ASSET2] doubleValue] / asset2Rating;
-    double price3 = [currentSaldo[ASSET3] doubleValue] / asset3Rating;
-    double price4 = [currentSaldo[ASSET4] doubleValue] / asset4Rating;
-    double price5 = [currentSaldo[ASSET5] doubleValue] / asset5Rating;
+    double price1 = [currentSaldo[ASSET_KEY(1)] doubleValue] / asset1Rating;
+    double price2 = [currentSaldo[ASSET_KEY(2)] doubleValue] / asset2Rating;
+    double price3 = [currentSaldo[ASSET_KEY(3)] doubleValue] / asset3Rating;
+    double price4 = [currentSaldo[ASSET_KEY(4)] doubleValue] / asset4Rating;
+    double price5 = [currentSaldo[ASSET_KEY(5)] doubleValue] / asset5Rating;
 
-    double price6 = [currentSaldo[ASSET6] doubleValue] / asset6Rating;
-    double price7 = [currentSaldo[ASSET7] doubleValue] / asset7Rating;
-    double price8 = [currentSaldo[ASSET8] doubleValue] / asset8Rating;
-    double price9 = [currentSaldo[ASSET9] doubleValue] / asset9Rating;
-    double price10 = [currentSaldo[ASSET10] doubleValue] / asset10Rating;
+    double price6 = [currentSaldo[ASSET_KEY(6)] doubleValue] / asset6Rating;
+    double price7 = [currentSaldo[ASSET_KEY(7)] doubleValue] / asset7Rating;
+    double price8 = [currentSaldo[ASSET_KEY(8)] doubleValue] / asset8Rating;
+    double price9 = [currentSaldo[ASSET_KEY(9)] doubleValue] / asset9Rating;
+    double price10 = [currentSaldo[ASSET_KEY(10)] doubleValue] / asset10Rating;
 
     double sum = price1 + price2 + price3 + price4 + price5 + price6 + price7 + price8 + price9 + price10;
 
@@ -412,7 +462,7 @@
     NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
 
     for (id key in volumes) {
-        if ([key isEqualToString:ASSET1]) {
+        if ([key isEqualToString:ASSET_KEY(1)]) {
             continue;
         }
 
@@ -420,7 +470,7 @@
         double v2 = [volumes[key][@"out"] doubleValue];
 
         double realPrice = v1 / v2;
-        double price = [currentRatings[ASSET1] doubleValue] / [currentRatings[key] doubleValue];
+        double price = [currentRatings[ASSET_KEY(1)] doubleValue] / [currentRatings[key] doubleValue];
         double percentChange = ((price / realPrice) - 1) * 100.0;
 
         result[key] = @{
@@ -484,7 +534,7 @@
         return nil;
     }
 
-    double btcPrice = [currentRatings[ASSET1] doubleValue];
+    double btcPrice = [currentRatings[ASSET_KEY(1)] doubleValue];
     double assetPrice = [currentRatings[cAsset] doubleValue];
     double cRate = wantedRate;
 
@@ -492,16 +542,16 @@
         cRate = btcPrice / assetPrice;
     }
 
-    // Bestimme die maximale Anzahl an ASSET1's, die verkauft werden können...
-    double amountMax = feeAsFactor * ([self currentSaldo:ASSET1] / cRate);
+    // Bestimme die maximale Anzahl an ASSET_KEY(1)'s, die verkauft werden können...
+    double amountMax = feeAsFactor * ([self currentSaldo:ASSET_KEY(1)] / cRate);
     double amount = amountMax;
 
     if (wantedAmount > 0) {
         amount = wantedAmount;
     }
 
-    if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:fiatCurrencies[0]] || [cAsset isEqualToString:fiatCurrencies[1]]) {
-        // Illegale Kombination ASSET1_(cAsset)
+    if ([cAsset isEqualToString:ASSET_KEY(1)] || [cAsset isEqualToString:fiatCurrencies[0]] || [cAsset isEqualToString:fiatCurrencies[1]]) {
+        // Illegale Kombination ASSET_KEY(1)_(cAsset)
         return nil;
     }
 
@@ -531,7 +581,7 @@
         }
     }
 
-    NSString *cPair = [NSString stringWithFormat:@"%@_%@", ASSET1, cAsset];
+    NSString *cPair = [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), cAsset];
     NSDictionary *order = [Brokerage buy:ak withSecret:sk currencyPair:cPair rate:cRate amount:amount onExchange:defaultExchange];
 
     if (order[@"error"]) {
@@ -587,15 +637,15 @@
     double amountMax = feeAsFactor * [self currentSaldo:cAsset];
     double amount = amountMax;
 
-    double btcPrice = [currentRatings[ASSET1] doubleValue];
+    double btcPrice = [currentRatings[ASSET_KEY(1)] doubleValue];
     double assetPrice = [currentRatings[cAsset] doubleValue];
 
     if (wantedAmount > 0) {
         amount = wantedAmount;
     }
 
-    if ([cAsset isEqualToString:ASSET1] || [cAsset isEqualToString:fiatCurrencies[0]] || [cAsset isEqualToString:fiatCurrencies[1]]) {
-        // Illegale Kombination ASSET1_(cAsset)
+    if ([cAsset isEqualToString:ASSET_KEY(1)] || [cAsset isEqualToString:fiatCurrencies[0]] || [cAsset isEqualToString:fiatCurrencies[1]]) {
+        // Illegale Kombination ASSET_KEY(1)_(cAsset)
         return nil;
     }
 
@@ -623,7 +673,7 @@
         }
     }
 
-    NSString *cPair = [NSString stringWithFormat:@"%@_%@", ASSET1, cAsset];
+    NSString *cPair = [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), cAsset];
     NSDictionary *order = [Brokerage sell:ak withSecret:sk currencyPair:cPair rate:cRate amount:amount onExchange:defaultExchange];
 
     if (order[@"error"]) {
@@ -681,7 +731,7 @@
  */
 - (void)sellWithProfitInEuro:(double)wantedEuros {
     for (id key in currentSaldo) {
-        if ([key isEqualToString:ASSET1]) { continue; }
+        if ([key isEqualToString:ASSET_KEY(1)]) { continue; }
         if ([key isEqualToString:fiatCurrencies[0]]) { continue; }
         if ([key isEqualToString:fiatCurrencies[1]]) { continue; }
 
@@ -709,12 +759,12 @@
 - (void)sellWithProfitInPercent:(double)wantedPercent {
 
     for (id key in currentSaldo) {
-        if ([key isEqualToString:ASSET1]) { continue; }
+        if ([key isEqualToString:ASSET_KEY(1)]) { continue; }
         if ([key isEqualToString:fiatCurrencies[0]]) { continue; }
         if ([key isEqualToString:fiatCurrencies[1]]) { continue; }
 
         NSDictionary *checkpoint = [self checkpointForAsset:key];
-        NSDictionary *btcCheckpoint = [self checkpointForAsset:ASSET1];
+        NSDictionary *btcCheckpoint = [self checkpointForAsset:ASSET_KEY(1)];
 
         double currentPrice = [checkpoint[CP_CURRENT_PRICE] doubleValue];
         double btcPercent = [btcCheckpoint[CP_PERCENT] doubleValue];
@@ -767,18 +817,18 @@
  * @param wantedRate
  */
 - (void)buyWithProfitInPercent:(double)wantedPercent andInvestmentRate:(double)wantedRate {
-    double balance = [self currentSaldo:ASSET1];
+    double balance = [self currentSaldo:ASSET_KEY(1)];
     NSDictionary *realChanges = [self realChanges];
 
     if (balance < 0.0001) { return; }
 
     for (id key in currentSaldo) {
-        if ([key isEqualToString:ASSET1]) { continue; }
+        if ([key isEqualToString:ASSET_KEY(1)]) { continue; }
         if ([key isEqualToString:fiatCurrencies[0]]) { continue; }
         if ([key isEqualToString:fiatCurrencies[1]]) { continue; }
 
         NSDictionary *checkpoint = [self checkpointForAsset:key];
-        NSDictionary *btcCheckpoint = [self checkpointForAsset:ASSET1];
+        NSDictionary *btcCheckpoint = [self checkpointForAsset:ASSET_KEY(1)];
 
         double btcPercent = [btcCheckpoint[CP_PERCENT] doubleValue];
         double percent = [checkpoint[CP_PERCENT] doubleValue];
@@ -972,18 +1022,18 @@
 
     ticker = [tickerDictionary mutableCopy];
 
-    NSString *btcFiat = [NSString stringWithFormat:@"%@_%@", ASSET1, fiatCurrencies[0]];
+    NSString *btcFiat = [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), fiatCurrencies[0]];
     double btcValue = 1.0 / [tickerDictionary[btcFiat][POLONIEX_LAST] doubleValue];
 
     currentRatings = [[NSMutableDictionary alloc] init];
 
-    currentRatings[ASSET1] = @(btcValue);
+    currentRatings[ASSET_KEY(1)] = @(btcValue);
     currentRatings[fiatCurrencies[1]] = tickerDictionary[fiatCurrencies[1]];
 
     for (id key in tickerKeys) {
         double assetValue = btcValue;
 
-        if (![key isEqualToString:ASSET1]) {
+        if (![key isEqualToString:ASSET_KEY(1)]) {
             assetValue /= [tickerDictionary[tickerKeys[key]][POLONIEX_LAST] doubleValue];
         }
 

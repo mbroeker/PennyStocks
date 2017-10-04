@@ -63,16 +63,16 @@ const char *makeHeadlineString(NSDictionary *checkpoint, NSString *asset) {
  */
 const char *makeString(NSDictionary *checkpoint, NSString *asset, NSDictionary *currentRatings, double asset1Percent) {
     double effectivePercent = [checkpoint[CP_PERCENT] doubleValue];
-    if (![asset isEqualToString:ASSET1]) effectivePercent -= asset1Percent;
+    if (![asset isEqualToString:ASSET_KEY(1)]) effectivePercent -= asset1Percent;
 
     double currentPrice = [checkpoint[CP_CURRENT_PRICE] doubleValue];
-    double currentPriceInBTC = [currentRatings[ASSET1] doubleValue] / [currentRatings[asset] doubleValue];
+    double currentPriceInBTC = [currentRatings[ASSET_KEY(1)] doubleValue] / [currentRatings[asset] doubleValue];
 
     NSString *theString = [
         NSString stringWithFormat:@"%.6f EUR / %.8f %@ / %+.2f%%",
             currentPrice,
             currentPriceInBTC,
-            ASSET1,
+            ASSET_KEY(1),
             effectivePercent
     ];
 
@@ -92,30 +92,30 @@ void brokerRun(CONFIG config) {
     for (;;) {
         NSDictionary *currentRatings = [calculator currentRatings];
 
-        NSDictionary *asset1Checkpoint = [calculator checkpointForAsset:ASSET1];
-        NSDictionary *asset2Checkpoint = [calculator checkpointForAsset:ASSET2];
-        NSDictionary *asset3Checkpoint = [calculator checkpointForAsset:ASSET3];
-        NSDictionary *asset4Checkpoint = [calculator checkpointForAsset:ASSET4];
-        NSDictionary *asset5Checkpoint = [calculator checkpointForAsset:ASSET5];
+        NSDictionary *asset1Checkpoint = [calculator checkpointForAsset:ASSET_KEY(1)];
+        NSDictionary *asset2Checkpoint = [calculator checkpointForAsset:ASSET_KEY(2)];
+        NSDictionary *asset3Checkpoint = [calculator checkpointForAsset:ASSET_KEY(3)];
+        NSDictionary *asset4Checkpoint = [calculator checkpointForAsset:ASSET_KEY(4)];
+        NSDictionary *asset5Checkpoint = [calculator checkpointForAsset:ASSET_KEY(5)];
 
         double asset1Percent = [asset1Checkpoint[CP_PERCENT] doubleValue];
 
         if ((counter++ % config.rows) == 0) {
             printf("%%: %-43s | %-43s | %-43s | %-43s | %-43s\n",
-                makeHeadlineString(asset1Checkpoint, ASSET1),
-                makeHeadlineString(asset2Checkpoint, ASSET2),
-                makeHeadlineString(asset3Checkpoint, ASSET3),
-                makeHeadlineString(asset4Checkpoint, ASSET4),
-                makeHeadlineString(asset5Checkpoint, ASSET5)
+                makeHeadlineString(asset1Checkpoint, ASSET_KEY(1)),
+                makeHeadlineString(asset2Checkpoint, ASSET_KEY(2)),
+                makeHeadlineString(asset3Checkpoint, ASSET_KEY(3)),
+                makeHeadlineString(asset4Checkpoint, ASSET_KEY(4)),
+                makeHeadlineString(asset5Checkpoint, ASSET_KEY(5))
             );
         }
 
         printf("%%: %-43s | %-43s | %-43s | %-43s | %-43s\n",
-            makeString(asset1Checkpoint, ASSET1, currentRatings, asset1Percent),
-            makeString(asset2Checkpoint, ASSET2, currentRatings, asset1Percent),
-            makeString(asset3Checkpoint, ASSET3, currentRatings, asset1Percent),
-            makeString(asset4Checkpoint, ASSET4, currentRatings, asset1Percent),
-            makeString(asset5Checkpoint, ASSET5, currentRatings, asset1Percent)
+            makeString(asset1Checkpoint, ASSET_KEY(1), currentRatings, asset1Percent),
+            makeString(asset2Checkpoint, ASSET_KEY(2), currentRatings, asset1Percent),
+            makeString(asset3Checkpoint, ASSET_KEY(3), currentRatings, asset1Percent),
+            makeString(asset4Checkpoint, ASSET_KEY(4), currentRatings, asset1Percent),
+            makeString(asset5Checkpoint, ASSET_KEY(5), currentRatings, asset1Percent)
         );
 
         [calculator updateRatings:false];
@@ -140,17 +140,17 @@ void usage(const char *name) {
     printf("  --balance\t\tZeige den aktuellen Gesamtsaldo aller Coins an\n");
     printf("  --list\n\n");
 
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET1.lowercaseString] UTF8String], ASSET1_DESC.UTF8String);
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET2.lowercaseString] UTF8String], ASSET2_DESC.UTF8String);
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET3.lowercaseString] UTF8String], ASSET3_DESC.UTF8String);
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET4.lowercaseString] UTF8String], ASSET4_DESC.UTF8String);
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET5.lowercaseString] UTF8String], ASSET5_DESC.UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(1).lowercaseString] UTF8String], ASSET_DESC(1).UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(2).lowercaseString] UTF8String], ASSET_DESC(2).UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(3).lowercaseString] UTF8String], ASSET_DESC(3).UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(4).lowercaseString] UTF8String], ASSET_DESC(4).UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(5).lowercaseString] UTF8String], ASSET_DESC(5).UTF8String);
 
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET6.lowercaseString] UTF8String], ASSET6_DESC.UTF8String);
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET7.lowercaseString] UTF8String], ASSET7_DESC.UTF8String);
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET8.lowercaseString] UTF8String], ASSET8_DESC.UTF8String);
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET9.lowercaseString] UTF8String], ASSET9_DESC.UTF8String);
-    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET10.lowercaseString] UTF8String], ASSET10_DESC.UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(6).lowercaseString] UTF8String], ASSET_DESC(6).UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(7).lowercaseString] UTF8String], ASSET_DESC(7).UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(8).lowercaseString] UTF8String], ASSET_DESC(8).UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(9).lowercaseString] UTF8String], ASSET_DESC(9).UTF8String);
+    printf("  --%s ANZAHL\t\tSetze den aktuellen Saldo für %s\n", [[NSString stringWithFormat:@"%@", ASSET_KEY(10).lowercaseString] UTF8String], ASSET_DESC(10).UTF8String);
 
     printf("ANZAHL im amerikanische Dezimalformat (0.5 anstatt 0,5)\n\n");
 
@@ -218,73 +218,73 @@ void parseOptions(int argc, const char **argv, CONFIG *config) {
     }
 
     for (int i = 1; i < argc; i++) {
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET1.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(1).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET1 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET1 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(1) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(1) withBTCUpdate:false];
             update = true;
         }
 
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET2.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(2).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET2 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET2 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(2) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(2) withBTCUpdate:false];
             update = true;
         }
 
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET3.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(3).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET3 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET3 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(3) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(3) withBTCUpdate:false];
             update = true;
         }
 
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET4.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(4).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET4 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET4 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(4) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(4) withBTCUpdate:false];
             update = true;
         }
 
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET5.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(5).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET5 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET5 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(5) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(5) withBTCUpdate:false];
             update = true;
         }
 
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET6.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(6).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET6 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET6 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(6) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(6) withBTCUpdate:false];
             update = true;
         }
 
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET7.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(7).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET7 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET7 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(7) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(7) withBTCUpdate:false];
             update = true;
         }
 
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET8.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(8).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET8 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET8 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(8) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(8) withBTCUpdate:false];
             update = true;
         }
 
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET9.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(9).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET9 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET9 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(9) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(9) withBTCUpdate:false];
             update = true;
         }
 
-        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET10.lowercaseString] UTF8String])) {
+        if (!strcmp(argv[i], [[NSString stringWithFormat:@"--%@", ASSET_KEY(10).lowercaseString] UTF8String])) {
             value = atof(argv[i + 1]);
-            [calculator currentSaldo:ASSET10 withDouble:value];
-            [calculator updateCheckpointForAsset:ASSET10 withBTCUpdate:false];
+            [calculator currentSaldo:ASSET_KEY(10) withDouble:value];
+            [calculator updateCheckpointForAsset:ASSET_KEY(10) withBTCUpdate:false];
             update = true;
         }
 

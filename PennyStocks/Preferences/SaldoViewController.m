@@ -66,46 +66,46 @@
     // Aktualisierte Ratings besorgen
     NSMutableDictionary *currentSaldo = [calculator currentSaldo];
 
-    self.asset1Field.doubleValue = [currentSaldo[ASSET1] doubleValue];
-    self.asset2Field.doubleValue = [currentSaldo[ASSET2] doubleValue];
-    self.asset3Field.doubleValue = [currentSaldo[ASSET3] doubleValue];
-    self.asset4Field.doubleValue = [currentSaldo[ASSET4] doubleValue];
-    self.asset5Field.doubleValue = [currentSaldo[ASSET5] doubleValue];
-    self.asset6Field.doubleValue = [currentSaldo[ASSET6] doubleValue];
-    self.asset7Field.doubleValue = [currentSaldo[ASSET7] doubleValue];
-    self.asset8Field.doubleValue = [currentSaldo[ASSET8] doubleValue];
-    self.asset9Field.doubleValue = [currentSaldo[ASSET9] doubleValue];
-    self.asset10Field.doubleValue = [currentSaldo[ASSET10] doubleValue];
+    self.asset1Field.doubleValue = [currentSaldo[ASSET_KEY(1)] doubleValue];
+    self.asset2Field.doubleValue = [currentSaldo[ASSET_KEY(2)] doubleValue];
+    self.asset3Field.doubleValue = [currentSaldo[ASSET_KEY(3)] doubleValue];
+    self.asset4Field.doubleValue = [currentSaldo[ASSET_KEY(4)] doubleValue];
+    self.asset5Field.doubleValue = [currentSaldo[ASSET_KEY(5)] doubleValue];
+    self.asset6Field.doubleValue = [currentSaldo[ASSET_KEY(6)] doubleValue];
+    self.asset7Field.doubleValue = [currentSaldo[ASSET_KEY(7)] doubleValue];
+    self.asset8Field.doubleValue = [currentSaldo[ASSET_KEY(8)] doubleValue];
+    self.asset9Field.doubleValue = [currentSaldo[ASSET_KEY(9)] doubleValue];
+    self.asset10Field.doubleValue = [currentSaldo[ASSET_KEY(10)] doubleValue];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // Properties List
-    self.asset1Field.placeholderString = ASSET1_DESC;
-    self.asset2Field.placeholderString = ASSET2_DESC;
-    self.asset3Field.placeholderString = ASSET3_DESC;
-    self.asset4Field.placeholderString = ASSET4_DESC;
-    self.asset5Field.placeholderString = ASSET5_DESC;
+    self.asset1Field.placeholderString = ASSET_DESC(1);
+    self.asset2Field.placeholderString = ASSET_DESC(2);
+    self.asset3Field.placeholderString = ASSET_DESC(3);
+    self.asset4Field.placeholderString = ASSET_DESC(4);
+    self.asset5Field.placeholderString = ASSET_DESC(5);
 
-    self.asset6Field.placeholderString = ASSET6_DESC;
-    self.asset7Field.placeholderString = ASSET7_DESC;
-    self.asset8Field.placeholderString = ASSET8_DESC;
-    self.asset9Field.placeholderString = ASSET9_DESC;
-    self.asset10Field.placeholderString = ASSET10_DESC;
+    self.asset6Field.placeholderString = ASSET_DESC(6);
+    self.asset7Field.placeholderString = ASSET_DESC(7);
+    self.asset8Field.placeholderString = ASSET_DESC(8);
+    self.asset9Field.placeholderString = ASSET_DESC(9);
+    self.asset10Field.placeholderString = ASSET_DESC(10);
 
     // Image List
-    self.asset1ImageView.image = [NSImage imageNamed:ASSET1];
-    self.asset2ImageView.image = [NSImage imageNamed:ASSET2];
-    self.asset3ImageView.image = [NSImage imageNamed:ASSET3];
-    self.asset4ImageView.image = [NSImage imageNamed:ASSET4];
-    self.asset5ImageView.image = [NSImage imageNamed:ASSET5];
+    self.asset1ImageView.image = [NSImage imageNamed:ASSET_KEY(1)];
+    self.asset2ImageView.image = [NSImage imageNamed:ASSET_KEY(2)];
+    self.asset3ImageView.image = [NSImage imageNamed:ASSET_KEY(3)];
+    self.asset4ImageView.image = [NSImage imageNamed:ASSET_KEY(4)];
+    self.asset5ImageView.image = [NSImage imageNamed:ASSET_KEY(5)];
 
-    self.asset6ImageView.image = [NSImage imageNamed:ASSET6];
-    self.asset7ImageView.image = [NSImage imageNamed:ASSET7];
-    self.asset8ImageView.image = [NSImage imageNamed:ASSET8];
-    self.asset9ImageView.image = [NSImage imageNamed:ASSET9];
-    self.asset10ImageView.image = [NSImage imageNamed:ASSET10];
+    self.asset6ImageView.image = [NSImage imageNamed:ASSET_KEY(6)];
+    self.asset7ImageView.image = [NSImage imageNamed:ASSET_KEY(7)];
+    self.asset8ImageView.image = [NSImage imageNamed:ASSET_KEY(8)];
+    self.asset9ImageView.image = [NSImage imageNamed:ASSET_KEY(9)];
+    self.asset10ImageView.image = [NSImage imageNamed:ASSET_KEY(10)];
 
     [self updateView];
 }
@@ -130,16 +130,16 @@
     double numberAsset9 = self.asset9Field.doubleValue;
     double numberAsset10 = self.asset10Field.doubleValue;
 
-    currentSaldo[ASSET1] = @(numberAsset1);
-    currentSaldo[ASSET2] = @(numberAsset2);
-    currentSaldo[ASSET3] = @(numberAsset3);
-    currentSaldo[ASSET4] = @(numberAsset4);
-    currentSaldo[ASSET5] = @(numberAsset5);
-    currentSaldo[ASSET6] = @(numberAsset6);
-    currentSaldo[ASSET7] = @(numberAsset7);
-    currentSaldo[ASSET8] = @(numberAsset8);
-    currentSaldo[ASSET9] = @(numberAsset9);
-    currentSaldo[ASSET10] = @(numberAsset10);
+    currentSaldo[ASSET_KEY(1)] = @(numberAsset1);
+    currentSaldo[ASSET_KEY(2)] = @(numberAsset2);
+    currentSaldo[ASSET_KEY(3)] = @(numberAsset3);
+    currentSaldo[ASSET_KEY(4)] = @(numberAsset4);
+    currentSaldo[ASSET_KEY(5)] = @(numberAsset5);
+    currentSaldo[ASSET_KEY(6)] = @(numberAsset6);
+    currentSaldo[ASSET_KEY(7)] = @(numberAsset7);
+    currentSaldo[ASSET_KEY(8)] = @(numberAsset8);
+    currentSaldo[ASSET_KEY(9)] = @(numberAsset9);
+    currentSaldo[ASSET_KEY(10)] = @(numberAsset10);
 
     [calculator currentSaldoForDictionary:currentSaldo];
 

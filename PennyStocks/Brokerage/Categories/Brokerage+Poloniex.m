@@ -40,13 +40,13 @@
         return nil;
     }
 
-    NSString *asset1Fiat = [NSString stringWithFormat:@"%@_%@", ASSET1, fiatCurrencies[0]];
+    NSString *asset1Fiat = [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), fiatCurrencies[0]];
     ticker[asset1Fiat] = asset1Ticker;
     ticker[fiatCurrencies[1]] = @([exchangeRate doubleValue]);
 
     // BCC ist BCH auf Poloniex
-    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
-    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET1];
+    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET_KEY(1)];
+    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET_KEY(1)];
     ticker[asset1BCC] = ticker[asset1BCH];
 
     return ticker;
@@ -107,8 +107,8 @@
     NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     // Bitcoin Cash heißt BCH auf Poloniex
-    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
-    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET1];
+    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET_KEY(1)];
+    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET_KEY(1)];
     if ([currencyPair isEqualToString:asset1BCC]) {
         currencyPair = asset1BCH;
     }
@@ -148,8 +148,8 @@
     NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     // Bitcoin Cash heißt BCH auf Poloniex
-    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
-    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET1];
+    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET_KEY(1)];
+    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET_KEY(1)];
     if ([currencyPair isEqualToString:asset1BCC]) {
         currencyPair = asset1BCH;
     }
@@ -203,8 +203,8 @@
     }
 
     // Bitcoin Cash heißt BCH auf Poloniex
-    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET1];
-    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET1];
+    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET_KEY(1)];
+    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET_KEY(1)];
 
     NSMutableArray *orders = [[NSMutableArray alloc] init];
 

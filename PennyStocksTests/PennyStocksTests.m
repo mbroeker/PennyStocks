@@ -107,7 +107,7 @@
 
     NSLog(@"TESTING ALL KEYS ON BITTREX");
     for (id key in tickerKeys) {
-        if ([key isEqualToString:[NSString stringWithFormat:@"%@_%@", ASSET1, EUR]]) {
+        if ([key isEqualToString:[NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), EUR]]) {
             continue;
         }
 
@@ -152,7 +152,7 @@
     }
 
     for (id asset in [self.calculator tickerKeys]) {
-        NSDictionary *historicalData = [self historicalData:key forAsset:asset withBaseAsset:ASSET1];
+        NSDictionary *historicalData = [self historicalData:key forAsset:asset withBaseAsset:ASSET_KEY(1)];
         NSArray *sortedKeys = [[historicalData allKeys] sortedArrayUsingSelector:@selector(compare:)];
 
         for (id key in sortedKeys) {
@@ -160,7 +160,7 @@
             double diffInPercent = 100 * (diffInBTC / [historicalData[key][@"low"] doubleValue]);
 
             NSLog(@"POSSIBLE MARGIN YESTERDAY: %@ /%4s %6.02f %%",
-                ASSET1,
+                ASSET_KEY(1),
                 [asset UTF8String],
                 diffInPercent
             );

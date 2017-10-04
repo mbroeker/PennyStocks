@@ -28,17 +28,17 @@
 
     [self setPreferredContentSize:self.view.frame.size];
 
-    self.asset1ImageButton.image = [NSImage imageNamed:ASSET1];
-    self.asset2ImageButton.image = [NSImage imageNamed:ASSET2];
-    self.asset3ImageButton.image = [NSImage imageNamed:ASSET3];
-    self.asset4ImageButton.image = [NSImage imageNamed:ASSET4];
-    self.asset5ImageButton.image = [NSImage imageNamed:ASSET5];
+    self.asset1ImageButton.image = [NSImage imageNamed:ASSET_KEY(1)];
+    self.asset2ImageButton.image = [NSImage imageNamed:ASSET_KEY(2)];
+    self.asset3ImageButton.image = [NSImage imageNamed:ASSET_KEY(3)];
+    self.asset4ImageButton.image = [NSImage imageNamed:ASSET_KEY(4)];
+    self.asset5ImageButton.image = [NSImage imageNamed:ASSET_KEY(5)];
 
-    self.asset6ImageButton.image = [NSImage imageNamed:ASSET6];
-    self.asset7ImageButton.image = [NSImage imageNamed:ASSET7];
-    self.asset8ImageButton.image = [NSImage imageNamed:ASSET8];
-    self.asset9ImageButton.image = [NSImage imageNamed:ASSET9];
-    self.asset10ImageButton.image = [NSImage imageNamed:ASSET10];
+    self.asset6ImageButton.image = [NSImage imageNamed:ASSET_KEY(6)];
+    self.asset7ImageButton.image = [NSImage imageNamed:ASSET_KEY(7)];
+    self.asset8ImageButton.image = [NSImage imageNamed:ASSET_KEY(8)];
+    self.asset9ImageButton.image = [NSImage imageNamed:ASSET_KEY(9)];
+    self.asset10ImageButton.image = [NSImage imageNamed:ASSET_KEY(10)];
 
     self.title = NSLocalizedString(@"total_saldo", @"Gesamtbestand umgerechnet");
 
@@ -95,17 +95,17 @@
     NSDictionary *currentRatings = [calculator currentRatings];
 
     NSArray *data = @[
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET1]]),
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET2]]),
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET3]]),
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET4]]),
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET5]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(1)]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(2)]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(3)]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(4)]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(5)]]),
 
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET6]]),
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET7]]),
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET8]]),
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET9]]),
-        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET10]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(6)]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(7)]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(8)]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(9)]]),
+        @([self format:[calculator calculateWithRatings:currentRatings currency:ASSET_KEY(10)]]),
     ];
 
     if (initialValues == nil) {

@@ -169,30 +169,30 @@ typedef struct DASHBOARD_VARS {
 
     tabs = @{
         DASHBOARD: @[DASHBOARD, @1],
-        ASSET1: @[ASSET1_DESC, @1],
-        ASSET2: @[ASSET2_DESC, @1],
-        ASSET3: @[ASSET3_DESC, @1],
-        ASSET4: @[ASSET4_DESC, @1],
-        ASSET5: @[ASSET5_DESC, @1],
-        ASSET6: @[ASSET6_DESC, @1],
-        ASSET7: @[ASSET7_DESC, @1],
-        ASSET8: @[ASSET8_DESC, @1],
-        ASSET9: @[ASSET9_DESC, @1],
-        ASSET10: @[ASSET10_DESC, @1],
+        ASSET_KEY(1): @[ASSET_DESC(1), @1],
+        ASSET_KEY(2): @[ASSET_DESC(2), @1],
+        ASSET_KEY(3): @[ASSET_DESC(3), @1],
+        ASSET_KEY(4): @[ASSET_DESC(4), @1],
+        ASSET_KEY(5): @[ASSET_DESC(5), @1],
+        ASSET_KEY(6): @[ASSET_DESC(6), @1],
+        ASSET_KEY(7): @[ASSET_DESC(7), @1],
+        ASSET_KEY(8): @[ASSET_DESC(8), @1],
+        ASSET_KEY(9): @[ASSET_DESC(9), @1],
+        ASSET_KEY(10): @[ASSET_DESC(10), @1],
     };
 
     labels = @{
         DASHBOARD: DASHBOARD,
-        ASSET1_DESC: ASSET1,
-        ASSET2_DESC: ASSET2,
-        ASSET3_DESC: ASSET3,
-        ASSET4_DESC: ASSET4,
-        ASSET5_DESC: ASSET5,
-        ASSET6_DESC: ASSET6,
-        ASSET7_DESC: ASSET7,
-        ASSET8_DESC: ASSET8,
-        ASSET9_DESC: ASSET9,
-        ASSET10_DESC: ASSET10,
+        ASSET_DESC(1): ASSET_KEY(1),
+        ASSET_DESC(2): ASSET_KEY(2),
+        ASSET_DESC(3): ASSET_KEY(3),
+        ASSET_DESC(4): ASSET_KEY(4),
+        ASSET_DESC(5): ASSET_KEY(5),
+        ASSET_DESC(6): ASSET_KEY(6),
+        ASSET_DESC(7): ASSET_KEY(7),
+        ASSET_DESC(8): ASSET_KEY(8),
+        ASSET_DESC(9): ASSET_KEY(9),
+        ASSET_DESC(10): ASSET_KEY(10),
     };
 
     images = @{
@@ -201,32 +201,32 @@ typedef struct DASHBOARD_VARS {
         GBP: [NSImage imageNamed:GBP],
         CNY: [NSImage imageNamed:CNY],
         JPY: [NSImage imageNamed:JPY],
-        ASSET1: [NSImage imageNamed:ASSET1],
-        ASSET2: [NSImage imageNamed:ASSET2],
-        ASSET3: [NSImage imageNamed:ASSET3],
-        ASSET4: [NSImage imageNamed:ASSET4],
-        ASSET5: [NSImage imageNamed:ASSET5],
-        ASSET6: [NSImage imageNamed:ASSET6],
-        ASSET7: [NSImage imageNamed:ASSET7],
-        ASSET8: [NSImage imageNamed:ASSET8],
-        ASSET9: [NSImage imageNamed:ASSET9],
-        ASSET10: [NSImage imageNamed:ASSET10],
+        ASSET_KEY(1): [NSImage imageNamed:ASSET_KEY(1)],
+        ASSET_KEY(2): [NSImage imageNamed:ASSET_KEY(2)],
+        ASSET_KEY(3): [NSImage imageNamed:ASSET_KEY(3)],
+        ASSET_KEY(4): [NSImage imageNamed:ASSET_KEY(4)],
+        ASSET_KEY(5): [NSImage imageNamed:ASSET_KEY(5)],
+        ASSET_KEY(6): [NSImage imageNamed:ASSET_KEY(6)],
+        ASSET_KEY(7): [NSImage imageNamed:ASSET_KEY(7)],
+        ASSET_KEY(8): [NSImage imageNamed:ASSET_KEY(8)],
+        ASSET_KEY(9): [NSImage imageNamed:ASSET_KEY(9)],
+        ASSET_KEY(10): [NSImage imageNamed:ASSET_KEY(10)],
     };
 
     applications = [[defaults objectForKey:TV_APPLICATIONS] mutableCopy];
 
     if (applications == nil) {
         applications = [@{
-            ASSET1_DESC: @"/Applications/Ethereum Wallet.app",
-            ASSET2_DESC: @"",
-            ASSET3_DESC: @"/Applications/monero-wallet-gui.App",
-            ASSET4_DESC: @"/Applications/Electrum-LTC.App",
-            ASSET5_DESC: @"",
-            ASSET6_DESC: @"",
-            ASSET7_DESC: @"",
-            ASSET8_DESC: @"",
-            ASSET9_DESC: @"",
-            ASSET10_DESC: @"",
+            ASSET_DESC(1): @"/Applications/Ethereum Wallet.app",
+            ASSET_DESC(2): @"",
+            ASSET_DESC(3): @"/Applications/monero-wallet-gui.App",
+            ASSET_DESC(4): @"/Applications/Electrum-LTC.App",
+            ASSET_DESC(5): @"",
+            ASSET_DESC(6): @"",
+            ASSET_DESC(7): @"",
+            ASSET_DESC(8): @"",
+            ASSET_DESC(9): @"",
+            ASSET_DESC(10): @"",
         } mutableCopy];
 
         [defaults setObject:applications forKey:TV_APPLICATIONS];
@@ -330,28 +330,28 @@ typedef struct DASHBOARD_VARS {
     [super viewDidLoad];
 
     // Initialisieren der Bezeichner
-    self.currency1Label.stringValue = ASSET1;
-    self.currency2Label.stringValue = ASSET2;
-    self.currency3Label.stringValue = ASSET3;
-    self.currency4Label.stringValue = ASSET4;
-    self.currency5Label.stringValue = ASSET5;
-    self.currency6Label.stringValue = ASSET6;
-    self.currency7Label.stringValue = ASSET7;
-    self.currency8Label.stringValue = ASSET8;
-    self.currency9Label.stringValue = ASSET9;
-    self.currency10Label.stringValue = ASSET10;
+    self.currency1Label.stringValue = ASSET_KEY(1);
+    self.currency2Label.stringValue = ASSET_KEY(2);
+    self.currency3Label.stringValue = ASSET_KEY(3);
+    self.currency4Label.stringValue = ASSET_KEY(4);
+    self.currency5Label.stringValue = ASSET_KEY(5);
+    self.currency6Label.stringValue = ASSET_KEY(6);
+    self.currency7Label.stringValue = ASSET_KEY(7);
+    self.currency8Label.stringValue = ASSET_KEY(8);
+    self.currency9Label.stringValue = ASSET_KEY(9);
+    self.currency10Label.stringValue = ASSET_KEY(10);
 
     // Exchange Rate Currencies
-    self.asset1MenuItem.title = ASSET1;
-    self.asset2MenuItem.title = ASSET2;
-    self.asset3MenuItem.title = ASSET3;
-    self.asset4MenuItem.title = ASSET4;
-    self.asset5MenuItem.title = ASSET5;
-    self.asset6MenuItem.title = ASSET6;
-    self.asset7MenuItem.title = ASSET7;
-    self.asset8MenuItem.title = ASSET8;
-    self.asset9MenuItem.title = ASSET9;
-    self.asset10MenuItem.title = ASSET10;
+    self.asset1MenuItem.title = ASSET_KEY(1);
+    self.asset2MenuItem.title = ASSET_KEY(2);
+    self.asset3MenuItem.title = ASSET_KEY(3);
+    self.asset4MenuItem.title = ASSET_KEY(4);
+    self.asset5MenuItem.title = ASSET_KEY(5);
+    self.asset6MenuItem.title = ASSET_KEY(6);
+    self.asset7MenuItem.title = ASSET_KEY(7);
+    self.asset8MenuItem.title = ASSET_KEY(8);
+    self.asset9MenuItem.title = ASSET_KEY(9);
+    self.asset10MenuItem.title = ASSET_KEY(10);
 
     // Initialisieren der Anwendung und der Datenstrukturen
     [self initializeWithDefaults];
@@ -372,10 +372,10 @@ typedef struct DASHBOARD_VARS {
  */
 - (void)markGainers {
     // Hole die aktualisierten Dictionaries
-    NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET1];
+    NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET_KEY(1)];
     NSMutableDictionary *currentRatings = [calculator currentRatings];
 
-    double btcPercent = [btcCheckpoint[ASSET1] doubleValue];
+    double btcPercent = [btcCheckpoint[ASSET_KEY(1)] doubleValue];
 
     NSMutableDictionary *currencyUnits = [[NSMutableDictionary alloc] init];
     for (id cAsset in currentRatings) {
@@ -386,37 +386,37 @@ typedef struct DASHBOARD_VARS {
         /* Higher Checkpoint Block */
 
         // Chart Leiste 1
-        if ([cAsset isEqualToString:ASSET1] && cPercent > 0) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultHigherColor]; }
-        if ([cAsset isEqualToString:ASSET2] && cPercent > 0) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultHigherColor]; }
-        if ([cAsset isEqualToString:ASSET3] && cPercent > 0) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultHigherColor]; }
-        if ([cAsset isEqualToString:ASSET4] && cPercent > 0) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultHigherColor]; }
-        if ([cAsset isEqualToString:ASSET5] && cPercent > 0) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(1)] && cPercent > 0) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(2)] && cPercent > 0) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(3)] && cPercent > 0) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(4)] && cPercent > 0) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(5)] && cPercent > 0) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultHigherColor]; }
 
         // Chart Leiste 2
-        if ([cAsset isEqualToString:ASSET6] && cPercent > 0) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultHigherColor]; }
-        if ([cAsset isEqualToString:ASSET7] && cPercent > 0) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultHigherColor]; }
-        if ([cAsset isEqualToString:ASSET8] && cPercent > 0) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultHigherColor]; }
-        if ([cAsset isEqualToString:ASSET9] && cPercent > 0) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultHigherColor]; }
-        if ([cAsset isEqualToString:ASSET10] && cPercent > 0) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(6)] && cPercent > 0) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(7)] && cPercent > 0) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(8)] && cPercent > 0) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(9)] && cPercent > 0) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultHigherColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(10)] && cPercent > 0) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultHigherColor]; }
 
         /* Highest Checkpoint Block */
 
         // Chart Leiste 1
-        if ([cAsset isEqualToString:ASSET1] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultHighestColor]; }
-        if ([cAsset isEqualToString:ASSET2] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultHighestColor]; }
-        if ([cAsset isEqualToString:ASSET3] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultHighestColor]; }
-        if ([cAsset isEqualToString:ASSET4] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultHighestColor]; }
-        if ([cAsset isEqualToString:ASSET5] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(1)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(2)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(3)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(4)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(5)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultHighestColor]; }
 
         // Chart Leiste 2
-        if ([cAsset isEqualToString:ASSET6] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultHighestColor]; }
-        if ([cAsset isEqualToString:ASSET7] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultHighestColor]; }
-        if ([cAsset isEqualToString:ASSET8] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultHighestColor]; }
-        if ([cAsset isEqualToString:ASSET9] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultHighestColor]; }
-        if ([cAsset isEqualToString:ASSET10] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(6)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(7)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(8)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(9)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultHighestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(10)] && cPercent > CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultHighestColor]; }
 
         // Bilde die Differenz aus BTC und der jeweiligen Cryptowährung, falls es sich nicht um BTC handelt.
-        if (![cAsset isEqualToString:ASSET1]) {
+        if (![cAsset isEqualToString:ASSET_KEY(1)]) {
             cPercent -= btcPercent;
         }
 
@@ -431,18 +431,18 @@ typedef struct DASHBOARD_VARS {
         /* Gainers Checkpoint Block */
 
         // Chart Leiste 1
-        if ([highestKey isEqualToString:ASSET1]) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultGainColor]; }
-        if ([highestKey isEqualToString:ASSET2]) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultGainColor]; }
-        if ([highestKey isEqualToString:ASSET3]) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultGainColor]; }
-        if ([highestKey isEqualToString:ASSET4]) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultGainColor]; }
-        if ([highestKey isEqualToString:ASSET5]) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(1)]) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(2)]) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(3)]) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(4)]) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(5)]) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultGainColor]; }
 
         // Chart Leiste 2
-        if ([highestKey isEqualToString:ASSET6]) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultGainColor]; }
-        if ([highestKey isEqualToString:ASSET7]) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultGainColor]; }
-        if ([highestKey isEqualToString:ASSET8]) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultGainColor]; }
-        if ([highestKey isEqualToString:ASSET9]) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultGainColor]; }
-        if ([highestKey isEqualToString:ASSET10]) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(6)]) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(7)]) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(8)]) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(9)]) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultGainColor]; }
+        if ([highestKey isEqualToString:ASSET_KEY(10)]) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultGainColor]; }
     }
 }
 
@@ -452,8 +452,8 @@ typedef struct DASHBOARD_VARS {
 - (void)markLoosers {
     NSMutableDictionary *currentRatings = [calculator currentRatings];
 
-    NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET1];
-    double btcPercent = [btcCheckpoint[ASSET1] doubleValue];
+    NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET_KEY(1)];
+    double btcPercent = [btcCheckpoint[ASSET_KEY(1)] doubleValue];
 
     NSMutableDictionary *currencyUnits = [[NSMutableDictionary alloc] init];
     for (id cAsset in currentRatings) {
@@ -464,37 +464,37 @@ typedef struct DASHBOARD_VARS {
         /* Lower Checkpoint Block */
 
         // Chart Leiste 1
-        if ([cAsset isEqualToString:ASSET1] && cPercent < 0) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultLowerColor]; }
-        if ([cAsset isEqualToString:ASSET2] && cPercent < 0) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultLowerColor]; }
-        if ([cAsset isEqualToString:ASSET3] && cPercent < 0) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultLowerColor]; }
-        if ([cAsset isEqualToString:ASSET4] && cPercent < 0) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultLowerColor]; }
-        if ([cAsset isEqualToString:ASSET5] && cPercent < 0) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(1)] && cPercent < 0) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(2)] && cPercent < 0) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(3)] && cPercent < 0) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(4)] && cPercent < 0) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(5)] && cPercent < 0) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultLowerColor]; }
 
         // Chart Leiste 2
-        if ([cAsset isEqualToString:ASSET6] && cPercent < 0) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultLowerColor]; }
-        if ([cAsset isEqualToString:ASSET7] && cPercent < 0) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultLowerColor]; }
-        if ([cAsset isEqualToString:ASSET8] && cPercent < 0) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultLowerColor]; }
-        if ([cAsset isEqualToString:ASSET9] && cPercent < 0) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultLowerColor]; }
-        if ([cAsset isEqualToString:ASSET10] && cPercent < 0) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(6)] && cPercent < 0) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(7)] && cPercent < 0) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(8)] && cPercent < 0) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(9)] && cPercent < 0) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultLowerColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(10)] && cPercent < 0) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultLowerColor]; }
 
         /* Lowest Checkpoint Block */
 
         // Chart Leiste 1
-        if ([cAsset isEqualToString:ASSET1] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultLowestColor]; }
-        if ([cAsset isEqualToString:ASSET2] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultLowestColor]; }
-        if ([cAsset isEqualToString:ASSET3] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultLowestColor]; }
-        if ([cAsset isEqualToString:ASSET4] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultLowestColor]; }
-        if ([cAsset isEqualToString:ASSET5] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(1)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(2)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(3)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(4)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(5)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultLowestColor]; }
 
         // Chart Leiste 2
-        if ([cAsset isEqualToString:ASSET6] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultLowestColor]; }
-        if ([cAsset isEqualToString:ASSET7] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultLowestColor]; }
-        if ([cAsset isEqualToString:ASSET8] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultLowestColor]; }
-        if ([cAsset isEqualToString:ASSET9] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultLowestColor]; }
-        if ([cAsset isEqualToString:ASSET10] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(6)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(7)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(8)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(9)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultLowestColor]; }
+        if ([cAsset isEqualToString:ASSET_KEY(10)] && cPercent < -CHECKPOINT_PERCENTAGE) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultLowestColor]; }
 
         // Bilde die Differenz aus BTC und der jeweiligen Cryptowährung, falls es sich nicht um BTC handelt.
-        if (![cAsset isEqualToString:ASSET1]) {
+        if (![cAsset isEqualToString:ASSET_KEY(1)]) {
             cPercent -= btcPercent;
         }
 
@@ -509,18 +509,18 @@ typedef struct DASHBOARD_VARS {
         /* Loose Checkpoint Block */
 
         // Chart Leiste 1
-        if ([lowestKey isEqualToString:ASSET1]) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultLooseColor]; }
-        if ([lowestKey isEqualToString:ASSET2]) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultLooseColor]; }
-        if ([lowestKey isEqualToString:ASSET3]) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultLooseColor]; }
-        if ([lowestKey isEqualToString:ASSET4]) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultLooseColor]; }
-        if ([lowestKey isEqualToString:ASSET5]) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(1)]) { [self alterFieldColors:self.currency1Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(2)]) { [self alterFieldColors:self.currency2Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(3)]) { [self alterFieldColors:self.currency3Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(4)]) { [self alterFieldColors:self.currency4Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(5)]) { [self alterFieldColors:self.currency5Field withBackgroundColor:defaultLooseColor]; }
 
         // Chart Leiste 2
-        if ([lowestKey isEqualToString:ASSET6]) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultLooseColor]; }
-        if ([lowestKey isEqualToString:ASSET7]) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultLooseColor]; }
-        if ([lowestKey isEqualToString:ASSET8]) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultLooseColor]; }
-        if ([lowestKey isEqualToString:ASSET9]) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultLooseColor]; }
-        if ([lowestKey isEqualToString:ASSET10]) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(6)]) { [self alterFieldColors:self.currency6Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(7)]) { [self alterFieldColors:self.currency7Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(8)]) { [self alterFieldColors:self.currency8Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(9)]) { [self alterFieldColors:self.currency9Field withBackgroundColor:defaultLooseColor]; }
+        if ([lowestKey isEqualToString:ASSET_KEY(10)]) { [self alterFieldColors:self.currency10Field withBackgroundColor:defaultLooseColor]; }
     }
 }
 
@@ -548,8 +548,8 @@ typedef struct DASHBOARD_VARS {
 // Simpler Fetch der Poloniex Daten
 - (void)updateTicker:(NSString *)label {
 
-    if ([label isEqualToString:DASHBOARD] || [label isEqualToString:ASSET1]) {
-        label = ASSET1;
+    if ([label isEqualToString:DASHBOARD] || [label isEqualToString:ASSET_KEY(1)]) {
+        label = ASSET_KEY(1);
 
         self.changeLabel.stringValue = @"24h CHANGE";
     }
@@ -574,12 +574,12 @@ typedef struct DASHBOARD_VARS {
 
     NSUInteger fractions = 8;
 
-    if ([label isEqualToString:ASSET1]) {
+    if ([label isEqualToString:ASSET_KEY(1)]) {
         fractions = 2;
     }
 
     NSString *sign = @"";
-    if ([label isEqualToString:DASHBOARD] || [label isEqualToString:ASSET1]) {
+    if ([label isEqualToString:DASHBOARD] || [label isEqualToString:ASSET_KEY(1)]) {
         sign = fiatCurrencySymbol;
     }
 
@@ -652,7 +652,7 @@ typedef struct DASHBOARD_VARS {
         [@"####" UTF8String],
         [@"BALANCE" UTF8String],
         [[NSString stringWithFormat:@"BALANCE IN %@", fiatCurrencies[0]] UTF8String],
-        [[NSString stringWithFormat:@"BALANCE IN %@", ASSET1] UTF8String],
+        [[NSString stringWithFormat:@"BALANCE IN %@", ASSET_KEY(1)] UTF8String],
         [[NSString stringWithFormat:@"INITIAL IN %@", fiatCurrencies[0]] UTF8String],
         [[NSString stringWithFormat:@"CURRENT IN %@", fiatCurrencies[0]] UTF8String],
         [@"SHARE IN %" UTF8String],
@@ -677,7 +677,7 @@ typedef struct DASHBOARD_VARS {
 
         double currentPrice = [checkpoint[CP_CURRENT_PRICE] doubleValue];
         double percent = [checkpoint[CP_PERCENT] doubleValue];
-        double btcPrice = [asset isEqualToString:ASSET1] ? 1 : [currentRatings[ASSET1] doubleValue] / [currentRatings[asset] doubleValue];
+        double btcPrice = [asset isEqualToString:ASSET_KEY(1)] ? 1 : [currentRatings[ASSET_KEY(1)] doubleValue] / [currentRatings[asset] doubleValue];
 
         double amount = [currentSaldo[asset] doubleValue];
 
@@ -746,18 +746,18 @@ typedef struct DASHBOARD_VARS {
     self.rateOutputLabel.placeholderString = [Helper double2German:1.0f / [currentRatings[fiatCurrencies[1]] doubleValue] min:2 max:4];
 
     // Chart Leiste 1
-    self.currency1Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET1] doubleValue] min:2 max:4], fiatCurrencySymbol];
-    self.currency2Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET2] doubleValue] min:2 max:4], fiatCurrencySymbol];
-    self.currency3Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET3] doubleValue] min:2 max:4], fiatCurrencySymbol];
-    self.currency4Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET4] doubleValue] min:2 max:4], fiatCurrencySymbol];
-    self.currency5Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET5] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency1Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(1)] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency2Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(2)] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency3Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(3)] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency4Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(4)] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency5Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(5)] doubleValue] min:2 max:4], fiatCurrencySymbol];
 
     // Chart Leiste 2
-    self.currency6Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET6] doubleValue] min:2 max:4], fiatCurrencySymbol];
-    self.currency7Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET7] doubleValue] min:2 max:4], fiatCurrencySymbol];
-    self.currency8Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET8] doubleValue] min:2 max:4], fiatCurrencySymbol];
-    self.currency9Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET9] doubleValue] min:2 max:4], fiatCurrencySymbol];
-    self.currency10Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET10] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency6Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(6)] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency7Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(7)] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency8Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(8)] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency9Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(9)] doubleValue] min:2 max:4], fiatCurrencySymbol];
+    self.currency10Field.stringValue = [NSString stringWithFormat:@"%@ %@", [Helper double2German:1 / [currentRatings[ASSET_KEY(10)] doubleValue] min:2 max:4], fiatCurrencySymbol];
 
     [self markGainers];
     [self markLoosers];
@@ -818,7 +818,7 @@ typedef struct DASHBOARD_VARS {
 
     // Hole die aktualisierten Dictionaries
     NSDictionary *checkpoint = [calculator checkpointForAsset:asset];
-    NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET1];
+    NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET_KEY(1)];
     NSMutableDictionary *currentRatings = [calculator currentRatings];
 
     double percent = [checkpoint[CP_PERCENT] doubleValue];
@@ -831,7 +831,7 @@ typedef struct DASHBOARD_VARS {
 
     double diffPercent = percent;
 
-    if (![asset isEqualToString:ASSET1]) {
+    if (![asset isEqualToString:ASSET_KEY(1)]) {
         diffPercent -= btcPercent;
     }
 
@@ -867,47 +867,47 @@ typedef struct DASHBOARD_VARS {
     [self markDockLabels:coinchange];
 
     NSDictionary *currentPriceInUnits = @{
-        ASSET1: @([calculator factorForAsset:ASSET1 inRelationTo:asset]),
-        ASSET2: @([calculator factorForAsset:ASSET2 inRelationTo:asset]),
-        ASSET3: @([calculator factorForAsset:ASSET3 inRelationTo:asset]),
-        ASSET4: @([calculator factorForAsset:ASSET4 inRelationTo:asset]),
-        ASSET5: @([calculator factorForAsset:ASSET5 inRelationTo:asset]),
-        ASSET6: @([calculator factorForAsset:ASSET6 inRelationTo:asset]),
-        ASSET7: @([calculator factorForAsset:ASSET7 inRelationTo:asset]),
-        ASSET8: @([calculator factorForAsset:ASSET8 inRelationTo:asset]),
-        ASSET9: @([calculator factorForAsset:ASSET9 inRelationTo:asset]),
-        ASSET10: @([calculator factorForAsset:ASSET10 inRelationTo:asset]),
+        ASSET_KEY(1): @([calculator factorForAsset:ASSET_KEY(1) inRelationTo:asset]),
+        ASSET_KEY(2): @([calculator factorForAsset:ASSET_KEY(2) inRelationTo:asset]),
+        ASSET_KEY(3): @([calculator factorForAsset:ASSET_KEY(3) inRelationTo:asset]),
+        ASSET_KEY(4): @([calculator factorForAsset:ASSET_KEY(4) inRelationTo:asset]),
+        ASSET_KEY(5): @([calculator factorForAsset:ASSET_KEY(5) inRelationTo:asset]),
+        ASSET_KEY(6): @([calculator factorForAsset:ASSET_KEY(6) inRelationTo:asset]),
+        ASSET_KEY(7): @([calculator factorForAsset:ASSET_KEY(7) inRelationTo:asset]),
+        ASSET_KEY(8): @([calculator factorForAsset:ASSET_KEY(8) inRelationTo:asset]),
+        ASSET_KEY(9): @([calculator factorForAsset:ASSET_KEY(9) inRelationTo:asset]),
+        ASSET_KEY(10): @([calculator factorForAsset:ASSET_KEY(10) inRelationTo:asset]),
     };
 
-    NSUInteger fractions = ([label isEqualToString:ASSET1]) ? 4 : 8;
+    NSUInteger fractions = ([label isEqualToString:ASSET_KEY(1)]) ? 4 : 8;
 
-    self.currency1Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET1] doubleValue] min:fractions max:fractions];
-    self.currency2Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET2] doubleValue] min:fractions max:fractions];
-    self.currency3Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET3] doubleValue] min:fractions max:fractions];
-    self.currency4Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET4] doubleValue] min:fractions max:fractions];
-    self.currency5Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET5] doubleValue] min:fractions max:fractions];
+    self.currency1Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(1)] doubleValue] min:fractions max:fractions];
+    self.currency2Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(2)] doubleValue] min:fractions max:fractions];
+    self.currency3Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(3)] doubleValue] min:fractions max:fractions];
+    self.currency4Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(4)] doubleValue] min:fractions max:fractions];
+    self.currency5Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(5)] doubleValue] min:fractions max:fractions];
 
-    fractions = ([label isEqualToString:ASSET1]) ? 4 : 6;
+    fractions = ([label isEqualToString:ASSET_KEY(1)]) ? 4 : 6;
 
-    self.currency6Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET6] doubleValue] min:fractions max:fractions];
-    self.currency7Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET7] doubleValue] min:fractions max:fractions];
-    self.currency8Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET8] doubleValue] min:fractions max:fractions];
-    self.currency9Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET9] doubleValue] min:fractions max:fractions];
-    self.currency10Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET10] doubleValue] min:fractions max:fractions];
+    self.currency6Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(6)] doubleValue] min:fractions max:fractions];
+    self.currency7Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(7)] doubleValue] min:fractions max:fractions];
+    self.currency8Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(8)] doubleValue] min:fractions max:fractions];
+    self.currency9Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(9)] doubleValue] min:fractions max:fractions];
+    self.currency10Field.stringValue = [Helper double2German:[currentPriceInUnits[ASSET_KEY(10)] doubleValue] min:fractions max:fractions];
 
     // Chart Leiste 1
-    if ([asset isEqualToString:ASSET1]) { self.currency1Field.stringValue = @"1"; }
-    if ([asset isEqualToString:ASSET2]) { self.currency2Field.stringValue = @"1"; }
-    if ([asset isEqualToString:ASSET3]) { self.currency3Field.stringValue = @"1"; }
-    if ([asset isEqualToString:ASSET4]) { self.currency4Field.stringValue = @"1"; }
-    if ([asset isEqualToString:ASSET5]) { self.currency5Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(1)]) { self.currency1Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(2)]) { self.currency2Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(3)]) { self.currency3Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(4)]) { self.currency4Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(5)]) { self.currency5Field.stringValue = @"1"; }
 
     // Chart Leiste 2
-    if ([asset isEqualToString:ASSET6]) { self.currency6Field.stringValue = @"1"; }
-    if ([asset isEqualToString:ASSET7]) { self.currency7Field.stringValue = @"1"; }
-    if ([asset isEqualToString:ASSET8]) { self.currency8Field.stringValue = @"1"; }
-    if ([asset isEqualToString:ASSET9]) { self.currency9Field.stringValue = @"1"; }
-    if ([asset isEqualToString:ASSET10]) { self.currency10Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(6)]) { self.currency6Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(7)]) { self.currency7Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(8)]) { self.currency8Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(9)]) { self.currency9Field.stringValue = @"1"; }
+    if ([asset isEqualToString:ASSET_KEY(10)]) { self.currency10Field.stringValue = @"1"; }
 
     [self markGainers];
     [self markLoosers];
@@ -1108,7 +1108,7 @@ typedef struct DASHBOARD_VARS {
         return;
     }
 
-    if ([cAsset isEqualToString:ASSET1]) {
+    if ([cAsset isEqualToString:ASSET_KEY(1)]) {
         // Die Leute können mit (BTC) (exchangeUnit) kaufen
         if (self.instantTrading.state == NSOnState) {
             [calculator autoBuy:exchangeUnit amount:result];
@@ -1116,7 +1116,7 @@ typedef struct DASHBOARD_VARS {
         }
     } else {
         // Die Leute können Ihre (cAsset)s nach (BTC) verkaufen
-        if ([exchangeUnit isEqualToString:ASSET1]) {
+        if ([exchangeUnit isEqualToString:ASSET_KEY(1)]) {
             if (self.instantTrading.state == NSOnState) {
                 [calculator autoSell:cAsset amount:amount];
                 self.exchangeSelection.title = fiatCurrencies[0];

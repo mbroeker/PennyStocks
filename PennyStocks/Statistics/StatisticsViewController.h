@@ -12,7 +12,7 @@
 
 @property(strong) IBOutlet NSTextField *openOrdersLabel;
 @property(strong) IBOutlet NSButton *dismissButton;
-@property(strong) IBOutlet NSTableView *ordersTableView;
+@property(weak) IBOutlet NSTableView *ordersTableView;
 
 @property(strong) NSMutableArray *dataRows;
 

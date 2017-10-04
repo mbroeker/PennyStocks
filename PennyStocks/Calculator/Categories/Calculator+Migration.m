@@ -32,9 +32,9 @@
         mustUpdate = true;
     }
 
-    if (!saldoUrls[ASSET1_DESC]) {
+    if (!saldoUrls[ASSET_DESC(1)]) {
         NSString *exchange = ([calculator.defaultExchange isEqualToString:EXCHANGE_BITTREX]) ? @"bittrex" : @"poloniex";
-        saldoUrls[ASSET1_DESC] = [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges/%@/", exchange];
+        saldoUrls[ASSET_DESC(1)] = [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges/%@/", exchange];
 
         mustUpdate = true;
     }
@@ -42,9 +42,9 @@
     for (id key in tickerKeysDescription) {
         if (!saldoUrls[key]) {
             if ([calculator.defaultExchange isEqualToString:EXCHANGE_BITTREX]) {
-                saldoUrls[key] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET1, tickerKeysDescription[key]];
+                saldoUrls[key] = [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), tickerKeysDescription[key]];
             } else {
-                saldoUrls[key] = [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET1.lowercaseString, [tickerKeysDescription[key] lowercaseString]];
+                saldoUrls[key] = [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, [tickerKeysDescription[key] lowercaseString]];
             }
 
             mustUpdate = true;
@@ -157,6 +157,8 @@
     [defaults removeObjectForKey:KEY_SALDO_URLS];
     [defaults removeObjectForKey:KEY_CURRENT_SALDO];
     [defaults removeObjectForKey:KEY_INITIAL_RATINGS];
+    [defaults removeObjectForKey:KEY_CURRENT_ASSETS];
+    [defaults removeObjectForKey:TV_APPLICATIONS];
 
     [defaults synchronize];
 }

@@ -4,7 +4,7 @@
 //
 
 #import "RestrictedClickableTextField.h"
-#import "CalculatorConstants.h"
+#import "Calculator.h"
 
 @implementation RestrictedClickableTextField
 
@@ -12,7 +12,7 @@
  * onHover effect for restricted and clickable TextFields
  */
 - (void)viewWillDraw {
-    if ([self.stringValue isEqualToString:DASHBOARD] || [self.stringValue isEqualToString:ASSET1_DESC]) {
+    if ([self.stringValue isEqualToString:DASHBOARD] || [self.stringValue isEqualToString:ASSET_DESC(1)]) {
         return;
     }
 
@@ -25,7 +25,7 @@
  * @param theEvent
  */
 - (void)mouseDown:(NSEvent *)theEvent {
-    if ([self.stringValue isEqualToString:DASHBOARD] || [self.stringValue isEqualToString:ASSET1_DESC]) {
+    if ([self.stringValue isEqualToString:DASHBOARD] || [self.stringValue isEqualToString:ASSET_DESC(1)]) {
         return;
     }
 

@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "Brokerage.h"
+#import "CalculatorConstants.h"
 
 @interface Calculator : NSObject
+
+/**
+ *
+ * @param row
+ * @param index
+ * @return
+ */
++ (NSString *)assetString:(long)row withIndex:(long)index;
 
 /**
  * Static Constructor implemented as singleton

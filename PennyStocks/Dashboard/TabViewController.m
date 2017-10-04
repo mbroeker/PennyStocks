@@ -21,16 +21,16 @@
 
     self.tabView.delegate = self;
 
-    self.asset1TabViewItem.label = ASSET1;
-    self.asset2TabViewItem.label = ASSET2;
-    self.asset3TabViewItem.label = ASSET3;
-    self.asset4TabViewItem.label = ASSET4;
-    self.asset5TabViewItem.label = ASSET5;
-    self.asset6TabViewItem.label = ASSET6;
-    self.asset7TabViewItem.label = ASSET7;
-    self.asset8TabViewItem.label = ASSET8;
-    self.asset9TabViewItem.label = ASSET9;
-    self.asset10TabViewItem.label = ASSET10;
+    self.asset1TabViewItem.label = ASSET_KEY(1);
+    self.asset2TabViewItem.label = ASSET_KEY(2);
+    self.asset3TabViewItem.label = ASSET_KEY(3);
+    self.asset4TabViewItem.label = ASSET_KEY(4);
+    self.asset5TabViewItem.label = ASSET_KEY(5);
+    self.asset6TabViewItem.label = ASSET_KEY(6);
+    self.asset7TabViewItem.label = ASSET_KEY(7);
+    self.asset8TabViewItem.label = ASSET_KEY(8);
+    self.asset9TabViewItem.label = ASSET_KEY(9);
+    self.asset10TabViewItem.label = ASSET_KEY(10);
 
     controller = (TemplateViewController *) self.tabViewItems.firstObject.viewController;
     [controller updateAssistant];

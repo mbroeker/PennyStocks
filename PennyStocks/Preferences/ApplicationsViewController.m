@@ -16,30 +16,30 @@
     [super viewDidLoad];
 
     // Properties List
-    self.asset1Field.placeholderString = ASSET1_DESC;
-    self.asset2Field.placeholderString = ASSET2_DESC;
-    self.asset3Field.placeholderString = ASSET3_DESC;
-    self.asset4Field.placeholderString = ASSET4_DESC;
-    self.asset5Field.placeholderString = ASSET5_DESC;
+    self.asset1Field.placeholderString = ASSET_DESC(1);
+    self.asset2Field.placeholderString = ASSET_DESC(2);
+    self.asset3Field.placeholderString = ASSET_DESC(3);
+    self.asset4Field.placeholderString = ASSET_DESC(4);
+    self.asset5Field.placeholderString = ASSET_DESC(5);
 
-    self.asset6Field.placeholderString = ASSET6_DESC;
-    self.asset7Field.placeholderString = ASSET7_DESC;
-    self.asset8Field.placeholderString = ASSET8_DESC;
-    self.asset9Field.placeholderString = ASSET9_DESC;
-    self.asset10Field.placeholderString = ASSET10_DESC;
+    self.asset6Field.placeholderString = ASSET_DESC(6);
+    self.asset7Field.placeholderString = ASSET_DESC(7);
+    self.asset8Field.placeholderString = ASSET_DESC(8);
+    self.asset9Field.placeholderString = ASSET_DESC(9);
+    self.asset10Field.placeholderString = ASSET_DESC(10);
 
     // Images List
-    self.asset1ImageButton.image = [NSImage imageNamed:ASSET1];
-    self.asset2ImageButton.image = [NSImage imageNamed:ASSET2];
-    self.asset3ImageButton.image = [NSImage imageNamed:ASSET3];
-    self.asset4ImageButton.image = [NSImage imageNamed:ASSET4];
-    self.asset5ImageButton.image = [NSImage imageNamed:ASSET5];
+    self.asset1ImageButton.image = [NSImage imageNamed:ASSET_KEY(1)];
+    self.asset2ImageButton.image = [NSImage imageNamed:ASSET_KEY(2)];
+    self.asset3ImageButton.image = [NSImage imageNamed:ASSET_KEY(3)];
+    self.asset4ImageButton.image = [NSImage imageNamed:ASSET_KEY(4)];
+    self.asset5ImageButton.image = [NSImage imageNamed:ASSET_KEY(5)];
 
-    self.asset6ImageButton.image = [NSImage imageNamed:ASSET6];
-    self.asset7ImageButton.image = [NSImage imageNamed:ASSET7];
-    self.asset8ImageButton.image = [NSImage imageNamed:ASSET8];
-    self.asset9ImageButton.image = [NSImage imageNamed:ASSET9];
-    self.asset10ImageButton.image = [NSImage imageNamed:ASSET10];
+    self.asset6ImageButton.image = [NSImage imageNamed:ASSET_KEY(6)];
+    self.asset7ImageButton.image = [NSImage imageNamed:ASSET_KEY(7)];
+    self.asset8ImageButton.image = [NSImage imageNamed:ASSET_KEY(8)];
+    self.asset9ImageButton.image = [NSImage imageNamed:ASSET_KEY(9)];
+    self.asset10ImageButton.image = [NSImage imageNamed:ASSET_KEY(10)];
 
     [self updateView];
 }
@@ -53,16 +53,16 @@
     // aktualisierten Saldo besorgen
     NSMutableDictionary *applications = [[defaults objectForKey:TV_APPLICATIONS] mutableCopy];
 
-    self.asset1Field.stringValue = applications[ASSET1_DESC];
-    self.asset2Field.stringValue = applications[ASSET2_DESC];
-    self.asset3Field.stringValue = applications[ASSET3_DESC];
-    self.asset4Field.stringValue = applications[ASSET4_DESC];
-    self.asset5Field.stringValue = applications[ASSET5_DESC];
-    self.asset6Field.stringValue = applications[ASSET6_DESC];
-    self.asset7Field.stringValue = applications[ASSET7_DESC];
-    self.asset8Field.stringValue = applications[ASSET8_DESC];
-    self.asset9Field.stringValue = applications[ASSET9_DESC];
-    self.asset10Field.stringValue = applications[ASSET10_DESC];
+    self.asset1Field.stringValue = applications[ASSET_DESC(1)];
+    self.asset2Field.stringValue = applications[ASSET_DESC(2)];
+    self.asset3Field.stringValue = applications[ASSET_DESC(3)];
+    self.asset4Field.stringValue = applications[ASSET_DESC(4)];
+    self.asset5Field.stringValue = applications[ASSET_DESC(5)];
+    self.asset6Field.stringValue = applications[ASSET_DESC(6)];
+    self.asset7Field.stringValue = applications[ASSET_DESC(7)];
+    self.asset8Field.stringValue = applications[ASSET_DESC(8)];
+    self.asset9Field.stringValue = applications[ASSET_DESC(9)];
+    self.asset10Field.stringValue = applications[ASSET_DESC(10)];
 }
 
 /**
@@ -76,16 +76,16 @@
     // aktualisierten Saldo besorgen
     NSMutableDictionary *applications = [[defaults objectForKey:TV_APPLICATIONS] mutableCopy];
 
-    applications[ASSET1_DESC] = self.asset1Field.stringValue;
-    applications[ASSET2_DESC] = self.asset2Field.stringValue;
-    applications[ASSET3_DESC] = self.asset3Field.stringValue;
-    applications[ASSET4_DESC] = self.asset4Field.stringValue;
-    applications[ASSET5_DESC] = self.asset5Field.stringValue;
-    applications[ASSET6_DESC] = self.asset6Field.stringValue;
-    applications[ASSET7_DESC] = self.asset7Field.stringValue;
-    applications[ASSET8_DESC] = self.asset8Field.stringValue;
-    applications[ASSET9_DESC] = self.asset9Field.stringValue;
-    applications[ASSET10_DESC] = self.asset10Field.stringValue;
+    applications[ASSET_DESC(1)] = self.asset1Field.stringValue;
+    applications[ASSET_DESC(2)] = self.asset2Field.stringValue;
+    applications[ASSET_DESC(3)] = self.asset3Field.stringValue;
+    applications[ASSET_DESC(4)] = self.asset4Field.stringValue;
+    applications[ASSET_DESC(5)] = self.asset5Field.stringValue;
+    applications[ASSET_DESC(6)] = self.asset6Field.stringValue;
+    applications[ASSET_DESC(7)] = self.asset7Field.stringValue;
+    applications[ASSET_DESC(8)] = self.asset8Field.stringValue;
+    applications[ASSET_DESC(9)] = self.asset9Field.stringValue;
+    applications[ASSET_DESC(10)] = self.asset10Field.stringValue;
 
     [defaults setObject:applications forKey:TV_APPLICATIONS];
     [defaults synchronize];

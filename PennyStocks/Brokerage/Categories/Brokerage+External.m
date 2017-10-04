@@ -39,12 +39,12 @@
  * @return NSDictionary*
  */
 + (NSDictionary *)bitstampAsset1Ticker:(NSString *)asset {
-    NSString *jsonURL = [NSString stringWithFormat:@"https://www.bitstamp.net/api/v2/ticker/%@%@/", [ASSET1 lowercaseString], [asset lowercaseString]];
+    NSString *jsonURL = [NSString stringWithFormat:@"https://www.bitstamp.net/api/v2/ticker/%@%@/", [ASSET_KEY(1) lowercaseString], [asset lowercaseString]];
 
     NSDictionary *theirData = [Brokerage jsonRequest:jsonURL];
 
     if (!theirData[@"last"]) {
-        NSLog(@"API-ERROR: Cannot retrieve exchange rates for %@/%@", ASSET1, asset);
+        NSLog(@"API-ERROR: Cannot retrieve exchange rates for %@/%@", ASSET_KEY(1), asset);
 
         return nil;
     }

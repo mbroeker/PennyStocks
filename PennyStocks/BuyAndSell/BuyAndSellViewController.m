@@ -33,12 +33,12 @@
     calculator = [Calculator instance];
 
     self.buyAssetImage.image = [NSImage imageNamed:tabLabel];
-    self.buyAsset1Image.image = [NSImage imageNamed:ASSET1];
-    self.buyAsset1TotalImage.image = [NSImage imageNamed:ASSET1];
+    self.buyAsset1Image.image = [NSImage imageNamed:ASSET_KEY(1)];
+    self.buyAsset1TotalImage.image = [NSImage imageNamed:ASSET_KEY(1)];
 
     self.sellAssetImage.image = [NSImage imageNamed:tabLabel];
-    self.sellAsset1Image.image = [NSImage imageNamed:ASSET1];
-    self.sellAsset1TotalImage.image = [NSImage imageNamed:ASSET1];
+    self.sellAsset1Image.image = [NSImage imageNamed:ASSET_KEY(1)];
+    self.sellAsset1TotalImage.image = [NSImage imageNamed:ASSET_KEY(1)];
 
     // Vorbelegen der Preise
     self.buyAssetPriceField.doubleValue = [calculator ethPriceForAsset:tabLabel];

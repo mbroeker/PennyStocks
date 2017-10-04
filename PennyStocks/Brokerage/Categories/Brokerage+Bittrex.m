@@ -24,9 +24,9 @@
 
     NSMutableDictionary *ticker = [[NSMutableDictionary alloc] init];
     for (id key in assetsArray) {
-        if ([key isEqualToString:ASSET1]) { continue; }
+        if ([key isEqualToString:ASSET_KEY(1)]) { continue; }
 
-        NSString *pair = [NSString stringWithFormat:@"%@-%@", [ASSET1 lowercaseString], [key lowercaseString]];
+        NSString *pair = [NSString stringWithFormat:@"%@-%@", [ASSET_KEY(1) lowercaseString], [key lowercaseString]];
         NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/public/getmarketsummary?market=%@", pair];
 
         NSMutableDictionary *innerTicker = [[Brokerage jsonRequest:jsonURL] mutableCopy];
@@ -75,7 +75,7 @@
         return nil;
     }
 
-    NSString *asset1Fiat = [NSString stringWithFormat:@"%@_%@", ASSET1, fiatCurrencies[0]];
+    NSString *asset1Fiat = [NSString stringWithFormat:@"%@_%@", ASSET_KEY(1), fiatCurrencies[0]];
     ticker[asset1Fiat] = asset1Ticker;
     ticker[fiatCurrencies[1]] = @([exchangeRate doubleValue]);
 
