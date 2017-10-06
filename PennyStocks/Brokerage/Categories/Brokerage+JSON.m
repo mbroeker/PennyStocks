@@ -18,39 +18,7 @@
  * @return NSDictionary*
  */
 + (NSDictionary *)jsonRequest:(NSString *)jsonURL {
-
-    if (![Brokerage isInternetConnection]) {
-        return nil;
-    }
-
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:jsonURL]];
-    [request setHTTPMethod:@"GET"];
-
-    __block NSMutableDictionary *result;
-    __block dispatch_semaphore_t lock = dispatch_semaphore_create(0);
-
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-
-        NSData *jsonData = [requestReply dataUsingEncoding:NSUTF8StringEncoding];
-        NSError *jsonError;
-
-        result = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&jsonError];
-        if (jsonError && !RELEASE_BUILD) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // Fehlermeldung wird angezeigt
-                NSLog(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
-            });
-        }
-
-        dispatch_semaphore_signal(lock);
-
-    }] resume];
-
-    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
-    return result;
+    return [Brokerage jsonRequest:jsonURL withPayload:nil andHeader:nil];
 }
 
 /**
@@ -84,8 +52,10 @@
     [request setHTTPMethod:(payload == nil) ? @"GET" : @"POST"];
     [request setURL:[NSURL URLWithString:jsonURL]];
 
-    for (id field in header) {
-        [request setValue:header[field] forHTTPHeaderField:field];
+    if (header != nil) {
+        for (id field in header) {
+            [request setValue:header[field] forHTTPHeaderField:field];
+        }
     }
 
     if (payload != nil) {
