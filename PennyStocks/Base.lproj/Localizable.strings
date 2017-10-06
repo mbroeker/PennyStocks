@@ -59,3 +59,5 @@ error = "FEHLER";
 cancel_order_param = "Auftrag %@";
 cancel_order_long = "Möchten Sie den Auftrag stornieren?";
 open_orders = "OFFENE AUFTRÄGE";
+
+restart_required = "Neustart erforderlich";

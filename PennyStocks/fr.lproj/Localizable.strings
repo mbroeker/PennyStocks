@@ -57,3 +57,5 @@ error = "ERROR";
 cancel_order_param = "Order %@";
 cancel_order_long = "Do you want to cancel the order?";
 open_orders = "OPEN ORDERS";
+
+restart_required = "Restart required";

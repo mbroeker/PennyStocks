@@ -35,6 +35,7 @@
 		B2B2316A1F71C9CC007FD022 /* ExtraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B231691F71C9CC007FD022 /* ExtraViewController.m */; };
 		B2B3319E1F7DD7CF00BD64AC /* Portfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B3319D1F7DD7CF00BD64AC /* Portfolio.storyboard */; };
 		B2B331A01F7DD87000BD64AC /* BuyAndSell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B3319F1F7DD87000BD64AC /* BuyAndSell.storyboard */; };
+		B2C632811F87FBF00039F20F /* YourAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C632801F87FBF00039F20F /* YourAssetsViewController.m */; };
 		B2D6ABA21F82B6B100A608C8 /* PortfolioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D6ABA11F82B6B100A608C8 /* PortfolioViewController.m */; };
 		B2E076CB1F6B794A0050A42C /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB85971F688B8A00F37D30 /* Algorithm.m */; };
 		B2E23D271F756075001E135B /* BuyAndSellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E23D261F756075001E135B /* BuyAndSellViewController.m */; };
@@ -173,6 +174,8 @@
 		B2B231691F71C9CC007FD022 /* ExtraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraViewController.m; sourceTree = "<group>"; };
 		B2B3319D1F7DD7CF00BD64AC /* Portfolio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Portfolio.storyboard; sourceTree = "<group>"; };
 		B2B3319F1F7DD87000BD64AC /* BuyAndSell.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BuyAndSell.storyboard; sourceTree = "<group>"; };
+		B2C6327F1F87FBF00039F20F /* YourAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourAssetsViewController.h; sourceTree = "<group>"; };
+		B2C632801F87FBF00039F20F /* YourAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourAssetsViewController.m; sourceTree = "<group>"; };
 		B2D6ABA01F82B6B100A608C8 /* PortfolioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortfolioViewController.h; sourceTree = "<group>"; };
 		B2D6ABA11F82B6B100A608C8 /* PortfolioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortfolioViewController.m; sourceTree = "<group>"; };
 		B2E23D251F756075001E135B /* BuyAndSellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyAndSellViewController.h; sourceTree = "<group>"; };
@@ -371,6 +374,8 @@
 				B271E51A1F5E0D0E00B14228 /* RatingsViewController.m */,
 				B271E51C1F5E0D0E00B14228 /* SaldoViewController.h */,
 				B271E51D1F5E0D0E00B14228 /* SaldoViewController.m */,
+				B2C6327F1F87FBF00039F20F /* YourAssetsViewController.h */,
+				B2C632801F87FBF00039F20F /* YourAssetsViewController.m */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -670,6 +675,7 @@
 				B2F9FEBB1F6913A600BD668D /* Helper.m in Sources */,
 				B2D6ABA21F82B6B100A608C8 /* PortfolioViewController.m in Sources */,
 				B271E4CE1F5E0C4800B14228 /* main.m in Sources */,
+				B2C632811F87FBF00039F20F /* YourAssetsViewController.m in Sources */,
 				B2FB85BD1F688BBA00F37D30 /* Brokerage.m in Sources */,
 				B2FB85C11F688BBA00F37D30 /* Brokerage+JSON.m in Sources */,
 				B2F9FECA1F6913C600BD668D /* KeychainWrapper.m in Sources */,
