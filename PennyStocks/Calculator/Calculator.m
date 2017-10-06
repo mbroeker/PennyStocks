@@ -152,12 +152,12 @@
 
         fiatCurrencies = currencies;
 
-        defaultExchange = [defaults objectForKey:@"defaultExchange"];
+        defaultExchange = [defaults objectForKey:KEY_DEFAULT_EXCHANGE];
 
         if (defaultExchange == nil) {
             defaultExchange = EXCHANGE_BITTREX;
 
-            [defaults setObject:defaultExchange forKey:@"defaultExchange"];
+            [defaults setObject:defaultExchange forKey:KEY_DEFAULT_EXCHANGE];
         }
 
         currentSaldo = [[defaults objectForKey:KEY_CURRENT_SALDO] mutableCopy];
