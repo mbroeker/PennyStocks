@@ -126,7 +126,6 @@
     
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-        [[defaults objectForKey:KEY_CURRENT_ASSETS] mutableCopy];
         [defaults setObject:currentAssets forKey:KEY_CURRENT_ASSETS];
         [defaults synchronize];
     }
