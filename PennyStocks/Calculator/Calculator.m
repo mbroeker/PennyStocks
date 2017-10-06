@@ -56,7 +56,7 @@
         NSLog(@"Creating inital assets");
         #endif
         assets = @[
-            @[@"DASHBOARD", @"DASHBOARD"],
+            @[DASHBOARD, DASHBOARD],
             @[@"ETH", @"Ethereum"],
             @[@"DASH", @"Digital Cash"],
             @[@"ZEC", @"ZCash"],
