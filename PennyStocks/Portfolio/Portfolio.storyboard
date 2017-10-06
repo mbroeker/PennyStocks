@@ -60,7 +60,7 @@
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="BDv-e6-e7d">
                                             <rect key="frame" x="7" y="8" width="42" height="42"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="BCC" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Jti-88-hpV">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="DASH" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Jti-88-hpV">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -87,7 +87,7 @@
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="8yb-Ub-URP">
                                             <rect key="frame" x="7" y="8" width="42" height="42"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="XMR" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Z5k-ZM-13Q">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ZEC" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Z5k-ZM-13Q">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -304,7 +304,7 @@
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="WsC-sU-Pmc">
                                             <rect key="frame" x="7" y="8" width="42" height="42"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="GNT" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NQt-Bz-Y5C">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="PAY" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NQt-Bz-Y5C">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -364,7 +364,7 @@
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="Si1-dE-DCD">
                                             <rect key="frame" x="7" y="8" width="42" height="42"/>
-                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="DGB" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="osr-RT-DAS">
+                                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="BAT" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="osr-RT-DAS">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -496,15 +496,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BCC" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="DGB" width="128" height="128"/>
+        <image name="BAT" width="128" height="128"/>
+        <image name="DASH" width="102.40000152587891" height="102.40000152587891"/>
         <image name="ETH" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="GNT" width="128" height="128"/>
         <image name="LTC" width="102.40000152587891" height="102.40000152587891"/>
         <image name="MCO" width="128" height="128"/>
         <image name="NEO" width="128" height="128"/>
         <image name="OMG" width="128" height="128"/>
+        <image name="PAY" width="128" height="128"/>
         <image name="QTUM" width="128" height="128"/>
-        <image name="XMR" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="ZEC" width="128" height="128"/>
     </resources>
 </document>

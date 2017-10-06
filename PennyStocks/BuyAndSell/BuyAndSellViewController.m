@@ -12,7 +12,6 @@
 @implementation BuyAndSellViewController {
 @private
     Calculator *calculator;
-    NSString *tabLabel;
 }
 
 /**
@@ -24,25 +23,19 @@
     self.buyButton.title = NSLocalizedString(@"buy", "Kaufen");
     self.sellButton.title = NSLocalizedString(@"sell", "Verkaufen");
 
-    NSTabViewController *controller = (NSTabViewController *) [[[NSApplication sharedApplication] mainWindow] contentViewController];
-    NSUInteger pos = controller.selectedTabViewItemIndex;
-    NSTabViewItem *item = controller.tabViewItems[pos];
-
-    tabLabel = item.label;
-
     calculator = [Calculator instance];
 
-    self.buyAssetImage.image = [NSImage imageNamed:tabLabel];
+    self.buyAssetImage.image = [NSImage imageNamed:self.tabLabel];
     self.buyAsset1Image.image = [NSImage imageNamed:ASSET_KEY(1)];
     self.buyAsset1TotalImage.image = [NSImage imageNamed:ASSET_KEY(1)];
 
-    self.sellAssetImage.image = [NSImage imageNamed:tabLabel];
+    self.sellAssetImage.image = [NSImage imageNamed:self.tabLabel];
     self.sellAsset1Image.image = [NSImage imageNamed:ASSET_KEY(1)];
     self.sellAsset1TotalImage.image = [NSImage imageNamed:ASSET_KEY(1)];
 
     // Vorbelegen der Preise
-    self.buyAssetPriceField.doubleValue = [calculator ethPriceForAsset:tabLabel];
-    self.sellAssetPriceField.doubleValue = [calculator ethPriceForAsset:tabLabel];
+    self.buyAssetPriceField.doubleValue = [calculator ethPriceForAsset:self.tabLabel];
+    self.sellAssetPriceField.doubleValue = [calculator ethPriceForAsset:self.tabLabel];
 
     [self updateBuyAndSellView];
 }
@@ -85,7 +78,7 @@
     double amount = self.buyAssetField.doubleValue;
     double rate = self.buyAssetPriceField.doubleValue;
 
-    [calculator autoBuy:tabLabel amount:amount withRate:rate];
+    [calculator autoBuy:self.tabLabel amount:amount withRate:rate];
 }
 
 /**
@@ -97,7 +90,7 @@
     double amount = self.sellAssetField.doubleValue;
     double rate = self.sellAssetPriceField.doubleValue;
 
-    [calculator autoSell:tabLabel amount:amount withRate:rate];
+    [calculator autoSell:self.tabLabel amount:amount withRate:rate];
 }
 
 

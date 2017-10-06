@@ -19,7 +19,6 @@
 		B271E4D31F5E0C4800B14228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D21F5E0C4800B14228 /* Assets.xcassets */; };
 		B271E4D61F5E0C4800B14228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271E4D41F5E0C4800B14228 /* Main.storyboard */; };
 		B271E52E1F5E0D0E00B14228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4DF1F5E0D0E00B14228 /* AppDelegate.m */; };
-		B271E5371F5E0D0E00B14228 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E4F51F5E0D0E00B14228 /* TabViewController.m */; };
 		B271E53F1F5E0D0E00B14228 /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E5091F5E0D0E00B14228 /* AddressViewController.m */; };
 		B271E5401F5E0D0E00B14228 /* ApplicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B271E50B1F5E0D0E00B14228 /* ApplicationsViewController.m */; };
 		B271E5421F5E0D0E00B14228 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B271E50E1F5E0D0E00B14228 /* Preferences.storyboard */; };
@@ -114,8 +113,6 @@
 		B271E4DE1F5E0D0E00B14228 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B271E4DF1F5E0D0E00B14228 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B271E4E01F5E0D0E00B14228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B271E4F41F5E0D0E00B14228 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
-		B271E4F51F5E0D0E00B14228 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
 		B271E4F61F5E0D0E00B14228 /* TemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateViewController.h; sourceTree = "<group>"; };
 		B271E4F71F5E0D0E00B14228 /* TemplateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateViewController.m; sourceTree = "<group>"; };
 		B271E5081F5E0D0E00B14228 /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AddressViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -352,8 +349,6 @@
 		B271E4F31F5E0D0E00B14228 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				B271E4F41F5E0D0E00B14228 /* TabViewController.h */,
-				B271E4F51F5E0D0E00B14228 /* TabViewController.m */,
 				B271E4F61F5E0D0E00B14228 /* TemplateViewController.h */,
 				B271E4F71F5E0D0E00B14228 /* TemplateViewController.m */,
 			);
@@ -367,15 +362,15 @@
 				B271E5091F5E0D0E00B14228 /* AddressViewController.m */,
 				B271E50A1F5E0D0E00B14228 /* ApplicationsViewController.h */,
 				B271E50B1F5E0D0E00B14228 /* ApplicationsViewController.m */,
-				B271E50E1F5E0D0E00B14228 /* Preferences.storyboard */,
 				B271E5101F5E0D0E00B14228 /* BittrexViewController.h */,
 				B271E5111F5E0D0E00B14228 /* BittrexViewController.m */,
+				B2B231681F71C9CC007FD022 /* ExtraViewController.h */,
+				B2B231691F71C9CC007FD022 /* ExtraViewController.m */,
+				B271E50E1F5E0D0E00B14228 /* Preferences.storyboard */,
 				B271E5191F5E0D0E00B14228 /* RatingsViewController.h */,
 				B271E51A1F5E0D0E00B14228 /* RatingsViewController.m */,
 				B271E51C1F5E0D0E00B14228 /* SaldoViewController.h */,
 				B271E51D1F5E0D0E00B14228 /* SaldoViewController.m */,
-				B2B231681F71C9CC007FD022 /* ExtraViewController.h */,
-				B2B231691F71C9CC007FD022 /* ExtraViewController.m */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -394,8 +389,8 @@
 		B2824CF21F676DD800DC10F3 /* PennyStocksTests */ = {
 			isa = PBXGroup;
 			children = (
-				B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */,
 				B2824CF51F676DD800DC10F3 /* Info.plist */,
+				B2824CF31F676DD800DC10F3 /* PennyStocksTests.m */,
 			);
 			path = PennyStocksTests;
 			sourceTree = "<group>";
@@ -415,9 +410,9 @@
 		B2B3319C1F7DD78100BD64AC /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
+				B2B3319D1F7DD7CF00BD64AC /* Portfolio.storyboard */,
 				B2D6ABA01F82B6B100A608C8 /* PortfolioViewController.h */,
 				B2D6ABA11F82B6B100A608C8 /* PortfolioViewController.m */,
-				B2B3319D1F7DD7CF00BD64AC /* Portfolio.storyboard */,
 			);
 			path = Portfolio;
 			sourceTree = "<group>";
@@ -425,11 +420,11 @@
 		B2E23D241F756075001E135B /* BuyAndSell */ = {
 			isa = PBXGroup;
 			children = (
+				B2B3319F1F7DD87000BD64AC /* BuyAndSell.storyboard */,
 				B2E23D251F756075001E135B /* BuyAndSellViewController.h */,
 				B2E23D261F756075001E135B /* BuyAndSellViewController.m */,
-				43D6F0544839CEF7511634D5 /* RestrictedClickableTextField.m */,
 				43D6F673AE566AF75F129ECE /* RestrictedClickableTextField.h */,
-				B2B3319F1F7DD87000BD64AC /* BuyAndSell.storyboard */,
+				43D6F0544839CEF7511634D5 /* RestrictedClickableTextField.m */,
 			);
 			path = BuyAndSell;
 			sourceTree = "<group>";
@@ -437,14 +432,14 @@
 		B2F9FEB01F6913A600BD668D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				43D6F269EE82390A9B8A6C87 /* ClickableTextField.h */,
+				43D6FFBF2890499FD95E1FFB /* ClickableTextField.m */,
 				B2F9FEB41F6913A600BD668D /* Helper.h */,
 				B2F9FEB51F6913A600BD668D /* Helper.m */,
 				B2F9FEB61F6913A600BD668D /* KeychainWrapper.h */,
 				B2F9FEB71F6913A600BD668D /* KeychainWrapper.m */,
 				B2F9FEB81F6913A600BD668D /* TabView.h */,
 				B2F9FEB91F6913A600BD668D /* TabView.m */,
-				43D6FFBF2890499FD95E1FFB /* ClickableTextField.m */,
-				43D6F269EE82390A9B8A6C87 /* ClickableTextField.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -497,8 +492,8 @@
 			isa = PBXGroup;
 			children = (
 				B2FB85AD1F688BBA00F37D30 /* Algorithm.h */,
-				B2FB85AF1F688BBA00F37D30 /* Brokerage.h */,
 				B2FB85AE1F688BBA00F37D30 /* Algorithm.m */,
+				B2FB85AF1F688BBA00F37D30 /* Brokerage.h */,
 				B2FB85B01F688BBA00F37D30 /* Brokerage.m */,
 				B2FB85B11F688BBA00F37D30 /* Categories */,
 			);
@@ -509,14 +504,14 @@
 			isa = PBXGroup;
 			children = (
 				B2FB85B21F688BBA00F37D30 /* Brokerage+Bittrex.h */,
-				B2FB85B41F688BBA00F37D30 /* Brokerage+Crypto.h */,
-				B2FB85B61F688BBA00F37D30 /* Brokerage+External.h */,
-				B2FB85B81F688BBA00F37D30 /* Brokerage+JSON.h */,
-				B2FB85BA1F688BBA00F37D30 /* Brokerage+Poloniex.h */,
 				B2FB85B31F688BBA00F37D30 /* Brokerage+Bittrex.m */,
+				B2FB85B41F688BBA00F37D30 /* Brokerage+Crypto.h */,
 				B2FB85B51F688BBA00F37D30 /* Brokerage+Crypto.m */,
+				B2FB85B61F688BBA00F37D30 /* Brokerage+External.h */,
 				B2FB85B71F688BBA00F37D30 /* Brokerage+External.m */,
+				B2FB85B81F688BBA00F37D30 /* Brokerage+JSON.h */,
 				B2FB85B91F688BBA00F37D30 /* Brokerage+JSON.m */,
+				B2FB85BA1F688BBA00F37D30 /* Brokerage+Poloniex.h */,
 				B2FB85BB1F688BBA00F37D30 /* Brokerage+Poloniex.m */,
 			);
 			path = Categories;
@@ -671,7 +666,6 @@
 				B2B2316A1F71C9CC007FD022 /* ExtraViewController.m in Sources */,
 				B271E52E1F5E0D0E00B14228 /* AppDelegate.m in Sources */,
 				B2F9FECB1F6913C600BD668D /* TabView.m in Sources */,
-				B271E5371F5E0D0E00B14228 /* TabViewController.m in Sources */,
 				B2FB85BC1F688BBA00F37D30 /* Algorithm.m in Sources */,
 				B2F9FEBB1F6913A600BD668D /* Helper.m in Sources */,
 				B2D6ABA21F82B6B100A608C8 /* PortfolioViewController.m in Sources */,

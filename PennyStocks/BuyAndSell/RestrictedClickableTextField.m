@@ -31,5 +31,4 @@
 
     [self sendAction:[self action] to:[self target]];
 }
-
 @end

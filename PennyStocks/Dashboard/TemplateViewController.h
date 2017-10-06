@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ClickableTextField.h"
 
 @interface TemplateViewController : NSViewController
 
@@ -14,6 +15,7 @@
 @property (strong) IBOutlet NSView *menuBar;
 
 // Definition der Menü-Buttons
+@property (strong) IBOutlet NSButton *dashboardButton;
 @property (strong) IBOutlet NSButton *homeButton;
 @property (strong) IBOutlet NSButton *leftButton;
 @property (strong) IBOutlet NSButton *rightButton;
@@ -26,7 +28,7 @@
 @property (strong) IBOutlet NSButton *infoButton;
 
 // Definition der Labels
-@property (strong) IBOutlet NSTextField *headlineLabel;
+@property (strong) IBOutlet ClickableTextField *headlineLabel;
 @property (strong) IBOutlet NSTextField *percentLabel;
 @property (strong) IBOutlet NSTextField *iBrokerLabel;
 @property (strong) IBOutlet NSTextField *statusLabel;
@@ -57,17 +59,17 @@
 @property (strong) IBOutlet NSTextField *currency10Label;
 
 
-@property (strong) IBOutlet NSTextField *currency1Field;
-@property (strong) IBOutlet NSTextField *currency2Field;
-@property (strong) IBOutlet NSTextField *currency3Field;
-@property (strong) IBOutlet NSTextField *currency4Field;
-@property (strong) IBOutlet NSTextField *currency5Field;
+@property (strong) IBOutlet ClickableTextField *currency1Field;
+@property (strong) IBOutlet ClickableTextField *currency2Field;
+@property (strong) IBOutlet ClickableTextField *currency3Field;
+@property (strong) IBOutlet ClickableTextField *currency4Field;
+@property (strong) IBOutlet ClickableTextField *currency5Field;
 
-@property (strong) IBOutlet NSTextField *currency6Field;
-@property (strong) IBOutlet NSTextField *currency7Field;
-@property (strong) IBOutlet NSTextField *currency8Field;
-@property (strong) IBOutlet NSTextField *currency9Field;
-@property (strong) IBOutlet NSTextField *currency10Field;
+@property (strong) IBOutlet ClickableTextField *currency6Field;
+@property (strong) IBOutlet ClickableTextField *currency7Field;
+@property (strong) IBOutlet ClickableTextField *currency8Field;
+@property (strong) IBOutlet ClickableTextField *currency9Field;
+@property (strong) IBOutlet ClickableTextField *currency10Field;
 
 // Definition der Poloniex Label und Felder
 @property (strong) IBOutlet NSTextField *lastLabel;
@@ -107,6 +109,7 @@
 - (IBAction)walletAction:(id)sender;
 - (IBAction)automatedTradingAction:(id)sender;
 - (IBAction)homepageAction:(id)sender;
+- (IBAction)dashboardAction:(id)sender;
 
 // Info-Icon Action
 - (IBAction)infoAction:(id)sender;

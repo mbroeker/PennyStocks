@@ -8,6 +8,7 @@
 #import "TemplateViewController.h"
 #import "Helper.h"
 #import "Calculator.h"
+#import "BuyAndSellViewController.h"
 
 const double CHECKPOINT_PERCENTAGE = 5.0;
 
@@ -323,6 +324,68 @@ typedef struct DASHBOARD_VARS {
     parentWindow.title = [NSString stringWithFormat:@"PennyStocks on %@", onExchangeText];
 }
 
+- (void)switchView:(id)sender {
+    NSString *identifier = [sender identifier];
+
+    int item = [[identifier componentsSeparatedByString:@"ASSET"][1] intValue];
+    [self updateTemplateView:(item == 0) ? DASHBOARD : ASSET_KEY(item)];
+}
+
+/**
+ *
+ */
+- (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
+
+    if ([segue.identifier isEqualToString:@"BuyAndSell"]) {
+        NSString *label = labels[[self.headlineLabel stringValue]];
+
+        if ([label isEqualToString:DASHBOARD] || [label isEqualToString:ASSET_DESC(1)]) {
+            return;
+        }
+
+        BuyAndSellViewController *controller = segue.destinationController;
+        controller.tabLabel = label;
+    }
+
+    if ([segue.identifier isEqualToString:@"Portfolio"]) {
+    }
+
+    if ([segue.identifier isEqualToString:@"Statistics"]) {
+    }
+}
+
+- (void)awakeFromNib {
+    [self.currency1Field setTarget:self];
+    [self.currency1Field setAction:@selector(switchView:)];
+
+    [self.currency2Field setTarget:self];
+    [self.currency2Field setAction:@selector(switchView:)];
+
+    [self.currency3Field setTarget:self];
+    [self.currency3Field setAction:@selector(switchView:)];
+
+    [self.currency4Field setTarget:self];
+    [self.currency4Field setAction:@selector(switchView:)];
+
+    [self.currency5Field setTarget:self];
+    [self.currency5Field setAction:@selector(switchView:)];
+
+    [self.currency6Field setTarget:self];
+    [self.currency6Field setAction:@selector(switchView:)];
+
+    [self.currency7Field setTarget:self];
+    [self.currency7Field setAction:@selector(switchView:)];
+
+    [self.currency8Field setTarget:self];
+    [self.currency8Field setAction:@selector(switchView:)];
+
+    [self.currency9Field setTarget:self];
+    [self.currency9Field setAction:@selector(switchView:)];
+
+    [self.currency10Field setTarget:self];
+    [self.currency10Field setAction:@selector(switchView:)];
+}
+
 /**
  * Initialisierung der Sicht / des View
  */
@@ -365,6 +428,25 @@ typedef struct DASHBOARD_VARS {
 
     // Setze das selektierte Element des Taschenrechners auf Fiat Währung 1 = EUR
     [self.exchangeSelection selectItemWithTitle:fiatCurrencies[0]];
+
+    [self updateAssistant];
+
+    // Startseite aufrufen
+    [self updateOverview];
+
+    dispatch_queue_t autoRefreshQueue = dispatch_queue_create("de.4customers.PennyStocks.autoRefresh", NULL);
+    dispatch_async(autoRefreshQueue, ^{
+
+        while (true) {
+            [NSThread sleepForTimeInterval:30];
+
+            [self updateBalanceAndRatings];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateCurrentView:true];
+            });
+        }
+
+    });
 }
 
 /**
@@ -771,7 +853,6 @@ typedef struct DASHBOARD_VARS {
  * @param label
  */
 - (void)updateTemplateView:(NSString *)label {
-
     // Dynamisches Setzen der Programmüberschrift
     [self pennyStocksOnExchange];
 
@@ -1001,6 +1082,10 @@ typedef struct DASHBOARD_VARS {
  */
 - (IBAction)rightAction:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:traders[TV_TRADER2]]];
+}
+
+- (IBAction)dashboardAction:(id)sender {
+    [self switchView:sender];
 }
 
 /**
