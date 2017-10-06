@@ -352,6 +352,11 @@ typedef struct DASHBOARD_VARS {
         [self resetFiatCurrencies];
     }
 
+    if (item == 0 || item == 1) {
+        self.iBrokerLabel.stringValue = @"";
+        self.infoLabel.stringValue = @"";
+    }
+
     NSString *label = (item == 0) ? DASHBOARD : ASSET_KEY(item);
     [self updateTemplateView:label];
 }
@@ -1038,7 +1043,7 @@ typedef struct DASHBOARD_VARS {
  */
 - (IBAction)dashboardAction:(id)sender {
     [self resetFiatCurrencies];
-    [self updateTemplateView:DASHBOARD];
+    [self switchView:sender];
 }
 
 /**
