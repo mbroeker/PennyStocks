@@ -332,6 +332,21 @@ typedef struct DASHBOARD_VARS {
 }
 
 /**
+ * Prevent Nonsense Segues on DASHBOARD
+ */
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+   if ([identifier isEqualToString:@"BuyAndSell"]) {
+        NSString *label = labels[[self.headlineLabel stringValue]];
+
+        if ([label isEqualToString:DASHBOARD] || [label isEqualToString:ASSET_DESC(1)]) {
+            return NO;
+        }
+    }
+
+    return YES;
+}
+
+/**
  *
  */
 - (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
