@@ -56,10 +56,10 @@
     ];
 
     for (NSTextField *field in fields) {
-        field.editable = false;
+        field.editable = NO;
     }
 
-    isActive = true;
+    isActive = YES;
     dispatch_queue_t queue = dispatch_queue_create("de.4customers.PennyStocks.updatePortfolioViewer", NULL);
     dispatch_async(queue, ^{
 
@@ -78,7 +78,7 @@
  * Deactivate the running thread
  */
 - (void)viewDidDisappear {
-    isActive = false;
+    isActive = NO;
 }
 
 /**

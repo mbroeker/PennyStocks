@@ -14,7 +14,7 @@
  * Migration der URLs, Saldo und Ratings
  */
 + (void)migrateSaldoAndRatings {
-    BOOL mustUpdate = false;
+    BOOL mustUpdate = NO;
 
     Calculator *calculator = [Calculator instance];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -29,14 +29,14 @@
     if (!saldoUrls[DASHBOARD]) {
         saldoUrls[DASHBOARD] = @"https://coinmarketcap.com/gainers-losers/";
 
-        mustUpdate = true;
+        mustUpdate = YES;
     }
 
     if (!saldoUrls[ASSET_DESC(1)]) {
         NSString *exchange = ([calculator.defaultExchange isEqualToString:EXCHANGE_BITTREX]) ? @"bittrex" : @"poloniex";
         saldoUrls[ASSET_DESC(1)] = [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges/%@/", exchange];
 
-        mustUpdate = true;
+        mustUpdate = YES;
     }
 
     for (id key in tickerKeysDescription) {
@@ -47,7 +47,7 @@
                 saldoUrls[key] = [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, [tickerKeysDescription[key] lowercaseString]];
             }
 
-            mustUpdate = true;
+            mustUpdate = YES;
         }
     }
 
@@ -55,7 +55,7 @@
         if (!initialRatings[key]) {
             initialRatings[key] = @0;
 
-            mustUpdate = true;
+            mustUpdate = YES;
         }
     }
 
@@ -63,12 +63,12 @@
         if (!currentSaldo[key]) {
             currentSaldo[key] = @0;
 
-            mustUpdate = true;
+            mustUpdate = YES;
         }
     }
 
     if (saldoUrls.count != 11) {
-        mustUpdate = true;
+        mustUpdate = YES;
     }
 
     if (mustUpdate) {
@@ -106,7 +106,7 @@
  * Migration der Applications
  */
 + (NSMutableDictionary *)migrateApplications {
-    BOOL mustUpdate = false;
+    BOOL mustUpdate = NO;
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
@@ -117,12 +117,12 @@
     for (id key in tickerKeysDescription) {
         if (!applications[key]) {
             applications[key] = @"";
-            mustUpdate = true;
+            mustUpdate = YES;
         }
     }
 
     if (applications.count != 10) {
-        mustUpdate = true;
+        mustUpdate = YES;
     }
 
     if (mustUpdate) {

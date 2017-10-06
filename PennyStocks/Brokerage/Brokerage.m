@@ -112,7 +112,7 @@
         return [Brokerage bittrexCancelOrder:apikey withSecret:secret orderId:orderId];
     }
 
-    return false;
+    return NO;
 }
 
 @end

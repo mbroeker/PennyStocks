@@ -65,7 +65,7 @@
     NSString *sk = apiKey[@"secret"];
 
     if (ak == nil || sk == nil) {
-        return false;
+        return NO;
     }
 
     return [Brokerage cancelOrder:ak withSecret:sk orderId:self.orderId onExchange:defaultExchange];

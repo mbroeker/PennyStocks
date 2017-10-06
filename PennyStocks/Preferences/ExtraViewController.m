@@ -52,7 +52,7 @@
     self.percentRateIndicator.integerValue = [percentRate integerValue];
     self.percentRateLabel.stringValue = [NSString stringWithFormat:NSLocalizedString(@"percentrate_with_param", @"Prozentrate"), [percentRate doubleValue]];
 
-    if (tradingWithConfirmation.boolValue == true) {
+    if (tradingWithConfirmation.boolValue == YES) {
         self.tradingWithConfirmationButton.state = NSOnState;
     } else {
         self.tradingWithConfirmationButton.state = NSOffState;

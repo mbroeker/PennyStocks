@@ -297,7 +297,7 @@
 + (BOOL)bittrexCancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId {
 
     if (apikey == nil || secret == nil) {
-        return false;
+        return NO;
     }
 
     time_t t = time(NULL);

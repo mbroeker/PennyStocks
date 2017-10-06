@@ -42,7 +42,7 @@
  * @param sender
  */
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
-    return true;
+    return YES;
 }
 
 /**

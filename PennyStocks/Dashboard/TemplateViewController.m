@@ -68,8 +68,8 @@ typedef struct DASHBOARD_VARS {
  * Aktualisierung der Nutzdaten(Kurse und Kontostände)
  */
 - (void)updateBalanceAndRatings {
-    [calculator updateRatings:true];
-    [calculator updateBalances:true];
+    [calculator updateRatings:YES];
+    [calculator updateBalances:YES];
 }
 
 /**
@@ -276,7 +276,7 @@ typedef struct DASHBOARD_VARS {
     defaultLooseColor = [NSColor redColor];
 
     // deaktiviere das Instant Trading
-    self.instantTrading.enabled = false;
+    self.instantTrading.enabled = NO;
 
     NSNumber *ccp = [defaults objectForKey:COINCHANGE_PERCENTAGE];
 
@@ -476,11 +476,11 @@ typedef struct DASHBOARD_VARS {
     dispatch_async(autoRefreshQueue, ^{
 
         while (true) {
-            [NSThread sleepForTimeInterval:30];
+            [NSThread sleepForTimeInterval:60];
 
             [self updateBalanceAndRatings];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self updateCurrentView:true];
+                [self updateCurrentView:YES];
             });
         }
 
@@ -767,6 +767,9 @@ typedef struct DASHBOARD_VARS {
     // Farben zurück setzen
     [self resetColors];
 
+    // Instant Trading deaktivieren
+    self.instantTrading.enabled = NO;
+
 #ifdef DEBUG
     NSLog(@"%5s %20s | %20s | %14s | %14s | %14s | %12s | %20s | %12s |\n",
         [@"####" UTF8String],
@@ -920,10 +923,10 @@ typedef struct DASHBOARD_VARS {
     }
 
     // Aktiviere InstantTrading für alle Assets
-    self.instantTrading.enabled = true;
+    self.instantTrading.enabled = YES;
 
     // Aktiviere die Eingabe für die Crypto-Einheiten
-    self.cryptoUnits.editable = true;
+    self.cryptoUnits.editable = YES;
 
     // Setze das Bild für die FiatWährung
     [self.currencyButton setImage:self.images[fiatCurrencies[0]]];
@@ -1148,10 +1151,10 @@ typedef struct DASHBOARD_VARS {
     NSString *info = NSLocalizedString(@"comparison_belongs_to_checkpoint", @"Der Vergleich (+/-) bezieht sich auf den zuletzt gespeicherten Checkpoint!");
 
     if ([Helper messageText:msg info:info] == NSAlertFirstButtonReturn) {
-        [calculator updateCheckpointForAsset:tabTitle withBTCUpdate:FALSE];
+        [calculator updateCheckpointForAsset:tabTitle withBTCUpdate:NO];
     }
 
-    [self updateCurrentView:false];
+    [self updateCurrentView:NO];
 }
 
 /**
@@ -1180,11 +1183,11 @@ typedef struct DASHBOARD_VARS {
 
         if (mustUpdateBecauseIHaveBought) {
             // Checkpoint aktualisieren
-            [calculator updateCheckpointForAsset:asset withBTCUpdate:TRUE];
+            [calculator updateCheckpointForAsset:asset withBTCUpdate:YES];
         }
 
         // nach dem Aktualisieren des Bestands muss die Statusleiste aktualisisiert werden...
-        [self updateCurrentView:false];
+        [self updateCurrentView:NO];
     }
 }
 

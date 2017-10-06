@@ -245,14 +245,14 @@
         tradingWithConfirmation = [defaults objectForKey:KEY_TRADING_WITH_CONFIRMATION];
 
         if (tradingWithConfirmation == nil) {
-            tradingWithConfirmation = [NSNumber numberWithBool:true];
+            tradingWithConfirmation = [NSNumber numberWithBool:YES];
 
             [defaults setObject:tradingWithConfirmation forKey:KEY_TRADING_WITH_CONFIRMATION];
         }
 
         [defaults synchronize];
 
-        [self updateRatings:true];
+        [self updateRatings:YES];
     }
 
     return self;
@@ -590,7 +590,7 @@
     }
 
     if (order[@"orderNumber"]) {
-        [self updateCheckpointForAsset:cAsset withBTCUpdate:true andRate:cRate];
+        [self updateCheckpointForAsset:cAsset withBTCUpdate:YES andRate:cRate];
 
         return order[@"orderNumber"];
     }
@@ -682,7 +682,7 @@
     }
 
     if (order[@"orderNumber"]) {
-        [self updateCheckpointForAsset:cAsset withBTCUpdate:false andRate:cRate];
+        [self updateCheckpointForAsset:cAsset withBTCUpdate:NO andRate:cRate];
 
         return order[@"orderNumber"];
     }
@@ -707,7 +707,7 @@
         lastBoughtAsset = cAsset;
 
         // Aktualisiere alle Checkpoints
-        [self updateCheckpointForAsset:DASHBOARD withBTCUpdate:true];
+        [self updateCheckpointForAsset:DASHBOARD withBTCUpdate:YES];
     }
 }
 
@@ -720,7 +720,7 @@
     double ask = ([tradingWithConfirmation boolValue]) ? 0 : -1;
     if ([self autoSell:cAsset amount:ask] != nil) {
         // Aktualisiere alle Checkpoints
-        [self updateCheckpointForAsset:DASHBOARD withBTCUpdate:true];
+        [self updateCheckpointForAsset:DASHBOARD withBTCUpdate:YES];
     }
 }
 

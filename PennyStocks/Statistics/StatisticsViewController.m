@@ -73,7 +73,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    isActive = true;
+    isActive = YES;
     dispatch_queue_t updateOpenOrdersQueue = dispatch_queue_create("de.4customers.PennyStocks.updateOpenOrdersQueue", NULL);
     dispatch_async(updateOpenOrdersQueue, ^{
 
@@ -153,7 +153,7 @@
     NSWindow *window = self.view.window;
     [window.sheetParent endSheet:window returnCode:NSModalResponseOK];
 
-    isActive = false;
+    isActive = NO;
 }
 
 @end
