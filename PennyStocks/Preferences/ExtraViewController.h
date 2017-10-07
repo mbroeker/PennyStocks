@@ -9,15 +9,23 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ExtraViewController : NSViewController
-@property (strong) IBOutlet NSButton *tradingWithConfirmationButton;
-@property (strong) IBOutlet NSTextField *extraSettingsTextField;
-@property (strong) IBOutlet NSButton *saveButton;
+@property(strong) IBOutlet NSButton *tradingWithConfirmationButton;
+@property(strong) IBOutlet NSTextField *extraSettingsTextField;
+@property(strong) IBOutlet NSButton *saveButton;
 
-@property (strong) IBOutlet NSTextField *percentRateLabel;
-@property (strong) IBOutlet NSLevelIndicator *percentRateIndicator;
+@property(strong) IBOutlet NSTextField *percentRateLabel;
+@property(strong) IBOutlet NSLevelIndicator *percentRateIndicator;
 
-// Die Action Handler
+/**
+ *
+ * @param sender
+ */
 - (IBAction)sliderAction:(id)sender;
+
+/**
+ *
+ * @param sender
+ */
 - (IBAction)saveAction:(id)sender;
 
 @end

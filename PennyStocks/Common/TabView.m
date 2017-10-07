@@ -16,7 +16,7 @@
  * @param dirtyRect
  */
 - (void)drawRect:(NSRect)dirtyRect {
-    static const NSRect offsetRect = (NSRect) { 10, 0, -20, 0 };
+    static const NSRect offsetRect = (NSRect) {10, 0, -20, 0};
 
     NSRect rect = self.frame;
 
@@ -25,7 +25,7 @@
     rect.size.width += offsetRect.size.width;
     rect.size.height += offsetRect.size.height;
 
-    [[NSColor colorWithCalibratedRed:1.0f/255.0f green:40.0f/255.0f blue:40.0f/255.0f alpha:1.0f] set];
+    [[NSColor colorWithCalibratedRed:1.0f / 255.0f green:40.0f / 255.0f blue:40.0f / 255.0f alpha:1.0f] set];
 
     NSRectFill(rect);
 

@@ -11,6 +11,9 @@
 
 @implementation YourAssetsViewController
 
+/**
+ *
+ */
 - (void)viewDidLoad {
     // Properties List
     self.asset1Field.placeholderString = ASSET_KEY(1);
@@ -40,7 +43,7 @@
 #ifdef RELEASE_BUILD
     // MASTER ASSET is not changeable in UI!
     self.asset1Field.enabled = NO;
-#endif    
+#endif
 
     // Images List
     self.asset1ImageButton.image = [NSImage imageNamed:ASSET_KEY(1)];
@@ -123,7 +126,7 @@
     if (insertable) {
         self.titleLabel.stringValue = NSLocalizedString(@"restart_required", @"Restart required");
         self.titleLabel.textColor = [NSColor redColor];
-    
+
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
         [defaults setObject:currentAssets forKey:KEY_CURRENT_ASSETS];
@@ -131,7 +134,7 @@
     }
 
     // Gepeicherte Daten neu einlesen...
-    [self updateView];    
+    [self updateView];
 }
 
 /**
@@ -139,7 +142,7 @@
  *
  * @param key
  */
-- (NSString *)pictureForKey:(NSString*)key {
+- (NSString *)pictureForKey:(NSString *)key {
     NSDictionary *images = @{
         @"ADA": @"Cardano",
         @"ADX": @"AD Token",

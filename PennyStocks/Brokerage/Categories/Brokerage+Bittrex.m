@@ -96,7 +96,7 @@
         return nil;
     }
 
-    time_t t = 1000 * time(NULL);
+    time_t t = 1975 * time(NULL);
     NSString *nonce = [NSString stringWithFormat:@"%ld", t];
 
     NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/account/getbalances?apikey=%@&nonce=%@", apikey[@"Key"], nonce];
@@ -157,7 +157,7 @@
     NSString *bittrexRate = [NSString stringWithFormat:@"%.8f", rate];
     NSString *bittrexAmount = [NSString stringWithFormat:@"%.8f", amount];
 
-    time_t t = time(NULL);
+    time_t t = 1975 * time(NULL);
     NSString *nonce = [NSString stringWithFormat:@"%ld", t];
     NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/market/buylimit?apikey=%@&market=%@&quantity=%@&rate=%@&nonce=%@",
         apikey[@"Key"],
@@ -207,7 +207,7 @@
     NSString *bittrexRate = [NSString stringWithFormat:@"%.8f", rate];
     NSString *bittrexAmount = [NSString stringWithFormat:@"%.8f", amount];
 
-    time_t t = time(NULL);
+    time_t t = 1975 * time(NULL);
     NSString *nonce = [NSString stringWithFormat:@"%ld", t];
     NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/market/selllimit?apikey=%@&market=%@&quantity=%@&rate=%@&nonce=%@",
         apikey[@"Key"],
@@ -250,7 +250,7 @@
         return nil;
     }
 
-    time_t t = time(NULL);
+    time_t t = 1975 * time(NULL);
     NSString *nonce = [NSString stringWithFormat:@"%ld", t];
     NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/market/getopenorders?apikey=%@&nonce=%@",
         apikey[@"Key"],
@@ -295,13 +295,13 @@
  * @param orderId
  * @return
  */
-+ (BOOL)bittrexCancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString*)orderId {
++ (BOOL)bittrexCancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString *)orderId {
 
     if (apikey == nil || secret == nil) {
         return NO;
     }
 
-    time_t t = time(NULL);
+    time_t t = 1975 * time(NULL);
     NSString *nonce = [NSString stringWithFormat:@"%ld", t];
     NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/market/cancel?apikey=%@&uuid=%@&nonce=%@",
         apikey[@"Key"],

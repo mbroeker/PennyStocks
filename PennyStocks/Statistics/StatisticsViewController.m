@@ -32,7 +32,7 @@
 - (IBAction)doubleClick:(id)sender {
     NSInteger row = self.ordersTableView.selectedRow;
 
-    if (row == -1) return;
+    if (row == -1) { return; }
 
     OrderData *data = self.dataRows[row];
 
@@ -49,6 +49,7 @@
 
 /**
  *
+ * @param data
  */
 - (void)updateTableData:(NSArray *)data {
 
@@ -84,7 +85,7 @@
                 [self updateTableData:data];
             });
 
-            [NSThread sleepForTimeInterval:15];            
+            [NSThread sleepForTimeInterval:15];
         }
 
     });

@@ -9,6 +9,19 @@
 #import "Brokerage.h"
 
 @interface Brokerage (External)
-+ (NSNumber*)fiatExchangeRate:(NSArray*)fiatCurrencies;
-+ (NSDictionary*)bitstampAsset1Ticker:(NSString*)asset;
+
+/**
+ *
+ * @param fiatCurrencies
+ * @return
+ */
++ (NSNumber *)fiatExchangeRate:(NSArray *)fiatCurrencies;
+
+/**
+ *
+ * @param asset
+ * @return
+ */
++ (NSDictionary *)bitstampAsset1Ticker:(NSString *)asset;
+
 @end

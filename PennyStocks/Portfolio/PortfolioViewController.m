@@ -18,10 +18,16 @@
     BOOL isActive;
 }
 
+/**
+ *
+ */
 - (void)viewDidAppear {
-    self.view.window.backgroundColor = [NSColor colorWithCalibratedRed:1.0f/255.0f green:40.0f/255.0f blue:40.0f/255.0f alpha:1.0f];
+    self.view.window.backgroundColor = [NSColor colorWithCalibratedRed:1.0f / 255.0f green:40.0f / 255.0f blue:40.0f / 255.0f alpha:1.0f];
 }
 
+/**
+ *
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -88,6 +94,9 @@
     return round(pow(10, 4) * value) / pow(10, 4);
 }
 
+/**
+ *
+ */
 - (void)updatePortfolioView {
     Calculator *calculator = [Calculator instance];
     // Aktualisierte Ratings besorgen
@@ -128,6 +137,10 @@
     }
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset1ClickedAction:(id)sender {
     if ([Helper messageText:NSLocalizedString(@"all_charts", @"") info:NSLocalizedString(@"wanna_update_current_saldo", @"")] == NSAlertFirstButtonReturn) {
         initialValues = nil;
@@ -136,38 +149,74 @@
     [self updatePortfolioView];
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset2ClickedAction:(id)sender {
     [self updatePortfolioView];
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset3ClickedAction:(id)sender {
     [self updatePortfolioView];
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset4ClickedAction:(id)sender {
     [self updatePortfolioView];
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset5ClickedAction:(id)sender {
     [self updatePortfolioView];
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset6ClickedAction:(id)sender {
     [self updatePortfolioView];
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset7ClickedAction:(id)sender {
     [self updatePortfolioView];
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset8ClickedAction:(id)sender {
     [self updatePortfolioView];
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset9ClickedAction:(id)sender {
     [self updatePortfolioView];
 }
 
+/**
+ *
+ * @param sender
+ */
 - (IBAction)asset10ClickedAction:(id)sender {
     [self updatePortfolioView];
 }

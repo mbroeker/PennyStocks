@@ -10,17 +10,30 @@
 
 @interface BittrexViewController : NSViewController
 
-@property (strong) IBOutlet NSTextField *apikeyField;
-@property (strong) IBOutlet NSSecureTextField *secretField;
+@property(strong) IBOutlet NSButton *standardExchangeButton;
+@property(strong) IBOutlet NSTextField *apikeyField;
+@property(strong) IBOutlet NSSecureTextField *secretField;
 
-@property (strong) IBOutlet NSTextField *legalNoticeLabel;
-@property (strong) IBOutlet NSButton *keyEraseButton;
+@property(strong) IBOutlet NSTextField *legalNoticeLabel;
+@property(strong) IBOutlet NSButton *keyEraseButton;
+@property(strong) IBOutlet NSButton *saveButton;
+
+/**
+ *
+ * @param sender
+ */
 - (IBAction)keyEraseAction:(id)sender;
 
-@property (strong) IBOutlet NSButton *saveButton;
-
+/**
+ *
+ * @param sender
+ */
 - (IBAction)saveAction:(id)sender;
 
-@property (strong) IBOutlet NSButton *standardExchangeButton;
+/**
+ *
+ * @param sender
+ */
 - (IBAction)standardExchangeAction:(id)sender;
+
 @end

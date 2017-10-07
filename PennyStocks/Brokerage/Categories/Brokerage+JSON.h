@@ -9,9 +9,43 @@
 #import "Brokerage.h"
 
 @interface Brokerage (JSON)
-+ (NSDictionary*)jsonRequest:(NSString*)jsonURL;
-+ (NSDictionary*)jsonRequest:(NSString*)jsonURL withPayload:(NSDictionary*)payload;
-+ (NSDictionary*)jsonRequest:(NSString*)jsonURL withPayload:(NSDictionary*)payload andHeader:(NSDictionary*)header;
-+ (NSString*) urlStringEncode:(NSString*)string;
-+ (NSString*)urlEncode:(NSDictionary*)payload;
+
+/**
+ *
+ * @param jsonURL
+ * @return
+ */
++ (NSDictionary *)jsonRequest:(NSString *)jsonURL;
+
+/**
+ *
+ * @param jsonURL
+ * @param payload
+ * @return
+ */
++ (NSDictionary *)jsonRequest:(NSString *)jsonURL withPayload:(NSDictionary *)payload;
+
+/**
+ *
+ * @param jsonURL
+ * @param payload
+ * @param header
+ * @return
+ */
++ (NSDictionary *)jsonRequest:(NSString *)jsonURL withPayload:(NSDictionary *)payload andHeader:(NSDictionary *)header;
+
+/**
+ *
+ * @param string
+ * @return
+ */
++ (NSString *)urlStringEncode:(NSString *)string;
+
+/**
+ *
+ * @param payload
+ * @return
+ */
++ (NSString *)urlEncode:(NSDictionary *)payload;
+
 @end

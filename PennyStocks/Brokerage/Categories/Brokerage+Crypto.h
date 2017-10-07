@@ -9,6 +9,20 @@
 #import "Brokerage.h"
 
 @interface Brokerage (Crypto)
-+ (NSString *)hmac:(NSString *)plainText withSecret:(NSString*)secret;
+
+/**
+ *
+ * @param plainText
+ * @param secret
+ * @return
+ */
++ (NSString *)hmac:(NSString *)plainText withSecret:(NSString *)secret;
+
+/**
+ *
+ * @param input
+ * @return
+ */
 + (NSString *)sha512:(NSString *)input;
+
 @end

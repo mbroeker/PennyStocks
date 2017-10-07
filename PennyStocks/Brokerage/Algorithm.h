@@ -9,7 +9,27 @@
 #import <Foundation/Foundation.h>
 
 @interface Algorithm : NSObject
-+ (NSArray*)gaussAlgorithm:(NSArray*)matrix;
-+ (void)gaussAlgorithm:(double**)A withEquations:(int)equations;
+
+/**
+ *
+ * @param matrix
+ * @return
+ */
++ (NSArray *)gaussAlgorithm:(NSArray *)matrix;
+
+/**
+ *
+ * @param A
+ * @param equations
+ */
++ (void)gaussAlgorithm:(double **)A withEquations:(int)equations;
+
+/**
+ *
+ * @param value
+ * @param accuracy
+ * @return
+ */
 + (double)nearest:(double)value withAccuracy:(double)accuracy;
+
 @end

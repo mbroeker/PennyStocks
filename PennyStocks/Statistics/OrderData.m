@@ -13,8 +13,9 @@
 
 /**
  *
+ * @return NSArray*
  */
-+ (NSArray*)fetchOrderData {
++ (NSArray *)fetchOrderData {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSString *defaultExchange = [defaults objectForKey:KEY_DEFAULT_EXCHANGE];
@@ -38,8 +39,9 @@
 
 /**
  *
+ * @return id
  */
-- (id)initWithArray:(NSArray*)data {
+- (id)initWithArray:(NSArray *)data {
     if (self = [super init]) {
         self.orderId = data[0];
         self.date = data[1];
@@ -53,7 +55,7 @@
 
 /**
  *
- * @return
+ * @return BOOL
  */
 - (BOOL)cancelOrder {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

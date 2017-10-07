@@ -10,13 +10,13 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (strong) IBOutlet NSMenuItem *menubarItem;
-@property (strong) IBOutlet NSMenuItem *eurUSDItem;
-@property (strong) IBOutlet NSMenuItem *usdEURItem;
+@property(strong) IBOutlet NSMenuItem *menubarItem;
+@property(strong) IBOutlet NSMenuItem *eurUSDItem;
+@property(strong) IBOutlet NSMenuItem *usdEURItem;
 
-@property (strong) IBOutlet NSMenuItem *eurGBPItem;
-@property (strong) IBOutlet NSMenuItem *usdGBPItem;
-@property (strong) IBOutlet NSMenuItem *usdCNYItem;
-@property (strong) IBOutlet NSMenuItem *usdJPYItem;
+@property(strong) IBOutlet NSMenuItem *eurGBPItem;
+@property(strong) IBOutlet NSMenuItem *usdGBPItem;
+@property(strong) IBOutlet NSMenuItem *usdCNYItem;
+@property(strong) IBOutlet NSMenuItem *usdJPYItem;
 
 @end
