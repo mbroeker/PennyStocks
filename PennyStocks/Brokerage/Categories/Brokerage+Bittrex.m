@@ -36,6 +36,7 @@
         }
 
         if ([innerTicker[@"message"] isEqualToString:@"INVALID_MARKET"]) {
+            NSLog(@"Invalid Market on Bittrex: %@/%@", ASSET_KEY(1), key);
             return nil;
         }
 

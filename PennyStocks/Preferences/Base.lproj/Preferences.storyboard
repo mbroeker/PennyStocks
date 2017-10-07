@@ -12,13 +12,13 @@
                 <customObject id="3TI-xR-7Sy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <tabViewController title="Einstellungen" selectedTabViewItemIndex="0" id="u0k-Ex-xGQ" sceneMemberID="viewController">
                     <tabViewItems>
+                        <tabViewItem id="Zqo-GS-N5W"/>
                         <tabViewItem identifier="" id="dJw-c7-Fxl"/>
                         <tabViewItem identifier="" id="6yC-vw-Dge"/>
                         <tabViewItem id="P9B-lq-uNk"/>
                         <tabViewItem id="IvL-R4-6Xs"/>
                         <tabViewItem id="V35-kF-Mhx"/>
                         <tabViewItem id="dok-RG-ZdK"/>
-                        <tabViewItem id="Zqo-GS-N5W"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="Wr1-30-btf">
                         <rect key="frame" x="0.0" y="0.0" width="524" height="148"/>
@@ -27,13 +27,13 @@
                         <tabViewItems/>
                     </tabView>
                     <connections>
+                        <segue destination="Sud-5r-Hym" kind="relationship" relationship="tabItems" id="wUL-CY-wdP"/>
                         <segue destination="yX1-xt-20W" kind="relationship" relationship="tabItems" id="ykV-ul-8u6"/>
                         <segue destination="Txn-YE-STf" kind="relationship" relationship="tabItems" id="pfF-eW-HHj"/>
                         <segue destination="4CC-Z0-rPL" kind="relationship" relationship="tabItems" id="r4l-OX-WlB"/>
                         <segue destination="aKY-JE-DW7" kind="relationship" relationship="tabItems" id="SIy-pd-phB"/>
                         <segue destination="oMN-OW-Mnz" kind="relationship" relationship="tabItems" id="YAN-Yf-NMO"/>
                         <segue destination="Skb-x7-But" kind="relationship" relationship="tabItems" id="FLd-1T-dT1"/>
-                        <segue destination="Sud-5r-Hym" kind="relationship" relationship="tabItems" id="wUL-CY-wdP"/>
                     </connections>
                 </tabViewController>
             </objects>
