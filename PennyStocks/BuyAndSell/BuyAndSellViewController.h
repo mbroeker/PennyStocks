@@ -10,7 +10,7 @@
 
 @interface BuyAndSellViewController : NSViewController
 @property (strong) IBOutlet NSButton *dismissButton;
-@property (weak) NSString *tabLabel;
+@property (weak) NSString *currentAsset;
 
 - (IBAction)dismissActionClicked:(id)sender;
 

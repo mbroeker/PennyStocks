@@ -8,7 +8,6 @@
 
 #import "PortfolioViewController.h"
 #import "Calculator.h"
-#import "CalculatorConstants.h"
 #import "Helper.h"
 
 @implementation PortfolioViewController {

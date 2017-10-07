@@ -9,6 +9,13 @@
 #ifndef CalculatorConstants_h
 #define CalculatorConstants_h
 
+#ifdef DEBUG
+    #define NSDebug(FORMAT, ...) fprintf(stderr,"%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+    #define NSLog(...)
+#else
+    #define NSDebug(...)
+#endif
+
 #define ASSET_KEY(row) [Calculator assetString:row withIndex:0]
 #define ASSET_DESC(row) [Calculator assetString:row withIndex:1]
 
@@ -39,11 +46,11 @@
 #define KEY_INITIAL_RATINGS @"initialRatings"
 #define KEY_CURRENT_SALDO @"currentSaldo"
 #define KEY_SALDO_URLS @"saldoUrls"
-#define KEY_TRADING_WITH_CONFIRMATION @"tradingWithConfirmation"
 #define KEY_CURRENT_ASSETS @"currentAssets"
 
 #define KEY_FIAT_CURRENCIES @"fiatCurrencies"
 #define KEY_DEFAULT_EXCHANGE @"defaultExchange"
+#define KEY_TRADING_WITH_CONFIRMATION @"tradingWithConfirmation"
 
 // CHECKPOINT KEYS
 #define CP_INITIAL_PRICE @"initialPrice"

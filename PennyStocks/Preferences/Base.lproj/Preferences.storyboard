@@ -173,7 +173,7 @@
         <scene sceneID="u3E-9Z-eds">
             <objects>
                 <viewController title="Crypto" id="Sud-5r-Hym" customClass="YourAssetsViewController" sceneMemberID="viewController">
-                    <view key="view" id="Yig-UQ-P26" customClass="TabView">
+                    <view key="view" wantsLayer="YES" id="Yig-UQ-P26" customClass="TabView">
                         <rect key="frame" x="0.0" y="0.0" width="705" height="690"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>

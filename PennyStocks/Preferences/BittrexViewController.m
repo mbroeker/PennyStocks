@@ -8,7 +8,6 @@
 
 #import "BittrexViewController.h"
 #import "Calculator.h"
-#import "CalculatorConstants.h"
 #import "KeychainWrapper.h"
 
 @implementation BittrexViewController

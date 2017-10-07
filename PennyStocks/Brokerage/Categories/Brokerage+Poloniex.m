@@ -178,11 +178,12 @@
  * @return
  */
 + (NSArray *)poloniexOpenOrders:(NSDictionary *)apikey withSecret:(NSString *)secret {
-    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
-    if ([secret isEqualToString:@""]) {
+    if (apikey == nil || secret == nil) {
         return nil;
     }
+
+    NSString *jsonURL = @"https://poloniex.com/tradingApi";
 
     NSMutableDictionary *payload = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *header = [apikey mutableCopy];

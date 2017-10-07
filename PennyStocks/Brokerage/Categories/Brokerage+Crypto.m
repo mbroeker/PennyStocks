@@ -11,10 +11,13 @@
 #import <CommonCrypto/CommonHMAC.h>
 
 @implementation Brokerage (Crypto)
+
 /**
  * HMAC SHA512
  */
 + (NSString *)hmac:(NSString *)plainText withSecret:(NSString *)secret {
+    NSDebug(@"Brokerage::hmac");
+
     const char *cKey = [secret cStringUsingEncoding:NSASCIIStringEncoding];
     const char *cData = [plainText cStringUsingEncoding:NSASCIIStringEncoding];
 
@@ -41,6 +44,8 @@
  * @return NSString*
  */
 + (NSString *)sha512:(NSString *)input {
+    NSDebug(@"Brokerage::sha512");
+
     const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:input.length];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];

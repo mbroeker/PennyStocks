@@ -42,10 +42,7 @@
  * @return NSDictionary*
  */
 + (NSDictionary *)jsonRequest:(NSString *)jsonURL withPayload:(NSDictionary *)payload andHeader:(NSDictionary *)header {
-
-    if (![Brokerage isInternetConnection]) {
-        return nil;
-    }
+    NSDebug(@"Brokerage::jsonRequest:%@ withPayload:... andHeader:...", jsonURL);
 
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
@@ -66,7 +63,7 @@
     }
 
     __block NSMutableDictionary *result;
-    __block dispatch_semaphore_t lock = dispatch_semaphore_create(0);
+     __block dispatch_semaphore_t lock = dispatch_semaphore_create(0);
 
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -77,10 +74,8 @@
 
         result = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&jsonError];
         if (jsonError && !RELEASE_BUILD) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // Fehlermeldung wird angezeigt
-                NSLog(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
-            });
+            // Fehlermeldung wird angezeigt
+            NSLog(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
         }
 
         dispatch_semaphore_signal(lock);
@@ -97,6 +92,8 @@
  * @param string
  */
 + (NSString *)urlStringEncode:(NSString *)string {
+    NSDebug(@"Brokerage::urlStringEncode:%@", string);
+
     return [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 }
 
@@ -107,6 +104,8 @@
  * @return NSString*
  */
 + (NSString *)urlEncode:(NSDictionary *)payload {
+    NSDebug(@"Brokerage::urlEncode:%@", payload);
+
     NSMutableString *str = [@"" mutableCopy];
 
     for (id key in payload) {
@@ -126,6 +125,8 @@
  * @return BOOL
  */
 + (BOOL)isInternetConnection {
+    NSDebug(@"Brokerage::isInternetConnection");
+
     BOOL returnValue = NO;
 
     struct sockaddr zeroAddress;

@@ -68,6 +68,8 @@ typedef struct DASHBOARD_VARS {
  * Aktualisierung der Nutzdaten(Kurse und Kontostände)
  */
 - (void)updateBalanceAndRatings {
+    NSDebug(@"TemplateViewController::updateBalanceAndRatings");
+
     [calculator updateRatings:YES];
     [calculator updateBalances:YES];
 }
@@ -78,6 +80,8 @@ typedef struct DASHBOARD_VARS {
  * @param withTrading
  */
 - (void)updateCurrentView:(BOOL)withTrading {
+    NSDebug(@"TemplateViewController::updateCurrentView: %d", withTrading);
+
     if (withTrading) {
         if (calculator.automatedTrading) {
 
@@ -112,6 +116,8 @@ typedef struct DASHBOARD_VARS {
  * Zurücksetzen der Farben
  */
 - (void)resetColors {
+    NSDebug(@"TemplateViewController::resetColors");
+
     NSColor *chartBGColor = [NSColor whiteColor];
     NSColor *infoBarFGColor = [NSColor colorWithCalibratedRed:178.0f / 255.0f green:178.0f / 255.0f blue:178.0f / 255.0f alpha:1.0f];
 
@@ -147,6 +153,8 @@ typedef struct DASHBOARD_VARS {
  *
  */
 - (void)resetFiatCurrencies {
+    NSDebug(@"TemplateViewController::resetFiatCurrencies");
+
     // Exchange Rate FiatCurrencies
     self.fiatAsset1MenuItem.title = fiatCurrencies[0];
     self.fiatAsset2MenuItem.title = fiatCurrencies[1];
@@ -162,6 +170,8 @@ typedef struct DASHBOARD_VARS {
  * Initialisiere alle Datenstrukturen
  */
 - (void)initializeWithDefaults {
+    NSDebug(@"TemplateViewController::initializeWithDefaults");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     // Liste der Fiat-Währungen
@@ -235,8 +245,8 @@ typedef struct DASHBOARD_VARS {
         applications = [@{
             ASSET_DESC(1): @"/Applications/Ethereum Wallet.app",
             ASSET_DESC(2): @"",
-            ASSET_DESC(3): @"/Applications/monero-wallet-gui.app",
-            ASSET_DESC(4): @"/Applications/Electrum-LTC.app",
+            ASSET_DESC(3): @"",
+            ASSET_DESC(4): @"",
             ASSET_DESC(5): @"",
             ASSET_DESC(6): @"",
             ASSET_DESC(7): @"",
@@ -295,6 +305,8 @@ typedef struct DASHBOARD_VARS {
  * simpler Upgrade Assistent
  */
 - (void)updateAssistant {
+    NSDebug(@"TemplateViewController::updateAssistant");
+
     [Calculator migrateSaldoAndRatings];
     applications = [Calculator migrateApplications];
 }
@@ -306,6 +318,8 @@ typedef struct DASHBOARD_VARS {
  * @param assetFractions
  */
 - (void)stdNumberFormatter:(NSUInteger)fractions forAsset:(NSUInteger)assetFractions {
+    NSDebug(@"TemplateViewController::stdNumberFormatter");
+
     // Währungsformat mit 2 Nachkommastellen
     NSNumberFormatter *currencyFormatter = [self.currencyUnits formatter];
     [currencyFormatter setMinimumFractionDigits:fractions];
@@ -326,6 +340,8 @@ typedef struct DASHBOARD_VARS {
  * Setzen des Action Buttons per Code, da es keinen Sinn macht, dass pro Tab in XCode einzurichten...
  */
 - (void)viewWillAppear {
+    NSDebug(@"TemplateViewController::viewWillAppear");
+
     [_cryptoUnits setTarget:self];
     [_cryptoUnits setAction:@selector(cryptoAction:)];
 }
@@ -334,6 +350,8 @@ typedef struct DASHBOARD_VARS {
  * Informiere den Nutzer über die aktuell genutzte Börse
  */
 - (void)pennyStocksOnExchange {
+    NSDebug(@"TemplateViewController::pennyStocksOnExchange");
+
     NSWindow *parentWindow = [[NSApplication sharedApplication] windows][0];
     NSString *onExchangeText = [calculator.defaultExchange isEqualToString:EXCHANGE_BITTREX] ? @"Bittrex" : @"Poloniex";
     parentWindow.title = [NSString stringWithFormat:@"PennyStocks on %@", onExchangeText];
@@ -344,12 +362,16 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (void)switchView:(id)sender {
+    NSDebug(@"TemplateViewController::switchView");
+
     NSString *identifier = [sender identifier];
 
     int item = [[identifier componentsSeparatedByString:@"ASSET"][1] intValue];
 
     if (item == 0) {
         [self resetFiatCurrencies];
+        // Deaktiviere die Eingabe für die Crypto-Einheiten
+        self.cryptoUnits.editable = NO;
     }
 
     if (item == 0 || item == 1) {
@@ -365,9 +387,10 @@ typedef struct DASHBOARD_VARS {
  * Prevent Nonsense Segues on DASHBOARD
  */
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([identifier isEqualToString:@"BuyAndSell"]) {
-        NSString *label = labels[[self.headlineLabel stringValue]];
+    NSDebug(@"TemplateViewController::shouldPerformSegueWithIdentifier");
 
+    if ([identifier isEqualToString:@"BuyAndSell"]) {
+        NSString *label = self.headlineLabel.stringValue;
         if ([label isEqualToString:DASHBOARD] || [label isEqualToString:ASSET_DESC(1)]) {
             return NO;
         }
@@ -380,15 +403,13 @@ typedef struct DASHBOARD_VARS {
  *
  */
 - (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"BuyAndSell"]) {
-        NSString *label = labels[[self.headlineLabel stringValue]];
+    NSDebug(@"TemplateViewController::prepareForSegue");
 
-        if ([label isEqualToString:DASHBOARD] || [label isEqualToString:ASSET_DESC(1)]) {
-            return;
-        }
+    if ([segue.identifier isEqualToString:@"BuyAndSell"]) {
+        NSString *asset = labels[[self.headlineLabel stringValue]];
 
         BuyAndSellViewController *controller = segue.destinationController;
-        controller.tabLabel = label;
+        controller.currentAsset = asset;
     }
 
     if ([segue.identifier isEqualToString:@"Portfolio"]) {
@@ -399,9 +420,13 @@ typedef struct DASHBOARD_VARS {
 }
 
 /**
- *
+ * Initialisierung der Sicht / des View
  */
-- (void)awakeFromNib {
+- (void)viewDidLoad {
+    NSDebug(@"TemplateViewController::viewDidLoad");
+
+    [super viewDidLoad];
+
     [self.currency1Field setTarget:self];
     [self.currency1Field setAction:@selector(switchView:)];
 
@@ -431,13 +456,6 @@ typedef struct DASHBOARD_VARS {
 
     [self.currency10Field setTarget:self];
     [self.currency10Field setAction:@selector(switchView:)];
-}
-
-/**
- * Initialisierung der Sicht / des View
- */
-- (void)viewDidLoad {
-    [super viewDidLoad];
 
     // Initialisieren der Bezeichner
     self.currency1Label.stringValue = ASSET_KEY(1);
@@ -470,7 +488,7 @@ typedef struct DASHBOARD_VARS {
     [self updateAssistant];
 
     // Startseite aufrufen
-    [self updateOverview];
+    [self updateTemplateView:DASHBOARD];
 
     dispatch_queue_t autoRefreshQueue = dispatch_queue_create("de.4customers.PennyStocks.autoRefresh", NULL);
     dispatch_async(autoRefreshQueue, ^{
@@ -491,6 +509,8 @@ typedef struct DASHBOARD_VARS {
  * Markieren der Gewinner der obersten Leiste
  */
 - (void)markGainers {
+    NSDebug(@"TemplateViewController::markGainers");
+
     // Hole die aktualisierten Dictionaries
     NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET_KEY(1)];
     NSMutableDictionary *currentRatings = [calculator currentRatings];
@@ -570,6 +590,8 @@ typedef struct DASHBOARD_VARS {
  * Markieren der Verlierer der obersten Leiste
  */
 - (void)markLoosers {
+    NSDebug(@"TemplateViewController::markLoosers");
+
     NSMutableDictionary *currentRatings = [calculator currentRatings];
 
     NSDictionary *btcCheckpoint = [calculator checkpointForAsset:ASSET_KEY(1)];
@@ -648,6 +670,8 @@ typedef struct DASHBOARD_VARS {
  * Einfärben der Labels
  */
 - (void)markDockLabels:(COINCHANGE)loop_vars {
+    NSDebug(@"TemplateViewController::markDockLabels");
+
     if (loop_vars.effectivePercent < 0.0) {
         self.percentLabel.textColor = defaultLooseColor;
     }
@@ -667,6 +691,7 @@ typedef struct DASHBOARD_VARS {
 
 // Simpler Fetch der Poloniex Daten
 - (void)updateTicker:(NSString *)label {
+    NSDebug(@"TemplateViewController::updateTicker:%@", label);
 
     if ([label isEqualToString:DASHBOARD] || [label isEqualToString:ASSET_KEY(1)]) {
         label = ASSET_KEY(1);
@@ -736,6 +761,8 @@ typedef struct DASHBOARD_VARS {
  * @param asset
  */
 - (void)highlightVolumeMismatch:(NSString *)asset {
+    NSDebug(@"TemplateViewController::highlightVolumeMismatch");
+
     // Differenzen größer oder kleiner als -2 Prozent sind relevant
     double RANGE = 0.0;
 
@@ -757,15 +784,7 @@ typedef struct DASHBOARD_VARS {
  * Übersicht mit richtigen Live-Werten
  */
 - (void)updateOverview {
-
-    // Dynamisches Setzen der Programmüberschrift
-    [self pennyStocksOnExchange];
-
-    // Aktualisiere die URL für den HOME-Button
-    homeURL = [calculator saldoUrlForLabel:DASHBOARD];
-
-    // Farben zurück setzen
-    [self resetColors];
+    NSDebug(@"TemplateViewController::updateOverview");
 
     // Instant Trading deaktivieren
     self.instantTrading.enabled = NO;
@@ -894,33 +913,31 @@ typedef struct DASHBOARD_VARS {
  * @param label
  */
 - (void)updateTemplateView:(NSString *)label {
-
-    // Dynamisches Setzen der Programmüberschrift
-    [self pennyStocksOnExchange];
-
-    // Es sind mehrere Buttons, die so synchronisiert gehalten werden...
-    self.automatedTradingButton.state = (calculator.automatedTrading) ? NSOnState : NSOffState;
-
-    // Farben zurück setzen
-    [self resetColors];
+    NSDebug(@"TemplateViewController::updateTemplateView:%@", label);
 
     // Aktualisieren der Headline
     self.headlineLabel.stringValue = tabs[label][0];
 
-    NSString *asset = label;
-    double assets = [(NSNumber *) tabs[label][1] doubleValue];
+    // Dynamisches Setzen der Programmüberschrift
+    [self pennyStocksOnExchange];
 
-    // Standards
+    // Aktualisiere die URL für den HOME-Button
     homeURL = [calculator saldoUrlForLabel:tabs[label][0]];
 
-    // Aktualisiere den Kurs des Tabs - falls einer gesetzt ist
-    [self rateInputAction:self];
+    // Farben zurück setzen
+    [self resetColors];
 
     if ([label isEqualToString:DASHBOARD]) {
         [self updateOverview];
 
         return;
     }
+
+    NSString *asset = label;
+    double assets = [(NSNumber *) tabs[label][1] doubleValue];
+
+    // Aktualisiere den Kurs des Tabs - falls einer gesetzt ist
+    [self rateInputAction:self];
 
     // Aktiviere InstantTrading für alle Assets
     self.instantTrading.enabled = YES;
@@ -1045,7 +1062,8 @@ typedef struct DASHBOARD_VARS {
  * Action-Handler für das headlineLabel
  */
 - (IBAction)dashboardAction:(id)sender {
-    [self resetFiatCurrencies];
+    NSDebug(@"TemplateViewController::dashboardAction");
+
     [self switchView:sender];
 }
 
@@ -1055,6 +1073,8 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (IBAction)homepageAction:(id)sender {
+    NSDebug(@"TemplateViewController::homepageAction");
+
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:traders[TV_HOMEPAGE]]];
 }
 
@@ -1064,6 +1084,8 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (IBAction)walletAction:(id)sender {
+    NSDebug(@"TemplateViewController::walletAction");
+
     NSString *title = self.headlineLabel.stringValue;
 
     if ([title isEqualToString:DASHBOARD]) {
@@ -1099,6 +1121,8 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (IBAction)automatedTradingAction:(id)sender {
+    NSDebug(@"TemplateViewController::automatedTradingAction");
+
     NSString *infoText = (!calculator.automatedTrading) ? NSLocalizedString(@"automated_trading_on", @"activated") : NSLocalizedString(@"automated_trading_off", @"deactivated");
     if ([Helper messageText:@"AUTOMATED TRADING" info:infoText] == NSAlertFirstButtonReturn) {
         calculator.automatedTrading = !calculator.automatedTrading;
@@ -1113,6 +1137,8 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (IBAction)homeAction:(id)sender {
+    NSDebug(@"TemplateViewController::homeAction");
+
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:homeURL]];
 }
 
@@ -1122,6 +1148,7 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (IBAction)leftAction:(id)sender {
+    NSDebug(@"TemplateViewController::leftAction");
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:traders[TV_TRADER1]]];
 }
 
@@ -1131,6 +1158,8 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (IBAction)rightAction:(id)sender {
+    NSDebug(@"TemplateViewController::rightAction");
+
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:traders[TV_TRADER2]]];
 }
 
@@ -1140,6 +1169,8 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (IBAction)infoAction:(id)sender {
+    NSDebug(@"TemplateViewController::infoAction");
+
     NSString *tabTitle = labels[self.headlineLabel.stringValue];
     NSString *withAsset = tabs[tabTitle][0];
 
@@ -1163,6 +1194,8 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (IBAction)cryptoAction:(id)sender {
+    NSDebug(@"TemplateViewController::cryptoAction");
+
     NSString *tabTitle = self.headlineLabel.stringValue;
     if ([tabTitle isEqualToString:DASHBOARD]) {
         return;
@@ -1197,6 +1230,8 @@ typedef struct DASHBOARD_VARS {
  * @param sender
  */
 - (IBAction)rateInputAction:(id)sender {
+    NSDebug(@"TemplateViewController::rateInputAction");
+
     NSString *tabTitle = self.headlineLabel.stringValue;
 
     NSString *cAsset = ([tabTitle isEqualToString:DASHBOARD] ? fiatCurrencies[1] : labels[tabTitle]);
@@ -1262,6 +1297,8 @@ typedef struct DASHBOARD_VARS {
  * @return NSDictionary*
  */
 - (NSDictionary *)applications {
+    NSDebug(@"TemplateViewController::applications");
+
     return applications;
 }
 
@@ -1271,6 +1308,8 @@ typedef struct DASHBOARD_VARS {
  * @return NSDictionary*
  */
 - (NSDictionary *)traders {
+    NSDebug(@"TemplateViewController::traders");
+
     return traders;
 }
 
@@ -1280,6 +1319,8 @@ typedef struct DASHBOARD_VARS {
  * @return NSDictionary*
  */
 - (NSDictionary *)images {
+    NSDebug(@"TemplateViewController::images");
+
     return images;
 }
 
@@ -1289,6 +1330,8 @@ typedef struct DASHBOARD_VARS {
  * @return NSString*
  */
 - (NSString *)vendorURL {
+    NSDebug(@"TemplateViewController::vendorURL");
+
     return @"https://www.4customers.de/pennystocks/";
 }
 
@@ -1298,6 +1341,8 @@ typedef struct DASHBOARD_VARS {
  * @return NSString*
  */
 - (NSString *)homeURL {
+    NSDebug(@"TemplateViewController::homeURL");
+
     return homeURL;
 }
 

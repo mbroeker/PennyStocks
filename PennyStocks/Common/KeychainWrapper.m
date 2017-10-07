@@ -7,8 +7,6 @@
 //
 
 #import "KeychainWrapper.h"
-#import <Security/Security.h>
-#import <CommonCrypto/CommonDigest.h>
 
 @implementation KeychainWrapper
 

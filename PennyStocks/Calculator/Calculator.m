@@ -10,8 +10,6 @@
 #import "Helper.h"
 #import "KeychainWrapper.h"
 
-#import <dispatch/dispatch.h>
-
 /**
  * Berechnungklasse für Crypto-Währungen
  */
@@ -47,6 +45,8 @@
  * @return
  */
 + (NSArray *)initialAssets {
+    NSDebug(@"Calculator::initialAssets");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSArray *assets = [defaults objectForKey:KEY_CURRENT_ASSETS];
@@ -135,6 +135,8 @@
  * @return id
  */
 - (id)init {
+    NSDebug(@"Calculator::init");
+
     return [Calculator instance:@[EUR, USD]];
 }
 
@@ -145,6 +147,7 @@
  * @return id
  */
 - (id)initWithFiatCurrencies:(NSArray *)currencies {
+    NSDebug(@"Calculator::initWithFiatCurrencies:%@", currencies);
 
     if (self = [super init]) {
 
@@ -265,6 +268,8 @@
  * @param btcUpdate
  */
 - (void)updateCheckpointForAsset:(NSString *)asset withBTCUpdate:(BOOL)btcUpdate {
+    NSDebug(@"Calculator::updateCheckpointForAsset:%@ withBTCUpdate:%d", asset, btcUpdate);
+
     [self updateCheckpointForAsset:asset withBTCUpdate:btcUpdate andRate:0.0];
 }
 
@@ -275,6 +280,8 @@
  * @param btcUpdate
  */
 - (void)updateCheckpointForAsset:(NSString *)asset withBTCUpdate:(BOOL)btcUpdate andRate:(double)wantedRate {
+    NSDebug(@"Calculator::updateCheckpointForAsset:%@ withBTCUpdate:%d andRate:%.8f", asset, btcUpdate, wantedRate);
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (currentRatings == nil || initialRatings == nil) {
@@ -307,6 +314,8 @@
  * @return NSDictionary*
  */
 - (NSDictionary *)checkpointForAsset:(NSString *)asset {
+    //NSDebug(@"Calculator::checkpointForAsset:%@", asset);
+
     double initialAssetRating = [initialRatings[asset] doubleValue];
     double currentAssetRating = [currentRatings[asset] doubleValue];
 
@@ -334,11 +343,13 @@
  * @return double
  */
 - (double)ethPriceForAsset:(NSString *)asset {
-    double btcRating = [currentRatings[ASSET_KEY(1)] doubleValue];
+    NSDebug(@"Calculator::ethPriceForAsset:%@", asset);
+
+    double ethRating = [currentRatings[ASSET_KEY(1)] doubleValue];
     double assetRating = [currentRatings[asset] doubleValue];
 
-    double btcPrice = btcRating / assetRating;
-    return btcPrice;
+    double ethPrice = ethRating / assetRating;
+    return ethPrice;
 }
 
 /**
@@ -349,6 +360,8 @@
  * @return double
  */
 - (double)factorForAsset:(NSString *)asset inRelationTo:(NSString *)baseAsset {
+    NSDebug(@"Calculator::factorForAsset:%@ inRelationTo:%@", asset, baseAsset);
+
     return [self ethPriceForAsset:baseAsset] / [self ethPriceForAsset:asset];
 }
 
@@ -359,6 +372,8 @@
  * @return double
  */
 - (double)fiatPriceForAsset:(NSString *)asset {
+    NSDebug(@"Calculator::fiatPriceForAsset:%@", asset);
+
     return (1 / [currentRatings[asset] doubleValue]);
 }
 
@@ -368,6 +383,8 @@
  * @return NSDictionary*
  */
 - (NSDictionary *)checkpointChanges {
+    NSDebug(@"Calculator::checkpointChanges");
+
     NSMutableDictionary *checkpointChanges = [[NSMutableDictionary alloc] init];
 
     for (id cAsset in currentRatings) {
@@ -400,6 +417,7 @@
  * @return double
  */
 - (double)calculateWithRatings:(NSDictionary *)ratings currency:(NSString *)currency {
+    NSDebug(@"Calculator::calculateWithRatings:%@ currency:%@", ratings, currency);
 
     for (id key in ratings) {
         if ([ratings[key] doubleValue] == 0.0) {
@@ -447,6 +465,8 @@
  * @return NSDictionary*
  */
 - (NSDictionary *)realPrices {
+    NSDebug(@"Calculator::realprices");
+
     NSMutableDictionary *volumes = [[NSMutableDictionary alloc] init];
 
     for (id key in tickerKeys) {
@@ -489,6 +509,8 @@
  * @return NSDictionary*
  */
 - (NSDictionary *)realChanges {
+    NSDebug(@"Calculator::realChanges");
+
     NSDictionary *realPrices = [self realPrices];
     NSMutableDictionary *changes = [[NSMutableDictionary alloc] init];
 
@@ -507,6 +529,8 @@
  * @return NSString*
  */
 - (NSString *)autoBuy:(NSString *)cAsset amount:(double)wantedAmount {
+    NSDebug(@"Calculator::autoBuy:%@ amount:%8f", cAsset, wantedAmount);
+
     return [self autoBuy:cAsset amount:wantedAmount withRate:0.0];
 }
 
@@ -519,6 +543,7 @@
  * @return NSString*
  */
 - (NSString *)autoBuy:(NSString *)cAsset amount:(double)wantedAmount withRate:(double)wantedRate {
+    NSDebug(@"Calculator::autoBuy:%@ amount:%8f withRate:%.8f", cAsset, wantedAmount, wantedRate);
 
     NSDictionary *apiKey = [self apiKey];
     NSDictionary *ak = apiKey[@"apiKey"];
@@ -606,6 +631,8 @@
  * @return NSString*
  */
 - (NSString *)autoSell:(NSString *)cAsset amount:(double)wantedAmount {
+    NSDebug(@"Calculator::autoSell:%@ amount:%8f", cAsset, wantedAmount);
+
     return [self autoSell:cAsset amount:wantedAmount withRate:0.0];
 }
 
@@ -618,6 +645,7 @@
  * @return NSString*
  */
 - (NSString *)autoSell:(NSString *)cAsset amount:(double)wantedAmount withRate:(double)wantedRate {
+    NSDebug(@"Calculator::autoSell:%@ amount:%8f withRate:%.8f", cAsset, wantedAmount, wantedRate);
 
     NSDictionary *apiKey = [self apiKey];
     NSDictionary *ak = apiKey[@"apiKey"];
@@ -696,6 +724,8 @@
  * @param cAsset
  */
 - (void)autoBuyAll:(NSString *)cAsset {
+    NSDebug(@"Calculator::autoBuyAll:%@", cAsset);
+
     static NSString *lastBoughtAsset = @"";
 
     double ask = ([tradingWithConfirmation boolValue]) ? 0 : -1;
@@ -717,6 +747,8 @@
  * @param cAsset
  */
 - (void)autoSellAll:(NSString *)cAsset {
+    NSDebug(@"Calculator::autoSellAll:%@", cAsset);
+
     double ask = ([tradingWithConfirmation boolValue]) ? 0 : -1;
     if ([self autoSell:cAsset amount:ask] != nil) {
         // Aktualisiere alle Checkpoints
@@ -730,6 +762,8 @@
  * @param wantedEuros
  */
 - (void)sellWithProfitInEuro:(double)wantedEuros {
+    NSDebug(@"Calculator::sellWithProfitInEuro:%.4f", wantedEuros);
+
     for (id key in currentSaldo) {
         if ([key isEqualToString:ASSET_KEY(1)]) { continue; }
         if ([key isEqualToString:fiatCurrencies[0]]) { continue; }
@@ -757,6 +791,7 @@
  * @param wantedPercent
  */
 - (void)sellWithProfitInPercent:(double)wantedPercent {
+    NSDebug(@"Calculator::sellWithProfitInPercent:%.4f %%", wantedPercent);
 
     for (id key in currentSaldo) {
         if ([key isEqualToString:ASSET_KEY(1)]) { continue; }
@@ -790,6 +825,8 @@
  * @param wantedPercent
  */
 - (void)sellByInvestors:(double)wantedPercent {
+    NSDebug(@"Calculator::sellByInvestors:%.4f %%", wantedPercent);
+
     NSDictionary *currencyUnits = [self realChanges];
 
     NSNumber *lowest = [[currencyUnits allValues] valueForKeyPath:@"@min.self"];
@@ -817,6 +854,8 @@
  * @param wantedRate
  */
 - (void)buyWithProfitInPercent:(double)wantedPercent andInvestmentRate:(double)wantedRate {
+    NSDebug(@"Calculator::buyWithProfitInPercent:%.4f %% andRate:%.8f", wantedPercent, wantedRate);
+
     double balance = [self currentSaldo:ASSET_KEY(1)];
     NSDictionary *realChanges = [self realChanges];
 
@@ -858,6 +897,8 @@
  * @param wantedRate
  */
 - (void)buyByInvestors:(double)wantedRate {
+    NSDebug(@"Calculator::buyByInvestors:%.4f %%", wantedRate);
+
     NSDictionary *currencyUnits = [self realChanges];
 
     NSNumber *highest = [[currencyUnits allValues] valueForKeyPath:@"@max.self"];
@@ -878,6 +919,8 @@
  *
  */
 - (void)buyTheBest {
+    NSDebug(@"Calculator::buyTheBest");
+
     NSDictionary *currencyUnits = [self checkpointChanges];
 
     NSNumber *highest = [[currencyUnits allValues] valueForKeyPath:@"@max.self"];
@@ -893,6 +936,8 @@
  *
  */
 - (void)buyTheWorst {
+    NSDebug(@"Calculator::buyTheWorst");
+
     NSMutableDictionary *currencyUnits = [[self checkpointChanges] mutableCopy];
 
     NSNumber *lowest = [[currencyUnits allValues] valueForKeyPath:@"@min.self"];
@@ -912,6 +957,7 @@
  * @param synchronized
  */
 - (void)updateBalances:(BOOL)synchronized {
+    NSDebug(@"Calculator::updateBalances:%d", synchronized);
 
     dispatch_queue_t queue = dispatch_queue_create("de.4customers.PennyStocks.updateBalances", NULL);
 
@@ -934,6 +980,7 @@
  * falls automatedTrading aus ist, wird der handelbare(available) und der investierte(onOrders) Bestand angezeigt.
  */
 - (void)unsynchronizedUpdateBalances {
+    NSDebug(@"Calculator::unsynchronizedUpdateBalances");
 
     NSDictionary *apiKey = [self apiKey];
     NSDictionary *ak = apiKey[@"apiKey"];
@@ -970,6 +1017,7 @@
  * @param synchronized
  */
 - (void)updateRatings:(BOOL)synchronized {
+    NSDebug(@"Calculator::updateRatings");
 
     dispatch_queue_t queue = dispatch_queue_create("de.4customers.PennyStocks.updateRatings", NULL);
 
@@ -989,6 +1037,8 @@
  * Besorge die Kurse von der Börse per JSON-Request und speichere Sie in den App-Einstellungen
  */
 - (void)unsynchronizedUpdateRatings {
+    NSDebug(@"Calculator::unsynchronizedUpdateRatings");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *tickerDictionary;
 
@@ -1056,6 +1106,8 @@
  * @return double
  */
 - (double)currentSaldo:(NSString *)asset {
+    NSDebug(@"Calculator::currentSaldo:%@", asset);
+
     return [currentSaldo[asset] doubleValue];
 }
 
@@ -1066,6 +1118,8 @@
  * @return NSString*
  */
 - (NSString *)saldoUrlForLabel:(NSString *)label {
+    NSDebug(@"Calculator::saldoUrlForLabel:%@", label);
+
     return saldoUrls[label];
 }
 
@@ -1076,6 +1130,8 @@
  * @param saldo
  */
 - (void)currentSaldo:(NSString *)asset withDouble:(double)saldo {
+    NSDebug(@"Calculator::currentSaldo:%@ withDouble:%8f", asset, saldo);
+
     currentSaldo[asset] = [[NSNumber alloc] initWithDouble:saldo];
 
     [self currentSaldoForDictionary:currentSaldo];
@@ -1087,6 +1143,8 @@
  * @param dictionary
  */
 - (void)currentSaldoForDictionary:(NSMutableDictionary *)dictionary {
+    NSDebug(@"Calculator::currentSaldoForDictionary:%@", dictionary);
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (dictionary == nil) { return; }
@@ -1110,6 +1168,8 @@
  * @param dictionary
  */
 - (void)saldoUrlsForDictionary:(NSMutableDictionary *)dictionary {
+    NSDebug(@"Calculator::saldoUrlsForDictionary:%@", dictionary);
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (dictionary == nil) { return; }
@@ -1133,6 +1193,8 @@
  * @param dictionary
  */
 - (void)initialRatingsWithDictionary:(NSMutableDictionary *)dictionary {
+    NSDebug(@"Calculator::initialRatingsWithDictionary:%@", dictionary);
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (dictionary == nil) { return; }
@@ -1156,6 +1218,8 @@
  * @param exchange
  */
 - (void)defaultExchange:(NSString *)exchange {
+    NSDebug(@"Calculator::defaultExchange:%@", exchange);
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     // Instanzvariable zurück setzen
@@ -1182,6 +1246,8 @@
  * @return NSString*
  */
 - (NSString *)defaultExchange {
+    NSDebug(@"Calculator::defaultExchange");
+
     return defaultExchange;
 }
 
@@ -1191,6 +1257,8 @@
  * @return NSArray*
  */
 - (NSArray *)fiatCurrencies {
+    NSDebug(@"Calculator::fiatCurrencies");
+
     return fiatCurrencies;
 }
 
@@ -1200,6 +1268,8 @@
  * @return NSMutableDictionary*
  */
 - (NSMutableDictionary *)currentSaldo {
+    NSDebug(@"Calculator::currentSaldo");
+
     return [currentSaldo mutableCopy];
 }
 
@@ -1209,6 +1279,8 @@
  * @return NSMutableDictionary*
  */
 - (NSMutableDictionary *)saldoUrls {
+    NSDebug(@"Calculator::saldoUrls");
+
     return [saldoUrls mutableCopy];
 }
 
@@ -1218,6 +1290,8 @@
  * @return NSMutableDictionary*
  */
 - (NSMutableDictionary *)initialRatings {
+    NSDebug(@"Calculator::initialRatings");
+
     return [initialRatings mutableCopy];
 }
 
@@ -1227,6 +1301,8 @@
  * @return NSMutableDictionary*
  */
 - (NSMutableDictionary *)currentRatings {
+    NSDebug(@"Calculator::currentRatings");
+
     return [currentRatings mutableCopy];
 }
 
@@ -1236,6 +1312,8 @@
  * @return NSMutableDictionary*
  */
 - (NSMutableDictionary *)ticker {
+    NSDebug(@"Calculator::ticker");
+
     return [ticker mutableCopy];
 }
 
@@ -1245,6 +1323,8 @@
  * @return NSDictionary*
  */
 - (NSDictionary *)tickerKeys {
+    NSDebug(@"Calculator::tickerKeys");
+
     return tickerKeys;
 }
 
@@ -1254,6 +1334,8 @@
  * @return NSDictionary*
  */
 - (NSDictionary *)tickerKeysDescription {
+    NSDebug(@"Calculator::tickerKeysDescription");
+
     return tickerKeysDescription;
 }
 
@@ -1261,6 +1343,8 @@
  * Minimieren des Zugriffs auf den Schlüsselbund
  */
 - (NSDictionary *)apiKey {
+    NSDebug(@"Calculator::apiKey");
+
     if (keyAndSecret == nil) {
         if ([defaultExchange isEqualToString:EXCHANGE_POLONIEX]) {
             keyAndSecret = [KeychainWrapper keychain2ApiKeyAndSecret:@"POLONIEX"];
