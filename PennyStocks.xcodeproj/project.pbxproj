@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42B9AF490183B0206C7E4CBB /* libPods-PennyStocks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 575D82A30A65982A0CBA1832 /* libPods-PennyStocks.a */; };
 		43D6F1D5F5BB1EF870BEE7CC /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CEE211F841E7D0025D545 /* Calculator.m */; };
 		43D6F38ACFC8FA54F3AC373E /* ClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D6FFBF2890499FD95E1FFB /* ClickableTextField.m */; };
 		43D6F4348C268AF3D7234DC6 /* RestrictedClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D6F0544839CEF7511634D5 /* RestrictedClickableTextField.m */; };
@@ -96,6 +97,8 @@
 		43D6F269EE82390A9B8A6C87 /* ClickableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableTextField.h; sourceTree = "<group>"; };
 		43D6F673AE566AF75F129ECE /* RestrictedClickableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestrictedClickableTextField.h; sourceTree = "<group>"; };
 		43D6FFBF2890499FD95E1FFB /* ClickableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableTextField.m; sourceTree = "<group>"; };
+		52CD89AB8C5E199E2757A6A1 /* Pods-PennyStocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PennyStocks.release.xcconfig"; path = "Pods/Target Support Files/Pods-PennyStocks/Pods-PennyStocks.release.xcconfig"; sourceTree = "<group>"; };
+		575D82A30A65982A0CBA1832 /* libPods-PennyStocks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PennyStocks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23CEE171F841C100025D545 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
 		B23CEE181F841C100025D545 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		B23CEE191F841C100025D545 /* CalculatorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorConstants.h; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 		B2FB85B91F688BBA00F37D30 /* Brokerage+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+JSON.m"; sourceTree = "<group>"; };
 		B2FB85BA1F688BBA00F37D30 /* Brokerage+Poloniex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Brokerage+Poloniex.h"; sourceTree = "<group>"; };
 		B2FB85BB1F688BBA00F37D30 /* Brokerage+Poloniex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Brokerage+Poloniex.m"; sourceTree = "<group>"; };
+		C6AA648013587D58140DA9F1 /* Pods-PennyStocks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PennyStocks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PennyStocks/Pods-PennyStocks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B9AF490183B0206C7E4CBB /* libPods-PennyStocks.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +252,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07CC1CECBFCC57D0C62FD0FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6AA648013587D58140DA9F1 /* Pods-PennyStocks.debug.xcconfig */,
+				52CD89AB8C5E199E2757A6A1 /* Pods-PennyStocks.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		68CD081B516D885EEC00931B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				575D82A30A65982A0CBA1832 /* libPods-PennyStocks.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B23CEE161F841C100025D545 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +318,8 @@
 				B2824CF21F676DD800DC10F3 /* PennyStocksTests */,
 				B271E56E1F5E0F6400B14228 /* PennyStocksTool */,
 				B271E4C71F5E0C4800B14228 /* Products */,
+				07CC1CECBFCC57D0C62FD0FA /* Pods */,
+				68CD081B516D885EEC00931B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -529,9 +553,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B271E4DA1F5E0C4800B14228 /* Build configuration list for PBXNativeTarget "PennyStocks" */;
 			buildPhases = (
+				7CE4A6D73A3D9DC86EBB70FB /* [CP] Check Pods Manifest.lock */,
 				B271E4C21F5E0C4800B14228 /* Sources */,
 				B271E4C31F5E0C4800B14228 /* Frameworks */,
 				B271E4C41F5E0C4800B14228 /* Resources */,
+				469C3271580DF620C3FB83B6 /* [CP] Embed Pods Frameworks */,
+				A8EB8F0B926A57D169B9FA95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -655,6 +682,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		469C3271580DF620C3FB83B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PennyStocks/Pods-PennyStocks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CE4A6D73A3D9DC86EBB70FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PennyStocks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8EB8F0B926A57D169B9FA95 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PennyStocks/Pods-PennyStocks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B271E4C21F5E0C4800B14228 /* Sources */ = {
@@ -879,6 +957,7 @@
 		};
 		B271E4DB1F5E0C4800B14228 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6AA648013587D58140DA9F1 /* Pods-PennyStocks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PennyStocks/PennyStocks.entitlements;
@@ -895,6 +974,7 @@
 		};
 		B271E4DC1F5E0C4800B14228 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52CD89AB8C5E199E2757A6A1 /* Pods-PennyStocks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PennyStocks/PennyStocks.entitlements;

@@ -1,10 +1,13 @@
 .hg
 .DS_Store
 .idea/
+Podfile.lock
+
 PennyStocks.xcodeproj/xcuserdata/
 PennyStocks.xcodeproj/project.xcworkspace/xcuserdata/
+PennyStocks.xcworkspace/xcuserdata/
 
 PennyStocksTool/obj
 PennyStocksTool/*.app
 docs/
-
+Pods/
