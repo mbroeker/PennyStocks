@@ -319,13 +319,11 @@
     double initialAssetRating = [initialRatings[asset] doubleValue];
     double currentAssetRating = [currentRatings[asset] doubleValue];
 
-    if (initialAssetRating == 0 || currentAssetRating == 0) {
-        initialAssetRating = 1;
-        currentAssetRating = 1;
-    }
-
     double initialPrice = 1.0 / initialAssetRating;
     double currentPrice = 1.0 / currentAssetRating;
+
+    // Das darf einfach nicht passieren
+    assert(isfinite(currentPrice));
 
     double percent = 100.0 * (1 - (initialPrice / currentPrice));
 
@@ -420,8 +418,8 @@
     NSDebug(@"Calculator::calculateWithRatings:%@ currency:%@", ratings, currency);
 
     for (id key in ratings) {
-        if ([ratings[key] doubleValue] == 0.0) {
-            NSLog(@"ERROR IN CALCULATOR: DIVISION BY ZERO");
+        if (isfinite([ratings[key] doubleValue])) {
+            NSDebug(@"ERROR IN CALCULATOR: VALUES OUT OF RANGE");
             return 0;
         }
     }
