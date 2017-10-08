@@ -285,9 +285,6 @@ typedef struct DASHBOARD_VARS {
     defaultLowestColor = [NSColor orangeColor];
     defaultLooseColor = [NSColor redColor];
 
-    // deaktiviere das Instant Trading
-    self.instantTrading.enabled = NO;
-
     NSNumber *ccp = [defaults objectForKey:COINCHANGE_PERCENTAGE];
 
     if (ccp == nil) {
@@ -786,9 +783,6 @@ typedef struct DASHBOARD_VARS {
 - (void)updateOverview {
     NSDebug(@"TemplateViewController::updateOverview");
 
-    // Instant Trading deaktivieren
-    self.instantTrading.enabled = NO;
-
 #ifdef DEBUG
     NSLog(@"%5s %20s | %20s | %14s | %14s | %14s | %12s | %20s | %12s |\n",
         [@"####" UTF8String],
@@ -938,9 +932,6 @@ typedef struct DASHBOARD_VARS {
 
     // Aktualisiere den Kurs des Tabs - falls einer gesetzt ist
     [self rateInputAction:self];
-
-    // Aktiviere InstantTrading für alle Assets
-    self.instantTrading.enabled = YES;
 
     // Aktiviere die Eingabe für die Crypto-Einheiten
     self.cryptoUnits.editable = YES;
@@ -1262,32 +1253,6 @@ typedef struct DASHBOARD_VARS {
 
     } else {
         self.rateOutputLabel.stringValue = [Helper double2German:result min:4 max:8];
-    }
-
-    // EUR / USD - das kann nicht direkt gehandelt werden
-    if ([exchangeUnit isEqualToString:fiatCurrencies[0]] || [exchangeUnit isEqualToString:fiatCurrencies[1]]) {
-        return;
-    }
-
-    // Dashboard Tab: USD kann nicht direkt gehandelt werden...
-    if ([cAsset isEqualToString:fiatCurrencies[1]]) {
-        return;
-    }
-
-    if ([cAsset isEqualToString:ASSET_KEY(1)]) {
-        // Die Leute können mit (BTC) (exchangeUnit) kaufen
-        if (self.instantTrading.state == NSOnState) {
-            [calculator autoBuy:exchangeUnit amount:result];
-            self.exchangeSelection.title = fiatCurrencies[0];
-        }
-    } else {
-        // Die Leute können Ihre (cAsset)s nach (BTC) verkaufen
-        if ([exchangeUnit isEqualToString:ASSET_KEY(1)]) {
-            if (self.instantTrading.state == NSOnState) {
-                [calculator autoSell:cAsset amount:amount];
-                self.exchangeSelection.title = fiatCurrencies[0];
-            }
-        }
     }
 }
 

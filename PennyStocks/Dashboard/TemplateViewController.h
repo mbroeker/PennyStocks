@@ -85,7 +85,6 @@
 @property(strong) IBOutlet NSTextField *low24Field;
 
 @property(strong) IBOutlet NSPopUpButton *exchangeSelection;
-@property(strong) IBOutlet NSButton *instantTrading;
 
 // Definition der Menüpunkte
 @property(strong) IBOutlet NSMenuItem *asset1MenuItem;
