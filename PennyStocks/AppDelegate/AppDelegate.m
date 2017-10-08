@@ -228,13 +228,11 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
         [defaults removeObjectForKey:TV_APPLICATIONS];
+        [defaults removeObjectForKey:COINCHANGE_PERCENTAGE];
         [defaults removeObjectForKey:TV_TRADERS];
-        [defaults removeObjectForKey:KEY_SALDO_URLS];
-        [defaults removeObjectForKey:KEY_CURRENT_SALDO];
-        [defaults removeObjectForKey:KEY_INITIAL_RATINGS];
+        [defaults removeObjectForKey:KEY_TRADING_WITH_CONFIRMATION];
 
-        [defaults removeObjectForKey:KEY_FIAT_CURRENCIES];
-        [defaults removeObjectForKey:KEY_DEFAULT_EXCHANGE];
+        [Calculator reset];
 
         [defaults synchronize];
 

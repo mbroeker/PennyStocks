@@ -154,11 +154,12 @@
 + (void)reset {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    [defaults removeObjectForKey:KEY_SALDO_URLS];
-    [defaults removeObjectForKey:KEY_CURRENT_SALDO];
-    [defaults removeObjectForKey:KEY_INITIAL_RATINGS];
     [defaults removeObjectForKey:KEY_CURRENT_ASSETS];
-    [defaults removeObjectForKey:TV_APPLICATIONS];
+    [defaults removeObjectForKey:KEY_CURRENT_SALDO];
+    [defaults removeObjectForKey:KEY_DEFAULT_EXCHANGE];
+    [defaults removeObjectForKey:KEY_FIAT_CURRENCIES];
+    [defaults removeObjectForKey:KEY_INITIAL_RATINGS];
+    [defaults removeObjectForKey:KEY_SALDO_URLS];
 
     [defaults synchronize];
 }
