@@ -40,6 +40,7 @@
 + (NSModalResponse)messageText:(NSString *)message info:(NSString *)info;
 
 /**
+ * Show Message in Notification Center
  *
  * @param message
  * @param info
