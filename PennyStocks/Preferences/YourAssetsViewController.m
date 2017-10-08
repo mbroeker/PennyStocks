@@ -8,13 +8,18 @@
 
 #import "YourAssetsViewController.h"
 #import "Calculator.h"
+#import "Helper.h"
 
-@implementation YourAssetsViewController
+@implementation YourAssetsViewController {
+    Calculator *calculator;
+}
 
 /**
  *
  */
 - (void)viewDidLoad {
+    calculator = [Calculator instance];
+
     // Properties List
     self.asset1Field.placeholderString = ASSET_KEY(1);
     self.asset2Field.placeholderString = ASSET_KEY(2);
@@ -188,10 +193,18 @@
         @"ZEC": @"ZCash",
     };
 
-    // We are dealing with NSUSerDefaults: It must be a valid string
-    if (!images[key]) { return @""; }
+    NSString *image = images[key];
 
-    return images[key];
+    // We are dealing with NSUSerDefaults: It must be a valid string
+    if (!image) {
+        NSString *exchange = [calculator.defaultExchange isEqualToString:EXCHANGE_BITTREX] ? @"Bittrex" : @"Poloniex";
+        NSString *iText = [NSString stringWithFormat:@"Unsupported Market %@ on %@", key, exchange];
+        [Helper notificationText:@"UNSUPPORTED MARKET" info:iText];
+
+        return @"";
+    }
+
+    return image;
 }
 
 @end
