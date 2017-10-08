@@ -323,7 +323,8 @@
     double currentPrice = 1.0 / currentAssetRating;
 
     // Das darf einfach nicht passieren
-    assert(isfinite(currentPrice));
+    BOOL zeroOrInfinity = !((currentPrice == 0.0) || isinf(currentPrice));
+    assert(zeroOrInfinity);
 
     double percent = 100.0 * (1 - (initialPrice / currentPrice));
 
@@ -418,7 +419,9 @@
     NSDebug(@"Calculator::calculateWithRatings:%@ currency:%@", ratings, currency);
 
     for (id key in ratings) {
-        if (isfinite([ratings[key] doubleValue])) {
+        double v = [ratings[key] doubleValue];
+        BOOL zeroOrInfinity = !((v == 0.0) || isinf(v));
+        if (zeroOrInfinity) {
             NSDebug(@"ERROR IN CALCULATOR: VALUES OUT OF RANGE");
             return 0;
         }
