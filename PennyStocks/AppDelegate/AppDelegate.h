@@ -19,4 +19,60 @@
 @property(strong) IBOutlet NSMenuItem *usdCNYItem;
 @property(strong) IBOutlet NSMenuItem *usdJPYItem;
 
+/**
+ * EUR / USD
+ *
+ * @param sender
+ */
+- (IBAction)fiateurUSDAction:(id)sender;
+
+/**
+ * USD / EUR
+ *
+ * @param sender
+ */
+- (IBAction)fiatusdEURAction:(id)sender;
+
+/**
+ * EUR / GBP
+ *
+ * @param sender
+ */
+- (IBAction)fiateurGBPAction:(id)sender;
+
+/**
+ * USD / GBP
+ *
+ * @param sender
+ */
+- (IBAction)fiatusdGBPAction:(id)sender;
+
+/**
+ * USD / CNY
+ *
+ * @param sender
+ */
+- (IBAction)fiatusdCNYAction:(id)sender;
+
+/**
+ * USD / JPY
+ *
+ * @param sender
+ */
+- (IBAction)fiatusdJPYAction:(id)sender;
+
+/**
+ * Menubar ON/OFF
+ *
+ * @param sender
+ */
+- (IBAction)toggleMenuBar:(id)sender;
+
+/**
+* Reset the entire application data
+*
+* @param sender
+*/
+- (IBAction)applicationReset:(id)sender;
+
 @end

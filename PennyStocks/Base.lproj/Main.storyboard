@@ -69,13 +69,13 @@
                                         <menuItem title="EUR/USD" id="VL6-TP-Srq">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="fiatEURUSDAction:" target="Voe-Tx-rLC" id="aQj-nE-UP3"/>
+                                                <action selector="fiateurUSDAction:" target="Voe-Tx-rLC" id="gpF-oe-bUY"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="USD/EUR" id="k28-GY-y1j">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="fiatUSDEURAction:" target="Voe-Tx-rLC" id="4Ee-AX-eC2"/>
+                                                <action selector="fiatusdEURAction:" target="Voe-Tx-rLC" id="zL8-yj-x8h"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="p1n-jf-Pu6"/>

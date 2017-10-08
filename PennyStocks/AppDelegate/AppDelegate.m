@@ -18,6 +18,8 @@
  * @param aNotification
  */
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    NSDebug(@"AppDelegate::applicationDidFinishLaunching");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber *state = [defaults valueForKey:OPTIONS_MENUBAR];
 
@@ -50,6 +52,8 @@
  *
  */
 - (void)checkFiatMenuState {
+    NSDebug(@"AppDelegate::checkFiatMenuState");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *fiatCurrencies = [defaults objectForKey:@"fiatCurrencies"];
 
@@ -101,7 +105,9 @@
  *
  * @param sender
  */
-- (IBAction)fiatEURUSDAction:(id)sender {
+- (IBAction)fiateurUSDAction:(id)sender {
+    NSDebug(@"AppDelegate::fiateurUSDAction");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     [defaults setObject:@[EUR, USD] forKey:@"fiatCurrencies"];
@@ -115,7 +121,9 @@
  *
  * @param sender
  */
-- (IBAction)fiatUSDEURAction:(id)sender {
+- (IBAction)fiatusdEURAction:(id)sender {
+    NSDebug(@"AppDelegate::fiatusdEURAction");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     [defaults setObject:@[USD, EUR] forKey:@"fiatCurrencies"];
@@ -131,6 +139,8 @@
  * @param sender
  */
 - (IBAction)fiateurGBPAction:(id)sender {
+    NSDebug(@"AppDelegate::fiateurGBPAction");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     [defaults setObject:@[EUR, GBP] forKey:@"fiatCurrencies"];
@@ -145,6 +155,8 @@
  * @param sender
  */
 - (IBAction)fiatusdGBPAction:(id)sender {
+    NSDebug(@"AppDelegate::fiatusdGBPAction");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     [defaults setObject:@[USD, GBP] forKey:@"fiatCurrencies"];
@@ -159,6 +171,8 @@
  * @param sender
  */
 - (IBAction)fiatusdCNYAction:(id)sender {
+    NSDebug(@"AppDelegate::fiatusdCNYAction");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     [defaults setObject:@[USD, CNY] forKey:@"fiatCurrencies"];
@@ -173,6 +187,8 @@
  * @param sender
  */
 - (IBAction)fiatusdJPYAction:(id)sender {
+    NSDebug(@"AppDelegate::fiatusdJPYAction");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     [defaults setObject:@[USD, JPY] forKey:@"fiatCurrencies"];
@@ -187,6 +203,8 @@
  * @param sender
  */
 - (IBAction)toggleMenuBar:(id)sender {
+    NSDebug(@"AppDelegate::toggleMenuBar");
+
     NSMenuItem *item = (NSMenuItem *) sender;
 
     item.state = !item.state;
@@ -204,6 +222,8 @@
 * @param sender
 */
 - (IBAction)applicationReset:(id)sender {
+    NSDebug(@"AppDelegate::applicationReset");
+
     if ([Helper messageText:NSLocalizedString(@"application_reset", @"Anwendungs-Reset") info:NSLocalizedString(@"wanna_reset_to_app_defaults", @"Möchten Sie auf die Standard-Einstellungen zurück setzen?")] == NSAlertFirstButtonReturn) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
