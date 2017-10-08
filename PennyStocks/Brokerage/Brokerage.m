@@ -7,6 +7,7 @@
 //
 
 #import "Brokerage.h"
+#import "Brokerage+JSON.h"
 
 @implementation Brokerage
 
@@ -19,6 +20,10 @@
  */
 + (NSDictionary *)balance:(NSDictionary *)apikey withSecret:(NSString *)secret forExchange:(NSString *)exchange {
     NSDebug(@"Brokerage::balance");
+
+    if (![Brokerage isInternetConnection]) {
+        return nil;
+    }
 
     if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
         return [Brokerage poloniexBalance:apikey withSecret:secret];

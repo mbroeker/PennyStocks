@@ -48,4 +48,9 @@
  */
 + (NSString *)urlEncode:(NSDictionary *)payload;
 
+/**
+ *
+ */
++ (BOOL)isInternetConnection;
+
 @end

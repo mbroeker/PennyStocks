@@ -22,6 +22,10 @@
  */
 + (NSDictionary *)bittrexTicker:(NSArray *)fiatCurrencies forAssets:(NSArray *)assetsArray {
 
+    if (![Brokerage isInternetConnection]) {
+        return nil;
+    }
+
     NSMutableDictionary *ticker = [[NSMutableDictionary alloc] init];
     for (id key in assetsArray) {
         if ([key isEqualToString:ASSET_KEY(1)]) { continue; }
