@@ -1098,7 +1098,7 @@ typedef struct DASHBOARD_VARS {
     applications = [[defaults objectForKey:TV_APPLICATIONS] mutableCopy];
 
     if ([applications[title] isEqualToString:@""]) {
-        [Helper messageText:NSLocalizedString(@"std_app_not_configured", @"Standard App nicht konfiguriert") info:NSLocalizedString(@"check_preferences", @"Überprüfen Sie die Einstellungen.")];
+        [Helper notificationText:NSLocalizedString(@"std_app_not_configured", @"Standard App nicht konfiguriert") info:NSLocalizedString(@"check_preferences", @"Überprüfen Sie die Einstellungen.")];
 
         return;
     }

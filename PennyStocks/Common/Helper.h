@@ -40,6 +40,13 @@
 + (NSModalResponse)messageText:(NSString *)message info:(NSString *)info;
 
 /**
+ *
+ * @param message
+ * @param info
+ */
++ (void)notificationText:(NSString *)message info:(NSString *)info;
+
+/**
  * Restart the Application after "seconds"s
  *
  * @param seconds

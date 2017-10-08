@@ -20,6 +20,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSDebug(@"AppDelegate::applicationDidFinishLaunching");
 
+    NSUserNotificationCenter *notificationCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
+    notificationCenter.delegate = self;
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber *state = [defaults valueForKey:OPTIONS_MENUBAR];
 
@@ -44,6 +47,13 @@
  * @param sender
  */
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
+    return YES;
+}
+
+/**
+ * Sinn und Zweck: Mitteilungen sollen angezeigt werden
+ */
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
     return YES;
 }
 

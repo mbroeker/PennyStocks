@@ -61,7 +61,6 @@
  * @param message
  * @param info
  * @return NSModalResponse*
- *
  */
 + (NSModalResponse)messageText:(NSString *)message info:(NSString *)info {
 
@@ -76,6 +75,24 @@
 
     return [msg runModal];
 
+}
+
+/**
+ * Anzeige einer Nachricht im Notification Center
+ *
+ * @param message
+ * @param info
+ *
+ */
++ (void)notificationText:(NSString *)message info:(NSString *)info {
+
+    NSUserNotification *msg = [[NSUserNotification alloc] init];
+
+    msg.title = message;
+    msg.informativeText = info;
+    msg.soundName = NSUserNotificationDefaultSoundName;
+
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:msg];
 }
 
 /**

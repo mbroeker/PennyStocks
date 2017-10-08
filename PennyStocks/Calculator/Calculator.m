@@ -596,7 +596,7 @@
     if (amount > amountMax) {
         NSString *mText = NSLocalizedString(@"not_enough_btc", @"Zu wenig BTC");
         NSString *iText = NSLocalizedString(@"not_enough_btc_long", @"Sie haben zu wenig BTC zum Kauf");
-        [Helper messageText:mText info:iText];
+        [Helper notificationText:mText info:iText];
         return nil;
     }
 
@@ -604,7 +604,7 @@
     if (amount <= 0 || btcPrice <= 0 || assetPrice <= 0 || cRate <= 0) {
         NSString *mText = NSLocalizedString(@"not_enough_btc", @"Zu wenig BTC");
         NSString *iText = NSLocalizedString(@"not_enough_btc_long", @"Sie haben zu wenig BTC zum Kauf");
-        [Helper messageText:mText info:iText];
+        [Helper notificationText:mText info:iText];
         return nil;
     }
 
@@ -622,7 +622,7 @@
     NSDictionary *order = [Brokerage buy:ak withSecret:sk currencyPair:cPair rate:cRate amount:amount onExchange:defaultExchange];
 
     if (order[@"error"]) {
-        [Helper messageText:NSLocalizedString(@"error", "Fehler") info:order[@"error"]];
+        [Helper notificationText:NSLocalizedString(@"error", "Fehler") info:order[@"error"]];
         return nil;
     }
 
@@ -699,7 +699,7 @@
     if (amount > amountMax || amount <= 0 || btcPrice <= 0 || assetPrice <= 0 || cRate <= 0) {
         NSString *mText = [NSString stringWithFormat:NSLocalizedString(@"not_enough_asset_param", @"Zu wenig %@"), cAsset];
         NSString *iText = [NSString stringWithFormat:NSLocalizedString(@"not_enough_asset_long_param", @"Zu wenig %@ zum Verkaufen"), cAsset];
-        [Helper messageText:mText info:iText];
+        [Helper notificationText:mText info:iText];
         return nil;
     }
 
@@ -717,7 +717,7 @@
     NSDictionary *order = [Brokerage sell:ak withSecret:sk currencyPair:cPair rate:cRate amount:amount onExchange:defaultExchange];
 
     if (order[@"error"]) {
-        [Helper messageText:NSLocalizedString(@"error", "Fehler") info:order[@"error"]];
+        [Helper notificationText:NSLocalizedString(@"error", "Fehler") info:order[@"error"]];
         return nil;
     }
 
@@ -1006,7 +1006,7 @@
 
     if (currentBalance[@"error"]) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [Helper messageText:currentBalance[@"error"] info:@"CHECK API-KEY RESTRICTIONS"];
+            [Helper notificationText:currentBalance[@"error"] info:@"CHECK API-KEY RESTRICTIONS"];
         });
 
         return;
@@ -1066,7 +1066,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSLog(@"SERVICE UNAVAILABLE DURING INITIAL START");
 
-                [Helper messageText:NSLocalizedString(@"no_internet_connection", @"NO INTERNET CONNECTION")
+                [Helper notificationText:NSLocalizedString(@"no_internet_connection", @"NO INTERNET CONNECTION")
                     info:NSLocalizedString(@"internet_connection_required", @"Internet Connection required")
                 ];
             });
