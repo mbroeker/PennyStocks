@@ -99,6 +99,41 @@
 }
 
 /**
+ *
+ * @param currentAssets
+ */
+- (void)migrateRatings:(NSArray *)currentAssets {
+    NSArray *fiatCurrencies = [calculator fiatCurrencies];
+    NSDictionary *tickerKeys = @{
+        currentAssets[1][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], fiatCurrencies[0]],
+        currentAssets[2][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], currentAssets[2][0]],
+        currentAssets[3][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], currentAssets[3][0]],
+        currentAssets[4][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], currentAssets[4][0]],
+        currentAssets[5][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], currentAssets[5][0]],
+        currentAssets[6][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], currentAssets[6][0]],
+        currentAssets[7][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], currentAssets[7][0]],
+        currentAssets[8][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], currentAssets[8][0]],
+        currentAssets[9][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], currentAssets[9][0]],
+        currentAssets[10][0]: [NSString stringWithFormat:@"%@_%@", currentAssets[1][0], currentAssets[10][0]],
+    };
+
+    NSDictionary *tickerKeysDescription = @{
+        currentAssets[1][1]: currentAssets[1][0],
+        currentAssets[2][1]: currentAssets[2][0],
+        currentAssets[3][1]: currentAssets[3][0],
+        currentAssets[4][1]: currentAssets[4][0],
+        currentAssets[5][1]: currentAssets[5][0],
+        currentAssets[6][1]: currentAssets[6][0],
+        currentAssets[7][1]: currentAssets[7][0],
+        currentAssets[8][1]: currentAssets[8][0],
+        currentAssets[9][1]: currentAssets[9][0],
+        currentAssets[10][1]: currentAssets[10][0],
+    };
+
+    [Calculator migrateSaldoAndRatings:tickerKeys tickerKeysDescription:tickerKeysDescription];
+}
+
+/**
  * Speichern der Adressen des Nutzers
  *
  * @param sender
@@ -136,6 +171,8 @@
 
         [defaults setObject:currentAssets forKey:KEY_CURRENT_ASSETS];
         [defaults synchronize];
+
+        [self migrateRatings:currentAssets];
     }
 
     // Gepeicherte Daten neu einlesen...

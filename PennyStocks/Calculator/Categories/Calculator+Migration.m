@@ -14,6 +14,18 @@
  * Migration der URLs, Saldo und Ratings
  */
 + (void)migrateSaldoAndRatings {
+    Calculator *calculator = [Calculator instance];
+
+    NSDictionary *tickerKeys = [calculator tickerKeys];
+    NSDictionary *tickerKeysDescription = [calculator tickerKeysDescription];
+
+    [Calculator migrateSaldoAndRatings:tickerKeys tickerKeysDescription:tickerKeysDescription];
+}
+
+/**
+ * Migration der URLs, Saldo und Ratings
+ */
++ (void)migrateSaldoAndRatings:(NSDictionary *)tickerKeys tickerKeysDescription:(NSDictionary *)tickerKeysDescription {
     BOOL mustUpdate = NO;
 
     Calculator *calculator = [Calculator instance];
@@ -22,9 +34,6 @@
     NSMutableDictionary *saldoUrls = [[defaults objectForKey:KEY_SALDO_URLS] mutableCopy];
     NSMutableDictionary *currentSaldo = [[defaults objectForKey:KEY_CURRENT_SALDO] mutableCopy];
     NSMutableDictionary *initialRatings = [[defaults objectForKey:KEY_INITIAL_RATINGS] mutableCopy];
-
-    NSDictionary *tickerKeys = [calculator tickerKeys];
-    NSDictionary *tickerKeysDescription = [calculator tickerKeysDescription];
 
     if (!saldoUrls[DASHBOARD]) {
         saldoUrls[DASHBOARD] = @"https://coinmarketcap.com/gainers-losers/";

@@ -330,6 +330,10 @@
     double initialAssetRating = [initialRatings[asset] doubleValue];
     double currentAssetRating = [currentRatings[asset] doubleValue];
 
+    if (initialAssetRating == 0.0) {
+        initialAssetRating = currentAssetRating;
+    }
+
     double initialPrice = 1.0 / initialAssetRating;
     double currentPrice = 1.0 / currentAssetRating;
 

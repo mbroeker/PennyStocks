@@ -21,6 +21,14 @@
 + (void)migrateSaldoAndRatings;
 
 /**
+ * Migrate with custom keys
+ *
+ * @param tickerKeys
+ * @param tickerKeysDescription
+ */
++ (void)migrateSaldoAndRatings:(NSDictionary *)tickerKeys tickerKeysDescription:(NSDictionary *)tickerKeysDescription;
+
+/**
  * Migration of Preferences
  *
  * Migrate TV_APPLICATIONS
