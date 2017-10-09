@@ -204,7 +204,7 @@
             * RATE
             */
             orders[i++] = @[
-                data[@"orderNumber"],
+                data[POLONIEX_ORDERNUMBER],
                 @"---",
                 assetPair,
                 data[@"amount"],
