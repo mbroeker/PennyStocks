@@ -18,7 +18,7 @@
  * @param index
  * @return
  */
-+ (NSString *)assetString:(long)row withIndex:(long)index;
++ (NSString *)assetString:(unsigned int)row withIndex:(unsigned int)index;
 
 /**
  * Static Constructor implemented as singleton

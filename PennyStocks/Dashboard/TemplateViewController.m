@@ -806,7 +806,7 @@ typedef struct DASHBOARD_VARS {
 
     loop_vars.totalBalancesInEUR = [calculator calculate:fiatCurrencies[0]];
     loop_vars.initialBalancesInEUR = [calculator calculateWithRatings:initialRatings currency:fiatCurrencies[0]];
-    if (loop_vars.initialBalancesInEUR != 0) { loop_vars.coinchange.effectivePercent = 100.0 * (1 - (loop_vars.initialBalancesInEUR / loop_vars.totalBalancesInEUR)); }
+    if (loop_vars.initialBalancesInEUR != 0) { loop_vars.coinchange.effectivePercent = 100.0 * ((loop_vars.totalBalancesInEUR / loop_vars.initialBalancesInEUR) - 1); }
 
     for (id asset in [[calculator.tickerKeys allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]) {
         NSDictionary *checkpoint = [calculator checkpointForAsset:asset];

@@ -93,7 +93,7 @@
  * @param index
  * @return
  */
-+ (NSString *)assetString:(long)row withIndex:(long)index {
++ (NSString *)assetString:(unsigned int)row withIndex:(unsigned int)index {
     static NSArray *assets = nil;
 
     if (assets == nil) {
@@ -343,7 +343,7 @@
     assert(![Calculator zeroNanOrInfinity:currentPrice]);
 #endif
 
-    double percent = 100.0 * (1 - (initialPrice / currentPrice));
+    double percent = 100.0 * ((currentPrice / initialPrice) - 1);
 
     return @{
         CP_INITIAL_PRICE: @(initialPrice),
