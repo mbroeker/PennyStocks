@@ -40,8 +40,9 @@
         }
 
         if ([innerTicker[@"message"] isEqualToString:@"INVALID_MARKET"]) {
-            NSLog(@"Invalid Market on Bittrex: %@/%@", ASSET_KEY(1), key);
-            return nil;
+            return @{
+                POLONIEX_ERROR: [NSString stringWithFormat:@"Invalid Market on Bittrex: %@/%@", ASSET_KEY(1), key]
+            };
         }
 
         NSDictionary *data = innerTicker[@"result"][0];
@@ -112,13 +113,13 @@
 
     if (data == nil) {
         return @{
-            @"error": @"API-ERROR: Cannot fetch Data from Bittrex"
+            POLONIEX_ERROR: @"API-ERROR: Cannot fetch Data from Bittrex"
         };
     }
 
     if ([data[@"success"] intValue] == 0) {
         return @{
-            @"error": data[@"message"]
+            POLONIEX_ERROR: data[@"message"]
         };
     }
 
@@ -130,11 +131,11 @@
         NSString *asset = row[@"Currency"];
 
         double available = [row[@"Available"] doubleValue];
-        double onOrders = [row[@"Pending"] doubleValue];
+        double onOrders = [row[@"Balance"] doubleValue] - available;
 
         result[asset] = @{
-            @"available": @(available),
-            @"onOrders": @(onOrders)
+            POLONIEX_AVAILABLE: @(available),
+            POLONIEX_ONORDERS: @(onOrders)
         };
     }
 
@@ -180,11 +181,11 @@
         NSDictionary *result = response[@"result"];
 
         return @{
-            @"orderNumber": result[@"uuid"]
+            POLONIEX_ORDERNUMBER: result[@"uuid"]
         };
     } else {
         return @{
-            @"error": [NSString stringWithFormat:@"BUY-LIMIT: %@", response[@"message"]]
+            POLONIEX_ERROR: [NSString stringWithFormat:@"BUY-LIMIT: %@", response[@"message"]]
         };
     }
 
@@ -230,11 +231,11 @@
         NSDictionary *result = response[@"result"];
 
         return @{
-            @"orderNumber": result[@"uuid"]
+            POLONIEX_ORDERNUMBER: result[@"uuid"]
         };
     } else {
         return @{
-            @"error": [NSString stringWithFormat:@"SELL-LIMIT: %@", response[@"message"]]
+            POLONIEX_ERROR: [NSString stringWithFormat:@"SELL-LIMIT: %@", response[@"message"]]
         };
     }
 

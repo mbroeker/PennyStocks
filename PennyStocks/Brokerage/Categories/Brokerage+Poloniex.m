@@ -48,11 +48,6 @@
     ticker[asset1Fiat] = asset1Ticker;
     ticker[fiatCurrencies[1]] = @([exchangeRate doubleValue]);
 
-    // BCC ist BCH auf Poloniex
-    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET_KEY(1)];
-    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET_KEY(1)];
-    ticker[asset1BCC] = ticker[asset1BCH];
-
     return ticker;
 }
 
@@ -85,7 +80,7 @@
 
     if (data == nil) {
         return @{
-            @"error": @"API-ERROR: Cannot fetch Data from Poloniex"
+            POLONIEX_ERROR: @"API-ERROR: Cannot fetch Data from Poloniex"
         };
     }
 
@@ -109,13 +104,6 @@
     }
 
     NSString *jsonURL = @"https://poloniex.com/tradingApi";
-
-    // Bitcoin Cash heißt BCH auf Poloniex
-    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET_KEY(1)];
-    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET_KEY(1)];
-    if ([currencyPair isEqualToString:asset1BCC]) {
-        currencyPair = asset1BCH;
-    }
 
     NSMutableDictionary *payload = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *header = [apikey mutableCopy];
@@ -150,13 +138,6 @@
     }
 
     NSString *jsonURL = @"https://poloniex.com/tradingApi";
-
-    // Bitcoin Cash heißt BCH auf Poloniex
-    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET_KEY(1)];
-    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET_KEY(1)];
-    if ([currencyPair isEqualToString:asset1BCC]) {
-        currencyPair = asset1BCH;
-    }
 
     NSMutableDictionary *payload = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *header = [apikey mutableCopy];
@@ -202,25 +183,16 @@
 
     NSDictionary *response = [Brokerage jsonRequest:jsonURL withPayload:payload andHeader:header];
 
-    if (response[@"error"]) {
-        NSLog(@"ERROR: %@", response[@"error"]);
+    if (response[POLONIEX_ERROR]) {
+        NSLog(@"ERROR: %@", response[POLONIEX_ERROR]);
         return nil;
     }
-
-    // Bitcoin Cash heißt BCH auf Poloniex
-    NSString *asset1BCC = [NSString stringWithFormat:@"%@_BCC", ASSET_KEY(1)];
-    NSString *asset1BCH = [NSString stringWithFormat:@"%@_BCH", ASSET_KEY(1)];
 
     NSMutableArray *orders = [[NSMutableArray alloc] init];
 
     int i = 0;
     for (id key in response) {
         NSString *assetPair = key;
-
-        if ([assetPair isEqualToString:asset1BCH]) {
-            assetPair = asset1BCC;
-        }
-
         NSDictionary *data = response[key];
 
         if (data.count > 0) {
@@ -272,8 +244,8 @@
 
     NSDictionary *response = [Brokerage jsonRequest:jsonURL withPayload:payload andHeader:header];
 
-    if (response[@"error"]) {
-        NSLog(@"ERROR: %@", response[@"error"]);
+    if (response[POLONIEX_ERROR]) {
+        NSLog(@"ERROR: %@", response[POLONIEX_ERROR]);
         return NO;
     }
 

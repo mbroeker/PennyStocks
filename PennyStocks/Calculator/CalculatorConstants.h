@@ -32,6 +32,12 @@
 #define POLONIEX_PERCENT @"percentChange"
 #define POLONIEX_LAST @"last"
 
+#define POLONIEX_AVAILABLE @"available"
+#define POLONIEX_ONORDERS @"onOrders"
+
+#define POLONIEX_ORDERNUMBER @"orderNumber"
+#define POLONIEX_ERROR @"error"
+
 // ASSET DESCRIPTION KEYS
 #define DASHBOARD @"Dashboard"
 

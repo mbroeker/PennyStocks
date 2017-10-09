@@ -26,6 +26,8 @@
  * Migration der URLs, Saldo und Ratings
  */
 + (void)migrateSaldoAndRatings:(NSDictionary *)tickerKeys tickerKeysDescription:(NSDictionary *)tickerKeysDescription {
+    NSDebug(@"Calculator::migrateSaldoAndRatings:%@ tickerKeysDescription: %@", tickerKeys, tickerKeysDescription);
+
     BOOL mustUpdate = NO;
 
     Calculator *calculator = [Calculator instance];
@@ -115,6 +117,8 @@
  * Migration der Applications
  */
 + (NSMutableDictionary *)migrateApplications {
+    NSDebug(@"Calculator::migrateApplications");
+
     BOOL mustUpdate = NO;
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -161,6 +165,8 @@
  *
  */
 + (void)reset {
+    NSDebug(@"Calculator::reset");
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     [defaults removeObjectForKey:KEY_CURRENT_ASSETS];
