@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+/**
+ * Coins Management
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface YourAssetsViewController : NSViewController
 
 @property(strong) IBOutlet NSTextField *titleLabel;

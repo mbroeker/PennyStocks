@@ -5,5 +5,11 @@
 
 #import "ClickableTextField.h"
 
+/**
+ * Restricted Textfield as Button Replacement
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface RestrictedClickableTextField : ClickableTextField
 @end

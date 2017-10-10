@@ -8,6 +8,12 @@
 
 #import "Calculator.h"
 
+/**
+ * Category for Migration of Preferences
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface Calculator (Migration)
 
 /**

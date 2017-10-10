@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+/**
+ * Address Management
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface AddressViewController : NSViewController
 
 // Properties List

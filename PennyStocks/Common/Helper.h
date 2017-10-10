@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 
+/**
+ * Common Methods
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface Helper : NSObject
 
 /**

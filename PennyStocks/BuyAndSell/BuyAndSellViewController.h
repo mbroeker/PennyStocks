@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+/**
+ * BuyAndSell Segue Overlay
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface BuyAndSellViewController : NSViewController
 @property(strong) IBOutlet NSButton *dismissButton;
 @property(weak) NSString *currentAsset;

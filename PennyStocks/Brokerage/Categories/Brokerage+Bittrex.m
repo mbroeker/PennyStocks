@@ -135,7 +135,7 @@
 
         result[asset] = @{
             POLONIEX_AVAILABLE: @(available),
-            POLONIEX_ONORDERS: @(onOrders)
+            POLONIEX_ON_ORDERS: @(onOrders)
         };
     }
 

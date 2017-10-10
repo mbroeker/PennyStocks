@@ -8,5 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+/**
+ * Frame with Border and Padding
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface TabView : NSView
 @end

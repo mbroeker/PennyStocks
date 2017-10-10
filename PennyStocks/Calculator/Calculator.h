@@ -10,6 +10,12 @@
 #import "Brokerage.h"
 #import "CalculatorConstants.h"
 
+/**
+ * Calculator for Crypto Currencies
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface Calculator : NSObject
 
 /**

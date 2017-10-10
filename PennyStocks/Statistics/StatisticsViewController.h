@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+/**
+ * Open Orders Segue and useful stats in the future
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface StatisticsViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
 
 @property(strong) IBOutlet NSTextField *openOrdersLabel;

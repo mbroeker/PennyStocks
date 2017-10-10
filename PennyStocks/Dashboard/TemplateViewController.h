@@ -9,6 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import "ClickableTextField.h"
 
+/**
+ * Main Entry Point for this Application
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface TemplateViewController : NSViewController
 
 // Die Menübar selber

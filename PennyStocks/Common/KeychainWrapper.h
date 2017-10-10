@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Simplified Keychain Management
+ *
+ * @author      Chris Lowe
+ * @copyright   Copyright (C) 2011 USAA
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface KeychainWrapper : NSObject
 
 /**

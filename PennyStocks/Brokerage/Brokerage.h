@@ -9,6 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import "Calculator.h"
 
+/**
+ * Rudimentary Trading Functions
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface Brokerage : NSObject
 
 /**

@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Algorithms in Objective C
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface Algorithm : NSObject
 
 /**

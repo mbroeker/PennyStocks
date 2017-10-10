@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Entity for openOrders Table
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface OrderData : NSObject
 @property(nonatomic, copy) NSString *orderId;
 @property(nonatomic, copy) NSString *date;

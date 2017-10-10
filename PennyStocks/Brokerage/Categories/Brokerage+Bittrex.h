@@ -8,6 +8,12 @@
 
 #import "Brokerage.h"
 
+/**
+ * Category for Bittrex
+ *
+ * @author      Markus Bröker<broeker.markus@googlemail.com>
+ * @copyright   Copyright (C) 2017 4customers UG
+ */
 @interface Brokerage (Bittrex)
 
 /**

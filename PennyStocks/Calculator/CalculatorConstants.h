@@ -35,7 +35,7 @@
 #define POLONIEX_LAST @"last"
 
 #define POLONIEX_AVAILABLE @"available"
-#define POLONIEX_ONORDERS @"onOrders"
+#define POLONIEX_ON_ORDERS @"onOrders"
 
 #define POLONIEX_ORDER_NUMBER @"orderNumber"
 #define POLONIEX_ERROR @"error"
