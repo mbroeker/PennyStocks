@@ -169,10 +169,10 @@
             </objects>
             <point key="canvasLocation" x="-1193.5" y="-2092.5"/>
         </scene>
-        <!--Crypto-->
+        <!--Coins-->
         <scene sceneID="u3E-9Z-eds">
             <objects>
-                <viewController title="Crypto" id="Sud-5r-Hym" customClass="YourAssetsViewController" sceneMemberID="viewController">
+                <viewController title="Coins" id="Sud-5r-Hym" customClass="YourAssetsViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="Yig-UQ-P26" customClass="TabView">
                         <rect key="frame" x="0.0" y="0.0" width="705" height="690"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -198,6 +198,9 @@
                                         <constraint firstItem="Tcy-s8-lAN" firstAttribute="leading" secondItem="oRC-xG-WYO" secondAttribute="leading" constant="3" id="mHX-28-q7z"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="Dde-fA-kwV"/>
+                                </constraints>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
@@ -222,6 +225,9 @@
                                         <constraint firstItem="KWn-2g-Oil" firstAttribute="centerY" secondItem="yXh-HU-JBl" secondAttribute="centerY" id="zS8-xa-8OJ"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="0So-j7-rZa"/>
+                                </constraints>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
@@ -246,12 +252,15 @@
                                         <constraint firstItem="IgE-yS-FI5" firstAttribute="centerX" secondItem="h9G-Kc-YId" secondAttribute="centerX" id="xXq-iE-2cz"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="oKP-Wo-5Md"/>
+                                </constraints>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dez-yQ-wCD">
                                 <rect key="frame" x="0.0" y="659" width="707" height="31"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Crypto" placeholderString="" id="LIc-Qf-3UZ">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Coins" placeholderString="" id="LIc-Qf-3UZ">
                                     <font key="font" size="20" name="Krungthep"/>
                                     <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -278,6 +287,9 @@
                                         <constraint firstItem="I8j-5M-iOc" firstAttribute="leading" secondItem="6ay-Ka-eze" secondAttribute="leading" constant="3" id="KB3-EZ-W9b"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="UK1-x1-SVT"/>
+                                </constraints>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
@@ -302,6 +314,9 @@
                                         <constraint firstItem="Ana-0N-mmf" firstAttribute="centerX" secondItem="v6E-DE-oHr" secondAttribute="centerX" id="zeO-DQ-sOj"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="BhT-aR-kL0"/>
+                                </constraints>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
@@ -382,6 +397,9 @@
                                         <constraint firstItem="HxX-5b-ngG" firstAttribute="top" secondItem="h7y-vR-WGu" secondAttribute="top" constant="3" id="xWI-jy-lCS"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="Fec-3b-a5F"/>
+                                </constraints>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
@@ -406,6 +424,9 @@
                                         <constraint firstItem="8XN-FI-mj8" firstAttribute="leading" secondItem="GUD-lg-UQX" secondAttribute="leading" constant="3" id="qZa-N5-7Oi"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="A0P-FW-Gvl"/>
+                                </constraints>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
@@ -430,6 +451,9 @@
                                         <constraint firstItem="Jve-Li-HRy" firstAttribute="centerY" secondItem="jHj-b8-lcE" secondAttribute="centerY" id="fd0-Xk-cCT"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="iCX-Eq-FvI"/>
+                                </constraints>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
@@ -454,6 +478,9 @@
                                         <constraint firstItem="hv4-En-7Bq" firstAttribute="centerY" secondItem="gLv-22-Yfc" secondAttribute="centerY" id="tp6-S4-Lsc"/>
                                     </constraints>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="zNb-Lh-Tgg"/>
+                                </constraints>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </box>
