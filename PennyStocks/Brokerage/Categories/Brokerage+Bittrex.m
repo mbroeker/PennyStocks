@@ -181,7 +181,7 @@
         NSDictionary *result = response[@"result"];
 
         return @{
-            POLONIEX_ORDERNUMBER: result[@"uuid"]
+            POLONIEX_ORDER_NUMBER: result[@"uuid"]
         };
     } else {
         return @{
@@ -231,7 +231,7 @@
         NSDictionary *result = response[@"result"];
 
         return @{
-            POLONIEX_ORDERNUMBER: result[@"uuid"]
+            POLONIEX_ORDER_NUMBER: result[@"uuid"]
         };
     } else {
         return @{

@@ -62,6 +62,7 @@ typedef struct DASHBOARD_VARS {
     NSColor *defaultHighestColor;
 
     double coinchangePercentage;
+    int updateInterval;
 }
 
 /**
@@ -293,6 +294,15 @@ typedef struct DASHBOARD_VARS {
     }
 
     coinchangePercentage = [ccp doubleValue];
+
+    NSNumber *uInterval = [defaults objectForKey:UPDATE_INTERVAL];
+
+    if (uInterval == nil) {
+        uInterval = [NSNumber numberWithInt:30];
+        [defaults setObject:uInterval forKey:UPDATE_INTERVAL];
+    }
+
+    updateInterval = [uInterval doubleValue];
 
     // Synchronisiere alle Werte zum Schluss
     [defaults synchronize];

@@ -38,15 +38,14 @@
     NSMutableDictionary *initialRatings = [[defaults objectForKey:KEY_INITIAL_RATINGS] mutableCopy];
 
     if (!saldoUrls[DASHBOARD]) {
-        saldoUrls[DASHBOARD] = @"https://coinmarketcap.com/gainers-losers/";
+        NSString *exchange = ([calculator.defaultExchange isEqualToString:EXCHANGE_BITTREX]) ? @"bittrex" : @"poloniex";
+        saldoUrls[DASHBOARD] = [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges/%@/", exchange];
 
         mustUpdate = YES;
     }
 
     if (!saldoUrls[ASSET_DESC(1)]) {
-        NSString *exchange = ([calculator.defaultExchange isEqualToString:EXCHANGE_BITTREX]) ? @"bittrex" : @"poloniex";
-        saldoUrls[ASSET_DESC(1)] = [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges/%@/", exchange];
-
+        saldoUrls[ASSET_DESC(1)] = [NSString stringWithFormat:@"https://coinmarketcap.com/currencies/%@/", ASSET_DESC(1).lowercaseString];
         mustUpdate = YES;
     }
 

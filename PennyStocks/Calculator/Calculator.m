@@ -199,8 +199,8 @@
 
             if ([defaultExchange isEqualToString:EXCHANGE_BITTREX]) {
                 saldoUrls = [@{
-                    DASHBOARD: [NSString stringWithFormat:@"https://coinmarketcap.com/gainers-losers/"],
-                    ASSET_DESC(1): [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges"],
+                    DASHBOARD: [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges/bittrex/"],
+                    ASSET_DESC(1): [NSString stringWithFormat:@"https://coinmarketcap.com/currencies/%@/", ASSET_DESC(1).lowercaseString],
                     ASSET_DESC(2): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(2)],
                     ASSET_DESC(3): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(3)],
                     ASSET_DESC(4): [NSString stringWithFormat:@"https://bittrex.com/Market/Index?MarketName=%@-%@", ASSET_KEY(1), ASSET_KEY(4)],
@@ -213,8 +213,8 @@
                 } mutableCopy];
             } else {
                 saldoUrls = [@{
-                    DASHBOARD: [NSString stringWithFormat:@"https://coinmarketcap.com/gainers-losers/"],
-                    ASSET_DESC(1): [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges"],
+                    DASHBOARD: [NSString stringWithFormat:@"https://coinmarketcap.com/exchanges/poloniex/"],
+                    ASSET_DESC(1): [NSString stringWithFormat:@"https://coinmarketcap.com/currencies/%@/", ASSET_DESC(1).lowercaseString],
                     ASSET_DESC(2): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(2).lowercaseString],
                     ASSET_DESC(3): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(3).lowercaseString],
                     ASSET_DESC(4): [NSString stringWithFormat:@"https://poloniex.com/exchange#%@_%@", ASSET_KEY(1).lowercaseString, ASSET_KEY(4).lowercaseString],
@@ -630,10 +630,10 @@
         return nil;
     }
 
-    if (order[POLONIEX_ORDERNUMBER]) {
+    if (order[POLONIEX_ORDER_NUMBER]) {
         [self updateCheckpointForAsset:cAsset withBTCUpdate:YES andRate:cRate];
 
-        return order[POLONIEX_ORDERNUMBER];
+        return order[POLONIEX_ORDER_NUMBER];
     }
 
     return nil;
@@ -725,10 +725,10 @@
         return nil;
     }
 
-    if (order[POLONIEX_ORDERNUMBER]) {
+    if (order[POLONIEX_ORDER_NUMBER]) {
         [self updateCheckpointForAsset:cAsset withBTCUpdate:NO andRate:cRate];
 
-        return order[POLONIEX_ORDERNUMBER];
+        return order[POLONIEX_ORDER_NUMBER];
     }
 
     return nil;

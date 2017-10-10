@@ -9,6 +9,8 @@
 #ifndef CalculatorConstants_h
 #define CalculatorConstants_h
 
+#define RELEASE_BUILD 1
+
 #ifdef DEBUG
     #define NSDebug(FORMAT, ...) fprintf(stderr,"%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
     #define NSLog(...)
@@ -35,7 +37,7 @@
 #define POLONIEX_AVAILABLE @"available"
 #define POLONIEX_ONORDERS @"onOrders"
 
-#define POLONIEX_ORDERNUMBER @"orderNumber"
+#define POLONIEX_ORDER_NUMBER @"orderNumber"
 #define POLONIEX_ERROR @"error"
 
 // ASSET DESCRIPTION KEYS
@@ -80,5 +82,6 @@
 #define OPTIONS_MENUBAR @"menubar"
 
 #define COINCHANGE_PERCENTAGE @"coinchangePercentage"
+#define UPDATE_INTERVAL @"updateInterval"
 
 #endif /* CalculatorConstants_h */

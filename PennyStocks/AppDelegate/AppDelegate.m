@@ -241,6 +241,7 @@
         [defaults removeObjectForKey:COINCHANGE_PERCENTAGE];
         [defaults removeObjectForKey:TV_TRADERS];
         [defaults removeObjectForKey:KEY_TRADING_WITH_CONFIRMATION];
+        [defaults removeObjectForKey:UPDATE_INTERVAL];
 
         [Calculator reset];
 
