@@ -194,6 +194,7 @@
         @"BTC": @"Bitcoin",
         @"BTCD": @"Bitcoin Dark",
         @"BTS": @"BitShares",
+        @"CSH": @"Cash",
         @"DASH": @"Dash",
         @"DCR": @"Decred",
         @"DGB": @"DigiByte",
