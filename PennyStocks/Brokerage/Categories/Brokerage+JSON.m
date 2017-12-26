@@ -75,6 +75,9 @@
         result = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&jsonError];
         if (jsonError) {
             NSDebug(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
+            [session invalidateAndCancel];
+        } else {
+            [session finishTasksAndInvalidate];
         }
 
         dispatch_semaphore_signal(lock);
@@ -82,6 +85,7 @@
     }] resume];
 
     dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+
     return result;
 }
 
