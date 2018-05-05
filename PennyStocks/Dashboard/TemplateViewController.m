@@ -827,13 +827,14 @@ typedef struct DASHBOARD_VARS {
 
         double amount = [currentSaldo[asset] doubleValue];
 
+        double initialBalanceInEUR = amount * [checkpoint[CP_INITIAL_PRICE] doubleValue];
         double balanceInEUR = amount * currentPrice;
         double balanceInBTC = amount * btcPrice;
 
         double share = 0;
         if (loop_vars.totalBalancesInEUR != 0) { share = (balanceInEUR / loop_vars.totalBalancesInEUR) * 100.0; }
 
-        double diffInEuro = balanceInEUR * percent / 100.0;
+        double diffInEuro = initialBalanceInEUR * percent / 100.0;
         double diffInPercent = (amount >= 0) ? percent : 0;
 
 #ifdef DEBUG
@@ -967,17 +968,19 @@ typedef struct DASHBOARD_VARS {
 
     double assetRating = [currentRatings[asset] doubleValue];
     double saldo = [calculator currentSaldo:asset];
-    double priceInEuro = saldo / assetRating;
-    double diffInEuro = priceInEuro * percent / 100.0;
 
-    double diffPercent = percent;
+    double initialBalanceInEuro = saldo * [checkpoint[CP_INITIAL_PRICE] doubleValue];
+    double balanceInEuro = saldo / assetRating;
+
+    double diffInEuro = initialBalanceInEuro * percent / 100.0;
+    double diffInPercent = percent;
 
     if (![asset isEqualToString:ASSET_KEY(1)]) {
-        diffPercent -= btcPercent;
+        diffInPercent -= btcPercent;
     }
 
     // Die obligatorische Exchange-Rate
-    NSString *infoPercentString = [NSString stringWithFormat:@"ER: %@", [Helper double2GermanPercent:diffPercent fractions:2]];
+    NSString *infoPercentString = [NSString stringWithFormat:@"ER: %@", [Helper double2GermanPercent:diffInPercent fractions:2]];
 
     self.percentLabel.stringValue = [Helper double2GermanPercent:percent fractions:2];
     self.infoLabel.stringValue = infoPercentString;
@@ -985,7 +988,7 @@ typedef struct DASHBOARD_VARS {
     // Übersicht mit 2/8 Nachkommastellen für EUR/ASSET
     [self stdNumberFormatter:2 forAsset:8];
 
-    self.currencyUnits.doubleValue = priceInEuro;
+    self.currencyUnits.doubleValue = balanceInEuro;
     self.cryptoUnits.doubleValue = saldo;
 
     if (diffInEuro != 0) {
@@ -1004,7 +1007,7 @@ typedef struct DASHBOARD_VARS {
         self.percentLabel.textColor = defaultLooseColor;
     }
 
-    COINCHANGE coinchange = {0, diffPercent, diffInEuro};
+    COINCHANGE coinchange = {0, diffInPercent, diffInEuro};
     [self markDockLabels:coinchange];
 
     NSDictionary *currentPriceInUnits = @{
