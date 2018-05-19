@@ -17,16 +17,16 @@
 @interface SaldoViewController : NSViewController
 
 // Properties List
-@property(strong) IBOutlet NSTextField *asset1Field;
-@property(strong) IBOutlet NSTextField *asset2Field;
-@property(strong) IBOutlet NSTextField *asset3Field;
-@property(strong) IBOutlet NSTextField *asset4Field;
-@property(strong) IBOutlet NSTextField *asset5Field;
-@property(strong) IBOutlet NSTextField *asset6Field;
-@property(strong) IBOutlet NSTextField *asset7Field;
-@property(strong) IBOutlet NSTextField *asset8Field;
-@property(strong) IBOutlet NSTextField *asset9Field;
-@property(strong) IBOutlet NSTextField *asset10Field;
+@property(weak) IBOutlet NSTextField *asset1Field;
+@property(weak) IBOutlet NSTextField *asset2Field;
+@property(weak) IBOutlet NSTextField *asset3Field;
+@property(weak) IBOutlet NSTextField *asset4Field;
+@property(weak) IBOutlet NSTextField *asset5Field;
+@property(weak) IBOutlet NSTextField *asset6Field;
+@property(weak) IBOutlet NSTextField *asset7Field;
+@property(weak) IBOutlet NSTextField *asset8Field;
+@property(weak) IBOutlet NSTextField *asset9Field;
+@property(weak) IBOutlet NSTextField *asset10Field;
 
 // Images List
 @property(strong) IBOutlet NSImageView *asset1ImageView;

@@ -15,27 +15,27 @@
  * @copyright   Copyright (C) 2017 4customers UG
  */
 @interface BuyAndSellViewController : NSViewController
-@property(strong) IBOutlet NSButton *dismissButton;
+@property(weak) IBOutlet NSButton *dismissButton;
 @property(weak) NSString *currentAsset;
 
-@property(strong) IBOutlet NSTextField *buyAssetField;
-@property(strong) IBOutlet NSTextField *buyAssetPriceField;
-@property(strong) IBOutlet NSTextField *buyAsset1TotalField;
+@property(weak) IBOutlet NSTextField *buyAssetField;
+@property(weak) IBOutlet NSTextField *buyAssetPriceField;
+@property(weak) IBOutlet NSTextField *buyAsset1TotalField;
 
-@property(strong) IBOutlet NSTextField *sellAssetField;
-@property(strong) IBOutlet NSTextField *sellAssetPriceField;
-@property(strong) IBOutlet NSTextField *sellAsset1TotalField;
+@property(weak) IBOutlet NSTextField *sellAssetField;
+@property(weak) IBOutlet NSTextField *sellAssetPriceField;
+@property(weak) IBOutlet NSTextField *sellAsset1TotalField;
 
-@property(strong) IBOutlet NSButton *buyAssetImage;
-@property(strong) IBOutlet NSButton *buyAsset1Image;
-@property(strong) IBOutlet NSButton *buyAsset1TotalImage;
+@property(weak) IBOutlet NSButton *buyAssetImage;
+@property(weak) IBOutlet NSButton *buyAsset1Image;
+@property(weak) IBOutlet NSButton *buyAsset1TotalImage;
 
-@property(strong) IBOutlet NSButton *sellAssetImage;
-@property(strong) IBOutlet NSButton *sellAsset1Image;
-@property(strong) IBOutlet NSButton *sellAsset1TotalImage;
+@property(weak) IBOutlet NSButton *sellAssetImage;
+@property(weak) IBOutlet NSButton *sellAsset1Image;
+@property(weak) IBOutlet NSButton *sellAsset1TotalImage;
 
-@property(strong) IBOutlet NSButton *buyButton;
-@property(strong) IBOutlet NSButton *sellButton;
+@property(weak) IBOutlet NSButton *buyButton;
+@property(weak) IBOutlet NSButton *sellButton;
 
 /**
  *

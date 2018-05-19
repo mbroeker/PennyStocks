@@ -16,13 +16,13 @@
  */
 @interface BittrexViewController : NSViewController
 
-@property(strong) IBOutlet NSButton *standardExchangeButton;
-@property(strong) IBOutlet NSTextField *apikeyField;
-@property(strong) IBOutlet NSSecureTextField *secretField;
+@property(weak) IBOutlet NSButton *standardExchangeButton;
+@property(weak) IBOutlet NSTextField *apikeyField;
+@property(weak) IBOutlet NSSecureTextField *secretField;
 
-@property(strong) IBOutlet NSTextField *legalNoticeLabel;
-@property(strong) IBOutlet NSButton *keyEraseButton;
-@property(strong) IBOutlet NSButton *saveButton;
+@property(weak) IBOutlet NSTextField *legalNoticeLabel;
+@property(weak) IBOutlet NSButton *keyEraseButton;
+@property(weak) IBOutlet NSButton *saveButton;
 
 /**
  *

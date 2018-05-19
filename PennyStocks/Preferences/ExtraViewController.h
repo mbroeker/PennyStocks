@@ -15,12 +15,12 @@
  * @copyright   Copyright (C) 2017 4customers UG
  */
 @interface ExtraViewController : NSViewController
-@property(strong) IBOutlet NSButton *tradingWithConfirmationButton;
-@property(strong) IBOutlet NSTextField *extraSettingsTextField;
-@property(strong) IBOutlet NSButton *saveButton;
+@property(weak) IBOutlet NSButton *tradingWithConfirmationButton;
+@property(weak) IBOutlet NSTextField *extraSettingsTextField;
+@property(weak) IBOutlet NSButton *saveButton;
 
-@property(strong) IBOutlet NSTextField *percentRateLabel;
-@property(strong) IBOutlet NSLevelIndicator *percentRateIndicator;
+@property(weak) IBOutlet NSTextField *percentRateLabel;
+@property(weak) IBOutlet NSLevelIndicator *percentRateIndicator;
 
 /**
  *

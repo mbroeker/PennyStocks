@@ -16,14 +16,14 @@
  */
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
 
-@property(strong) IBOutlet NSMenuItem *menubarItem;
-@property(strong) IBOutlet NSMenuItem *eurUSDItem;
-@property(strong) IBOutlet NSMenuItem *usdEURItem;
+@property(weak) IBOutlet NSMenuItem *menubarItem;
+@property(weak) IBOutlet NSMenuItem *eurUSDItem;
+@property(weak) IBOutlet NSMenuItem *usdEURItem;
 
-@property(strong) IBOutlet NSMenuItem *eurGBPItem;
-@property(strong) IBOutlet NSMenuItem *usdGBPItem;
-@property(strong) IBOutlet NSMenuItem *usdCNYItem;
-@property(strong) IBOutlet NSMenuItem *usdJPYItem;
+@property(weak) IBOutlet NSMenuItem *eurGBPItem;
+@property(weak) IBOutlet NSMenuItem *usdGBPItem;
+@property(weak) IBOutlet NSMenuItem *usdCNYItem;
+@property(weak) IBOutlet NSMenuItem *usdJPYItem;
 
 /**
  * EUR / USD
