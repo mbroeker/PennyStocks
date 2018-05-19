@@ -1,7 +1,7 @@
 include $(GNUSTEP_MAKEFILES)/common.make
 
 TOOL_NAME = PennyStocksTool
-ADDITIONAL_INCLUDE_DIRS += -IBrokerage -ICommon
+ADDITIONAL_INCLUDE_DIRS += -IBrokerage -IBrokerage/Categories -ICommon -ICalculator -ICalculator/Categories
 ADDITIONAL_OBJCFLAGS += -fexceptions -fobjc-nonfragile-abi -fblocks
 ADDITIONAL_LDFLAGS += -lCommonCrypto -lgnustep-gui
 
