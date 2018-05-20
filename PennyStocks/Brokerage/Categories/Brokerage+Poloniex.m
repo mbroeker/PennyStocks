@@ -184,7 +184,7 @@
     NSDictionary *response = [Brokerage jsonRequest:jsonURL withPayload:payload andHeader:header];
 
     if (response[POLONIEX_ERROR]) {
-        NSLog(@"ERROR: %@", response[POLONIEX_ERROR]);
+        NSDebug(@"ERROR: %@", response[POLONIEX_ERROR]);
         return nil;
     }
 
@@ -245,7 +245,7 @@
     NSDictionary *response = [Brokerage jsonRequest:jsonURL withPayload:payload andHeader:header];
 
     if (response[POLONIEX_ERROR]) {
-        NSLog(@"ERROR: %@", response[POLONIEX_ERROR]);
+        NSDebug(@"ERROR: %@", response[POLONIEX_ERROR]);
         return NO;
     }
 

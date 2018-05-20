@@ -26,7 +26,7 @@
     NSDictionary *data = [Brokerage jsonRequest:jsonURL];
 
     if (!data[fiatCurrencies[0]]) {
-        NSLog(@"API-ERROR: Cannot retrieve exchange rates for %@/%@", fiatCurrencies[0], fiatCurrencies[1]);
+        NSDebug(@"API-ERROR: Cannot retrieve exchange rates for %@/%@", fiatCurrencies[0], fiatCurrencies[1]);
 
         return nil;
     }
@@ -48,7 +48,7 @@
     NSDictionary *theirData = [Brokerage jsonRequest:jsonURL];
 
     if (!theirData[@"last"]) {
-        NSLog(@"API-ERROR: Cannot retrieve exchange rates for %@/%@", ASSET_KEY(1), asset);
+        NSDebug(@"API-ERROR: Cannot retrieve exchange rates for %@/%@", ASSET_KEY(1), asset);
 
         return nil;
     }

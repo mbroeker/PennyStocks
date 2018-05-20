@@ -63,9 +63,8 @@
     NSArray *assets = [defaults objectForKey:KEY_CURRENT_ASSETS];
 
     if (assets == nil) {
-        #ifdef DEBUG
-        NSLog(@"Creating inital assets");
-        #endif
+        NSDebug(@"Creating inital assets");
+
         assets = @[
             @[DASHBOARD, DASHBOARD],
             @[@"ETH", @"Ethereum"],
@@ -296,7 +295,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (currentRatings == nil || initialRatings == nil) {
-        NSLog(@"updateCheckPointForAsset: NO DATA");
+        NSDebug(@"updateCheckPointForAsset: NO DATA");
 
         return;
     }
@@ -1068,7 +1067,7 @@
 
         if (initialRatings == nil) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"SERVICE UNAVAILABLE DURING INITIAL START");
+                NSDebug(@"SERVICE UNAVAILABLE DURING INITIAL START");
 
                 [Helper notificationText:NSLocalizedString(@"no_internet_connection", @"NO INTERNET CONNECTION")
                     info:NSLocalizedString(@"internet_connection_required", @"Internet Connection required")
@@ -1165,9 +1164,7 @@
 
     if (dictionary == nil) { return; }
     if ([dictionary count] == 0) {
-        if (!RELEASE_BUILD) {
-            NSLog(@"EMPTY ARRAY - NOT INSERTING");
-        }
+        NSDebug(@"EMPTY ARRAY - NOT INSERTING");
 
         return;
     }
@@ -1190,9 +1187,7 @@
 
     if (dictionary == nil) { return; }
     if ([dictionary count] == 0) {
-        if (!RELEASE_BUILD) {
-            NSLog(@"EMPTY ARRAY - NOT INSERTING");
-        }
+        NSDebug(@"EMPTY ARRAY - NOT INSERTING");
 
         return;
     }
@@ -1215,9 +1210,7 @@
 
     if (dictionary == nil) { return; }
     if ([dictionary count] == 0) {
-        if (!RELEASE_BUILD) {
-            NSLog(@"EMPTY ARRAY - NOT INSERTING");
-        }
+        NSDebug(@"EMPTY ARRAY - NOT INSERTING");
 
         return;
     }
