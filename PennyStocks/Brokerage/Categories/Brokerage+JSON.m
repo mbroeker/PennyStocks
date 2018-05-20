@@ -65,8 +65,8 @@
     __block NSMutableDictionary *result;
     __block dispatch_semaphore_t lock = dispatch_semaphore_create(0);
 
-    __weak NSURLSession *session = [NSURLSession sharedSession];    
-    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 
         NSData *jsonData = [requestReply dataUsingEncoding:NSUTF8StringEncoding];
@@ -75,14 +75,13 @@
         result = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&jsonError];
         if (jsonError) {
             NSDebug(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
-            [session invalidateAndCancel];
-        } else {
-            [session finishTasksAndInvalidate];
         }
 
         dispatch_semaphore_signal(lock);
 
-    }] resume];
+    }];
+
+    [dataTask resume];
 
     dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
 
