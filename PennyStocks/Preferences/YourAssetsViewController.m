@@ -190,7 +190,7 @@
         @"ADX": @"AD Token",
         @"ARK": @"Ark Byte",
         @"BAT": @"Basic Attention",
-        @"BCC": @"BC Cash",
+        @"BCH": @"BC Cash",
         @"BTC": @"Bitcoin",
         @"BTCD": @"Bitcoin Dark",
         @"BTS": @"BitShares",
