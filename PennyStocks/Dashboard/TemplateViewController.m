@@ -95,6 +95,9 @@ typedef struct DASHBOARD_VARS {
             // Gewinn: Automatisches Kaufen von Assets mit einer Exchange-Rate von coinchangePercentage oder mehr
             [calculator buyWithProfitInPercent:coinchangePercentage andInvestmentRate:-3.5];
 
+            // Automatisches Kaufen einer ASSET zum Tiefstpreis
+            [calculator buyLow];
+
         }
     }
 

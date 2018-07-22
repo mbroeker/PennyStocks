@@ -850,14 +850,37 @@
         NSString *lowestKey = [currencyUnits allKeysForObject:lowest][0];
         double investorsRate = [currencyUnits[lowestKey] doubleValue];
 
-        double price = [currentSaldo[lowestKey] doubleValue] * [self ethPriceForAsset:lowestKey];
+        double amount = [currentSaldo[lowestKey] doubleValue] * [self ethPriceForAsset:lowestKey];
 
         // Wir verkaufen keinen Sternenstaub...
-        if (price < 0.0001) { return; }
+        if (amount < 0.0001) { return; }
 
         // Verkaufe auf Grundlage der aktuellen Investoren-Rate
         if (investorsRate < wantedPercent) {
             [self autoSellAll:lowestKey];
+        }
+    }
+}
+
+/**
+ * Verkaufe zum täglichen Höchstpreis
+ */
+- (void)sellHigh {
+    NSDebug(@"Calculator::sellHigh");
+
+    for (id key in tickerKeys) {
+        if ([key isEqualToString:ASSET_KEY(1)]) continue;
+
+        double high = [ticker[tickerKeys[key]][POLONIEX_HIGH24] doubleValue] * 0.99;
+
+        double price = [self ethPriceForAsset:key];
+        double amount = [currentSaldo[key] doubleValue] * price;
+
+        // Wir verkaufen keinen Sternenstaub...
+        if (amount < 0.0001) { continue; }
+
+        if (price >= high) {
+          [self autoSellAll:key];
         }
     }
 }
@@ -960,6 +983,29 @@
     if (lowest != nil) {
         NSString *lowestKey = [currencyUnits allKeysForObject:lowest][0];
         [self autoBuyAll:lowestKey];
+    }
+}
+
+/**
+ * buyLow: Kaufe zum täglichen Tiefstpreis
+ */
+- (void)buyLow {
+    NSDebug(@"Calculator::buyLow");
+
+    double btcAmount = [currentSaldo[ASSET_KEY(1)] doubleValue];
+
+    // Currently we have no BTC
+    if (btcAmount < 0.0001) { return; }
+
+    for (id key in tickerKeys) {
+        if ([key isEqualToString:ASSET_KEY(1)]) continue;
+
+        double low = [ticker[tickerKeys[key]][POLONIEX_LOW24] doubleValue] * 1.01;
+        double price = [self ethPriceForAsset:key];
+
+        if (price <= low) {
+            [self autoBuyAll:key];
+        }
     }
 }
 

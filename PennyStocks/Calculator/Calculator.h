@@ -68,6 +68,11 @@
 - (void)sellByInvestors:(double)wantedPercent;
 
 /**
+ * Sell at a daily high
+ */
+- (void)sellHigh;
+
+/**
  * BUY with the current amount of MASTER-ASSET (ETH) ANY ASSET WITH an EXCHANGE-RATE of "wantedPercent" and an INVESTMENT-RATE greater than "wantedRate"
  *
  * @param wantedPercent
@@ -91,6 +96,11 @@
  * BUY with the current amount of MASTER-ASSET (ETH) the ASSET the lowest INVESTMENT-RATE
  */
 - (void)buyTheWorst;
+
+/**
+ * Buy at a daily low
+ */
+- (void)buyLow;
 
 - (NSString *)autoBuy:(NSString *)cAsset amount:(double)wantedAmount;
 
