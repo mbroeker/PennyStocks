@@ -83,7 +83,8 @@
 
     [dataTask resume];
 
-    dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+    // Wait 15 seconds for the request to finish: That's more than enough and better than DISPATCH_TIME_FOREVER
+    dispatch_semaphore_wait(lock, dispatch_time(DISPATCH_TIME_NOW, 15 * NSEC_PER_SEC));
 
     return result;
 }

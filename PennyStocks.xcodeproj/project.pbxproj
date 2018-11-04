@@ -588,6 +588,7 @@
 				TargetAttributes = {
 					B271E4C51F5E0C4800B14228 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = NS52DCTHFQ;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -885,6 +886,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NS52DCTHFQ;
 				INFOPLIST_FILE = PennyStocks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.4customers.PennyStocks;
@@ -901,6 +903,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NS52DCTHFQ;
 				INFOPLIST_FILE = PennyStocks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.4customers.PennyStocks;
