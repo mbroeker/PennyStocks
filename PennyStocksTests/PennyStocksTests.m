@@ -199,4 +199,16 @@
     XCTAssert(nearest == 0.1235, @"Assumpion failed %f", nearest);
 }
 
+/**
+ * Check the computation
+ */
+- (void)testCalculate {
+    for (int i = 1; i <= 10; i++) {
+        double sum = [self.calculator calculate:ASSET_KEY(i)];
+        double factor = [self.calculator factorForAsset:ASSET_KEY(i) inRelationTo:ASSET_KEY(3)];
+        NSLog(@"SUM %@ => %.4f : %.8f", ASSET_KEY(i), sum, factor);
+    }
+
+}
+
 @end

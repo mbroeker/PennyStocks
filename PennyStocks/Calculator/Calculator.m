@@ -35,10 +35,10 @@
 
     // Mit oder ohne Abfrage
     NSNumber *tradingWithConfirmation;
-
-    // Keychain Entries
-    NSDictionary *keyAndSecret;
 }
+
+// Keychain Entries
+static NSDictionary *keyAndSecret = nil;
 
 /**
  * Check for inf, nan or zero
