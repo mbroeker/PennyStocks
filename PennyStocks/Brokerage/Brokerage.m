@@ -50,6 +50,10 @@
 + (NSDictionary *)buy:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString *)exchange {
     NSDebug(@"Brokerage::buy");
 
+    if (![Brokerage isInternetConnection]) {
+        return nil;
+    }
+
     if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
         return [Brokerage poloniexBuy:apikey withSecret:secret currencyPair:currencyPair rate:rate amount:amount];
     }
@@ -75,6 +79,10 @@
 + (NSDictionary *)sell:(NSDictionary *)apikey withSecret:(NSString *)secret currencyPair:(NSString *)currencyPair rate:(double)rate amount:(double)amount onExchange:(NSString *)exchange {
     NSDebug(@"Brokerage::sell");
 
+    if (![Brokerage isInternetConnection]) {
+        return nil;
+    }
+
     if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
         return [Brokerage poloniexSell:apikey withSecret:secret currencyPair:currencyPair rate:rate amount:amount];
     }
@@ -97,6 +105,10 @@
 + (NSArray *)openOrders:(NSDictionary *)apikey withSecret:(NSString *)secret onExchange:(NSString *)exchange {
     NSDebug(@"Brokerage::openOrders");
 
+    if (![Brokerage isInternetConnection]) {
+        return nil;
+    }
+
     if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
         return [Brokerage poloniexOpenOrders:apikey withSecret:secret];
     }
@@ -118,6 +130,10 @@
  */
 + (BOOL)cancelOrder:(NSDictionary *)apikey withSecret:(NSString *)secret orderId:(NSString *)orderId onExchange:(NSString *)exchange {
     NSDebug(@"Brokerage::cancelOrder");
+
+    if (![Brokerage isInternetConnection]) {
+        return NO;
+    }
 
     if ([exchange isEqualToString:EXCHANGE_POLONIEX]) {
         return [Brokerage poloniexCancelOrder:apikey withSecret:secret orderId:orderId];

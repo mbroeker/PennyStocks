@@ -17,6 +17,13 @@
 @interface Brokerage (Bittrex)
 
 /**
+ * Retrieve the Marketsummary from Bittrex
+ *
+ * @return NSDictionary*
+ */
++ (NSDictionary *)bittrexMarketSummaries;
+
+/**
  * Retrieve the ticker from Bittrex
  *
  * @param fiatCurrencies

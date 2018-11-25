@@ -14,15 +14,38 @@
 @implementation Brokerage (Bittrex)
 
 /**
+ * Besorge die Marktzusammenfassung von Bittrex
+ *
+ * @return NSDictionary*
+ */
++ (NSDictionary *)bittrexMarketSummaries {
+
+    if (![Brokerage isInternetConnection]) {
+        return nil;
+    }
+
+    NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/public/getmarketsummaries"];
+    NSMutableDictionary *innerTicker = [[Brokerage jsonRequest:jsonURL] mutableCopy];
+
+    if (!innerTicker[@"result"]) {
+        return nil;
+    }
+
+    return innerTicker[@"result"];
+}
+
+/**
  * Besorge den Ticker von Bittrex
  *
- * @param fiatCurrencies
- * @param assetsArray
+ * @param fiatCurrencies NSArray*
+ * @param assetsArray NSArray*
  * @return NSDictionary*
  */
 + (NSDictionary *)bittrexTicker:(NSArray *)fiatCurrencies forAssets:(NSArray *)assetsArray {
 
-    if (![Brokerage isInternetConnection]) {
+    NSDictionary *innerTicker = [Brokerage bittrexMarketSummaries];
+
+    if (innerTicker == nil) {
         return nil;
     }
 
@@ -30,43 +53,34 @@
     for (id key in assetsArray) {
         if ([key isEqualToString:ASSET_KEY(1)]) { continue; }
 
-        NSString *pair = [NSString stringWithFormat:@"%@-%@", [ASSET_KEY(1) lowercaseString], [key lowercaseString]];
-        NSString *jsonURL = [NSString stringWithFormat:@"https://bittrex.com/api/v1.1/public/getmarketsummary?market=%@", pair];
+        NSString *pair = [NSString stringWithFormat:@"%@-%@", ASSET_KEY(1), key];
 
-        NSMutableDictionary *innerTicker = [[Brokerage jsonRequest:jsonURL] mutableCopy];
+        for (id data in innerTicker) {
 
-        if (!innerTicker[@"result"]) {
-            return nil;
+            if (!data[@"MarketName"]) {
+                continue;
+            }
+
+            if ([data[@"MarketName"] isEqualToString:pair]) {
+                NSString *marketName = data[@"MarketName"];
+                marketName = [marketName stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
+
+                double percent = ([data[@"Last"] doubleValue] / [data[@"PrevDay"] doubleValue]) - 1;
+
+                ticker[marketName] = @{
+                    POLONIEX_HIGH24: data[@"High"],
+                    POLONIEX_LOW24: data[@"Low"],
+                    POLONIEX_ASK: data[@"Ask"],
+                    POLONIEX_BID: data[@"Bid"],
+                    POLONIEX_LAST: data[@"Last"],
+                    POLONIEX_BASE_VOLUME: data[@"BaseVolume"],
+                    POLONIEX_QUOTE_VOLUME: data[@"Volume"],
+                    POLONIEX_PERCENT: @(percent)
+                };
+
+                break;
+            }
         }
-
-        if ([innerTicker[@"message"] isEqualToString:@"INVALID_MARKET"]) {
-            return @{
-                POLONIEX_ERROR: [NSString stringWithFormat:@"Invalid Market on Bittrex: %@/%@", ASSET_KEY(1), key]
-            };
-        }
-
-        NSDictionary *data = innerTicker[@"result"][0];
-
-        if (!data[@"MarketName"]) {
-            return nil;
-        }
-
-        NSString *marketName = data[@"MarketName"];
-
-        marketName = [marketName stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
-
-        double percent = ([data[@"Last"] doubleValue] / [data[@"PrevDay"] doubleValue]) - 1;
-
-        ticker[marketName] = @{
-            POLONIEX_HIGH24: data[@"High"],
-            POLONIEX_LOW24: data[@"Low"],
-            POLONIEX_ASK: data[@"Ask"],
-            POLONIEX_BID: data[@"Bid"],
-            POLONIEX_LAST: data[@"Last"],
-            POLONIEX_BASE_VOLUME: data[@"BaseVolume"],
-            POLONIEX_QUOTE_VOLUME: data[@"Volume"],
-            POLONIEX_PERCENT: @(percent)
-        };
     }
 
     NSDictionary *asset1Ticker = [Brokerage bitstampAsset1Ticker:fiatCurrencies[0]];
