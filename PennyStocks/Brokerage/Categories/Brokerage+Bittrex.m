@@ -144,8 +144,18 @@
     for (NSDictionary *row in dataRows) {
         NSString *asset = row[@"Currency"];
 
-        double available = [row[@"Available"] doubleValue];
-        double onOrders = [row[@"Balance"] doubleValue] - available;
+        double available = 0.0;
+        double onOrders = 0.0;
+
+        /* Bittrex Technology Update Feb 2019-28-02 */
+        if (![row[@"Available"] isEqual:[NSNull null]]) {
+            available = [row[@"Available"] doubleValue];
+        }
+
+        if (![row[@"Balance"] isEqual:[NSNull null]]) {
+            onOrders = [row[@"Balance"] doubleValue] - available;
+        }
+        /* Bittrex Technology Update Feb 2019-28-02 */
 
         result[asset] = @{
             POLONIEX_AVAILABLE: @(available),
