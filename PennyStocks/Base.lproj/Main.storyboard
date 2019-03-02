@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F2511" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Preferences-->
@@ -189,6 +191,9 @@
                         <rect key="contentRect" x="900" y="400" width="640" height="580"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="640" height="580"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="Grw-UU-TRP"/>
+                        </connections>
                     </window>
                     <connections>
                         <segue destination="2wC-py-DJR" kind="relationship" relationship="window.shadowedContentViewController" id="9OE-XW-PCZ"/>
@@ -227,7 +232,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="52m-od-dE4">
-                                <rect key="frame" x="496" y="287" width="123" height="31"/>
+                                <rect key="frame" x="496" y="282" width="123" height="31"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="gRb-72-KO9">
                                     <font key="font" size="20" name="Krungthep"/>
                                     <color key="textColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
@@ -247,7 +252,7 @@
                                     <action selector="infoAction:" target="2wC-py-DJR" id="Bc5-1l-hnp"/>
                                 </connections>
                             </button>
-                            <box wantsLayer="YES" title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="ibZ-fl-489">
+                            <box wantsLayer="YES" boxType="custom" borderType="line" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="ibZ-fl-489">
                                 <rect key="frame" x="553" y="135" width="64" height="64"/>
                                 <view key="contentView" wantsLayer="YES" id="eOg-ya-OP0">
                                     <rect key="frame" x="1" y="1" width="62" height="62"/>
@@ -271,7 +276,6 @@
                                         <constraint firstItem="Jlk-75-vTn" firstAttribute="leading" secondItem="eOg-ya-OP0" secondAttribute="leading" constant="8" id="pWo-fc-F4y"/>
                                     </constraints>
                                 </view>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
                             </box>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Eux-yU-TCb">
@@ -378,7 +382,7 @@
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box title="Box" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="QCn-PU-dxM">
+                            <box boxType="custom" borderType="line" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="QCn-PU-dxM">
                                 <rect key="frame" x="553" y="210" width="64" height="64"/>
                                 <view key="contentView" id="1OT-qa-3mG">
                                     <rect key="frame" x="1" y="1" width="62" height="62"/>
@@ -402,10 +406,9 @@
                                         <constraint firstItem="h8R-Ca-f07" firstAttribute="centerY" secondItem="1OT-qa-3mG" secondAttribute="centerY" id="rCI-sT-ZqC"/>
                                     </constraints>
                                 </view>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
                             </box>
-                            <box wantsLayer="YES" borderWidth="0.0" boxType="custom" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="FBW-b0-6St">
+                            <box wantsLayer="YES" boxType="custom" borderType="line" borderWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="FBW-b0-6St">
                                 <rect key="frame" x="0.0" y="0.0" width="639" height="45"/>
                                 <view key="contentView" id="djh-fJ-a7e">
                                     <rect key="frame" x="0.0" y="0.0" width="639" height="45"/>
@@ -724,7 +727,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box borderWidth="0.0" boxType="custom" borderType="none" translatesAutoresizingMaskIntoConstraints="NO" id="VrK-PC-fjo">
+                            <box boxType="custom" borderType="none" borderWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="VrK-PC-fjo">
                                 <rect key="frame" x="0.0" y="522" width="639" height="60"/>
                                 <view key="contentView" id="gea-GI-YQj">
                                     <rect key="frame" x="0.0" y="0.0" width="639" height="60"/>
