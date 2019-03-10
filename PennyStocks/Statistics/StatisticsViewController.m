@@ -82,7 +82,9 @@
             NSArray *data = [OrderData fetchOrderData];
 
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self updateTableData:data];
+                @autoreleasepool {
+                    [self updateTableData:data];
+                }
             });
 
             [NSThread sleepForTimeInterval:15];

@@ -14,7 +14,7 @@
 /**
  * Allgemeiner jsonRequest Handler
  *
- * @param jsonURL
+ * @param jsonURL NSString*
  * @return NSDictionary*
  */
 + (NSDictionary *)jsonRequest:(NSString *)jsonURL {
@@ -24,8 +24,8 @@
 /**
  * Allgemeiner jsonRequest Handler mit Payload
  *
- * @param jsonURL
- * @param payload
+ * @param jsonURL NSString*
+ * @param payload NSDictionary*
  * @return NSDictionary*
  */
 + (NSDictionary *)jsonRequest:(NSString *)jsonURL withPayload:(NSDictionary *)payload {
@@ -33,12 +33,28 @@
 }
 
 /**
+ * Session Handle als Singleton
+ *
+ * @return NSURLSession*
+ */
++ (NSURLSession *)commonSession {
+    static NSURLSession *session = nil;
+
+    if (session == nil) {
+        @synchronized (self) {
+            session = [NSURLSession sharedSession];
+        }
+    }
+
+    return session;
+}
+
+/**
  * Allgemeiner jsonRequest Handler mit Payload und Header
  *
- * @param jsonURL
- * @param payload
- * @param header
- *
+ * @param jsonURL NSString*
+ * @param payload NSDictionary*
+ * @param header NSDictionary*
  * @return NSDictionary*
  */
 + (NSDictionary *)jsonRequest:(NSString *)jsonURL withPayload:(NSDictionary *)payload andHeader:(NSDictionary *)header {
@@ -62,29 +78,38 @@
         [request setHTTPBody:data];
     }
 
-    __block NSMutableDictionary *result;
-    __block dispatch_semaphore_t lock = dispatch_semaphore_create(0);
+    NSMutableDictionary *result = nil;
 
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    @autoreleasepool {
+        __block NSMutableDictionary *jsonResult = nil;
+        __block dispatch_semaphore_t lock = dispatch_semaphore_create(0);
 
-        NSData *jsonData = [requestReply dataUsingEncoding:NSUTF8StringEncoding];
-        NSError *jsonError;
+        NSURLSession *session = [Brokerage commonSession];
+        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            NSString *requestReply = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 
-        result = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&jsonError];
-        if (jsonError) {
-            NSDebug(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
+            NSData *jsonData = [requestReply dataUsingEncoding:NSUTF8StringEncoding];
+            NSError *jsonError;
+
+            jsonResult = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
+            if (jsonError) {
+                NSDebug(@"JSON-ERROR for URL %@\n%@", jsonURL, [jsonError description]);
+            }
+
+            dispatch_semaphore_signal(lock);
+        }];
+
+        [dataTask resume];
+        [session finishTasksAndInvalidate];
+
+        // Wait 15 seconds for the request to finish: That's more than enough and better than DISPATCH_TIME_FOREVER
+        dispatch_semaphore_wait(lock, dispatch_time(DISPATCH_TIME_NOW, 15 * NSEC_PER_SEC));
+
+        if (jsonResult != nil) {
+            result = [jsonResult copy];
+            [jsonResult removeAllObjects];
         }
-
-        dispatch_semaphore_signal(lock);
-
-    }];
-
-    [dataTask resume];
-
-    // Wait 15 seconds for the request to finish: That's more than enough and better than DISPATCH_TIME_FOREVER
-    dispatch_semaphore_wait(lock, dispatch_time(DISPATCH_TIME_NOW, 15 * NSEC_PER_SEC));
+    }
 
     return result;
 }
@@ -92,7 +117,8 @@
 /**
  * Simpler Text Encoder
  *
- * @param string
+ * @param string NSString*
+ * @return NSString*
  */
 + (NSString *)urlStringEncode:(NSString *)string {
     NSDebug(@"Brokerage::urlStringEncode:%@", string);
@@ -103,7 +129,7 @@
 /**
  * Simpler URL-Encoder
  *
- * @param payload
+ * @param payload NSDictionary*
  * @return NSString*
  */
 + (NSString *)urlEncode:(NSDictionary *)payload {

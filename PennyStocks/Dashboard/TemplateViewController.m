@@ -78,7 +78,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Aktualisiert das aktive Tab
  *
- * @param withTrading
+ * @param withTrading BOOL
  */
 - (void)updateCurrentView:(BOOL)withTrading {
     NSDebug(@"TemplateViewController::updateCurrentView: %d", withTrading);
@@ -109,8 +109,8 @@ typedef struct DASHBOARD_VARS {
 /**
  * Einfärben der Textfelder vereinheitlichen
  *
- * @param field
- * @param color
+ * @param field NSString*
+ * @param color NSColor*
  */
 - (void)alterFieldColors:(NSTextField *)field withBackgroundColor:(NSColor *)color {
     field.backgroundColor = color;
@@ -324,8 +324,8 @@ typedef struct DASHBOARD_VARS {
 /**
  * Setzen der Formatierungsregeln für die Eingabefelder
  *
- * @param fractions
- * @param assetFractions
+ * @param fractions NSUInteger
+ * @param assetFractions NSUInteger
  */
 - (void)stdNumberFormatter:(NSUInteger)fractions forAsset:(NSUInteger)assetFractions {
     NSDebug(@"TemplateViewController::stdNumberFormatter");
@@ -369,7 +369,7 @@ typedef struct DASHBOARD_VARS {
 
 /**
  *
- * @param sender
+ * @param sender id
  */
 - (void)switchView:(id)sender {
     NSDebug(@"TemplateViewController::switchView");
@@ -504,12 +504,14 @@ typedef struct DASHBOARD_VARS {
     dispatch_async(autoRefreshQueue, ^{
 
         while (true) {
-            [NSThread sleepForTimeInterval:60];
+            [NSThread sleepForTimeInterval:updateInterval];
 
-            [self updateBalanceAndRatings];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self updateCurrentView:YES];
-            });
+            @autoreleasepool {
+                [self updateBalanceAndRatings];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self updateCurrentView:YES];
+                });
+            }
         }
 
     });
@@ -768,7 +770,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Zeige Differenzen zwischen dem gehandelten und dem berechneten Preis
  *
- * @param asset
+ * @param asset NSString*
  */
 - (void)highlightVolumeMismatch:(NSString *)asset {
     NSDebug(@"TemplateViewController::highlightVolumeMismatch");
@@ -916,9 +918,9 @@ typedef struct DASHBOARD_VARS {
 }
 
 /**
- * Aktualisiere den jeweiligen Tab
+ * Aktualisiere das jeweilige Tab
  *
- * @param label
+ * @param label NSString*
  */
 - (void)updateTemplateView:(NSString *)label {
     NSDebug(@"TemplateViewController::updateTemplateView:%@", label);
@@ -1067,6 +1069,8 @@ typedef struct DASHBOARD_VARS {
 
 /**
  * Action-Handler für das headlineLabel
+ *
+ * @param sender id
  */
 - (IBAction)dashboardAction:(id)sender {
     NSDebug(@"TemplateViewController::dashboardAction");
@@ -1077,7 +1081,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Action-Handler für den homepageButton
  *
- * @param sender
+ * @param sender id
  */
 - (IBAction)homepageAction:(id)sender {
     NSDebug(@"TemplateViewController::homepageAction");
@@ -1088,7 +1092,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Action-Handler zum Starten der jeweiligen Wallet-App
  *
- * @param sender
+ * @param sender id
  */
 - (IBAction)walletAction:(id)sender {
     NSDebug(@"TemplateViewController::walletAction");
@@ -1125,7 +1129,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Action-Handler zum Aktivieren des automatisierten Handelns
  *
- * @param sender
+ * @param sender id
  */
 - (IBAction)automatedTradingAction:(id)sender {
     NSDebug(@"TemplateViewController::automatedTradingAction");
@@ -1141,7 +1145,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Action-Handler zum Starten der Crypto-Page des Vertrauens
  *
- * @param sender
+ * @param sender id
  */
 - (IBAction)homeAction:(id)sender {
     NSDebug(@"TemplateViewController::homeAction");
@@ -1152,7 +1156,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Action-Handler zum Aufruf des Crypto-Shifters
  *
- * @param sender
+ * @param sender id
  */
 - (IBAction)leftAction:(id)sender {
     NSDebug(@"TemplateViewController::leftAction");
@@ -1162,7 +1166,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Action-Handler zum Aufruf des Crypto-Shifters
  *
- * @param sender
+ * @param sender id
  */
 - (IBAction)rightAction:(id)sender {
     NSDebug(@"TemplateViewController::rightAction");
@@ -1173,7 +1177,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Action-Handler zum Aktualisieren des initialen Kurses der gewählten Währung (blaues Info-Icon)
  *
- * @param sender
+ * @param sender id
  */
 - (IBAction)infoAction:(id)sender {
     NSDebug(@"TemplateViewController::infoAction");
@@ -1198,7 +1202,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Aktualisieren des eingegeben Bestands per Klick
  *
- * @param sender
+ * @param sender id
  */
 - (IBAction)cryptoAction:(id)sender {
     NSDebug(@"TemplateViewController::cryptoAction");
@@ -1234,7 +1238,7 @@ typedef struct DASHBOARD_VARS {
 /**
  * Einfacher Währungsumrechner
  *
- * @param sender
+ * @param sender id
  */
 - (IBAction)rateInputAction:(id)sender {
     NSDebug(@"TemplateViewController::rateInputAction");

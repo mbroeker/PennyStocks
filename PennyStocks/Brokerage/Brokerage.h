@@ -6,7 +6,6 @@
 //  Copyright © 2017 Markus Bröker. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
 #import "Calculator.h"
 
 /**
