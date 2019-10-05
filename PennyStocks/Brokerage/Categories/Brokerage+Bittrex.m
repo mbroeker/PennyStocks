@@ -61,6 +61,11 @@
                 continue;
             }
 
+            // Filter disabled markets
+            if (![data[@"Volume"] isKindOfClass:[NSNumber class]]) {
+                continue;
+            }
+
             if ([data[@"MarketName"] isEqualToString:pair]) {
                 NSString *marketName = data[@"MarketName"];
                 marketName = [marketName stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
